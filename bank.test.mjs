@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fmtMetric, sortBy, rankIn, bestOf, periodsOf, periodKey, METRICS } from './bank.js';
 import { initials } from './orbit.js';
+import { LOGOS } from './logos.js';
 
 const DATA = JSON.parse(readFileSync(new URL('./bank.json', import.meta.url)));
 
@@ -75,4 +76,14 @@ test('bank.json lengkap dan masuk akal', () => {
   }
   for (const g of ['bumn', 'swasta', 'bpd']) assert.ok(DATA.bank.filter((b) => b.grup === g).length >= 2, `kelompok ${g} minimal dua bank`);
   assert.ok(periodsOf(DATA.bank).length >= 1);
+});
+
+test('setiap bank punya logo SVG yang aman', () => {
+  for (const b of DATA.bank) {
+    const l = LOGOS[b.kode];
+    assert.ok(l, `${b.kode} tanpa logo`);
+    assert.match(l.svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/, b.kode);
+    assert.doesNotMatch(l.svg, /<script|\son\w+=|href=|<image|<foreignObject/i, b.kode);
+    assert.ok(l.ratio > 0.5 && l.ratio < 6, `${b.kode} rasio`);
+  }
 });

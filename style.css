@@ -54,57 +54,48 @@
 .orbit-copy .lede { max-width: 44ch; margin: 0 auto; }
 .orbit-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
 .orbit-actions a { pointer-events: auto; }
-.orbit-field { position: relative; height: clamp(660px, 88vh, 800px); perspective: 1100px; overflow: hidden; touch-action: pan-y; }
-.orbit-stage { position: absolute; inset: 0; transform-style: preserve-3d; }
+.orbit-field { position: relative; height: clamp(660px, 88vh, 800px); overflow: hidden; touch-action: pan-y; contain: layout paint; }
+.orbit-stage { position: absolute; inset: 0; }
 
+/* Tiap kartu adalah ruang 3D kecil berisi dua sisi; posisinya di tengah ruang supaya titik putarnya sama. */
 .tile {
-  --fog: 0;
-  position: absolute; left: 50%; top: 50%; width: 132px; height: 150px; padding: 0; border: 0; border-radius: 28px;
+  --tw: 148px; --th: 112px;
+  position: absolute; left: 50%; top: 50%; width: var(--tw); height: var(--th);
+  margin: calc(var(--th) / -2) 0 0 calc(var(--tw) / -2); padding: 0; border: 0; border-radius: 26px;
   background: none; cursor: pointer; transform-style: preserve-3d; will-change: transform; font: inherit; color: inherit;
 }
 .tile:focus { outline: none; }
-.tile .slab { position: absolute; inset: 0; border-radius: inherit; background: #D9D9D4; }
 .tile .face {
   position: absolute; inset: 0; border-radius: inherit; display: grid; justify-items: center; align-content: center;
-  gap: 12px; padding: 14px; text-align: center; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  gap: 8px; padding: 12px; text-align: center; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  transition: opacity .4s;
 }
-.tile .front {
-  transform: translateZ(5px);
-  background: color-mix(in srgb, var(--card), var(--bg-2) calc(var(--fog) * 100%));
-  box-shadow: inset 0 0 0 1px var(--line), 0 22px 40px -26px rgba(20, 20, 20, .45);
-}
-.tile .front b { font-size: 14px; font-weight: 500; line-height: 1.2; color: color-mix(in srgb, var(--ink), var(--bg-2) calc(var(--fog) * 100%)); }
-.tile .front .logo { opacity: calc(1 - var(--fog) * .75); }
-.tile .back {
-  transform: rotateY(180deg) translateZ(5px); gap: 3px;
-  background: color-mix(in srgb, var(--ink), var(--bg-2) calc(var(--fog) * 100%)); color: #fff;
-}
-.tile .back small { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .62); }
-.tile .back b { font-size: 19px; font-weight: 600; letter-spacing: -.02em; }
-.tile .back span { font-size: 12px; color: rgba(255, 255, 255, .7); }
-.tile .back em { margin-top: 6px; font-style: normal; font-size: 12px; font-weight: 500; color: #9BE7BD; }
+.tile .front { background: #fff; box-shadow: inset 0 0 0 1px var(--line), 0 14px 30px -20px rgba(20, 20, 20, .38); }
+.tile .front small { font-size: 11.5px; font-weight: 500; letter-spacing: .05em; color: var(--ink-3); }
+.tile .back { transform: rotateY(180deg); gap: 2px; background: var(--ink); color: #fff; }
+.tile .back small { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .62); }
+.tile .back b { font-size: 18px; font-weight: 600; letter-spacing: -.02em; }
+.tile .back span { font-size: 11.5px; color: rgba(255, 255, 255, .7); }
+.tile .back em { margin-top: 4px; font-style: normal; font-size: 11.5px; font-weight: 500; color: #9BE7BD; }
 .tile .back em.neg { color: #FFB4A3; }
-.tile:focus-visible .front { box-shadow: 0 0 0 3px var(--accent), 0 22px 40px -26px rgba(20, 20, 20, .45); }
+.tile.dim .face { opacity: .3; }
+.tile:focus-visible .front { box-shadow: 0 0 0 3px var(--accent), 0 14px 30px -20px rgba(20, 20, 20, .38); }
 
-/* ---------- Logo bank ---------- */
-.logo, .logo-lg, .logo-sm, .logo-xs {
-  display: inline-grid; place-items: center; flex-shrink: 0; overflow: hidden; background: #fff;
-  box-shadow: inset 0 0 0 1px var(--line);
-}
-.logo img, .logo-lg img, .logo-sm img, .logo-xs img { object-fit: contain; }
-.logo { width: 64px; height: 64px; border-radius: 20px; }
-.logo img { width: 42px; height: 42px; }
-.logo-lg { width: 84px; height: 84px; border-radius: 26px; }
-.logo-lg img { width: 56px; height: 56px; }
-.logo-sm { width: 46px; height: 46px; border-radius: 15px; }
-.logo-sm img { width: 30px; height: 30px; }
-.logo-xs { width: 30px; height: 30px; border-radius: 10px; }
-.logo-xs img { width: 20px; height: 20px; }
-.mono { background: var(--bg-2); box-shadow: none; }
+/* ---------- Logo bank (SVG lokal) ---------- */
+/* Flex (bukan grid) supaya tinggi 100% pada gambar mengikuti tinggi wadah, termasuk logo yang hampir persegi. */
+.logo, .logo-lg, .logo-sm, .logo-xs { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; box-sizing: border-box; overflow: hidden; }
+.logo img, .logo-lg img, .logo-sm img, .logo-xs img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; }
+/* Logo melebar dibuat lebar penuh; logo yang hampir persegi dibuat lebih tinggi supaya ukurannya seimbang. */
+.logo { width: 108px; height: clamp(40px, calc(108px / var(--ratio, 2.4)), 58px); }
+.logo-sm { width: 92px; height: 50px; padding: 9px 10px; border-radius: 15px; background: #fff; }
+.logo-xs { width: 54px; height: 32px; padding: 5px 7px; border-radius: 10px; background: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+.logo-lg { width: 184px; height: 100px; padding: 18px 22px; border-radius: 26px; background: #fff; box-shadow: inset 0 0 0 1px var(--line-2); }
+.mono { background: var(--bg-2); box-shadow: none; border-radius: 14px; }
 .mono::before { content: attr(data-initials); font-weight: 600; letter-spacing: -.03em; color: var(--ink); }
+.logo.mono { width: 64px; height: 56px; }
 .logo.mono::before { font-size: 19px; }
-.logo-lg.mono::before { font-size: 25px; }
-.logo-sm.mono::before { font-size: 14px; }
+.logo-lg.mono::before { font-size: 28px; }
+.logo-sm.mono::before { font-size: 15px; }
 .logo-xs.mono::before { font-size: 10px; }
 
 /* ---------- Per bank ---------- */
@@ -129,7 +120,7 @@
 
 .bbars { display: grid; gap: 4px; margin-bottom: 26px; }
 .bb {
-  display: grid; grid-template-columns: 22px 30px minmax(0, 170px) minmax(60px, 1fr) minmax(110px, auto); align-items: center; gap: 12px;
+  display: grid; grid-template-columns: 22px 54px minmax(0, 170px) minmax(60px, 1fr) minmax(110px, auto); align-items: center; gap: 12px;
   width: 100%; padding: 8px 10px; border: 0; border-radius: 16px; background: none; text-align: left; cursor: pointer; font: inherit; color: inherit;
 }
 .bb:hover { background: var(--bg); }
@@ -189,15 +180,15 @@
 }
 @media (max-width: 720px) {
   .orbit-field { height: 340px; margin: 0 -16px; }
-  .tile { width: 96px; height: 112px; border-radius: 24px; }
-  .tile .face { gap: 8px; padding: 10px; }
-  .tile .logo { width: 50px; height: 50px; border-radius: 16px; }
-  .tile .logo img { width: 32px; height: 32px; }
-  .tile .front b { font-size: 12.5px; }
-  .tile .back b { font-size: 15.5px; }
-  .tile .back em { margin-top: 3px; font-size: 11px; }
+  .tile { --tw: 116px; --th: 88px; border-radius: 22px; }
+  .tile .face { gap: 6px; padding: 10px; }
+  .tile .logo { width: 86px; height: clamp(30px, calc(86px / var(--ratio, 2.4)), 44px); }
+  .tile .front small { font-size: 10.5px; }
+  .tile .back b { font-size: 15px; }
+  .tile .back span { font-size: 10.5px; }
+  .tile .back em { margin-top: 2px; font-size: 10.5px; }
   .bcards { grid-template-columns: minmax(0, 1fr); }
-  .bb { grid-template-columns: 18px 30px minmax(0, 1fr) auto; grid-template-areas: 'r l n v' 'r . b b'; row-gap: 6px; padding: 8px 4px; }
+  .bb { grid-template-columns: 18px 54px minmax(0, 1fr) auto; grid-template-areas: 'r l n v' 'r . b b'; row-gap: 6px; padding: 8px 4px; }
   .bb-rank { grid-area: r; align-self: start; padding-top: 8px; }
   .bb .logo-xs { grid-area: l; }
   .bb-name { grid-area: n; }
@@ -213,5 +204,3 @@
 .bd-key { font-size: 13.5px; color: var(--ink-2); max-width: 76ch; padding-left: 12px; box-shadow: inset 2px 0 0 var(--line-2); }
 .bbars + .tbl-title { margin-top: 4px; }
 .bb-missing { margin-bottom: 6px; }
-.logo-xs.mono::before { font-size: 9px; letter-spacing: -.04em; }
-.logo-sm.mono::before { font-size: 13px; }

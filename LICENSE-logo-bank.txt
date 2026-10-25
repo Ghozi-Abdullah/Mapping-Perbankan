@@ -1,0 +1,72 @@
+Logo bank di logos.js berasal dari idn-finlogos (https://github.com/hafidznoor/idn-finlogos), versi 2.5.0.
+Perubahan: atribut xmlns ditambahkan ke tiap SVG; logo OCBC dipotong ke simbolnya saja.
+Logo dipakai hanya untuk menandai bank dalam perbandingan data, tanpa tujuan komersial.
+
+Logo Assets License — Creative Commons Attribution-NonCommercial 4.0 International
+(CC BY-NC 4.0)
+
+This license applies to all SVG logo assets in `icons/` and `dist/icons/`.
+
+Copyright (c) 2026 Hafidz Noor Fauzi (collection/curation only).
+
+The underlying logo marks remain the property of their respective trademark
+holders. See NOTICE for details on trademark ownership and disclaimers.
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format.
+  - Adapt — remix, transform, and build upon the material.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to this
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+  - NonCommercial — You may not use the material for commercial purposes.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+Full license text:
+  https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Human-readable summary:
+  https://creativecommons.org/licenses/by-nc/4.0/
+
+THE LOGO ASSETS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+
+-----
+
+idn-finlogos
+============
+
+This package distributes vector logos of Indonesian financial institutions
+and related services for non-commercial reference and integration purposes.
+
+TRADEMARKS
+----------
+All brand names, logos, and trademarks distributed by this package are the
+property of their respective owners. Their inclusion in this package does
+not imply endorsement, sponsorship, or affiliation with the trademark
+holders, nor any transfer of trademark rights.
+
+This package is an unofficial, community-maintained collection. Each
+individual logo is reproduced from publicly available sources for
+identification purposes. If you are a trademark holder and want a logo
+removed, updated, or attributed differently, please open an issue at:
+
+  https://github.com/hafidznoor/idn-finlogos/issues
+
+SOURCES
+-------
+Logos in this collection were curated from publicly available materials,
+including Seeklogo.com, Logos.fandom.com, Masvian.com, Vector69.com, and
+official corporate materials.
+
+DUAL LICENSING
+--------------
+- Build code, scripts, and JS/TS module wrappers:  MIT (see LICENSE)
+- SVG logo assets:                                 CC-BY-NC-4.0 (see LICENSE-ASSETS)
+
+USE OF THE SVG ASSETS IN A COMMERCIAL PRODUCT REQUIRES PERMISSION FROM THE
+TRADEMARK HOLDER OF EACH RESPECTIVE LOGO. THIS PACKAGE'S LICENSE COVERS THE
+COLLECTION/CURATION, NOT THE UNDERLYING TRADEMARKS.

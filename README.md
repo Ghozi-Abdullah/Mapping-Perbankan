@@ -4,7 +4,7 @@
 
 **Laporan keuangan terbaru bank-bank besar Indonesia, dibandingkan dalam kelompoknya, plus peta kredit dan tabungan seluruh industri.**
 
-[**Coba sekarang →**](https://ghozi-abdullah.github.io/Peta-Perbankan/)
+[**Coba sekarang →**](https://ghozi-abdullah.github.io/Mapping-Perbankan/)
 
 </div>
 
@@ -23,7 +23,7 @@ Dibuat untuk mahasiswa, analis, jurnalis, dan siapa saja yang ingin memahami pet
 ## Fitur
 
 ### Logo bank yang melayang
-Logo 14 bank mengorbit dan berputar dalam ruang 3D di halaman pembuka. Sisi depan menampilkan logo, sisi belakang laba terbaru. Arahkan kursor untuk menghentikan putarannya, lalu klik untuk membuka laporan bank itu. Di ponsel, logo tersusun dalam silinder yang bisa diputar dengan geseran jari.
+Logo 14 bank mengorbit dan berputar dalam ruang 3D di halaman pembuka. Sisi depan menampilkan logo, sisi belakang laba terbaru. Putarannya melambat saat logo menghadap depan, jadi logo lebih sering terlihat. Arahkan kursor untuk menghentikan putarannya, lalu klik untuk membuka laporan bank itu. Di ponsel, logo tersusun dalam silinder yang bisa diputar dengan geseran jari.
 
 ### Per bank
 Kartu ringkas tiap bank berisi laba, kredit, NPL, dan CAR. Pilih kelompok (BUMN, swasta, BPD, atau semua) dan ukuran (kredit, aset, laba, NPL, CAR, CASA, LDR, NIM) untuk melihat urutannya, lalu baca tabel lengkapnya dengan angka terbaik di tiap kolom ditebalkan.
@@ -48,7 +48,7 @@ Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bu
 
 ## Sumber data
 
-**Per bank.** Laporan keuangan publikasi dan rilis kinerja resmi BRI, Bank Mandiri, BNI, BTN, BSI, BCA, CIMB Niaga, OCBC Indonesia, PermataBank, Danamon, Maybank Indonesia, PaninBank, bank bjb, dan Bank Jatim, sebagaimana dikutip media keuangan. Angka diperbarui setiap musim laporan kuartalan di `bank.json`. Logo adalah ikon situs resmi masing-masing bank.
+**Per bank.** Laporan keuangan publikasi dan rilis kinerja resmi BRI, Bank Mandiri, BNI, BTN, BSI, BCA, CIMB Niaga, OCBC Indonesia, PermataBank, Danamon, Maybank Indonesia, PaninBank, bank bjb, dan Bank Jatim, sebagaimana dikutip media keuangan. Angka diperbarui setiap musim laporan kuartalan di `bank.json`. Logo bank berupa SVG dari koleksi [idn-finlogos](https://github.com/hafidznoor/idn-finlogos), disimpan di `logos.js` sehingga tajam di semua ukuran dan tidak dimuat dari situs lain.
 
 **Per kelompok.** Bank Indonesia, [Statistik Ekonomi dan Keuangan Indonesia](https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx):
 
@@ -67,4 +67,4 @@ Tabel SEKI disajikan per kelompok bank, bukan per bank. Bank swasta milik grup a
 
 ## Lisensi
 
-Kode dirilis dengan lisensi MIT. Huruf Google Sans Flex dirilis dengan SIL Open Font License (lihat `LICENSE-google-sans-flex.txt`).
+Kode dirilis dengan lisensi MIT. Huruf Google Sans Flex dirilis dengan SIL Open Font License (lihat `LICENSE-google-sans-flex.txt`). Logo bank dari idn-finlogos dirilis dengan lisensi CC BY-NC 4.0 untuk penggunaan nonkomersial; merek dan logo tetap milik bank masing-masing (lihat `LICENSE-logo-bank.txt`).

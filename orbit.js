@@ -1,13 +1,15 @@
-// Panggung logo bank yang melayang dan berputar dalam ruang 3D (CSS perspective).
+// Panggung logo bank yang melayang dan berputar dalam ruang 3D.
 // Layar lebar: kartu mengorbit di sekeliling judul tanpa menutupinya.
 // Layar sempit: kartu tersusun di dua cincin silinder yang berputar dan bisa digeser.
-// Tiap kartu berupa lempeng tebal: sisi depan logo dan nama, sisi belakang angka utama.
-// Gerakan berhenti bila pengguna memilih "kurangi gerakan".
+// Tiap kartu punya dua sisi: depan logo, belakang laba terbaru.
+//
+// Supaya ringan: tiap kartu punya perspektifnya sendiri (tidak ada satu ruang 3D bersama yang harus
+// diurutkan ulang setiap frame), hanya transform yang berubah per frame (tanpa repaint), dan animasi
+// berhenti saat panggung tidak terlihat atau pengguna memilih "kurangi gerakan".
 
 import { esc } from './kit.js';
+import { LOGOS, logoUrl } from './logos.js';
 
-const LOGO = (domain, size = 128) => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=${size}`;
-const LOGO_ALT = (domain) => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(domain)}.ico`;
 export const initials = (name) => {
   const words = name.replace(/^bank\s+/i, '').split(/\s+/).filter(Boolean);
   // Singkatan pendek (BRI, BCA, bjb) dipakai utuh supaya tidak tertukar; nama lain diambil huruf awalnya.
@@ -15,28 +17,15 @@ export const initials = (name) => {
   return words.map((w) => w[0]).join('').slice(0, 3).toUpperCase();
 };
 
-/** Gambar logo dengan cadangan: ikon resmi situs bank, lalu inisial bila ikon tidak tersedia. */
-export function logoImg(b, size = 128, cls = 'logo') {
-  return `<span class="${cls}" data-initials="${esc(initials(b.nama))}"><img src="${LOGO(b.domain, size)}" data-alt="${LOGO_ALT(b.domain)}" alt="Logo ${esc(b.nama)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>`;
-}
-/** Pasang penanganan gagal-muat untuk semua logo di dalam root. */
-export function wireLogos(root) {
-  root.querySelectorAll('[data-initials] > img:not([data-wired])').forEach((img) => {
-    img.dataset.wired = '1';
-    const fail = () => {
-      if (img.dataset.alt && img.src !== img.dataset.alt) { img.src = img.dataset.alt; img.dataset.alt = ''; return; }
-      img.parentElement?.classList.add('mono');
-      img.remove();
-    };
-    img.addEventListener('error', fail);
-    // Layanan ikon mengembalikan bola dunia 16 px bila situs tidak punya ikon: anggap gagal.
-    img.addEventListener('load', () => { if (img.naturalWidth && img.naturalWidth < 24) fail(); });
-    if (img.complete && img.naturalWidth === 0 && img.src) fail();
-  });
+/** Logo bank (SVG lokal). Bila logonya belum ada, tampil inisial. */
+export function logoImg(b, cls = 'logo') {
+  const url = logoUrl(b.kode);
+  if (!url) return `<span class="${cls} mono" data-initials="${esc(initials(b.nama))}"></span>`;
+  const l = LOGOS[b.kode];
+  return `<span class="${cls}${l.mark ? ' is-mark' : ''}" style="--ratio:${l.ratio}"><img src="${url}" alt="Logo ${esc(b.nama)}" decoding="async" draggable="false"></span>`;
 }
 
 const rand = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
-const SLABS = [-3.75, -2.5, -1.25, 0, 1.25, 2.5, 3.75];
 
 /**
  * host: wadah ruang 3D. keep: elemen judul yang tidak boleh tertutup (opsional).
@@ -44,14 +33,11 @@ const SLABS = [-3.75, -2.5, -1.25, 0, 1.25, 2.5, 3.75];
  */
 export function orbit(host, banks, { onPick, back, keep = null }) {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  host.innerHTML = `<div class="orbit-stage">${banks.map((b, i) => `
-    <button class="tile" type="button" data-kode="${esc(b.kode)}" data-grup="${esc(b.grup)}" style="--i:${i}" aria-label="${esc(b.nama)}: lihat laporan">
-      ${SLABS.map((z) => `<span class="slab" style="transform:translateZ(${z}px)"></span>`).join('')}
-      <span class="face front">${logoImg(b)}<b>${esc(b.nama)}</b></span>
+  host.innerHTML = `<div class="orbit-stage">${banks.map((b) => `
+    <button class="tile" type="button" data-kode="${esc(b.kode)}" data-grup="${esc(b.grup)}" aria-label="${esc(b.nama)}: lihat laporan">
+      <span class="face front">${logoImg(b)}<small>${esc(LOGOS[b.kode]?.mark || !LOGOS[b.kode] ? b.nama : b.kode)}</small></span>
       <span class="face back">${back(b)}</span>
     </button>`).join('')}</div>`;
-  wireLogos(host);
-  const stage = host.querySelector('.orbit-stage');
   const tiles = [...host.querySelectorAll('.tile')];
   const r = rand(11);
 
@@ -59,36 +45,34 @@ export function orbit(host, banks, { onPick, back, keep = null }) {
     el, i,
     angle: (i / tiles.length) * Math.PI * 2 + (r() - 0.5) * 0.3,
     ring: 0.8 + r() * 0.24,
-    z: -240 + r() * 320,
-    ax: 10 + r() * 18, ay: 8 + r() * 14,
+    z: -260 + r() * 280,
+    ax: 10 + r() * 16, ay: 8 + r() * 12,
     fx: 0.18 + r() * 0.22, fy: 0.16 + r() * 0.2,
     ph: r() * Math.PI * 2,
-    spin: (0.05 + r() * 0.05) * (r() > 0.5 ? 1 : -1),
-    rot: r() * 360, hover: 0, hovered: false, dim: 0, dimTo: 0
+    spin: (0.04 + r() * 0.05) * (r() > 0.5 ? 1 : -1),
+    p: r(), hover: 0, hovered: false, zi: null, dimmed: false
   }));
 
   // Ukuran ruang dan kotak judul (relatif terhadap pusat ruang).
-  let W = 0; let H = 0; let tw = 0; let th = 0; let box = null; let mode = 'ring'; let P = 1100;
+  let W = 0; let H = 0; let tw = 0; let th = 0; let box = null; let mode = 'ring'; let P = 1100; let rect = null;
   const measure = () => {
     W = host.clientWidth;
     H = host.clientHeight;
-    P = parseFloat(getComputedStyle(host).perspective) || 1100;
-    tw = tiles[0]?.offsetWidth || 120;
-    th = tiles[0]?.offsetHeight || 140;
+    tw = tiles[0]?.offsetWidth || 140;
+    th = tiles[0]?.offsetHeight || 110;
+    rect = host.getBoundingClientRect();
     box = null;
     mode = 'carousel';
     if (keep) {
-      const hb = host.getBoundingClientRect();
       // Kotak gabungan isi judul (bukan wadahnya, yang bisa selebar panggung).
       const rs = [...keep.children].map((c) => c.getBoundingClientRect()).filter((x) => x.width && x.height);
       const kb = rs.length ? {
         left: Math.min(...rs.map((x) => x.left)), right: Math.max(...rs.map((x) => x.right)),
         top: Math.min(...rs.map((x) => x.top)), bottom: Math.max(...rs.map((x) => x.bottom))
       } : keep.getBoundingClientRect();
-      const overlaps = kb.bottom > hb.top && kb.top < hb.bottom;
-      if (overlaps) {
-        const cx = hb.left + hb.width / 2;
-        const cy = hb.top + hb.height / 2;
+      if (kb.bottom > rect.top && kb.top < rect.bottom) {
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
         const m = 18;
         // Setengah lebar dan tinggi isi judul di layar, ditambah jarak aman.
         box = {
@@ -103,28 +87,31 @@ export function orbit(host, banks, { onPick, back, keep = null }) {
     }
     if (mode === 'carousel') host.style.minHeight = '';
     host.dataset.mode = mode;
+    P = mode === 'ring' ? 1100 : 900;
   };
   measure();
   new ResizeObserver(measure).observe(host);
   document.fonts?.ready.then(measure);
+  addEventListener('scroll', () => { rect = host.getBoundingClientRect(); }, { passive: true });
 
   // Arah pandang mengikuti kursor; di layar sentuh, geser untuk memutar silinder.
   let mx = 0; let my = 0;
   let spinVel = 0; let base = 0; let drag = null; let moved = false;
   host.addEventListener('pointermove', (e) => {
-    const b = host.getBoundingClientRect();
-    mx = (e.clientX - b.left) / b.width - 0.5;
-    my = (e.clientY - b.top) / b.height - 0.5;
+    if (!rect) return;
+    mx = (e.clientX - rect.left) / rect.width - 0.5;
+    my = (e.clientY - rect.top) / rect.height - 0.5;
     if (drag) {
       const dx = e.clientX - drag.x;
       if (Math.abs(e.clientX - drag.x0) > 6) moved = true;
       base += dx * 0.009;
-      spinVel = dx * 0.009 / Math.max(0.016, (e.timeStamp - drag.t) / 1000);
+      spinVel = (dx * 0.009) / Math.max(0.016, (e.timeStamp - drag.t) / 1000);
       drag.x = e.clientX;
       drag.t = e.timeStamp;
     }
-  });
+  }, { passive: true });
   host.addEventListener('pointerdown', (e) => {
+    rect = host.getBoundingClientRect();
     if (mode !== 'carousel') return;
     drag = { x: e.clientX, x0: e.clientX, t: e.timeStamp };
     moved = false;
@@ -146,40 +133,43 @@ export function orbit(host, banks, { onPick, back, keep = null }) {
     });
   });
 
+  // Animasi hanya berjalan saat panggung terlihat dan tab aktif.
   let visible = true;
-  new IntersectionObserver(([en]) => {
-    const was = visible;
-    visible = en.isIntersecting;
-    if (visible && !was) { last = performance.now(); requestAnimationFrame(frame); }
-  }).observe(host);
+  let running = false;
+  let last = 0;
+  const start = () => {
+    if (running || !visible || document.hidden) return;
+    running = true;
+    last = performance.now();
+    requestAnimationFrame(frame);
+  };
+  new IntersectionObserver(([en]) => { visible = en.isIntersecting; start(); }).observe(host);
+  document.addEventListener('visibilitychange', start);
 
-  let last = performance.now();
   let tiltX = 0; let tiltY = 0;
   const clamp = (v, a) => Math.max(-a, Math.min(a, v));
   function frame(now) {
-    if (!visible) return;
+    if (!visible || document.hidden) { running = false; return; }
     const dt = Math.min(0.05, (now - last) / 1000);
     last = now;
     const t = now / 1000;
     tiltX += ((mode === 'ring' ? my * -8 : -6) - tiltX) * 0.06;
     tiltY += ((mode === 'ring' ? mx * 12 : 0) - tiltY) * 0.06;
-    stage.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
     if (mode === 'carousel' && !drag) {
       spinVel *= Math.pow(0.04, dt);
       base += (reduce ? 0 : 0.22) * dt + spinVel * dt;
     }
     const n = items.length;
     const perRow = Math.ceil(n / 2);
+    const head = `perspective(${P}px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
     for (const it of items) {
-      it.hover += ((it.hovered ? 1 : 0) - it.hover) * 0.12;
-      it.dim += (it.dimTo - it.dim) * 0.1;
-      let x; let y; let z; let ry; let rx; let fog;
+      it.hover += ((it.hovered ? 1 : 0) - it.hover) * 0.14;
+      let x; let y; let z; let ry; let rx;
       if (mode === 'ring') {
         if (!reduce) it.angle += dt * 0.025;
         x = Math.cos(it.angle) * 0.42 * W * it.ring + (reduce ? 0 : Math.sin(t * it.fx + it.ph) * it.ax);
         y = Math.sin(it.angle) * 0.4 * H * it.ring + (reduce ? 0 : Math.cos(t * it.fy + it.ph) * it.ay);
-        z = it.z + it.hover * 160;
-        // Dorong keluar dari kotak judul sepanjang garis dari pusat, supaya geraknya tetap mulus.
+        z = it.z + it.hover * 120;
         // Posisi di layar = posisi 3D / k, dengan k = (P - z) / P. Kartu jauh tampak lebih dekat ke pusat,
         // jadi batasnya dihitung dalam ruang 3D: tepi kartu terdekat ke judul harus berada di luar kotak judul.
         const kz = (P - z) / P;
@@ -191,37 +181,43 @@ export function orbit(host, banks, { onPick, back, keep = null }) {
             x *= s; y *= s;
           }
         }
-        // Tepi luar kartu tetap di dalam ruang.
+        // Tepi luar kartu tetap di dalam ruang; kartu yang berputar tampak lebih tinggi karena perspektif.
         x = clamp(x, (W / 2 - 14) * kz - tw / 2);
-        y = clamp(y, (H / 2 - 14) * kz - th * 0.68);  // kartu yang berputar tampak lebih tinggi karena perspektif
-        if (!reduce && !it.hovered) it.rot = (it.rot + dt * it.spin * 360) % 360;
-        if (it.hovered) it.rot += (Math.round(it.rot / 360) * 360 - it.rot) * 0.15;
-        ry = it.rot;
-        rx = Math.sin(t * 0.6 + it.ph) * 8 * (1 - it.hover);
-        fog = Math.max(0, Math.min(1, (40 - z) / 300)) * 0.42;
+        y = clamp(y, (H / 2 - 14) * kz - th * 0.68);
+        // Putaran penuh, tapi melambat saat menghadap depan dan cepat saat membelakangi,
+        // jadi logo terlihat sekitar dua pertiga waktu. Saat diarahkan kursor, kartu kembali menghadap depan.
+        if (!reduce && !it.hovered) it.p = (it.p + dt * Math.abs(it.spin)) % 1;
+        if (it.hovered) it.p += (Math.round(it.p) - it.p) * 0.15;
+        ry = (it.p - (0.6 / (2 * Math.PI)) * Math.sin(2 * Math.PI * it.p)) * 360 * Math.sign(it.spin);
+        rx = Math.sin(t * 0.6 + it.ph) * 7 * (1 - it.hover);
       } else {
         // Dua cincin silinder; kartu menghadap keluar dan ikut berputar bersama cincin.
         const row = it.i < perRow ? 0 : 1;
         const k = row ? it.i - perRow : it.i;
         const count = row ? n - perRow : perRow;
-        const R = Math.min(W * 0.62, 260);
+        const R = Math.min(W * 0.62, 280);
         const a = base * (row ? -0.85 : 1) + (k / count) * Math.PI * 2 + (row ? Math.PI / count : 0);
         x = Math.sin(a) * R;
         z = Math.cos(a) * R - R * 0.55 + it.hover * 40;
-        y = (row ? 1 : -1) * Math.min(H * 0.24, th * 0.78) + (reduce ? 0 : Math.sin(t * 0.8 + it.ph) * 5);
+        y = (row ? 1 : -1) * Math.min(H * 0.24, th * 0.8) + (reduce ? 0 : Math.sin(t * 0.8 + it.ph) * 5);
         ry = (a * 180) / Math.PI;
         rx = 0;
-        fog = Math.max(0, Math.min(1, (R * 0.3 - z) / (R * 1.6))) * 0.5;
       }
-      fog = Math.max(fog, it.dim * 0.82);
-      it.el.style.transform = `translate(-50%, -50%) translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px) rotateY(${ry.toFixed(1)}deg) rotateX(${rx.toFixed(1)}deg)`;
-      it.el.style.setProperty('--fog', fog.toFixed(3));
+      it.el.style.transform = `${head} translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px) rotateY(${ry.toFixed(1)}deg) rotateX(${rx.toFixed(1)}deg)`;
+      // Urutan tumpuk hanya diubah bila berubah, supaya tidak memicu kerja ulang setiap frame.
+      const zi = Math.round(z / 8) + 100;
+      if (zi !== it.zi) { it.zi = zi; it.el.style.zIndex = String(zi); }
     }
     requestAnimationFrame(frame);
   }
-  requestAnimationFrame(frame);
+  start();
 
   return {
-    focus(grup) { for (const it of items) it.dimTo = grup && grup !== 'semua' && it.el.dataset.grup !== grup ? 1 : 0; }
+    focus(grup) {
+      for (const it of items) {
+        const dim = Boolean(grup && grup !== 'semua' && it.el.dataset.grup !== grup);
+        if (dim !== it.dimmed) { it.dimmed = dim; it.el.classList.toggle('dim', dim); }
+      }
+    }
   };
 }

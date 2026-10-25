@@ -1,7 +1,7 @@
 // Bagian "Per bank": perbandingan antarbank dalam satu kelompok (BUMN, swasta, BPD) dan lembar detail tiap bank.
 
 import { $, $$, esc } from './kit.js';
-import { logoImg, wireLogos } from './orbit.js';
+import { logoImg } from './orbit.js';
 
 export const BANK_GROUPS = [
   { key: 'bumn', name: 'BUMN' },
@@ -111,7 +111,7 @@ function draw() {
 
   // Kartu bank.
   $('#bank-cards').innerHTML = list.map((b) => `<button class="bcard" data-kode="${esc(b.kode)}" type="button">
-      <span class="bc-head">${logoImg(b, 64, 'logo-sm')}<span class="bc-title"><b>${esc(b.nama)}</b><small>${esc(b.kode)} · ${esc(b.periode)}</small></span></span>
+      <span class="bc-head">${logoImg(b, 'logo-sm')}<span class="bc-title"><b>${esc(b.nama)}</b><small>${esc(b.kode)} · ${esc(b.periode)}</small></span></span>
       <span class="bc-stats">
         <span><small>Laba</small><b>${fmtMetric('laba', b.laba)}</b>${growth(b.tumbuh?.laba, true)}</span>
         <span><small>${metricLabel(b, 'kredit')}</small><b>${fmtMetric('kredit', b.kredit)}</b>${growth(b.tumbuh?.kredit, true)}</span>
@@ -130,7 +130,7 @@ function draw() {
     : '';
   $('#bank-bars-note').textContent = m.note + warn;
   $('#bank-bars').innerHTML = sorted.map((b, i) => `<li><button class="bb" data-kode="${esc(b.kode)}" type="button">
-      <span class="bb-rank">${m.good ? i + 1 : ''}</span>${logoImg(b, 32, 'logo-xs')}
+      <span class="bb-rank">${m.good ? i + 1 : ''}</span>${logoImg(b, 'logo-xs')}
       <span class="bb-name"><b>${esc(b.nama)}</b><small>${esc(b.periode)}</small></span>
       <span class="bar"><i style="width:${Math.max(2, (b[key] / max) * 100).toFixed(1)}%"></i></span>
       <span class="bb-val"><b>${fmtMetric(key, b[key])}${star(b, key)}</b>${growth(b.tumbuh?.[key], true)}</span>
@@ -141,10 +141,9 @@ function draw() {
   const cols = METRICS.filter((c) => c.key !== 'roa');
   $('#bank-table').innerHTML = `<thead><tr><th>Bank</th>${cols.map((c) => `<th class="num${c.key === key ? ' on' : ''}" title="${esc(c.note)}">${c.label}</th>`).join('')}</tr></thead>
     <tbody>${list.map((b) => `<tr>
-      <td><button class="tb-name" type="button" data-kode="${esc(b.kode)}">${logoImg(b, 32, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${esc(b.periode)}</small></span></button></td>
+      <td><button class="tb-name" type="button" data-kode="${esc(b.kode)}">${logoImg(b, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${esc(b.periode)}</small></span></button></td>
       ${cols.map((c) => `<td class="num${best[c.key] != null && b[c.key] === best[c.key] ? ' best' : ''}${c.key === key ? ' on' : ''}">${fmtMetric(c.key, b[c.key])}${star(b, c.key)}</td>`).join('')}
     </tr>`).join('')}</tbody>`;
-  wireLogos($('#per-bank'));
 }
 
 export function openBank(kode) {
@@ -159,7 +158,7 @@ export function openBank(kode) {
       <span class="ds-foot">${g != null ? `${growth(g, true)}<small>setahun</small>` : ''}${r && r.of > 1 ? `<small>ke-${r.rank} dari ${r.of} bank ${GROUP_SHORT[b.grup]}</small>` : ''}</span></div>`;
   };
   $('#bank-sheet-body').innerHTML = `<div class="bank-detail">
-    <div class="bd-head">${logoImg(b, 128, 'logo-lg')}<div class="bd-title"><h2 class="bd-name">${esc(b.nama)}</h2><p class="sub">${esc(b.lengkap)} · kode saham ${esc(b.kode)}</p>
+    <div class="bd-head">${logoImg(b, 'logo-lg')}<div class="bd-title"><h2 class="bd-name">${esc(b.nama)}</h2><p class="sub">${esc(b.lengkap)} · kode saham ${esc(b.kode)}</p>
       <div class="chips"><span class="tag accent">${esc(GROUP_NAME[b.grup])}</span><span class="tag">${esc(b.laporan)}</span></div></div></div>
     <p class="bd-profile">${esc(b.profil)}</p>
     ${b.terbaru ? `<p class="bd-news"><b>Kabar terbaru</b>${esc(b.terbaru)}</p>` : ''}
@@ -170,7 +169,6 @@ export function openBank(kode) {
     <ul class="bd-sources">${b.sumber.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.judul)}</a></li>`).join('')}</ul>
     <div class="film-actions"><a class="btn dark" href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/${esc(b.kode)}" target="_blank" rel="noopener">Laporan keuangan di IDX</a><a class="btn light" href="https://${esc(b.domain)}" target="_blank" rel="noopener">Situs ${esc(b.nama)}</a></div>
   </div>`;
-  wireLogos($('#bank-sheet-body'));
   const dlg = $('#bank-sheet');
   if (!dlg.open) dlg.showModal();
   $('#bank-sheet-body').scrollTop = 0;
