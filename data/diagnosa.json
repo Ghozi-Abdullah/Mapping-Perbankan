@@ -1,0 +1,1616 @@
+{
+ "updated": "2026-10-25T01:48:30Z",
+ "tabel": {
+  "kredit": [
+   [
+    "Bank Persero",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pinjaman Berdasarkan Lapangan Usaha",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertanian, Peternakan, Kehutanan & Perikanan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertambangan dan Penggalian",
+    186,
+    "2017-06"
+   ],
+   [
+    "Industri Pengolahan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Listrik, Gas dan Air Bersih",
+    186,
+    "2017-06"
+   ],
+   [
+    "Konstruksi",
+    186,
+    "2017-06"
+   ],
+   [
+    "Perdagangan, Hotel dan Restoran",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pengangkutan dan Komunikasi",
+    186,
+    "2017-06"
+   ],
+   [
+    "Keuangan, Real Estat dan Jasa Perusahaan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Jasa-jasa",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pinjaman Kepada Bukan Lapangan Usaha",
+    186,
+    "2017-06"
+   ],
+   [
+    "Rumah Tinggal",
+    186,
+    "2017-06"
+   ],
+   [
+    "Flat dan Apartemen",
+    186,
+    "2017-06"
+   ],
+   [
+    "Rumah Toko (Ruko) dan Rumah Kantor (Ruka",
+    186,
+    "2017-06"
+   ],
+   [
+    "Kendaraan Bermotor",
+    186,
+    "2017-06"
+   ],
+   [
+    "Lainnya",
+    186,
+    "2017-06"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pinjaman Berdasarkan Lapangan Usaha",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertanian, Peternakan, Kehutanan & Perikanan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertambangan dan Penggalian",
+    186,
+    "2017-06"
+   ],
+   [
+    "Industri Pengolahan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Listrik, Gas dan Air Bersih",
+    186,
+    "2017-06"
+   ],
+   [
+    "Konstruksi",
+    186,
+    "2017-06"
+   ],
+   [
+    "Perdagangan, Hotel dan Restoran",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pengangkutan dan Komunikasi",
+    186,
+    "2017-06"
+   ],
+   [
+    "Keuangan, Real Estat dan Jasa Perusahaan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Jasa-jasa",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pinjaman Kepada Bukan Lapangan Usaha",
+    186,
+    "2017-06"
+   ],
+   [
+    "Rumah Tinggal",
+    186,
+    "2017-06"
+   ],
+   [
+    "Flat dan Apartemen",
+    186,
+    "2017-06"
+   ],
+   [
+    "Rumah Toko (Ruko) dan Rumah Kantor (Ruka",
+    186,
+    "2017-06"
+   ],
+   [
+    "Kendaraan Bermotor",
+    186,
+    "2017-06"
+   ],
+   [
+    "Lainnya",
+    186,
+    "2017-06"
+   ],
+   [
+    "Bank Swasta Nasional",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pinjaman Berdasarkan Lapangan Usaha",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertanian, Peternakan, Kehutanan & Perikanan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertambangan dan Penggalian",
+    186,
+    "2017-06"
+   ],
+   [
+    "Industri Pengolahan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Listrik, Gas dan Air Bersih",
+    186,
+    "2017-06"
+   ],
+   [
+    "Konstruksi",
+    186,
+    "2017-06"
+   ],
+   [
+    "Perdagangan, Hotel dan Restoran",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pengangkutan dan Komunikasi",
+    186,
+    "2017-06"
+   ],
+   [
+    "Keuangan, Real Estat dan Jasa Perusahaan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Jasa-jasa",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pinjaman Kepada Bukan Lapangan Usaha",
+    186,
+    "2017-06"
+   ],
+   [
+    "Rumah Tinggal",
+    186,
+    "2017-06"
+   ],
+   [
+    "Flat dan Apartemen",
+    186,
+    "2017-06"
+   ],
+   [
+    "Rumah Toko (Ruko) dan Rumah Kantor (Ruka",
+    186,
+    "2017-06"
+   ],
+   [
+    "Kendaraan Bermotor",
+    186,
+    "2017-06"
+   ],
+   [
+    "Lainnya",
+    186,
+    "2017-06"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pinjaman Berdasarkan Lapangan Usaha",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertanian, Peternakan, Kehutanan & Perikanan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pertambangan dan Penggalian",
+    186,
+    "2017-06"
+   ],
+   [
+    "Industri Pengolahan",
+    186,
+    "2017-06"
+   ],
+   [
+    "Listrik, Gas dan Air Bersih",
+    186,
+    "2017-06"
+   ],
+   [
+    "Konstruksi",
+    186,
+    "2017-06"
+   ],
+   [
+    "Perdagangan, Hotel dan Restoran",
+    186,
+    "2017-06"
+   ],
+   [
+    "Pengangkutan dan Komunikasi",
+    186,
+    "2017-06"
+   ]
+  ],
+  "simpanan": [
+   [
+    "Rupiah",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Persero",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Swasta Nasional",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Perkreditan Rakyat",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    111,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Valuta Asing",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Persero",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Swasta Nasional",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Perkreditan Rakyat",
+    110,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    110,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    110,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    110,
+    "2025-03"
+   ],
+   [
+    "Rupiah Valuta Asing",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Persero",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Swasta Nasional",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    183,
+    "2025-03"
+   ],
+   [
+    "Giro",
+    183,
+    "2025-03"
+   ],
+   [
+    "Tabungan",
+    183,
+    "2025-03"
+   ],
+   [
+    "Deposito",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Perkreditan Rakyat",
+    183,
+    "2025-03"
+   ]
+  ],
+  "kredit_prov": [
+   [
+    "Nanggroe Aceh Darussalam",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sumatera Utara",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sumatera Barat",
+    230,
+    "2018-02"
+   ],
+   [
+    "Riau",
+    230,
+    "2018-02"
+   ],
+   [
+    "Jambi",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sumatera Selatan",
+    230,
+    "2018-02"
+   ],
+   [
+    "Bangka Belitung",
+    230,
+    "2018-02"
+   ],
+   [
+    "Bengkulu",
+    230,
+    "2018-02"
+   ],
+   [
+    "Lampung",
+    230,
+    "2018-02"
+   ],
+   [
+    "Banten",
+    230,
+    "2018-02"
+   ],
+   [
+    "D.K.I. Jakarta",
+    230,
+    "2018-02"
+   ],
+   [
+    "Jawa Barat",
+    230,
+    "2018-02"
+   ],
+   [
+    "Jawa Tengah",
+    230,
+    "2018-02"
+   ],
+   [
+    "D.I. Yogyakarta",
+    230,
+    "2018-02"
+   ],
+   [
+    "Jawa Timur",
+    230,
+    "2018-02"
+   ],
+   [
+    "Bali",
+    230,
+    "2018-02"
+   ],
+   [
+    "Nusa Tenggara Barat",
+    230,
+    "2018-02"
+   ],
+   [
+    "Nusa Tenggara Timur",
+    230,
+    "2018-02"
+   ],
+   [
+    "Kalimantan Barat",
+    230,
+    "2018-02"
+   ],
+   [
+    "Kalimantan Tengah",
+    230,
+    "2018-02"
+   ],
+   [
+    "Kalimantan Selatan",
+    230,
+    "2018-02"
+   ],
+   [
+    "Kalimantan Timur",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sulawesi Utara",
+    230,
+    "2018-02"
+   ],
+   [
+    "Gorontalo",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sulawesi Tengah",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sulawesi Selatan",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sulawesi Tenggara",
+    230,
+    "2018-02"
+   ],
+   [
+    "Maluku Utara",
+    230,
+    "2018-02"
+   ],
+   [
+    "Maluku",
+    230,
+    "2018-02"
+   ],
+   [
+    "Papua",
+    230,
+    "2018-02"
+   ],
+   [
+    "Papua Barat",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sulawesi Barat",
+    230,
+    "2018-02"
+   ],
+   [
+    "Kepulauan Riau",
+    230,
+    "2018-02"
+   ],
+   [
+    "Kalimantan Utara",
+    230,
+    "2018-02"
+   ],
+   [
+    "Timor Timur",
+    230,
+    "2018-02"
+   ],
+   [
+    "Jumlah",
+    230,
+    "2018-02"
+   ],
+   [
+    "Sampai dengan Juli 2000, termasuk Provinsi Timor Timur. -Sejak Mei 2014 terdapat perubahan cakupan dan klarifikasi data Dana dan Kredit berkaitan dengan implementasi Laporan Bulanan Bank Umum Syariah (LBUS) berdasarkan Laporan Stabilitas Moneter dan Sistem Keuangan (LSMK). Penjelasan lebih lanjut terdapat di Metadata",
+    0,
+    null
+   ],
+   [
+    "Up to July 2000, includes East Timor. -Since May 2014, data coverage and classification has been enhanced related to the implementation of Islamic Banking Monthly Report (LBUS) based on Monetary and Financial System Stability Report (LSMK). For further explanation please refer to Metadata",
+    0,
+    null
+   ]
+  ],
+  "simpanan_prov": [
+   [
+    "Nanggroe Aceh Darussalam",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sumatera Utara",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sumatera Barat",
+    228,
+    "2008-12"
+   ],
+   [
+    "Riau",
+    228,
+    "2008-12"
+   ],
+   [
+    "Jambi",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sumatera Selatan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bangka Belitung",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bengkulu",
+    228,
+    "2008-12"
+   ],
+   [
+    "Lampung",
+    228,
+    "2008-12"
+   ],
+   [
+    "Banten",
+    228,
+    "2008-12"
+   ],
+   [
+    "D.K.I. Jakarta",
+    228,
+    "2008-12"
+   ],
+   [
+    "Jawa Barat",
+    228,
+    "2008-12"
+   ],
+   [
+    "Jawa Tengah",
+    228,
+    "2008-12"
+   ],
+   [
+    "D.I. Yogyakarta",
+    228,
+    "2008-12"
+   ],
+   [
+    "Jawa Timur",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bali",
+    228,
+    "2008-12"
+   ],
+   [
+    "Nusa Tenggara Barat",
+    228,
+    "2008-12"
+   ],
+   [
+    "Nusa Tenggara Timur",
+    228,
+    "2008-12"
+   ],
+   [
+    "Kalimantan Barat",
+    228,
+    "2008-12"
+   ],
+   [
+    "Kalimantan Tengah",
+    228,
+    "2008-12"
+   ],
+   [
+    "Kalimantan Selatan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Kalimantan Timur",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sulawesi Utara",
+    228,
+    "2008-12"
+   ],
+   [
+    "Gorontalo",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sulawesi Tengah",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sulawesi Selatan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sulawesi Tenggara",
+    228,
+    "2008-12"
+   ],
+   [
+    "Maluku Utara",
+    228,
+    "2008-12"
+   ],
+   [
+    "Maluku",
+    228,
+    "2008-12"
+   ],
+   [
+    "Papua",
+    228,
+    "2008-12"
+   ],
+   [
+    "Papua Barat",
+    228,
+    "2008-12"
+   ],
+   [
+    "Sulawesi Barat",
+    228,
+    "2008-12"
+   ],
+   [
+    "Kepulauan Riau",
+    228,
+    "2008-12"
+   ],
+   [
+    "Kalimantan Utara",
+    228,
+    "2008-12"
+   ],
+   [
+    "Jumlah",
+    228,
+    "2008-12"
+   ],
+   [
+    "Memo Items",
+    0,
+    null
+   ],
+   [
+    "Pemerintah Pusat",
+    84,
+    "2008-12"
+   ],
+   [
+    "Bukan Penduduk",
+    84,
+    "2008-12"
+   ],
+   [
+    "Sampai dengan Juli 2000, termasuk Provinsi Timor Timur. -Sejak Mei 2014 terdapat perubahan cakupan dan klarifikasi data Dana dan Kredit berkaitan dengan implementasi Laporan Bulanan Bank Umum Syariah (LBUS) berdasarkan Laporan Stabilitas Moneter dan Sistem Keuangan (LSMK). Penjelasan lebih lanjut terdapat di Metadata",
+    0,
+    null
+   ],
+   [
+    "Up to July 2000, includes East Timor. -Since May 2014, data coverage and classification has been enhanced related to the implementation of Islamic Banking Monthly Report (LBUS) based on Monetary and Financial System Stability Report (LSMK). For further explanation please refer to Metadata",
+    0,
+    null
+   ]
+  ],
+  "kpr": [
+   [
+    "Rupiah",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Persero",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Swasta Nasional",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Perkreditan Rakyat",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    111,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    111,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Jumlah (1 s.d",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Valas",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Persero",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    168,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    132,
+    "2025-03"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    166,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    164,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    111,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    113,
+    "2025-03"
+   ],
+   [
+    "Bank Swasta Nasional",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Perkreditan Rakyat",
+    105,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    105,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    105,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    105,
+    "2025-03"
+   ],
+   [
+    "Jumlah (1 s.d",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Rupiah dan Valas",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Persero",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Konstruksi",
+    183,
+    "2025-03"
+   ],
+   [
+    "- Kredit Real Estate",
+    183,
+    "2025-03"
+   ],
+   [
+    "- KPR dan KPA",
+    183,
+    "2025-03"
+   ],
+   [
+    "Bank Swasta Nasional",
+    183,
+    "2025-03"
+   ]
+  ],
+  "bunga_kredit": [
+   [
+    "Bank Persero",
+    0,
+    null
+   ],
+   [
+    "Pinjaman Modal Kerja Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Investasi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Konsumsi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    0,
+    null
+   ],
+   [
+    "Pinjaman Modal Kerja Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Investasi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Konsumsi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Swasta Nasional",
+    0,
+    null
+   ],
+   [
+    "Pinjaman Modal Kerja Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Investasi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Konsumsi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    0,
+    null
+   ],
+   [
+    "Pinjaman Modal Kerja Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Investasi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Konsumsi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Umum",
+    0,
+    null
+   ],
+   [
+    "Pinjaman Modal Kerja Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Investasi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Pinjaman Konsumsi Yang Diberikan",
+    228,
+    "2008-12"
+   ],
+   [
+    "-Sejak periode data Agustus 2017, terdapat perubahan cakupan Bank Swasta Nasional dan Pemerintah akibat adanya perubahan status pada salah satu bank",
+    0,
+    null
+   ],
+   [
+    "'-Since the data period of August 2017, there is a channge of coverage of National Private Bank and Government Bank due to status change for one of the banks",
+    0,
+    null
+   ]
+  ],
+  "bunga_deposito": [
+   [
+    "Bank Persero",
+    0,
+    null
+   ],
+   [
+    "1 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "3 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "6 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "12 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "24 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    0,
+    null
+   ],
+   [
+    "1 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "3 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "6 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "12 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "24 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Swasta Nasional",
+    0,
+    null
+   ],
+   [
+    "1 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "3 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "6 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "12 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "24 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    0,
+    null
+   ],
+   [
+    "1 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "3 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "6 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "12 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "24 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Umum",
+    0,
+    null
+   ],
+   [
+    "1 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "3 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "6 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "12 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "24 Bulan",
+    228,
+    "2008-12"
+   ],
+   [
+    "-Sejak periode data Agustus 2017, terdapat perubahan cakupan Bank Swasta Nasional dan Pemerintah akibat adanya perubahan status pada salah satu bank",
+    0,
+    null
+   ],
+   [
+    "-Since the data period of August 2017, there is a channge of coverage of National Private Bank and Government Bank due to status change for one of the banks",
+    0,
+    null
+   ]
+  ],
+  "bunga_tabungan": [
+   [
+    "Bank Persero",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Pemerintah Daerah",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Swasta Nasional",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Asing dan Bank Campuran",
+    228,
+    "2008-12"
+   ],
+   [
+    "Bank Umum",
+    228,
+    "2008-12"
+   ],
+   [
+    "-Sejak periode data Agustus 2017, terdapat perubahan cakupan Bank Swasta Nasional dan Pemerintah akibat adanya perubahan status pada salah satu bank",
+    0,
+    null
+   ],
+   [
+    "-Since the data period of August 2017, there is a channge of coverage of National Private Bank and Government Bank due to status change for one of the banks",
+    0,
+    null
+   ]
+  ]
+ }
+}
