@@ -4,6 +4,8 @@ import {
   GROUPS, monthLabel, monthsOf, at, yoy, yoyPoints, ratio, ratioSeries, yoySeries,
   totalSeries, groupRows, provinceValues, commonLatest
 } from './logic.js';
+import { orbit } from './orbit.js';
+import { renderBanks, openBank, tileBack, periodKey } from './bank.js';
 
 let DATA = null;
 let YM = null;
@@ -212,15 +214,37 @@ function banner(status) {
   el.innerHTML = `<span>Sebagian tabel BI gagal diperbarui pada penarikan terakhir (${failed.map(([k]) => esc(k.replace('_', ' '))).join(', ')}). Bagian itu menampilkan data terakhir yang berhasil ditarik.</span>`;
 }
 
+const BLN = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+const tanggal = (iso) => { const [y, m, d] = iso.split('-').map(Number); return `${d} ${BLN[m - 1]} ${y}`; };
+
+/** Bagian per bank: panggung logo 3D, perbandingan dalam kelompok, dan lembar detail. */
+async function mainBanks() {
+  let data;
+  try {
+    data = await getJSON('bank.json');
+  } catch {
+    $('#orbit').hidden = true;
+    $('#per-bank').hidden = true;
+    return null;
+  }
+  const latest = data.bank.map((b) => b.periode).sort((a, b) => periodKey(b) - periodKey(a))[0];
+  $('#bank-eyebrow').textContent = `${data.bank.length} bank · laporan sampai ${latest} · diperbarui ${tanggal(data.diperbarui)}`;
+  const stage = orbit($('#orbit-field'), data.bank, { onPick: openBank, back: tileBack, keep: $('#orbit-copy') });
+  renderBanks(data, { onGroup: (g) => stage.focus(g) });
+  return data;
+}
+
 async function main() {
+  const banks = await mainBanks();
   let status = null;
   try { status = await getJSON('data/status.json'); } catch { /* belum ada */ }
   try {
     DATA = await getJSON('data/perbankan.json');
   } catch {
-    $('#updated').textContent = 'Menunggu data pertama';
-    $('#stats').outerHTML = `<div class="card empty"><b>Data belum tersedia</b><span>Penarikan pertama dari Bank Indonesia berjalan otomatis lewat GitHub Actions. Muat ulang halaman ini beberapa menit lagi.</span></div>`;
-    $$('#kelompok, #tren, #provinsi, #bunga, .main > .card:not(.empty)').forEach((el) => { el.hidden = true; });
+    $('#updated').textContent = banks ? `Data bank per ${tanggal(banks.diperbarui)}` : 'Menunggu data pertama';
+    $$('.seki').forEach((el) => { el.hidden = true; });
+    $('#banner').hidden = false;
+    $('#banner').innerHTML = '<b>Data per kelompok belum tersedia.</b> Penarikan pertama dari Bank Indonesia berjalan otomatis lewat GitHub Actions. Muat ulang halaman ini beberapa menit lagi.';
     return;
   }
   const k = DATA.kredit || {};

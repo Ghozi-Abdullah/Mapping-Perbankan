@@ -1,0 +1,554 @@
+{
+  "catatan": "Data per bank dikumpulkan dari rilis kinerja resmi yang dikutip media keuangan, bukan dari tabel otomatis. Diperbarui setiap musim laporan kuartalan. Angka dalam triliun rupiah, rasio dalam persen. null = tidak disebutkan di sumber. dihitung = rasio dihitung dari angka laporan (misalnya LDR = kredit / DPK).",
+  "diperbarui": "2026-10-25",
+  "bank": [
+    {
+      "kode": "BBRI",
+      "nama": "BRI",
+      "lengkap": "PT Bank Rakyat Indonesia (Persero) Tbk",
+      "grup": "bumn",
+      "domain": "bri.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026, konsolidasi",
+      "aset": 2352,
+      "kredit": 1646,
+      "dpk": 1581,
+      "laba": 31.2,
+      "tumbuh": {
+        "aset": 11.7,
+        "kredit": 16.2,
+        "dpk": 6.7,
+        "laba": 17.5
+      },
+      "npl": 2.9,
+      "car": 21.5,
+      "casa": 67.6,
+      "ldr": 90.8,
+      "nim": null,
+      "roa": null,
+      "roe": null,
+      "profil": "Bank milik negara yang berdiri sejak 1895 di Purwokerto. Fokus utamanya kredit usaha mikro, kecil, dan menengah, dengan jaringan unit kerja yang menjangkau desa-desa.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "Likuiditas dan permodalan kokoh, BRI perkuat kontribusi (InvestorTrust)",
+          "url": "https://investortrust.id/financial/115402/likuiditas-dan-permodalan-kokoh-bri-perkuat-kontribusi-bagi-pertumbuhan-ekonomi-nasional"
+        },
+        {
+          "judul": "Kualitas aset membaik, LDR dan CAR BRI terjaga (Stabilitas)",
+          "url": "https://www.stabilitas.id/kualitas-aset-membaik-ldr-dan-car-bri-terjaga-solid-di-paruh-pertama-2026/"
+        }
+      ],
+      "dihitung": [],
+      "keterangan": "LDR 90,8% adalah angka bank saja. Kredit konsolidasi ikut memuat pembiayaan anak usaha seperti Pegadaian dan PNM, yang tidak didanai simpanan, sehingga kredit terlihat lebih besar dari DPK."
+    },
+    {
+      "kode": "BMRI",
+      "nama": "Bank Mandiri",
+      "lengkap": "PT Bank Mandiri (Persero) Tbk",
+      "grup": "bumn",
+      "domain": "bankmandiri.co.id",
+      "periode": "Sep 2026",
+      "laporan": "Kuartal III 2026; laba konsolidasi, kredit dan rasio bank saja",
+      "aset": 2404.1,
+      "kredit": 1605.8,
+      "dpk": 1750.2,
+      "laba": 45.5,
+      "tumbuh": {
+        "aset": 20.1,
+        "kredit": 16.0,
+        "dpk": 17.7,
+        "laba": 20.7
+      },
+      "npl": 0.98,
+      "car": 18.4,
+      "casa": null,
+      "ldr": null,
+      "nim": null,
+      "roa": 2.99,
+      "roe": 23.6,
+      "profil": "Dibentuk pada 1998 dari penggabungan empat bank pemerintah: Bank Bumi Daya, Bank Dagang Negara, Bank Ekspor Impor Indonesia, dan Bapindo. Kuat di pembiayaan korporasi dan transaksi bisnis.",
+      "terbaru": "Bank pertama yang merilis kinerja kuartal III 2026 (23 Oktober 2026).",
+      "sumber": [
+        {
+          "judul": "Kinerja Bank Mandiri menguat di Q3 2026 (Katadata)",
+          "url": "https://katadata.co.id/finansial/korporasi/6adb72519e4aa/kinerja-bank-mandiri-menguat-di-q3-2026-kredit-dpk-dan-laba-naik"
+        },
+        {
+          "judul": "Laba Bank Mandiri meroket 20,7% di kuartal III (CNBC Indonesia)",
+          "url": "https://www.cnbcindonesia.com/market/20261023155239-17-778967/laba-bank-mandiri-meroket-207-tembus-rp-455-triliun-di-kuartal-iii"
+        }
+      ],
+      "dihitung": []
+    },
+    {
+      "kode": "BBNI",
+      "nama": "BNI",
+      "lengkap": "PT Bank Negara Indonesia (Persero) Tbk",
+      "grup": "bumn",
+      "domain": "bni.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026, konsolidasi",
+      "aset": 1461.0,
+      "kredit": 968.5,
+      "dpk": 1100.2,
+      "laba": 10.81,
+      "tumbuh": {
+        "aset": 21.58,
+        "kredit": 24.38,
+        "dpk": 22.26,
+        "laba": 6.33
+      },
+      "npl": 1.9,
+      "car": null,
+      "casa": null,
+      "ldr": 88.0,
+      "nim": 3.55,
+      "roa": 1.48,
+      "roe": 12.85,
+      "profil": "Didirikan pada 1946 sebagai bank pertama milik pemerintah Indonesia. Dikenal kuat di nasabah korporasi, perdagangan internasional, dan jaringan kantor luar negeri.",
+      "terbaru": "Laporan bulanan Agustus 2026: laba Rp14,32 triliun, tumbuh 6,9%.",
+      "sumber": [
+        {
+          "judul": "Rapor kinerja bank KBMI IV semester I/2026 (Bisnis.com)",
+          "url": "https://finansial.bisnis.com/read/20260810/90/1994867/rapor-kinerja-bank-kbmi-iv-semester-i2026-bank-mandiri-bni-bca"
+        },
+        {
+          "judul": "Kinerja keuangan BNI semester I 2026 (PintarSaham)",
+          "url": "https://pintarsaham.id/kinerja-keuangan-bni-semester-i-2026-laba-bersih-tumbuh-positif-di-tengah-ekspansi-kredit-agresif/"
+        },
+        {
+          "judul": "BNI kantongi laba Rp14,32 triliun per Agustus 2026 (Kontan)",
+          "url": "https://keuangan.kontan.co.id/news/bni-kantongi-laba-rp-1432-triliun-tumbuh-69-per-agustus-2026"
+        }
+      ],
+      "dihitung": [
+        "ldr"
+      ]
+    },
+    {
+      "kode": "BBTN",
+      "nama": "BTN",
+      "lengkap": "PT Bank Tabungan Negara (Persero) Tbk",
+      "grup": "bumn",
+      "domain": "btn.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026, konsolidasi",
+      "aset": 545.16,
+      "kredit": 418.11,
+      "dpk": 433,
+      "laba": 2.4,
+      "tumbuh": {
+        "aset": 12.4,
+        "kredit": 11.2,
+        "dpk": 6.6,
+        "laba": 40.8
+      },
+      "npl": 2.99,
+      "car": null,
+      "casa": null,
+      "ldr": 96.6,
+      "nim": 3.5,
+      "roa": null,
+      "roe": null,
+      "profil": "Berakar dari Postspaarbank yang berdiri pada 1897. Kini menjadi bank utama untuk pembiayaan perumahan dan penyalur terbesar KPR bersubsidi.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "Laba BTN tumbuh 40,8% jadi Rp2,4 triliun (Infobanknews)",
+          "url": "https://infobanknews.com/laba-btn-tumbuh-408-persen-jadi-rp24-triliun-di-semester-i-2026"
+        },
+        {
+          "judul": "BBTN bukukan laba bersih Rp2,4 triliun (KabarBursa)",
+          "url": "https://www.kabarbursa.com/market-hari-ini/bbtn-bukukan-laba-bersih-rp24-triliun-catatan-npl-turun"
+        }
+      ],
+      "dihitung": [
+        "ldr"
+      ]
+    },
+    {
+      "kode": "BRIS",
+      "nama": "BSI",
+      "lengkap": "PT Bank Syariah Indonesia Tbk",
+      "grup": "bumn",
+      "domain": "bankbsi.co.id",
+      "periode": "Agu 2026",
+      "laporan": "Januari–Agustus 2026",
+      "syariah": true,
+      "aset": null,
+      "kredit": 344,
+      "dpk": 389,
+      "laba": 5.3,
+      "tumbuh": {
+        "aset": null,
+        "kredit": 16.21,
+        "dpk": 17.71,
+        "laba": 10.07
+      },
+      "npl": 1.8,
+      "car": null,
+      "casa": 63.2,
+      "ldr": null,
+      "nim": null,
+      "roa": null,
+      "roe": null,
+      "profil": "Bank syariah terbesar di Indonesia, hasil penggabungan BRI Syariah, BNI Syariah, dan Bank Syariah Mandiri pada 2021. Untuk bank syariah, kredit disebut pembiayaan dan NPL disebut NPF.",
+      "terbaru": "Per Juni 2026, total aset Rp464,5 triliun (naik 15,96%) dan NPF bersih 0,33%. Laba semester I Rp4,16 triliun, naik 11,08%.",
+      "sumber": [
+        {
+          "judul": "BSI raup laba Rp5,3 triliun hingga Agustus 2026 (IDX Channel)",
+          "url": "https://www.rctiplus.com/news/detail/idxchannel/5486712/bsi--bris--raup-laba-rp5-3-triliun-hingga-agustus-2026--naik-10-persen"
+        },
+        {
+          "judul": "BSI cetak laba Rp4,16 triliun di semester I 2026 (Kontan)",
+          "url": "https://keuangan.kontan.co.id/news/bsi-cetak-laba-rp-416-triliun-di-semester-i-2026-tumbuh-1108"
+        }
+      ],
+      "dihitung": [
+        "casa"
+      ]
+    },
+    {
+      "kode": "BBCA",
+      "nama": "BCA",
+      "lengkap": "PT Bank Central Asia Tbk",
+      "grup": "swasta",
+      "domain": "bca.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026, laba konsolidasi",
+      "aset": null,
+      "kredit": 1036,
+      "dpk": 1284,
+      "laba": 29.5,
+      "tumbuh": {
+        "aset": null,
+        "kredit": 8.0,
+        "dpk": 7.9,
+        "laba": 1.8
+      },
+      "npl": 1.9,
+      "car": null,
+      "casa": 84.3,
+      "ldr": 80.7,
+      "nim": null,
+      "roa": null,
+      "roe": null,
+      "profil": "Bank swasta terbesar di Indonesia, berdiri pada 1957. Unggul di layanan transaksi dan tabungan, sehingga porsi dana murahnya termasuk yang tertinggi di industri.",
+      "terbaru": "Laporan bulanan Agustus 2026 (bank saja): laba Rp40,17 triliun, naik 2,85%; kredit Rp1.017,7 triliun, naik 10,52%; CASA 85,47%; NIM 5,33%. Kinerja kuartal III belum dirilis saat halaman ini diperbarui.",
+      "sumber": [
+        {
+          "judul": "BCA kantongi laba Rp29,5 triliun di semester I 2026 (Infobanknews)",
+          "url": "https://infobanknews.com/bca-kantongi-laba-rp295-triliun-di-semester-i-2026-kredit-lampaui-rp1-000-triliun"
+        },
+        {
+          "judul": "Laba BCA tumbuh 2,85% hingga Agustus 2026 (Investor.id)",
+          "url": "https://investor.id/market/454496/laba-bca-tumbuh-285-hingga-agustus-2026"
+        },
+        {
+          "judul": "BCA cetak laba Rp29,5 triliun, kredit tembus Rp1.000 triliun (Bisnis)",
+          "url": "https://finansial.bisnis.com/read/20260728/90/1991742/bca-bbca-cetak-laba-rp295-triliun-kredit-tembus-rp1000-triliun-semester-i2026"
+        }
+      ],
+      "dihitung": [
+        "ldr"
+      ]
+    },
+    {
+      "kode": "BNGA",
+      "nama": "CIMB Niaga",
+      "lengkap": "PT Bank CIMB Niaga Tbk",
+      "grup": "swasta",
+      "domain": "cimbniaga.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026",
+      "aset": 382,
+      "kredit": 247.2,
+      "dpk": 269.3,
+      "laba": 3.43,
+      "tumbuh": {
+        "aset": 6.7,
+        "kredit": 6.6,
+        "dpk": 2.8,
+        "laba": null
+      },
+      "npl": 1.83,
+      "car": 23.5,
+      "casa": 71.7,
+      "ldr": 90.4,
+      "nim": null,
+      "roa": null,
+      "roe": null,
+      "profil": "Berakar dari Bank Niaga yang berdiri pada 1955, kini bagian dari CIMB Group asal Malaysia. Kuat di kartu kredit, KPR, dan perbankan digital OCTO.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "CIMB Niaga raih laba bersih Rp3,43 triliun semester I/2026 (Bisnis.com)",
+          "url": "https://finansial.bisnis.com/read/20260814/90/1996224/cimb-niaga-bnga-raih-laba-bersih-rp343-triliun-semester-i2026-dirut-lani-fokus-strategi-forward30"
+        }
+      ],
+      "dihitung": []
+    },
+    {
+      "kode": "NISP",
+      "nama": "OCBC Indonesia",
+      "lengkap": "PT Bank OCBC NISP Tbk",
+      "grup": "swasta",
+      "domain": "ocbc.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026",
+      "aset": 329.5,
+      "kredit": 185.3,
+      "dpk": 239.9,
+      "laba": 2.7,
+      "tumbuh": {
+        "aset": 11,
+        "kredit": 11,
+        "dpk": 11,
+        "laba": null
+      },
+      "npl": 1.9,
+      "car": 23.1,
+      "casa": 60.5,
+      "ldr": null,
+      "nim": null,
+      "roa": null,
+      "roe": null,
+      "profil": "Berdiri di Bandung pada 1941 dan kini dimiliki OCBC asal Singapura. Dikenal dengan permodalan yang kuat dan pertumbuhan dana murah yang cepat.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "OCBC bukukan laba Rp2,7 triliun, kredit dan DPK tumbuh 11% (InvestorTrust)",
+          "url": "https://investortrust.id/financial/111258/ocbc-nisp-bukukan-laba-rp-2-7-triliun-kredit-dan-dpk-tumbuh-11-pada-semester-i-2026"
+        }
+      ],
+      "dihitung": []
+    },
+    {
+      "kode": "BNLI",
+      "nama": "PermataBank",
+      "lengkap": "PT Bank Permata Tbk",
+      "grup": "swasta",
+      "domain": "permatabank.com",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026",
+      "aset": null,
+      "kredit": 171.2,
+      "dpk": 189.24,
+      "laba": 1.72,
+      "tumbuh": {
+        "aset": null,
+        "kredit": 5.3,
+        "dpk": -0.01,
+        "laba": 4.48
+      },
+      "npl": 2.1,
+      "car": null,
+      "casa": 57.9,
+      "ldr": 90.3,
+      "nim": null,
+      "roa": null,
+      "roe": null,
+      "profil": "Dibentuk pada 2002 dari penggabungan lima bank, termasuk Bank Bali. Sejak 2020 dimiliki Bangkok Bank asal Thailand.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "Permata Bank cetak laba Rp1,72 triliun di semester I 2026 (InvestorTrust)",
+          "url": "https://investortrust.id/financial/112215/permata-bank-bnli-cetak-laba-rp-1-72-triliun-di-semester-i-2026-tumbuh-4-48"
+        }
+      ],
+      "dihitung": []
+    },
+    {
+      "kode": "BDMN",
+      "nama": "Danamon",
+      "lengkap": "PT Bank Danamon Indonesia Tbk",
+      "grup": "swasta",
+      "domain": "danamon.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026, konsolidasi termasuk Adira Finance",
+      "aset": null,
+      "kredit": 230.1,
+      "dpk": 181.7,
+      "laba": 2.4,
+      "tumbuh": {
+        "aset": null,
+        "kredit": 12,
+        "dpk": 14,
+        "laba": 33
+      },
+      "npl": null,
+      "car": null,
+      "casa": null,
+      "ldr": null,
+      "nim": 8.1,
+      "roa": null,
+      "roe": null,
+      "profil": "Berdiri pada 1956 dan menjadi bagian dari MUFG asal Jepang sejak 2019. Angka konsolidasinya ikut memuat Adira Finance, sehingga margin bunganya jauh di atas bank lain.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "Laba Bank Danamon naik 33% pada semester I 2026 (InvestorTrust)",
+          "url": "https://investortrust.id/financial/111261/laba-bank-danamon-bdmn-naik-33-pada-semester-i-2026-kredit-tumbuh-12"
+        }
+      ],
+      "dihitung": [],
+      "keterangan": "Angka konsolidasi memuat Adira Finance. Kredit konsolidasi lebih besar dari DPK karena pembiayaan Adira didanai obligasi dan pinjaman, bukan simpanan."
+    },
+    {
+      "kode": "BNII",
+      "nama": "Maybank Indonesia",
+      "lengkap": "PT Bank Maybank Indonesia Tbk",
+      "grup": "swasta",
+      "domain": "maybank.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026",
+      "aset": null,
+      "kredit": 126.28,
+      "dpk": 124.1,
+      "laba": 0.698,
+      "tumbuh": {
+        "aset": null,
+        "kredit": 3.8,
+        "dpk": 8.2,
+        "laba": 21.2
+      },
+      "npl": 2.1,
+      "car": 24.3,
+      "casa": 63.6,
+      "ldr": 86.6,
+      "nim": 4.3,
+      "roa": null,
+      "roe": null,
+      "profil": "Dahulu Bank Internasional Indonesia (BII) yang berdiri pada 1959, kini bagian dari Maybank asal Malaysia.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "Laba Maybank Indonesia naik 21,2% pada semester I 2026 (InvestorTrust)",
+          "url": "https://investortrust.id/market/111378/laba-maybank-indonesia-naik-21-2-pada-semester-i-2026-kredit-tumbuh-3-8"
+        }
+      ],
+      "dihitung": [],
+      "keterangan": "LDR 86,6% sesuai rilis bank, lebih rendah dari kredit dibagi simpanan nasabah (sekitar 102%). Selisih seperti ini biasanya karena kredit di rilis ikut memuat pembiayaan anak usaha, atau karena LDR dihitung dengan sumber dana yang lebih luas dari simpanan."
+    },
+    {
+      "kode": "PNBN",
+      "nama": "PaninBank",
+      "lengkap": "PT Bank Pan Indonesia Tbk",
+      "grup": "swasta",
+      "domain": "panin.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026",
+      "aset": null,
+      "kredit": 139.64,
+      "dpk": 144.57,
+      "laba": 1.44,
+      "tumbuh": {
+        "aset": null,
+        "kredit": null,
+        "dpk": null,
+        "laba": 1.0
+      },
+      "npl": null,
+      "car": 35.93,
+      "casa": 42,
+      "ldr": null,
+      "nim": 4.55,
+      "roa": null,
+      "roe": null,
+      "profil": "Berdiri pada 1971 dari penggabungan tiga bank swasta. ANZ termasuk pemegang saham besarnya. Permodalannya termasuk yang paling tebal di antara bank besar.",
+      "terbaru": "Kredit turun 3,75% dan DPK turun 7,87% dibanding akhir 2025.",
+      "sumber": [
+        {
+          "judul": "PaninBank bukukan laba Rp1,44 triliun di semester I 2026 (Infobanknews)",
+          "url": "https://infobanknews.com/paninbank-bukukan-laba-rp144-triliun-di-semester-i-2026-nim-naik-455-persen"
+        }
+      ],
+      "dihitung": []
+    },
+    {
+      "kode": "BJBR",
+      "nama": "bank bjb",
+      "lengkap": "PT Bank Pembangunan Daerah Jawa Barat dan Banten Tbk",
+      "grup": "bpd",
+      "domain": "bankbjb.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026, konsolidasi",
+      "aset": 228.2,
+      "kredit": 140.4,
+      "dpk": 160.9,
+      "laba": 0.783,
+      "tumbuh": {
+        "aset": null,
+        "kredit": null,
+        "dpk": null,
+        "laba": 58.8
+      },
+      "npl": null,
+      "car": null,
+      "casa": null,
+      "ldr": 87.3,
+      "nim": null,
+      "roa": null,
+      "roe": null,
+      "profil": "Bank pembangunan daerah milik Provinsi Jawa Barat, Provinsi Banten, serta kabupaten dan kota di kedua provinsi. Berdiri pada 1961.",
+      "terbaru": null,
+      "sumber": [
+        {
+          "judul": "Aset capai Rp228 triliun, laba bank bjb tumbuh 58,8% (RCTI+)",
+          "url": "https://www.rctiplus.com/news/detail/ekonomi/5439516/aset-capai-rp228-triliun--laba-bank-bjb-tumbuh-58-8-di-semester-i-2026"
+        },
+        {
+          "judul": "Laba bank bjb melesat 58,8% semester I 2026 (Kontan)",
+          "url": "https://keuangan.kontan.co.id/news/laba-bank-bjb-melesat-588-semester-i-2026-ini-pendorongnya"
+        }
+      ],
+      "dihitung": [
+        "ldr"
+      ]
+    },
+    {
+      "kode": "BJTM",
+      "nama": "Bank Jatim",
+      "lengkap": "PT Bank Pembangunan Daerah Jawa Timur Tbk",
+      "grup": "bpd",
+      "domain": "bankjatim.co.id",
+      "periode": "Jun 2026",
+      "laporan": "Semester I 2026, konsolidasi KUB",
+      "aset": 162.06,
+      "kredit": 111.29,
+      "dpk": 120.42,
+      "laba": 1.25,
+      "tumbuh": {
+        "aset": 37.16,
+        "kredit": 41.68,
+        "dpk": 31.47,
+        "laba": 53.49
+      },
+      "npl": 4.38,
+      "car": 23.72,
+      "casa": 58.72,
+      "ldr": 91.24,
+      "nim": 5.9,
+      "roa": null,
+      "roe": 11.43,
+      "profil": "Bank pembangunan daerah milik Provinsi Jawa Timur dan pemerintah kabupaten dan kota di Jawa Timur, berdiri pada 1961. Kini memimpin kelompok usaha bank (KUB) bersama beberapa bank daerah lain, sehingga angka konsolidasinya melonjak.",
+      "terbaru": "Tanpa anggota KUB (bank saja), aset Juni 2026 Rp101,76 triliun dan laba Rp708 miliar, hampir sama dengan tahun lalu. Lonjakan angka konsolidasi datang dari anggota KUB: Bank NTB Syariah, Bank Lampung, Bank Sultra, Bank NTT, dan Bank Banten.",
+      "sumber": [
+        {
+          "judul": "Laba Bank Jatim naik 53,49% jadi Rp1,25 triliun di semester I 2026 (Infobank)",
+          "url": "https://infobanknews.com/laba-bank-jatim-naik-5349-persen-jadi-rp125-triliun-di-semester-i-2026-ditopang-kub"
+        },
+        {
+          "judul": "Bank Jatim klaim fundamental solid, laba tumbuh 53,4% (InvestorTrust)",
+          "url": "https://investortrust.id/financial/115673/bank-jatim-bjtm-klaim-fundamental-solid-laba-tumbuh-53-4-dan-kredit-naik-41-68-di-semester-i-2026"
+        },
+        {
+          "judul": "Bank Jatim bukukan laba bersih Rp708 miliar di semester I 2026 (IDX Channel)",
+          "url": "https://www.idxchannel.com/banking/bank-jatim-bjtm-bukukan-laba-bersih-rp708-miliar-di-semester-i-2026/all"
+        }
+      ],
+      "dihitung": []
+    }
+  ]
+}

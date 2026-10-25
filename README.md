@@ -2,25 +2,34 @@
 
 # Peta Perbankan
 
-**Ke mana uang kredit dan tabungan Indonesia mengalir, per kelompok bank dan per provinsi.**
+**Laporan keuangan terbaru bank-bank besar Indonesia, dibandingkan dalam kelompoknya, plus peta kredit dan tabungan seluruh industri.**
 
 [**Coba sekarang →**](https://ghozi-abdullah.github.io/Peta-Perbankan/)
 
 </div>
 
-Peta Perbankan merangkum statistik resmi Bank Indonesia menjadi satu halaman yang mudah dibaca. Lihat seberapa besar bank BUMN dibanding bank swasta, bank daerah, dan cabang bank asing; bagaimana kredit tumbuh setiap bulan; provinsi mana yang paling banyak menerima kredit; dan berapa bunga kredit serta deposito di tiap kelompok bank.
+Peta Perbankan merangkum laporan keuangan bank dan statistik resmi Bank Indonesia menjadi satu halaman yang mudah dibaca. Bandingkan BRI dengan Mandiri, BCA dengan CIMB Niaga, atau bank bjb dengan Bank Jatim: siapa yang paling besar, paling untung, dan paling sehat. Lalu lihat gambaran seluruh industri: seberapa besar bank BUMN dibanding bank swasta, bank daerah, dan cabang bank asing; bagaimana kredit tumbuh setiap bulan; provinsi mana yang paling banyak menerima kredit; dan berapa bunga kredit serta deposito di tiap kelompok bank.
 
 Dibuat untuk mahasiswa, analis, jurnalis, dan siapa saja yang ingin memahami peta perbankan Indonesia tanpa membuka puluhan tabel Excel.
 
 ## Kenapa Peta Perbankan
 
-**Data resmi, bukan perkiraan.** Semua angka berasal dari Statistik Ekonomi dan Keuangan Indonesia (SEKI) yang diterbitkan Bank Indonesia setiap bulan.
+**Data resmi, bukan perkiraan.** Angka per bank berasal dari laporan keuangan publikasi dan rilis kinerja resmi tiap bank, dengan sumber tercantum di halaman bank masing-masing. Angka per kelompok berasal dari Statistik Ekonomi dan Keuangan Indonesia (SEKI) yang diterbitkan Bank Indonesia setiap bulan.
 
 **Selalu terbaru.** Halaman memeriksa rilis SEKI dua kali seminggu dan menambahkan bulan baru secara otomatis. Riwayat bulan lama tetap disimpan, jadi grafik makin panjang dari waktu ke waktu.
 
-**Langsung bisa dibandingkan.** Tabel BI dipisah per topik dan per halaman. Di sini kredit, simpanan, rasio, dan suku bunga tiap kelompok bank tampil berdampingan.
+**Bandingkan yang setara.** BUMN dibandingkan dengan BUMN, swasta dengan swasta, bank daerah dengan bank daerah. Peringkat tiap bank dihitung di dalam kelompoknya sendiri.
 
 ## Fitur
+
+### Logo bank yang melayang
+Logo 14 bank mengorbit dan berputar dalam ruang 3D di halaman pembuka. Sisi depan menampilkan logo, sisi belakang laba terbaru. Arahkan kursor untuk menghentikan putarannya, lalu klik untuk membuka laporan bank itu. Di ponsel, logo tersusun dalam silinder yang bisa diputar dengan geseran jari.
+
+### Per bank
+Kartu ringkas tiap bank berisi laba, kredit, NPL, dan CAR. Pilih kelompok (BUMN, swasta, BPD, atau semua) dan ukuran (kredit, aset, laba, NPL, CAR, CASA, LDR, NIM) untuk melihat urutannya, lalu baca tabel lengkapnya dengan angka terbaik di tiap kolom ditebalkan.
+
+### Halaman tiap bank
+Profil singkat, sepuluh angka utama dengan pertumbuhan tahunan dan peringkat di kelompoknya, kabar terbaru dari laporan bulanan, daftar sumber, dan tautan langsung ke laporan keuangan di Bursa Efek Indonesia. Setiap bank punya alamat sendiri, misalnya `#bank-BMRI`, jadi mudah dibagikan.
 
 ### Ringkasan nasional
 Total kredit, total simpanan masyarakat, rasio kredit terhadap simpanan, dan porsi dana murah (giro dan tabungan), lengkap dengan perubahan dari tahun lalu dan grafik kecil dua tahun terakhir.
@@ -39,7 +48,9 @@ Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bu
 
 ## Sumber data
 
-Bank Indonesia, [Statistik Ekonomi dan Keuangan Indonesia](https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx):
+**Per bank.** Laporan keuangan publikasi dan rilis kinerja resmi BRI, Bank Mandiri, BNI, BTN, BSI, BCA, CIMB Niaga, OCBC Indonesia, PermataBank, Danamon, Maybank Indonesia, PaninBank, bank bjb, dan Bank Jatim, sebagaimana dikutip media keuangan. Angka diperbarui setiap musim laporan kuartalan di `bank.json`. Logo adalah ikon situs resmi masing-masing bank.
+
+**Per kelompok.** Bank Indonesia, [Statistik Ekonomi dan Keuangan Indonesia](https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx):
 
 | Tabel | Isi |
 |---|---|
@@ -52,7 +63,7 @@ Bank Indonesia, [Statistik Ekonomi dan Keuangan Indonesia](https://www.bi.go.id/
 | I.28 | Suku bunga deposito rupiah menurut kelompok bank |
 | I.30 | Suku bunga tabungan rupiah menurut kelompok bank |
 
-Data disajikan per kelompok bank, bukan per bank. Bank swasta milik grup asing yang berbadan hukum Indonesia, seperti CIMB Niaga dan Danamon, termasuk kelompok bank swasta nasional.
+Tabel SEKI disajikan per kelompok bank, bukan per bank. Bank swasta milik grup asing yang berbadan hukum Indonesia, seperti CIMB Niaga dan Danamon, termasuk kelompok bank swasta nasional.
 
 ## Lisensi
 

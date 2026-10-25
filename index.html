@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Peta Perbankan Indonesia</title>
-  <meta name="description" content="Kredit, simpanan, dan suku bunga bank BUMN, swasta, BPD, dan asing per bulan dan per provinsi, dari data Bank Indonesia.">
+  <meta name="description" content="Laporan keuangan terbaru BRI, Mandiri, BNI, BCA, dan bank besar lain, dibandingkan dalam kelompoknya, plus kredit, simpanan, dan suku bunga per kelompok bank dari Bank Indonesia.">
   <meta name="theme-color" content="#F4F4F2">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="preload" href="google-sans-flex.woff2" as="font" type="font/woff2" crossorigin>
@@ -18,6 +18,7 @@
       <span class="brand-text"><b>Peta Perbankan</b><span id="updated">Memuat data…</span></span>
     </a>
     <nav class="top-nav" aria-label="Bagian">
+      <a href="#per-bank">Per bank</a>
       <a href="#kelompok">Kelompok bank</a>
       <a href="#tren">Tren</a>
       <a href="#provinsi">Provinsi</a>
@@ -26,22 +27,58 @@
   </header>
 
   <main class="main">
-    <section class="hero">
+    <section class="orbit" id="orbit" aria-label="Bank yang dibandingkan">
+      <div class="orbit-copy" id="orbit-copy">
+        <span class="eyebrow"><i class="dot"></i><span id="bank-eyebrow">Laporan keuangan terbaru tiap bank</span></span>
+        <h1 class="display">Bank mana yang paling <b>besar</b>, paling <b>untung</b>, paling <b>sehat</b></h1>
+        <p class="lede">Ketuk logo untuk membuka laporan keuangan terbaru tiap bank. Di bawahnya, bandingkan BUMN dengan BUMN, swasta dengan swasta, dan bank daerah dengan bank daerah.</p>
+        <div class="orbit-actions"><a class="btn dark" href="#per-bank">Bandingkan per bank</a><a class="btn light" href="#industri">Data seluruh industri</a></div>
+      </div>
+      <div class="orbit-field" id="orbit-field"></div>
+    </section>
+
+    <section class="per-bank" id="per-bank" aria-label="Perbandingan per bank">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h2>Per bank</h2>
+            <p id="bank-sub">Memuat…</p>
+          </div>
+          <div class="seg" id="bank-group" role="group" aria-label="Kelompok bank"></div>
+        </div>
+        <div class="bcards" id="bank-cards"></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h2 id="bank-bars-title">Perbandingan</h2>
+            <p id="bank-bars-note"></p>
+          </div>
+          <div class="seg" id="bank-metric" role="group" aria-label="Ukuran"></div>
+        </div>
+        <ul class="bbars" id="bank-bars"></ul>
+        <h3 class="bd-h3 tbl-title">Semua angka</h3>
+        <div class="table-wrap"><table class="tbl bank-tbl" id="bank-table"></table></div>
+        <p class="note" id="bank-date">Angka diambil dari laporan keuangan publikasi dan rilis kinerja resmi tiap bank. Kredit, simpanan, dan aset dalam triliun rupiah; pertumbuhan dibanding periode yang sama tahun lalu. Angka tercetak tebal adalah yang terbaik di kelompoknya.</p>
+      </div>
+    </section>
+
+    <section class="hero industri" id="industri">
       <span class="eyebrow"><i class="dot"></i><span id="eyebrow">Data Bank Indonesia</span></span>
-      <h1 class="display">Ke mana uang <b>kredit</b> dan <b>tabungan</b> Indonesia mengalir</h1>
-      <p class="lede">Bandingkan bank BUMN, bank swasta, bank daerah, dan cabang bank asing: berapa kredit yang mereka salurkan, berapa simpanan yang mereka kelola, dan berapa bunga yang mereka tawarkan.</p>
+      <h2 class="display sm">Seluruh industri, per <b>kelompok bank</b></h2>
+      <p class="lede">Gabungan semua bank di tiap kelompok, termasuk yang tidak tercatat di bursa: BUMN, swasta nasional, bank daerah, cabang bank asing, dan BPR. Data bulanan dari Bank Indonesia.</p>
     </section>
 
     <div id="banner" class="banner" hidden></div>
 
-    <section class="grid four" id="stats" aria-label="Angka utama">
+    <section class="grid four seki" id="stats" aria-label="Angka utama">
       <div class="card stat"><div class="skeleton" style="height:90px"></div></div>
       <div class="card stat"><div class="skeleton" style="height:90px"></div></div>
       <div class="card stat"><div class="skeleton" style="height:90px"></div></div>
       <div class="card stat"><div class="skeleton" style="height:90px"></div></div>
     </section>
 
-    <section class="card" id="kelompok">
+    <section class="card seki" id="kelompok">
       <div class="card-head">
         <div>
           <h2>Per kelompok bank</h2>
@@ -57,7 +94,7 @@
       <p class="note" id="group-note"></p>
     </section>
 
-    <section class="card" id="tren">
+    <section class="card seki" id="tren">
       <div class="card-head">
         <div>
           <h2>Tren bulanan</h2>
@@ -73,7 +110,7 @@
       <div id="trend-chart"></div>
     </section>
 
-    <section class="card" id="provinsi">
+    <section class="card seki" id="provinsi">
       <div class="card-head">
         <div>
           <h2>Per provinsi</h2>
@@ -95,7 +132,7 @@
       </div>
     </section>
 
-    <section class="grid two" id="bunga">
+    <section class="grid two seki" id="bunga">
       <div class="card">
         <div class="card-head">
           <div><h2>Bunga kredit</h2><p id="bunga-k-sub">Rata-rata tertimbang, persen per tahun</p></div>
@@ -110,7 +147,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card seki" id="tren-bunga">
       <div class="card-head">
         <div>
           <h2>Tren suku bunga</h2>
@@ -132,13 +169,21 @@
         <p><b>Kredit</b> adalah pinjaman yang masih berjalan (outstanding), dalam rupiah dan valuta asing. <b>Simpanan</b> adalah dana masyarakat di bank: giro, tabungan, dan deposito.</p>
         <p><b>Kredit/simpanan</b> menunjukkan berapa bagian simpanan yang disalurkan lagi sebagai kredit. Angka mendekati atau di atas 100% berarti bank meminjamkan hampir semua dananya; angka ini mirip LDR, tapi dihitung langsung dari tabel BI.</p>
         <p><b>Dana murah</b> adalah porsi giro dan tabungan dari total simpanan (sering disebut CASA). Makin tinggi, makin murah biaya dana bank.</p>
+        <p><b>NPL</b> adalah porsi kredit yang macet atau menunggak lebih dari 90 hari. Untuk bank syariah disebut NPF. OJK memakai batas 5% untuk NPL bersih.</p>
+        <p><b>CAR</b> mengukur modal dibanding aset berisiko. Minimum OJK 8% ditambah penyangga sesuai profil risiko; bank besar umumnya di atas 18%.</p>
+        <p><b>Laba</b> di rilis bank dihitung sejak Januari. Laba Juni berisi enam bulan, laba September sembilan bulan, jadi bandingkan pertumbuhannya bila periodenya berbeda.</p>
       </div>
     </section>
   </main>
 
+  <dialog class="sheet bank-sheet" id="bank-sheet" aria-label="Detail bank">
+    <form method="dialog"><button class="sheet-close btn light sm" aria-label="Tutup">Tutup</button></form>
+    <div id="bank-sheet-body"></div>
+  </dialog>
+
   <footer class="foot">
     <span>Sumber: <a href="https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx" target="_blank" rel="noopener">Statistik Ekonomi dan Keuangan Indonesia (SEKI), Bank Indonesia</a>. <span id="src-list"></span></span>
-    <span>Data per kelompok bank, bukan per bank. Diperiksa otomatis setiap minggu; BI menerbitkan SEKI setiap bulan.</span>
+    <span>Data per bank dari laporan keuangan publikasi dan rilis resmi tiap bank, diperbarui setiap kuartal; sumber tercantum di halaman tiap bank. Data per kelompok diperiksa otomatis dua kali seminggu; BI menerbitkan SEKI setiap bulan. Logo adalah ikon situs resmi masing-masing bank.</span>
   </footer>
 
   <script type="module" src="app.js"></script>
