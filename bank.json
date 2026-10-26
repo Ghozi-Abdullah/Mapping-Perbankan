@@ -1,554 +1,1905 @@
 {
-  "catatan": "Data per bank dikumpulkan dari rilis kinerja resmi yang dikutip media keuangan, bukan dari tabel otomatis. Diperbarui setiap musim laporan kuartalan. Angka dalam triliun rupiah, rasio dalam persen. null = tidak disebutkan di sumber. dihitung = rasio dihitung dari angka laporan (misalnya LDR = kredit / DPK).",
-  "diperbarui": "2026-10-25",
-  "bank": [
-    {
-      "kode": "BBRI",
-      "nama": "BRI",
-      "lengkap": "PT Bank Rakyat Indonesia (Persero) Tbk",
-      "grup": "bumn",
-      "domain": "bri.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026, konsolidasi",
-      "aset": 2352,
-      "kredit": 1646,
-      "dpk": 1581,
-      "laba": 31.2,
-      "tumbuh": {
-        "aset": 11.7,
-        "kredit": 16.2,
-        "dpk": 6.7,
-        "laba": 17.5
-      },
-      "npl": 2.9,
-      "car": 21.5,
-      "casa": 67.6,
-      "ldr": 90.8,
-      "nim": null,
-      "roa": null,
-      "roe": null,
-      "profil": "Bank milik negara yang berdiri sejak 1895 di Purwokerto. Fokus utamanya kredit usaha mikro, kecil, dan menengah, dengan jaringan unit kerja yang menjangkau desa-desa.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "Likuiditas dan permodalan kokoh, BRI perkuat kontribusi (InvestorTrust)",
-          "url": "https://investortrust.id/financial/115402/likuiditas-dan-permodalan-kokoh-bri-perkuat-kontribusi-bagi-pertumbuhan-ekonomi-nasional"
-        },
-        {
-          "judul": "Kualitas aset membaik, LDR dan CAR BRI terjaga (Stabilitas)",
-          "url": "https://www.stabilitas.id/kualitas-aset-membaik-ldr-dan-car-bri-terjaga-solid-di-paruh-pertama-2026/"
-        }
-      ],
-      "dihitung": [],
-      "keterangan": "LDR 90,8% adalah angka bank saja. Kredit konsolidasi ikut memuat pembiayaan anak usaha seperti Pegadaian dan PNM, yang tidak didanai simpanan, sehingga kredit terlihat lebih besar dari DPK."
+ "catatan": "Data per bank per kuartal, dikumpulkan dari rilis kinerja resmi bank dan media keuangan yang mengutipnya. Laba adalah laba bersih kumulatif sejak Januari (Q1 = 3 bulan, Q2 = semester I, Q3 = 9 bulan, Q4 = setahun). Aset, kredit, DPK, dan laba dalam triliun rupiah; rasio dalam persen. Kuartal tanpa angka berarti angka itu tidak ditemukan di rilis yang dikutip. Diperbarui setiap musim laporan kuartalan.",
+ "diperbarui": "2026-10-25",
+ "kuartal": [
+  "2023Q4",
+  "2024Q1",
+  "2024Q2",
+  "2024Q3",
+  "2024Q4",
+  "2025Q1",
+  "2025Q2",
+  "2025Q3",
+  "2025Q4",
+  "2026Q1",
+  "2026Q2",
+  "2026Q3"
+ ],
+ "sumber": {
+  "https://infobanknews.com/cetak-rekor-laba-bri-2023-tembus-rp604-triliun-melesat-175-persen/": "Cetak rekor laba BRI 2023 tembus melesat (Infobank)",
+  "https://infobanknews.com/bri-raup-laba-bersih-rp1598-triliun-di-kuartal-i-2024-ini-penopangnya/": "BRI raup laba bersih di kuartal I 2024 ini penopangnya (Infobank)",
+  "https://infobanknews.com/top-laba-bersih-bri-tembus-rp2990-triliun-di-semester-i-2024/": "Top laba bersih BRI tembus di semester I 2024 (Infobank)",
+  "https://www.investortrust.id/market/45868/bri-bbri-cetak-laba-konsolidasi-rp-45-36-triliun-di-kuartal-iii-2024-kredit-tembus-rp-1353-36-triliun": "BRI BBRI cetak laba konsolidasi di kuartal III 2024 kredit (Investor Trust)",
+  "https://finansial.bisnis.com/read/20260301/90/1956581/aset-bank-jumbo-tembus-ribuan-triliun-pada-2025-mandiri-bmri-teratas": "Aset bank jumbo tembus ribuan triliun pada 2025 mandiri BMRI teratas (Bisnis)",
+  "https://investortrust.id/financial/95580/intip-kinerja-laba-bank-bank-himbara-di-2025-siapa-yang-paling-melesat": "Intip kinerja laba bank bank himbara di 2025 siapa yang paling melesat (Investor Trust)",
+  "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi": "Kinerja bank himbara kuartal I 2026 BRI BBRI cetak laba paling jumbo BTN BBTN catat lompatan tertinggi (Investor Trust)",
+  "https://finansial.bisnis.com/read/20250502/90/1873695/kinerja-bank-jumbo-kuartal-i2025-laba-bbca-terbesar-salip-bbri-dan-bmri": "Kinerja bank jumbo kuartal I/2025 laba BBCA terbesar salip BBRI dan BMRI (Bisnis)",
+  "https://infobanknews.com/bri-bukukan-laba-bersih-rp2653-triliun-di-semester-i-2025/": "BRI bukukan laba bersih di semester I 2025 (Infobank)",
+  "https://infobanknews.com/adu-laba-bri-bank-mandiri-bni-dan-btn-di-kuartal-iii-2025-siapa-paling-cuan/": "Adu laba BRI bank mandiri BNI dan BTN di kuartal III 2025 siapa paling cuan (Infobank)",
+  "https://keuangan.kontan.co.id/news/adu-kinerja-bank-besar-pada-kuartal-i-2026-siapa-jawaranya": "Adu kinerja bank besar pada kuartal I 2026 siapa jawaranya (Kontan)",
+  "https://katadata.co.id/finansial/bursa/6a950c3890930/himbara-bukukan-laba-rp-74-4-t-semester-i-bbri-bmri-hingga-bbtn-siapa-unggul": "Himbara bukukan laba semester I BBRI BMRI hingga BBTN siapa unggul (Katadata)",
+  "https://investortrust.id/financial/115402/likuiditas-dan-permodalan-kokoh-bri-perkuat-kontribusi-bagi-pertumbuhan-ekonomi-nasional": "Likuiditas dan permodalan kokoh, BRI perkuat kontribusi (InvestorTrust)",
+  "https://www.stabilitas.id/kualitas-aset-membaik-ldr-dan-car-bri-terjaga-solid-di-paruh-pertama-2026/": "Kualitas aset membaik, LDR dan CAR BRI terjaga (Stabilitas)",
+  "https://investortrust.id/financial/7977/terus-melaju-bank-mandiri-gapai-laba-bersih-rp-55-1-triliun-di-tahun-2023": "Terus melaju bank mandiri gapai laba bersih di tahun 2023 (Investor Trust)",
+  "https://investortrust.id/financial/25318/lampaui-industri-kredit-bank-mandiri-bmri-tumbuh-19-1-di-kuartal-i-2024": "Lampaui industri kredit bank mandiri BMRI tumbuh di kuartal I 2024 (Investor Trust)",
+  "https://infobanknews.com/naik-523-persen-laba-bersih-bank-mandiri-jadi-rp2655-triliun-di-juni-2024/": "Naik laba bersih bank mandiri jadi di juni 2024 (Infobank)",
+  "https://investortrust.id/market/45939/ditopang-kredit-dan-dpk-laba-konsolidasi-bank-mandiri-bmri-tumbuh-7-56-jadi-rp-42-02-triliun-di-kuartal-iii-2024": "Ditopang kredit dan DPK laba konsolidasi bank mandiri BMRI tumbuh jadi di kuartal III 2024 (Investor Trust)",
+  "https://finansial.bisnis.com/read/20251028/90/1923909/ragam-kinerja-bank-besar-bbca-bmri-hingga-pnbn-kuartal-iii2025": "Ragam kinerja bank besar BBCA BMRI hingga PNBN kuartal III/2025 (Bisnis)",
+  "https://infobanknews.com/adu-laba-bank-bumn-sepanjang-2024-siapa-juaranya/": "Adu laba bank bumn sepanjang 2024 siapa juaranya (Infobank)",
+  "https://infobanknews.com/bank-mandiri-raup-laba-bersih-rp245-triliun-di-semester-i-2025/": "Bank mandiri raup laba bersih di semester I 2025 (Infobank)",
+  "https://infobanknews.com/bank-mandiri-bukukan-laba-rp563-triliun-pada-2025/": "Bank mandiri bukukan laba pada 2025 (Infobank)",
+  "https://www.cnbcindonesia.com/research/20260723140840-128-753258/makin-jumbo-aset-bank-mandiri-tembus-rp2527-triliun": "Makin jumbo aset bank mandiri (CNBC Indonesia)",
+  "https://www.cnbcindonesia.com/market/20261023215805-17-779066/neraca-sehat-kinerja-solid-bmri-catat-laba-rp-455-t-di-kuartal-iii": "Neraca sehat kinerja solid BMRI catat laba di kuartal III (CNBC Indonesia)",
+  "https://infobanknews.com/berkat-transformasi-laba-bersih-bni-2023-naik-142-persen-jadi-rp209-triliun/": "Berkat transformasi laba bersih BNI 2023 naik (Infobank)",
+  "https://infobanknews.com/bni-catat-laba-rp538-triliun-di-kuartal-i-2025-kredit-korporasi-melesat/": "BNI catat laba di kuartal I 2025 kredit korporasi melesat (Infobank)",
+  "https://infobanknews.com/bni-cetak-laba-bersih-rp101-triliun-di-semester-i-2025/": "BNI cetak laba bersih di semester I 2025 (Infobank)",
+  "https://finansial.bisnis.com/read/20241028/90/1811101/ragam-kinerja-big-bank-bbca-bbni-bnli-pnbn-pada-kuartal-iii2024/1": " (Bisnis)",
+  "https://infobanknews.com/laba-bersih-bni-tembus-rp20-triliun-pada-2025-kredit-melaju-159-persen/": "Laba bersih BNI tembus pada 2025 kredit melaju (Infobank)",
+  "https://finansial.bisnis.com/read/20260810/90/1994867/rapor-kinerja-bank-kbmi-iv-semester-i2026-bank-mandiri-bni-bca": "Rapor kinerja bank KBMI IV semester I/2026 (Bisnis.com)",
+  "https://pintarsaham.id/kinerja-keuangan-bni-semester-i-2026-laba-bersih-tumbuh-positif-di-tengah-ekspansi-kredit-agresif/": "Kinerja keuangan BNI semester I 2026 (PintarSaham)",
+  "https://keuangan.kontan.co.id/news/bni-kantongi-laba-rp-1432-triliun-tumbuh-69-per-agustus-2026": "BNI kantongi laba Rp14,32 triliun per Agustus 2026 (Kontan)",
+  "https://finansial.bisnis.com/read/20240425/90/1760523/btn-bbtn-raup-laba-bersih-rp860-miliar-kuartal-i2024-naik-74-yoy": "BTN BBTN raup laba bersih kuartal I/2024 naik (Bisnis)",
+  "https://investortrust.id/market/35027/kredit-bank-btn-bbtn-rp-352-triliun-laba-bersih-tembus-rp-1-50-triliun-semester-i-2024": "Kredit bank BTN BBTN laba bersih tembus semester I 2024 (Investor Trust)",
+  "https://katadata.co.id/finansial/bursa/6a58e985d679f/laba-btn-bbtn-meroket-40-8-di-paruh-pertama-2026-ini-penopangnya": "Laba BTN BBTN meroket di paruh pertama 2026 ini penopangnya (Katadata)",
+  "https://infobanknews.com/laba-btn-tumbuh-408-persen-jadi-rp24-triliun-di-semester-i-2026": "Laba BTN tumbuh 40,8% jadi Rp2,4 triliun (Infobanknews)",
+  "https://www.kabarbursa.com/market-hari-ini/bbtn-bukukan-laba-bersih-rp24-triliun-catatan-npl-turun": "BBTN bukukan laba bersih Rp2,4 triliun (KabarBursa)",
+  "https://investortrust.id/market/55746/ini-faktor-pemicu-laba-bsi-bris-tumbuh-22-83-jadi-rp-7-triliun-di-2024": "Ini faktor pemicu laba BSI BRIS tumbuh jadi di 2024 (Investor Trust)",
+  "https://finansial.bisnis.com/read/20240430/90/1761717/ini-penyebab-laba-bsi-bris-tumbuh-1707-jadi-rp171-triliun": "Ini penyebab laba BSI BRIS tumbuh (Bisnis)",
+  "https://investortrust.id/financial/79743/ditopang-hal-ini-laba-bersih-bsi-tumbuh-10-2-jadi-rp-3-7-triliun-di-semester-i-2025": "Ditopang hal ini laba bersih BSI tumbuh jadi di semester I 2025 (Investor Trust)",
+  "https://investortrust.id/market/45756/meningkat-21-60-laba-bsi-bris-tembus-rp-5-11-triliun-di-kuartal-iii-2024": "Meningkat laba BSI BRIS tembus di kuartal III 2024 (Investor Trust)",
+  "https://investortrust.id/market/64497/laba-bsi-bris-naik-10-capai-rp-1-87-triliun-di-kuartal-i": "Laba BSI BRIS naik capai di kuartal I (Investor Trust)",
+  "https://infobanknews.com/bsi-cetak-laba-rp557-triliun-di-kuartal-iii-2025-tumbuh-904-persen/": "BSI cetak laba di kuartal III 2025 tumbuh (Infobank)",
+  "https://keuangan.kontan.co.id/news/bsi-cetak-laba-rp-416-triliun-di-semester-i-2026-tumbuh-1108": "BSI cetak laba Rp4,16 triliun di semester I 2026 (Kontan)",
+  "https://keuangan.kontan.co.id/news/laba-bank-central-asia-bbca-melesat-194-jadi-rp-486-triliun-pada-2023?page=all": "Laba bank central asia BBCA melesat jadi pada 2023 (Kontan)",
+  "https://infobanknews.com/bca-bukukan-laba-bersih-rp129-triliun-di-kuartal-i-2024-tumbuh-117-persen/": "BCA bukukan laba bersih di kuartal I 2024 tumbuh (Infobank)",
+  "https://infobanknews.com/bca-cetak-laba-rp29-triliun-di-semester-i-2025-tumbuh-8-persen/": "BCA cetak laba di semester I 2025 tumbuh (Infobank)",
+  "https://infobanknews.com/bca-raup-laba-bersih-rp411-triliun-di-kuartal-iii-2024-naik-128-persen": "BCA raup laba bersih di kuartal III 2024 naik (Infobank)",
+  "https://keuangan.kontan.co.id/news/laba-bank-central-asia-bbca-melesat-127-jadi-rp-548-triliun-pada-2024": "Laba bank central asia BBCA melesat jadi pada 2024 (Kontan)",
+  "https://www.investortrust.id/financial/63748/kredit-melonjak-12-6-ke-rp-941-triliun-laba-bca-di-kuartal-i-tumbuh-9-8-tembus-rp-14-1-triliun": "Kredit melonjak ke laba BCA di kuartal I tumbuh (Investor Trust)",
+  "https://infobanknews.com/bca-bukukan-laba-bersih-rp434-triliun-di-kuartal-iii-2025-tumbuh-57-persen/": "BCA bukukan laba bersih di kuartal III 2025 tumbuh (Infobank)",
+  "https://www.investortrust.id/market/92638/bca-raup-laba-rp-57-5-triliun-di-2025-tumbuh-4-9": "BCA raup laba di 2025 tumbuh (Investor Trust)",
+  "https://finansial.bisnis.com/read/20260924/90/2006605/7-bank-dengan-laba-terbesar-di-indonesia-semester-i2026": "Bank dengan laba terbesar di indonesia semester I/2026 (Bisnis)",
+  "https://infobanknews.com/bca-kantongi-laba-rp295-triliun-di-semester-i-2026-kredit-lampaui-rp1-000-triliun": "BCA kantongi laba Rp29,5 triliun di semester I 2026 (Infobanknews)",
+  "https://investor.id/market/454496/laba-bca-tumbuh-285-hingga-agustus-2026": "Laba BCA tumbuh 2,85% hingga Agustus 2026 (Investor.id)",
+  "https://finansial.bisnis.com/read/20260728/90/1991742/bca-bbca-cetak-laba-rp295-triliun-kredit-tembus-rp1000-triliun-semester-i2026": "BCA cetak laba Rp29,5 triliun, kredit tembus Rp1.000 triliun (Bisnis)",
+  "https://infobanknews.com/cimb-niaga-cetak-laba-rp68-triliun-sepanjang-2024-ini-penopangnya/": "CIMB niaga cetak laba sepanjang 2024 ini penopangnya (Infobank)",
+  "https://infobanknews.com/naik-78-persen-cimb-niaga-cetak-laba-rp22-triliun-di-kuartal-i-2024": "Naik CIMB niaga cetak laba di kuartal I 2024 (Infobank)",
+  "https://finansial.bisnis.com/read/20240730/90/1786562/cimb-niaga-bnga-catat-laba-rp341-triliun-pada-semester-i2024-tumbuh-538": "CIMB niaga BNGA catat laba pada semester I/2024 tumbuh (Bisnis)",
+  "https://infobanknews.com/cimb-niaga-cetak-laba-bersih-rp533-t-di-kuartal-iii-2025/": "CIMB niaga cetak laba bersih di kuartal III 2025 (Infobank)",
+  "https://finansial.bisnis.com/read/20250429/90/1872894/laba-cimb-niaga-bnga-naik-736-ke-rp18-triliun-per-kuartal-i2025": "Laba CIMB niaga BNGA naik ke per kuartal I/2025 (Bisnis)",
+  "https://infobanknews.com/cimb-niaga-cetak-laba-rp351-triliun-di-juni-2025-tumbuh-195-persen/": "CIMB niaga cetak laba di juni 2025 tumbuh (Infobank)",
+  "https://infobanknews.com/laba-cimb-niaga-bnga-2025-tumbuh-tipis-jadi-rp693-triliun/": "Laba CIMB niaga BNGA 2025 tumbuh tipis (Infobank)",
+  "https://finansial.bisnis.com/read/20260501/90/1970541/cimb-niaga-bnga-bukukan-laba-bersih-konsolidasian-rp177-triliun-di-kuartal-i2026": "CIMB niaga BNGA bukukan laba bersih konsolidasian di kuartal I/2026 (Bisnis)",
+  "https://infobanknews.com/laba-cimb-niaga-capai-rp343-triliun-di-semester-i-2026-ini-penopangnya": "Laba CIMB niaga capai di semester I 2026 ini penopangnya (Infobank)",
+  "https://finansial.bisnis.com/read/20260814/90/1996224/cimb-niaga-bnga-raih-laba-bersih-rp343-triliun-semester-i2026-dirut-lani-fokus-strategi-forward30": "CIMB Niaga raih laba bersih Rp3,43 triliun semester I/2026 (Bisnis.com)",
+  "https://ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2024/01/30/factsheet-q4-2023-ocbc.pdf": "Factsheet Q4 2023 OCBC (OCBC (resmi))",
+  "https://www.ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2025/04/30/factsheet-q1-2025-bank-ocbc": "Factsheet Q1 2025 bank OCBC (OCBC (resmi))",
+  "https://investortrust.id/market/35619/bank-ocbc-nisp-cetak-laba-bersih-rp-2-4-triliun-pada-semester-i-2024": "Bank OCBC NISP cetak laba bersih pada semester I 2024 (Investor Trust)",
+  "https://www.ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2025/10/31/factsheet-q3-2025-bank-ocbc": "Factsheet Q3 2025 bank OCBC (OCBC (resmi))",
+  "https://ocbc.id/asset/media/feature/pdf/adhoc/2025/01/31/factsheet-2024-ocbc-indonesia": "Factsheet 2024 OCBC indonesia (OCBC (resmi))",
+  "https://keuangan.kontan.co.id/news/bank-ocbc-nisp-nisp-catat-laba-bersih-rp-257-triliun-pada-semester-i-2025": "Bank OCBC NISP NISP catat laba bersih pada semester I 2025 (Kontan)",
+  "https://infobanknews.com/laba-ocbc-tumbuh-4-persen-jadi-rp51-triliun-di-2025/": "Laba OCBC tumbuh jadi di 2025 (Infobank)",
+  "https://infobanknews.com/ocbc-cetak-laba-rp136-triliun-di-kuartal-i-2026-tumbuh-5-persen": "OCBC cetak laba di kuartal I 2026 tumbuh (Infobank)",
+  "https://investortrust.id/financial/111258/ocbc-nisp-bukukan-laba-rp-2-7-triliun-kredit-dan-dpk-tumbuh-11-pada-semester-i-2026": "OCBC bukukan laba Rp2,7 triliun, kredit dan DPK tumbuh 11% (InvestorTrust)",
+  "https://infobanknews.com/permata-bank-cetak-laba-rp36-triliun-di-2024-kredit-tumbuh-9-persen/": "Permata bank cetak laba di 2024 kredit tumbuh (Infobank)",
+  "https://investortrust.id/financial/73424/permata-bank-bukukan-laba-rp-1-6-triliun-kredit-tumbuh-7-4-di-semester-i-2025": "Permata bank bukukan laba kredit tumbuh di semester I 2025 (Investor Trust)",
+  "https://infobanknews.com/laba-bank-permata-tumbuh-35-persen-jadi-rp29-triliun-di-kuartal-iii-2025/": "Laba bank permata tumbuh jadi di kuartal III 2025 (Infobank)",
+  "https://keuangan.kontan.co.id/news/bank-permata-cetak-laba-bersih-rp-358-triliun-di-tahun-2025": "Bank permata cetak laba bersih di tahun 2025 (Kontan)",
+  "https://investortrust.id/financial/63704/permata-bank-bnli-salurkan-kredit-rp-156-6-triliun-di-kuartal-i-2025": "Permata bank BNLI salurkan kredit di kuartal I 2025 (Investor Trust)",
+  "https://infobanknews.com/permata-bank-bukukan-laba-rp920-miliar-pada-kuartal-i-2026-tumbuh-166-persen": "Permata bank bukukan laba pada kuartal I 2026 tumbuh (Infobank)",
+  "https://investortrust.id/financial/112215/permata-bank-bnli-cetak-laba-rp-1-72-triliun-di-semester-i-2026-tumbuh-4-48": "Permata Bank cetak laba Rp1,72 triliun di semester I 2026 (InvestorTrust)",
+  "https://infobanknews.com/ditopang-pertumbuhan-kredit-laba-bank-danamon-sepanjang-2023-tembus-rp35-triliun/": "Ditopang pertumbuhan kredit laba bank danamon sepanjang 2023 (Infobank)",
+  "https://investortrust.id/financial/35586/bank-danamon-bukukan-laba-rp-1-5-triliun-di-semester-i-2024": "Bank danamon bukukan laba di semester I 2024 (Investor Trust)",
+  "https://finansial.bisnis.com/read/20241030/90/1811996/kinerja-kuartal-iii2024-bank-danamon-kredit-tumbuh-12-laba-rp23-triliun": "Kinerja kuartal III/2024 bank danamon kredit tumbuh laba (Bisnis)",
+  "https://infobanknews.com/didukung-pertumbuhan-kredit-laba-danamon-tembus-rp32-triliun/": "Didukung pertumbuhan kredit laba danamon (Infobank)",
+  "https://finansial.bisnis.com/read/20250430/90/1873364/laba-bank-danamon-bdmn-rp757-miliar-sepanjang-kuartal-i2025": "Laba bank danamon BDMN sepanjang kuartal I/2025 (Bisnis)",
+  "https://www.fortuneidn.com/finance/danamon-salurkan-kredit-rp195-7-triliun-sepanjang-paruh-pertama-2025-00-5mjpg-d196c5": "Danamon salurkan kredit sepanjang paruh pertama 2025 5mjpg d196c5 (Fortune IDN)",
+  "https://infobanknews.com/bank-danamon-catat-laba-bersih-tumbuh-double-digit-jadi-rp28-t-di-q3-2025/": "Bank danamon catat laba bersih tumbuh double digit jadi di Q3 2025 (Infobank)",
+  "https://investortrust.id/financial/94954/laba-bersih-danamon-bdmn-tumbuh-14-jadi-rp-4-triliun-di-2025": "Laba bersih danamon BDMN tumbuh jadi di 2025 (Investor Trust)",
+  "https://investortrust.id/financial/101830/bank-danamon-bdmn-catat-laba-rp-1-1-triliun-naik-35-pada-kuartal-i-2026": "Bank danamon BDMN catat laba naik pada kuartal I 2026 (Investor Trust)",
+  "https://investortrust.id/financial/111261/laba-bank-danamon-bdmn-naik-33-pada-semester-i-2026-kredit-tumbuh-12": "Laba Bank Danamon naik 33% pada semester I 2026 (InvestorTrust)",
+  "https://sbn.maybank.co.id/-/media/Downloaded-Content/Presentasi-Perusahaan/Maybank-Indonesia-Financial-Result-FY-2024.pdf": "Financial result FY 2024 (Maybank Indonesia (resmi))",
+  "https://keuangan.kontan.co.id/news/maybank-indonesia-bnii-bukukan-patami-rp299-miliar-pada-kuartal-i2026": "Maybank indonesia BNII bukukan patami pada kuartal I/2026 (Kontan)",
+  "https://finansial.bisnis.com/read/20250731/90/1898143/maybank-indonesia-bnii-raup-laba-rp576-miliar-pada-semester-i2025": "Maybank indonesia BNII raup laba pada semester I/2025 (Bisnis)",
+  "https://infobanknews.com/maybank-indonesia-raup-laba-sebelum-pajak-kuartal-iii-2025-rp130-t-ini-penopangnya/": "Maybank indonesia raup laba sebelum pajak kuartal III 2025 ini penopangnya (Infobank)",
+  "https://www.cnbcindonesia.com/market/20260226085652-17-714031/maybank-kantongi-laba-rp-166-t-sepanjang-2025": "Maybank kantongi laba sepanjang 2025 (CNBC Indonesia)",
+  "https://investortrust.id/market/111378/laba-maybank-indonesia-naik-21-2-pada-semester-i-2026-kredit-tumbuh-3-8": "Laba Maybank Indonesia naik 21,2% pada semester I 2026 (InvestorTrust)",
+  "https://finansial.bisnis.com/read/20250226/90/1842919/bank-panin-pnbn-bukukan-laba-bersih-rp287-triliun-pada-2024": "Bank panin PNBN bukukan laba bersih pada 2024 (Bisnis)",
+  "https://keuangan.kontan.co.id/news/laba-bersih-panin-bank-pnbn-turun-3493-jadi-rp-136-triliun-pada-semester-i-2024": "Laba bersih panin bank PNBN turun jadi pada semester I 2024 (Kontan)",
+  "https://finansial.bisnis.com/read/20250430/90/1873509/bank-panin-pnbn-raup-laba-rp7494-miliar-sepanjang-kuartal-i2025": "Bank panin PNBN raup laba sepanjang kuartal I/2025 (Bisnis)",
+  "https://www.cnbcindonesia.com/market/20260803091626-17-755925/pertumbuhan-bisnis-bank-panin-seret--pnbn--kredit-dan-dpk-tergerus/amp": "Amp (CNBC Indonesia)",
+  "https://infobanknews.com/bank-panin-bukukan-laba-bersih-rp287-triliun-sepanjang-2025/": "Bank panin bukukan laba bersih sepanjang 2025 (Infobank)",
+  "https://infobanknews.com/paninbank-bukukan-laba-rp144-triliun-di-semester-i-2026-nim-naik-455-persen": "PaninBank bukukan laba Rp1,44 triliun di semester I 2026 (Infobanknews)",
+  "https://finansial.bisnis.com/read/20240430/90/1761652/bank-bjb-bjbr-raih-laba-rp36426-miliar-pada-kuartal-i2024": "Bank BJB BJBR raih laba pada kuartal I/2024 (Bisnis)",
+  "https://keuangan.kontan.co.id/news/bank-bjb-raup-laba-rp-931-miliar-pada-semester-i-2024": "Bank BJB raup laba pada semester I 2024 (Kontan)",
+  "https://investortrust.id/market/50275/bank-bjb-bjbr-bukukan-laba-rp-1-16-triliun-di-kuartal-iii-2024": "Bank BJB BJBR bukukan laba di kuartal III 2024 (Investor Trust)",
+  "https://finansial.bisnis.com/read/20250313/90/1860913/bank-bjb-bjbr-cetak-laba-bersih-rp136-triliun-pada-2024": "Bank BJB BJBR cetak laba bersih pada 2024 (Bisnis)",
+  "https://keuangan.kontan.co.id/news/bank-bjb-cetak-laba-rp-39841-miliar-pada-kuartal-i-2025": "Bank BJB cetak laba pada kuartal I 2025 (Kontan)",
+  "https://finansial.bisnis.com/read/20250729/90/1897340/bank-bjb-bjbr-raup-laba-bersih-rp71207-miliar-per-semester-i2025": "Bank BJB BJBR raup laba bersih per semester I/2025 (Bisnis)",
+  "https://investortrust.id/financial/83821/bank-bjb-catat-laba-konsolidasi-rp-1-37-triliun-di-kuartal-iii-2025": "Bank BJB catat laba konsolidasi di kuartal III 2025 (Investor Trust)",
+  "https://finansial.bisnis.com/read/20251029/90/1924288/laba-bersih-bjb-bjbr-rp114-triliun-per-september-2025": "Laba bersih BJB BJBR per september 2025 (Bisnis)",
+  "https://keuangan.kontan.co.id/news/bank-bjb-catat-laba-bersih-rp-158-triliun-pada-2025": "Bank BJB catat laba bersih pada 2025 (Kontan)",
+  "https://keuangan.kontan.co.id/news/bank-bjb-cetak-laba-rp-41015-miliar-di-kuartal-i-2026": "Bank BJB cetak laba di kuartal I 2026 (Kontan)",
+  "https://finansial.bisnis.com/read/20260729/90/1991989/laba-bank-bjb-melonjak-39-jadi-rp992-miliar-pada-semester-i2026": "Laba bank BJB melonjak jadi pada semester I/2026 (Bisnis)",
+  "https://www.rctiplus.com/news/detail/ekonomi/5439516/aset-capai-rp228-triliun--laba-bank-bjb-tumbuh-58-8-di-semester-i-2026": "Aset capai Rp228 triliun, laba bank bjb tumbuh 58,8% (RCTI+)",
+  "https://keuangan.kontan.co.id/news/laba-bank-bjb-melesat-588-semester-i-2026-ini-pendorongnya": "Laba bank bjb melesat 58,8% semester I 2026 (Kontan)",
+  "https://investortrust.id/market/60425/raup-rp-1-28-triliun-di-2024-bank-jatim-bjtm-catat-labaterbesardi-antara-bpd": "Raup di 2024 bank jatim BJTM catat labaterbesardi antara bpd (Investor Trust)",
+  "https://keuangan.kontan.co.id/news/bank-jatim-bjtm-catatkan-laba-rp-310-miliar-pada-kuartal-i-2024": "Bank jatim BJTM catatkan laba pada kuartal I 2024 (Kontan)",
+  "https://infobanknews.com/ditopang-faktor-ini-laba-bank-jatim-melonjak-2366-persen-jadi-rp115-t-di-q3-2025/": "Ditopang faktor ini laba bank jatim melonjak jadi di Q3 2025 (Infobank)",
+  "https://investortrust.id/financial/98429/laba-bank-jatim-bjtm-naik-20-65-di-2025-tembus-rp-1-54-triliun": "Laba bank jatim BJTM naik di 2025 (Investor Trust)",
+  "https://infobanknews.com/bank-jatim-raup-laba-bersih-rp661-miliar-di-kuartal-i-2026/": "Bank jatim raup laba bersih di kuartal I 2026 (Infobank)",
+  "https://finansial.bisnis.com/read/20251031/90/1925031/penyaluran-kredit-bank-jatim-tembus-rp802-triliun-pada-kuartal-iii2025": "Penyaluran kredit bank jatim tembus pada kuartal III/2025 (Bisnis)",
+  "https://infobanknews.com/laba-bank-jatim-naik-5349-persen-jadi-rp125-triliun-di-semester-i-2026-ditopang-kub": "Laba Bank Jatim naik 53,49% jadi Rp1,25 triliun di semester I 2026 (Infobank)",
+  "https://investortrust.id/financial/115673/bank-jatim-bjtm-klaim-fundamental-solid-laba-tumbuh-53-4-dan-kredit-naik-41-68-di-semester-i-2026": "Bank Jatim klaim fundamental solid, laba tumbuh 53,4% (InvestorTrust)",
+  "https://www.idxchannel.com/banking/bank-jatim-bjtm-bukukan-laba-bersih-rp708-miliar-di-semester-i-2026/all": "Bank Jatim bukukan laba bersih Rp708 miliar di semester I 2026 (IDX Channel)",
+  "https://katadata.co.id/finansial/korporasi/6adb72519e4aa/kinerja-bank-mandiri-menguat-di-q3-2026-kredit-dpk-dan-laba-naik": "Kinerja Bank Mandiri menguat di Q3 2026 (Katadata)",
+  "https://www.cnbcindonesia.com/market/20261023155239-17-778967/laba-bank-mandiri-meroket-207-tembus-rp-455-triliun-di-kuartal-iii": "Laba Bank Mandiri meroket 20,7% di kuartal III (CNBC Indonesia)",
+  "https://www.rctiplus.com/news/detail/idxchannel/5486712/bsi--bris--raup-laba-rp5-3-triliun-hingga-agustus-2026--naik-10-persen": "BSI raup laba Rp5,3 triliun hingga Agustus 2026 (IDX Channel)"
+ },
+ "bank": [
+  {
+   "kode": "BBRI",
+   "nama": "BRI",
+   "lengkap": "PT Bank Rakyat Indonesia (Persero) Tbk",
+   "grup": "bumn",
+   "domain": "bri.co.id",
+   "profil": "Bank milik negara yang berdiri sejak 1895 di Purwokerto. Fokus utamanya kredit usaha mikro, kecil, dan menengah, dengan jaringan unit kerja yang menjangkau desa-desa.",
+   "terbaru": "Laporan bulanan Agustus 2026: laba Rp34,77 triliun, naik 6,63%.",
+   "keterangan": "Kredit dan laba adalah angka konsolidasi yang ikut memuat Pegadaian dan PNM. LDR yang dilaporkan adalah angka bank saja, sehingga lebih rendah dari kredit dibagi DPK.",
+   "kuartal": {
+    "2023Q4": {
+     "aset": 1965.0,
+     "kredit": 1266.4,
+     "dpk": 1358.33,
+     "laba": 60.4,
+     "npl": 2.95,
+     "casa": 64.35,
+     "sumber": [
+      "https://infobanknews.com/cetak-rekor-laba-bri-2023-tembus-rp604-triliun-melesat-175-persen/"
+     ]
     },
-    {
-      "kode": "BMRI",
-      "nama": "Bank Mandiri",
-      "lengkap": "PT Bank Mandiri (Persero) Tbk",
-      "grup": "bumn",
-      "domain": "bankmandiri.co.id",
-      "periode": "Sep 2026",
-      "laporan": "Kuartal III 2026; laba konsolidasi, kredit dan rasio bank saja",
-      "aset": 2404.1,
-      "kredit": 1605.8,
-      "dpk": 1750.2,
-      "laba": 45.5,
-      "tumbuh": {
-        "aset": 20.1,
-        "kredit": 16.0,
-        "dpk": 17.7,
-        "laba": 20.7
-      },
-      "npl": 0.98,
-      "car": 18.4,
-      "casa": null,
-      "ldr": null,
-      "nim": null,
-      "roa": 2.99,
-      "roe": 23.6,
-      "profil": "Dibentuk pada 1998 dari penggabungan empat bank pemerintah: Bank Bumi Daya, Bank Dagang Negara, Bank Ekspor Impor Indonesia, dan Bapindo. Kuat di pembiayaan korporasi dan transaksi bisnis.",
-      "terbaru": "Bank pertama yang merilis kinerja kuartal III 2026 (23 Oktober 2026).",
-      "sumber": [
-        {
-          "judul": "Kinerja Bank Mandiri menguat di Q3 2026 (Katadata)",
-          "url": "https://katadata.co.id/finansial/korporasi/6adb72519e4aa/kinerja-bank-mandiri-menguat-di-q3-2026-kredit-dpk-dan-laba-naik"
-        },
-        {
-          "judul": "Laba Bank Mandiri meroket 20,7% di kuartal III (CNBC Indonesia)",
-          "url": "https://www.cnbcindonesia.com/market/20261023155239-17-778967/laba-bank-mandiri-meroket-207-tembus-rp-455-triliun-di-kuartal-iii"
-        }
-      ],
-      "dihitung": []
+    "2024Q1": {
+     "aset": 1989.07,
+     "kredit": 1308.6,
+     "dpk": 1416.21,
+     "laba": 15.98,
+     "npl": 3.11,
+     "car": 23.97,
+     "ldr": 83.28,
+     "sumber": [
+      "https://infobanknews.com/bri-raup-laba-bersih-rp1598-triliun-di-kuartal-i-2024-ini-penopangnya/"
+     ]
     },
-    {
-      "kode": "BBNI",
-      "nama": "BNI",
-      "lengkap": "PT Bank Negara Indonesia (Persero) Tbk",
-      "grup": "bumn",
-      "domain": "bni.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026, konsolidasi",
-      "aset": 1461.0,
-      "kredit": 968.5,
-      "dpk": 1100.2,
-      "laba": 10.81,
-      "tumbuh": {
-        "aset": 21.58,
-        "kredit": 24.38,
-        "dpk": 22.26,
-        "laba": 6.33
-      },
-      "npl": 1.9,
-      "car": null,
-      "casa": null,
-      "ldr": 88.0,
-      "nim": 3.55,
-      "roa": 1.48,
-      "roe": 12.85,
-      "profil": "Didirikan pada 1946 sebagai bank pertama milik pemerintah Indonesia. Dikenal kuat di nasabah korporasi, perdagangan internasional, dan jaringan kantor luar negeri.",
-      "terbaru": "Laporan bulanan Agustus 2026: laba Rp14,32 triliun, tumbuh 6,9%.",
-      "sumber": [
-        {
-          "judul": "Rapor kinerja bank KBMI IV semester I/2026 (Bisnis.com)",
-          "url": "https://finansial.bisnis.com/read/20260810/90/1994867/rapor-kinerja-bank-kbmi-iv-semester-i2026-bank-mandiri-bni-bca"
-        },
-        {
-          "judul": "Kinerja keuangan BNI semester I 2026 (PintarSaham)",
-          "url": "https://pintarsaham.id/kinerja-keuangan-bni-semester-i-2026-laba-bersih-tumbuh-positif-di-tengah-ekspansi-kredit-agresif/"
-        },
-        {
-          "judul": "BNI kantongi laba Rp14,32 triliun per Agustus 2026 (Kontan)",
-          "url": "https://keuangan.kontan.co.id/news/bni-kantongi-laba-rp-1432-triliun-tumbuh-69-per-agustus-2026"
-        }
-      ],
-      "dihitung": [
-        "ldr"
-      ]
+    "2024Q2": {
+     "aset": 1977.37,
+     "kredit": 1336.78,
+     "dpk": 1389.66,
+     "laba": 29.9,
+     "casa": 63.17,
+     "sumber": [
+      "https://infobanknews.com/top-laba-bersih-bri-tembus-rp2990-triliun-di-semester-i-2024/"
+     ]
     },
-    {
-      "kode": "BBTN",
-      "nama": "BTN",
-      "lengkap": "PT Bank Tabungan Negara (Persero) Tbk",
-      "grup": "bumn",
-      "domain": "btn.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026, konsolidasi",
-      "aset": 545.16,
-      "kredit": 418.11,
-      "dpk": 433,
-      "laba": 2.4,
-      "tumbuh": {
-        "aset": 12.4,
-        "kredit": 11.2,
-        "dpk": 6.6,
-        "laba": 40.8
-      },
-      "npl": 2.99,
-      "car": null,
-      "casa": null,
-      "ldr": 96.6,
-      "nim": 3.5,
-      "roa": null,
-      "roe": null,
-      "profil": "Berakar dari Postspaarbank yang berdiri pada 1897. Kini menjadi bank utama untuk pembiayaan perumahan dan penyalur terbesar KPR bersubsidi.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "Laba BTN tumbuh 40,8% jadi Rp2,4 triliun (Infobanknews)",
-          "url": "https://infobanknews.com/laba-btn-tumbuh-408-persen-jadi-rp24-triliun-di-semester-i-2026"
-        },
-        {
-          "judul": "BBTN bukukan laba bersih Rp2,4 triliun (KabarBursa)",
-          "url": "https://www.kabarbursa.com/market-hari-ini/bbtn-bukukan-laba-bersih-rp24-triliun-catatan-npl-turun"
-        }
-      ],
-      "dihitung": [
-        "ldr"
-      ]
+    "2024Q3": {
+     "aset": 1961.92,
+     "kredit": 1353.36,
+     "dpk": 1362.42,
+     "laba": 45.36,
+     "npl": 2.9,
+     "car": 26.76,
+     "casa": 64.17,
+     "ldr": 89.18,
+     "sumber": [
+      "https://www.investortrust.id/market/45868/bri-bbri-cetak-laba-konsolidasi-rp-45-36-triliun-di-kuartal-iii-2024-kredit-tembus-rp-1353-36-triliun"
+     ]
     },
-    {
-      "kode": "BRIS",
-      "nama": "BSI",
-      "lengkap": "PT Bank Syariah Indonesia Tbk",
-      "grup": "bumn",
-      "domain": "bankbsi.co.id",
-      "periode": "Agu 2026",
-      "laporan": "Januari–Agustus 2026",
-      "syariah": true,
-      "aset": null,
-      "kredit": 344,
-      "dpk": 389,
-      "laba": 5.3,
-      "tumbuh": {
-        "aset": null,
-        "kredit": 16.21,
-        "dpk": 17.71,
-        "laba": 10.07
-      },
-      "npl": 1.8,
-      "car": null,
-      "casa": 63.2,
-      "ldr": null,
-      "nim": null,
-      "roa": null,
-      "roe": null,
-      "profil": "Bank syariah terbesar di Indonesia, hasil penggabungan BRI Syariah, BNI Syariah, dan Bank Syariah Mandiri pada 2021. Untuk bank syariah, kredit disebut pembiayaan dan NPL disebut NPF.",
-      "terbaru": "Per Juni 2026, total aset Rp464,5 triliun (naik 15,96%) dan NPF bersih 0,33%. Laba semester I Rp4,16 triliun, naik 11,08%.",
-      "sumber": [
-        {
-          "judul": "BSI raup laba Rp5,3 triliun hingga Agustus 2026 (IDX Channel)",
-          "url": "https://www.rctiplus.com/news/detail/idxchannel/5486712/bsi--bris--raup-laba-rp5-3-triliun-hingga-agustus-2026--naik-10-persen"
-        },
-        {
-          "judul": "BSI cetak laba Rp4,16 triliun di semester I 2026 (Kontan)",
-          "url": "https://keuangan.kontan.co.id/news/bsi-cetak-laba-rp-416-triliun-di-semester-i-2026-tumbuh-1108"
-        }
-      ],
-      "dihitung": [
-        "casa"
-      ]
+    "2024Q4": {
+     "aset": 1992.1,
+     "kredit": 1348.2,
+     "dpk": 1365.45,
+     "laba": 60.3,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260301/90/1956581/aset-bank-jumbo-tembus-ribuan-triliun-pada-2025-mandiri-bmri-teratas",
+      "https://investortrust.id/financial/95580/intip-kinerja-laba-bank-bank-himbara-di-2025-siapa-yang-paling-melesat"
+     ]
     },
-    {
-      "kode": "BBCA",
-      "nama": "BCA",
-      "lengkap": "PT Bank Central Asia Tbk",
-      "grup": "swasta",
-      "domain": "bca.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026, laba konsolidasi",
-      "aset": null,
-      "kredit": 1036,
-      "dpk": 1284,
-      "laba": 29.5,
-      "tumbuh": {
-        "aset": null,
-        "kredit": 8.0,
-        "dpk": 7.9,
-        "laba": 1.8
-      },
-      "npl": 1.9,
-      "car": null,
-      "casa": 84.3,
-      "ldr": 80.7,
-      "nim": null,
-      "roa": null,
-      "roe": null,
-      "profil": "Bank swasta terbesar di Indonesia, berdiri pada 1957. Unggul di layanan transaksi dan tabungan, sehingga porsi dana murahnya termasuk yang tertinggi di industri.",
-      "terbaru": "Laporan bulanan Agustus 2026 (bank saja): laba Rp40,17 triliun, naik 2,85%; kredit Rp1.017,7 triliun, naik 10,52%; CASA 85,47%; NIM 5,33%. Kinerja kuartal III belum dirilis saat halaman ini diperbarui.",
-      "sumber": [
-        {
-          "judul": "BCA kantongi laba Rp29,5 triliun di semester I 2026 (Infobanknews)",
-          "url": "https://infobanknews.com/bca-kantongi-laba-rp295-triliun-di-semester-i-2026-kredit-lampaui-rp1-000-triliun"
-        },
-        {
-          "judul": "Laba BCA tumbuh 2,85% hingga Agustus 2026 (Investor.id)",
-          "url": "https://investor.id/market/454496/laba-bca-tumbuh-285-hingga-agustus-2026"
-        },
-        {
-          "judul": "BCA cetak laba Rp29,5 triliun, kredit tembus Rp1.000 triliun (Bisnis)",
-          "url": "https://finansial.bisnis.com/read/20260728/90/1991742/bca-bbca-cetak-laba-rp295-triliun-kredit-tembus-rp1000-triliun-semester-i2026"
-        }
-      ],
-      "dihitung": [
-        "ldr"
-      ]
+    "2025Q1": {
+     "kredit": 1374.0,
+     "dpk": 1421.6,
+     "laba": 13.8,
+     "sumber": [
+      "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi",
+      "https://finansial.bisnis.com/read/20250502/90/1873695/kinerja-bank-jumbo-kuartal-i2025-laba-bbca-terbesar-salip-bbri-dan-bmri"
+     ]
     },
-    {
-      "kode": "BNGA",
-      "nama": "CIMB Niaga",
-      "lengkap": "PT Bank CIMB Niaga Tbk",
-      "grup": "swasta",
-      "domain": "cimbniaga.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026",
-      "aset": 382,
-      "kredit": 247.2,
-      "dpk": 269.3,
-      "laba": 3.43,
-      "tumbuh": {
-        "aset": 6.7,
-        "kredit": 6.6,
-        "dpk": 2.8,
-        "laba": null
-      },
-      "npl": 1.83,
-      "car": 23.5,
-      "casa": 71.7,
-      "ldr": 90.4,
-      "nim": null,
-      "roa": null,
-      "roe": null,
-      "profil": "Berakar dari Bank Niaga yang berdiri pada 1955, kini bagian dari CIMB Group asal Malaysia. Kuat di kartu kredit, KPR, dan perbankan digital OCTO.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "CIMB Niaga raih laba bersih Rp3,43 triliun semester I/2026 (Bisnis.com)",
-          "url": "https://finansial.bisnis.com/read/20260814/90/1996224/cimb-niaga-bnga-raih-laba-bersih-rp343-triliun-semester-i2026-dirut-lani-fokus-strategi-forward30"
-        }
-      ],
-      "dihitung": []
+    "2025Q2": {
+     "aset": 2106.37,
+     "kredit": 1416.62,
+     "dpk": 1482.12,
+     "laba": 26.53,
+     "npl": 3.23,
+     "car": 25.01,
+     "casa": 65.5,
+     "ldr": 84.97,
+     "sumber": [
+      "https://infobanknews.com/bri-bukukan-laba-bersih-rp2653-triliun-di-semester-i-2025/"
+     ]
     },
-    {
-      "kode": "NISP",
-      "nama": "OCBC Indonesia",
-      "lengkap": "PT Bank OCBC NISP Tbk",
-      "grup": "swasta",
-      "domain": "ocbc.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026",
-      "aset": 329.5,
-      "kredit": 185.3,
-      "dpk": 239.9,
-      "laba": 2.7,
-      "tumbuh": {
-        "aset": 11,
-        "kredit": 11,
-        "dpk": 11,
-        "laba": null
-      },
-      "npl": 1.9,
-      "car": 23.1,
-      "casa": 60.5,
-      "ldr": null,
-      "nim": null,
-      "roa": null,
-      "roe": null,
-      "profil": "Berdiri di Bandung pada 1941 dan kini dimiliki OCBC asal Singapura. Dikenal dengan permodalan yang kuat dan pertumbuhan dana murah yang cepat.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "OCBC bukukan laba Rp2,7 triliun, kredit dan DPK tumbuh 11% (InvestorTrust)",
-          "url": "https://investortrust.id/financial/111258/ocbc-nisp-bukukan-laba-rp-2-7-triliun-kredit-dan-dpk-tumbuh-11-pada-semester-i-2026"
-        }
-      ],
-      "dihitung": []
+    "2025Q3": {
+     "aset": 2123.45,
+     "kredit": 1438.11,
+     "dpk": 1474.78,
+     "laba": 41.23,
+     "npl": 3.08,
+     "car": 25.42,
+     "ldr": 86.52,
+     "sumber": [
+      "https://infobanknews.com/adu-laba-bri-bank-mandiri-bni-dan-btn-di-kuartal-iii-2025-siapa-paling-cuan/"
+     ]
     },
-    {
-      "kode": "BNLI",
-      "nama": "PermataBank",
-      "lengkap": "PT Bank Permata Tbk",
-      "grup": "swasta",
-      "domain": "permatabank.com",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026",
-      "aset": null,
-      "kredit": 171.2,
-      "dpk": 189.24,
-      "laba": 1.72,
-      "tumbuh": {
-        "aset": null,
-        "kredit": 5.3,
-        "dpk": -0.01,
-        "laba": 4.48
-      },
-      "npl": 2.1,
-      "car": null,
-      "casa": 57.9,
-      "ldr": 90.3,
-      "nim": null,
-      "roa": null,
-      "roe": null,
-      "profil": "Dibentuk pada 2002 dari penggabungan lima bank, termasuk Bank Bali. Sejak 2020 dimiliki Bangkok Bank asal Thailand.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "Permata Bank cetak laba Rp1,72 triliun di semester I 2026 (InvestorTrust)",
-          "url": "https://investortrust.id/financial/112215/permata-bank-bnli-cetak-laba-rp-1-72-triliun-di-semester-i-2026-tumbuh-4-48"
-        }
-      ],
-      "dihitung": []
+    "2025Q4": {
+     "aset": 2135.3,
+     "kredit": 1517.07,
+     "dpk": 1466.84,
+     "laba": 57.13,
+     "npl": 3.29,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260301/90/1956581/aset-bank-jumbo-tembus-ribuan-triliun-pada-2025-mandiri-bmri-teratas",
+      "https://investortrust.id/financial/95580/intip-kinerja-laba-bank-bank-himbara-di-2025-siapa-yang-paling-melesat"
+     ]
     },
-    {
-      "kode": "BDMN",
-      "nama": "Danamon",
-      "lengkap": "PT Bank Danamon Indonesia Tbk",
-      "grup": "swasta",
-      "domain": "danamon.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026, konsolidasi termasuk Adira Finance",
-      "aset": null,
-      "kredit": 230.1,
-      "dpk": 181.7,
-      "laba": 2.4,
-      "tumbuh": {
-        "aset": null,
-        "kredit": 12,
-        "dpk": 14,
-        "laba": 33
-      },
-      "npl": null,
-      "car": null,
-      "casa": null,
-      "ldr": null,
-      "nim": 8.1,
-      "roa": null,
-      "roe": null,
-      "profil": "Berdiri pada 1956 dan menjadi bagian dari MUFG asal Jepang sejak 2019. Angka konsolidasinya ikut memuat Adira Finance, sehingga margin bunganya jauh di atas bank lain.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "Laba Bank Danamon naik 33% pada semester I 2026 (InvestorTrust)",
-          "url": "https://investortrust.id/financial/111261/laba-bank-danamon-bdmn-naik-33-pada-semester-i-2026-kredit-tumbuh-12"
-        }
-      ],
-      "dihitung": [],
-      "keterangan": "Angka konsolidasi memuat Adira Finance. Kredit konsolidasi lebih besar dari DPK karena pembiayaan Adira didanai obligasi dan pinjaman, bukan simpanan."
+    "2026Q1": {
+     "aset": 2250.0,
+     "kredit": 1562.0,
+     "dpk": 1555.0,
+     "laba": 15.5,
+     "casa": 68.1,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/adu-kinerja-bank-besar-pada-kuartal-i-2026-siapa-jawaranya",
+      "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi"
+     ]
     },
-    {
-      "kode": "BNII",
-      "nama": "Maybank Indonesia",
-      "lengkap": "PT Bank Maybank Indonesia Tbk",
-      "grup": "swasta",
-      "domain": "maybank.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026",
-      "aset": null,
-      "kredit": 126.28,
-      "dpk": 124.1,
-      "laba": 0.698,
-      "tumbuh": {
-        "aset": null,
-        "kredit": 3.8,
-        "dpk": 8.2,
-        "laba": 21.2
-      },
-      "npl": 2.1,
-      "car": 24.3,
-      "casa": 63.6,
-      "ldr": 86.6,
-      "nim": 4.3,
-      "roa": null,
-      "roe": null,
-      "profil": "Dahulu Bank Internasional Indonesia (BII) yang berdiri pada 1959, kini bagian dari Maybank asal Malaysia.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "Laba Maybank Indonesia naik 21,2% pada semester I 2026 (InvestorTrust)",
-          "url": "https://investortrust.id/market/111378/laba-maybank-indonesia-naik-21-2-pada-semester-i-2026-kredit-tumbuh-3-8"
-        }
-      ],
-      "dihitung": [],
-      "keterangan": "LDR 86,6% sesuai rilis bank, lebih rendah dari kredit dibagi simpanan nasabah (sekitar 102%). Selisih seperti ini biasanya karena kredit di rilis ikut memuat pembiayaan anak usaha, atau karena LDR dihitung dengan sumber dana yang lebih luas dari simpanan."
-    },
-    {
-      "kode": "PNBN",
-      "nama": "PaninBank",
-      "lengkap": "PT Bank Pan Indonesia Tbk",
-      "grup": "swasta",
-      "domain": "panin.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026",
-      "aset": null,
-      "kredit": 139.64,
-      "dpk": 144.57,
-      "laba": 1.44,
-      "tumbuh": {
-        "aset": null,
-        "kredit": null,
-        "dpk": null,
-        "laba": 1.0
-      },
-      "npl": null,
-      "car": 35.93,
-      "casa": 42,
-      "ldr": null,
-      "nim": 4.55,
-      "roa": null,
-      "roe": null,
-      "profil": "Berdiri pada 1971 dari penggabungan tiga bank swasta. ANZ termasuk pemegang saham besarnya. Permodalannya termasuk yang paling tebal di antara bank besar.",
-      "terbaru": "Kredit turun 3,75% dan DPK turun 7,87% dibanding akhir 2025.",
-      "sumber": [
-        {
-          "judul": "PaninBank bukukan laba Rp1,44 triliun di semester I 2026 (Infobanknews)",
-          "url": "https://infobanknews.com/paninbank-bukukan-laba-rp144-triliun-di-semester-i-2026-nim-naik-455-persen"
-        }
-      ],
-      "dihitung": []
-    },
-    {
-      "kode": "BJBR",
-      "nama": "bank bjb",
-      "lengkap": "PT Bank Pembangunan Daerah Jawa Barat dan Banten Tbk",
-      "grup": "bpd",
-      "domain": "bankbjb.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026, konsolidasi",
-      "aset": 228.2,
-      "kredit": 140.4,
-      "dpk": 160.9,
-      "laba": 0.783,
-      "tumbuh": {
-        "aset": null,
-        "kredit": null,
-        "dpk": null,
-        "laba": 58.8
-      },
-      "npl": null,
-      "car": null,
-      "casa": null,
-      "ldr": 87.3,
-      "nim": null,
-      "roa": null,
-      "roe": null,
-      "profil": "Bank pembangunan daerah milik Provinsi Jawa Barat, Provinsi Banten, serta kabupaten dan kota di kedua provinsi. Berdiri pada 1961.",
-      "terbaru": null,
-      "sumber": [
-        {
-          "judul": "Aset capai Rp228 triliun, laba bank bjb tumbuh 58,8% (RCTI+)",
-          "url": "https://www.rctiplus.com/news/detail/ekonomi/5439516/aset-capai-rp228-triliun--laba-bank-bjb-tumbuh-58-8-di-semester-i-2026"
-        },
-        {
-          "judul": "Laba bank bjb melesat 58,8% semester I 2026 (Kontan)",
-          "url": "https://keuangan.kontan.co.id/news/laba-bank-bjb-melesat-588-semester-i-2026-ini-pendorongnya"
-        }
-      ],
-      "dihitung": [
-        "ldr"
-      ]
-    },
-    {
-      "kode": "BJTM",
-      "nama": "Bank Jatim",
-      "lengkap": "PT Bank Pembangunan Daerah Jawa Timur Tbk",
-      "grup": "bpd",
-      "domain": "bankjatim.co.id",
-      "periode": "Jun 2026",
-      "laporan": "Semester I 2026, konsolidasi KUB",
-      "aset": 162.06,
-      "kredit": 111.29,
-      "dpk": 120.42,
-      "laba": 1.25,
-      "tumbuh": {
-        "aset": 37.16,
-        "kredit": 41.68,
-        "dpk": 31.47,
-        "laba": 53.49
-      },
-      "npl": 4.38,
-      "car": 23.72,
-      "casa": 58.72,
-      "ldr": 91.24,
-      "nim": 5.9,
-      "roa": null,
-      "roe": 11.43,
-      "profil": "Bank pembangunan daerah milik Provinsi Jawa Timur dan pemerintah kabupaten dan kota di Jawa Timur, berdiri pada 1961. Kini memimpin kelompok usaha bank (KUB) bersama beberapa bank daerah lain, sehingga angka konsolidasinya melonjak.",
-      "terbaru": "Tanpa anggota KUB (bank saja), aset Juni 2026 Rp101,76 triliun dan laba Rp708 miliar, hampir sama dengan tahun lalu. Lonjakan angka konsolidasi datang dari anggota KUB: Bank NTB Syariah, Bank Lampung, Bank Sultra, Bank NTT, dan Bank Banten.",
-      "sumber": [
-        {
-          "judul": "Laba Bank Jatim naik 53,49% jadi Rp1,25 triliun di semester I 2026 (Infobank)",
-          "url": "https://infobanknews.com/laba-bank-jatim-naik-5349-persen-jadi-rp125-triliun-di-semester-i-2026-ditopang-kub"
-        },
-        {
-          "judul": "Bank Jatim klaim fundamental solid, laba tumbuh 53,4% (InvestorTrust)",
-          "url": "https://investortrust.id/financial/115673/bank-jatim-bjtm-klaim-fundamental-solid-laba-tumbuh-53-4-dan-kredit-naik-41-68-di-semester-i-2026"
-        },
-        {
-          "judul": "Bank Jatim bukukan laba bersih Rp708 miliar di semester I 2026 (IDX Channel)",
-          "url": "https://www.idxchannel.com/banking/bank-jatim-bjtm-bukukan-laba-bersih-rp708-miliar-di-semester-i-2026/all"
-        }
-      ],
-      "dihitung": []
+    "2026Q2": {
+     "aset": 2352.0,
+     "kredit": 1645.5,
+     "dpk": 1581.0,
+     "laba": 30.87,
+     "npl": 2.9,
+     "car": 21.5,
+     "casa": 67.6,
+     "ldr": 90.8,
+     "tumbuh_rilis": {
+      "aset": 11.7,
+      "kredit": 16.2,
+      "dpk": 6.7,
+      "laba": 17.5
+     },
+     "sumber": [
+      "https://katadata.co.id/finansial/bursa/6a950c3890930/himbara-bukukan-laba-rp-74-4-t-semester-i-bbri-bmri-hingga-bbtn-siapa-unggul",
+      "https://investortrust.id/financial/115402/likuiditas-dan-permodalan-kokoh-bri-perkuat-kontribusi-bagi-pertumbuhan-ekonomi-nasional",
+      "https://www.stabilitas.id/kualitas-aset-membaik-ldr-dan-car-bri-terjaga-solid-di-paruh-pertama-2026/"
+     ]
     }
-  ]
+   }
+  },
+  {
+   "kode": "BMRI",
+   "nama": "Bank Mandiri",
+   "lengkap": "PT Bank Mandiri (Persero) Tbk",
+   "grup": "bumn",
+   "domain": "bankmandiri.co.id",
+   "profil": "Dibentuk pada 1998 dari penggabungan empat bank pemerintah: Bank Bumi Daya, Bank Dagang Negara, Bank Ekspor Impor Indonesia, dan Bapindo. Kuat di pembiayaan korporasi dan transaksi bisnis.",
+   "terbaru": "Bank pertama yang merilis kinerja kuartal III 2026 (23 Oktober 2026): laba Rp45,5 triliun, naik 20,7%.",
+   "keterangan": "Sejak 1 Februari 2026 BSI tidak lagi dikonsolidasikan ke Bank Mandiri, jadi aset, kredit, dan DPK konsolidasi 2026 tidak sebanding langsung dengan 2025. Untuk kuartal III 2026, aset, kredit, dan DPK yang dirilis adalah angka bank saja (aset Rp2.404,1 T, kredit Rp1.605,8 T, DPK Rp1.750,2 T), sehingga tidak dimasukkan ke deret konsolidasi.",
+   "putus": {
+    "kuartal": "2026Q1",
+    "metrik": [
+     "aset",
+     "kredit",
+     "dpk"
+    ],
+    "alasan": "BSI tidak lagi dikonsolidasikan sejak Februari 2026"
+   },
+   "kuartal": {
+    "2023Q4": {
+     "aset": 2174.2,
+     "kredit": 1398.1,
+     "dpk": 1577.0,
+     "laba": 55.1,
+     "npl": 1.02,
+     "casa": 79.4,
+     "sumber": [
+      "https://investortrust.id/financial/7977/terus-melaju-bank-mandiri-gapai-laba-bersih-rp-55-1-triliun-di-tahun-2023"
+     ]
+    },
+    "2024Q1": {
+     "kredit": 1435.0,
+     "dpk": 1572.0,
+     "laba": 12.7,
+     "npl": 1.02,
+     "casa": 79.4,
+     "sumber": [
+      "https://investortrust.id/financial/25318/lampaui-industri-kredit-bank-mandiri-bmri-tumbuh-19-1-di-kuartal-i-2024"
+     ]
+    },
+    "2024Q2": {
+     "aset": 2257.81,
+     "kredit": 1532.0,
+     "dpk": 1651.0,
+     "laba": 26.55,
+     "npl": 1.01,
+     "nim": 4.92,
+     "sumber": [
+      "https://infobanknews.com/naik-523-persen-laba-bersih-bank-mandiri-jadi-rp2655-triliun-di-juni-2024/"
+     ]
+    },
+    "2024Q3": {
+     "kredit": 1590.0,
+     "laba": 42.01,
+     "sumber": [
+      "https://investortrust.id/market/45939/ditopang-kredit-dan-dpk-laba-konsolidasi-bank-mandiri-bmri-tumbuh-7-56-jadi-rp-42-02-triliun-di-kuartal-iii-2024",
+      "https://finansial.bisnis.com/read/20251028/90/1923909/ragam-kinerja-bank-besar-bbca-bmri-hingga-pnbn-kuartal-iii2025"
+     ]
+    },
+    "2024Q4": {
+     "aset": 2427.22,
+     "kredit": 1671.0,
+     "laba": 55.8,
+     "sumber": [
+      "https://infobanknews.com/adu-laba-bank-bumn-sepanjang-2024-siapa-juaranya/"
+     ]
+    },
+    "2025Q1": {
+     "kredit": 1672.0,
+     "laba": 13.2,
+     "npl": 1.01,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250502/90/1873695/kinerja-bank-jumbo-kuartal-i2025-laba-bbca-terbesar-salip-bbri-dan-bmri"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 1701.0,
+     "laba": 24.5,
+     "npl": 1.08,
+     "casa": 78.4,
+     "sumber": [
+      "https://infobanknews.com/bank-mandiri-raup-laba-bersih-rp245-triliun-di-semester-i-2025/"
+     ]
+    },
+    "2025Q3": {
+     "aset": 2563.0,
+     "kredit": 1764.24,
+     "dpk": 1884.0,
+     "laba": 37.7,
+     "casa": 69.3,
+     "sumber": [
+      "https://infobanknews.com/adu-laba-bri-bank-mandiri-bni-dan-btn-di-kuartal-iii-2025-siapa-paling-cuan/"
+     ]
+    },
+    "2025Q4": {
+     "aset": 2829.9,
+     "kredit": 1895.0,
+     "laba": 56.3,
+     "npl": 0.96,
+     "casa": 68.0,
+     "sumber": [
+      "https://infobanknews.com/bank-mandiri-bukukan-laba-rp563-triliun-pada-2025/"
+     ]
+    },
+    "2026Q1": {
+     "aset": 2432.62,
+     "laba": 15.4,
+     "npl": 0.98,
+     "car": 19.7,
+     "casa": 71.71,
+     "sumber": [
+      "https://www.cnbcindonesia.com/research/20260723140840-128-753258/makin-jumbo-aset-bank-mandiri-tembus-rp2527-triliun",
+      "https://keuangan.kontan.co.id/news/adu-kinerja-bank-besar-pada-kuartal-i-2026-siapa-jawaranya",
+      "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi"
+     ]
+    },
+    "2026Q2": {
+     "aset": 2527.57,
+     "kredit": 1677.45,
+     "dpk": 1763.17,
+     "laba": 30.41,
+     "npl": 0.98,
+     "sumber": [
+      "https://www.cnbcindonesia.com/research/20260723140840-128-753258/makin-jumbo-aset-bank-mandiri-tembus-rp2527-triliun",
+      "https://katadata.co.id/finansial/bursa/6a950c3890930/himbara-bukukan-laba-rp-74-4-t-semester-i-bbri-bmri-hingga-bbtn-siapa-unggul"
+     ],
+     "tumbuh_rilis": {
+      "aset": 18.09,
+      "kredit": 18.8,
+      "dpk": 17.1
+     }
+    },
+    "2026Q3": {
+     "laba": 45.5,
+     "npl": 0.98,
+     "car": 18.4,
+     "roa": 2.99,
+     "roe": 23.6,
+     "tumbuh_rilis": {
+      "aset": 20.1,
+      "kredit": 16.0,
+      "dpk": 17.7,
+      "laba": 20.7
+     },
+     "sumber": [
+      "https://www.cnbcindonesia.com/market/20261023215805-17-779066/neraca-sehat-kinerja-solid-bmri-catat-laba-rp-455-t-di-kuartal-iii"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BBNI",
+   "nama": "BNI",
+   "lengkap": "PT Bank Negara Indonesia (Persero) Tbk",
+   "grup": "bumn",
+   "domain": "bni.co.id",
+   "profil": "Didirikan pada 1946 sebagai bank pertama milik pemerintah Indonesia. Dikenal kuat di nasabah korporasi, perdagangan internasional, dan jaringan kantor luar negeri.",
+   "terbaru": "Laporan bulanan Agustus 2026: laba Rp14,32 triliun, tumbuh 6,9%.",
+   "kuartal": {
+    "2023Q4": {
+     "dpk": 810.73,
+     "laba": 20.9,
+     "npl": 2.14,
+     "casa": 71.2,
+     "sumber": [
+      "https://infobanknews.com/berkat-transformasi-laba-bersih-bni-2023-naik-142-persen-jadi-rp209-triliun/"
+     ]
+    },
+    "2024Q1": {
+     "laba": 5.32,
+     "sumber": [
+      "https://infobanknews.com/bni-catat-laba-rp538-triliun-di-kuartal-i-2025-kredit-korporasi-melesat/"
+     ]
+    },
+    "2024Q2": {
+     "laba": 10.7,
+     "casa": 70.7,
+     "sumber": [
+      "https://infobanknews.com/bni-cetak-laba-bersih-rp101-triliun-di-semester-i-2025/"
+     ]
+    },
+    "2024Q3": {
+     "kredit": 735.02,
+     "dpk": 769.74,
+     "laba": 16.3,
+     "npl": 2.0,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20241028/90/1811101/ragam-kinerja-big-bank-bbca-bbni-bnli-pnbn-pada-kuartal-iii2024/1"
+     ]
+    },
+    "2024Q4": {
+     "aset": 1130.1,
+     "kredit": 775.87,
+     "dpk": 805.51,
+     "laba": 21.66,
+     "nim": 4.2,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260301/90/1956581/aset-bank-jumbo-tembus-ribuan-triliun-pada-2025-mandiri-bmri-teratas",
+      "https://infobanknews.com/adu-laba-bank-bumn-sepanjang-2024-siapa-juaranya/"
+     ]
+    },
+    "2025Q1": {
+     "kredit": 765.47,
+     "dpk": 819.6,
+     "laba": 5.38,
+     "npl": 2.0,
+     "casa": 70.5,
+     "sumber": [
+      "https://infobanknews.com/bni-catat-laba-rp538-triliun-di-kuartal-i-2025-kredit-korporasi-melesat/"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 778.7,
+     "dpk": 900.0,
+     "laba": 10.1,
+     "npl": 1.9,
+     "car": 21.1,
+     "casa": 72.0,
+     "ldr": 86.2,
+     "sumber": [
+      "https://infobanknews.com/bni-cetak-laba-bersih-rp101-triliun-di-semester-i-2025/"
+     ]
+    },
+    "2025Q3": {
+     "kredit": 812.2,
+     "dpk": 934.3,
+     "laba": 15.12,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20251028/90/1923909/ragam-kinerja-bank-besar-bbca-bmri-hingga-pnbn-kuartal-iii2025"
+     ]
+    },
+    "2025Q4": {
+     "aset": 1362.0,
+     "kredit": 899.53,
+     "dpk": 1040.83,
+     "laba": 20.11,
+     "npl": 1.9,
+     "car": 20.7,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260301/90/1956581/aset-bank-jumbo-tembus-ribuan-triliun-pada-2025-mandiri-bmri-teratas",
+      "https://infobanknews.com/laba-bersih-bni-tembus-rp20-triliun-pada-2025-kredit-melaju-159-persen/"
+     ]
+    },
+    "2026Q1": {
+     "aset": 1426.0,
+     "kredit": 919.3,
+     "dpk": 1100.0,
+     "laba": 5.6,
+     "npl": 1.9,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/adu-kinerja-bank-besar-pada-kuartal-i-2026-siapa-jawaranya",
+      "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi"
+     ]
+    },
+    "2026Q2": {
+     "aset": 1461.0,
+     "kredit": 968.5,
+     "dpk": 1100.2,
+     "laba": 10.75,
+     "npl": 1.9,
+     "casa": 65.4,
+     "ldr": 88.0,
+     "nim": 3.55,
+     "dihitung": [
+      "ldr"
+     ],
+     "roa": 1.48,
+     "roe": 12.85,
+     "tumbuh_rilis": {
+      "aset": 21.58,
+      "kredit": 24.38,
+      "dpk": 22.26,
+      "laba": 6.33
+     },
+     "sumber": [
+      "https://katadata.co.id/finansial/bursa/6a950c3890930/himbara-bukukan-laba-rp-74-4-t-semester-i-bbri-bmri-hingga-bbtn-siapa-unggul",
+      "https://finansial.bisnis.com/read/20260810/90/1994867/rapor-kinerja-bank-kbmi-iv-semester-i2026-bank-mandiri-bni-bca",
+      "https://pintarsaham.id/kinerja-keuangan-bni-semester-i-2026-laba-bersih-tumbuh-positif-di-tengah-ekspansi-kredit-agresif/",
+      "https://keuangan.kontan.co.id/news/bni-kantongi-laba-rp-1432-triliun-tumbuh-69-per-agustus-2026"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BBTN",
+   "nama": "BTN",
+   "lengkap": "PT Bank Tabungan Negara (Persero) Tbk",
+   "grup": "bumn",
+   "domain": "btn.co.id",
+   "profil": "Berakar dari Postspaarbank yang berdiri pada 1897. Kini menjadi bank utama untuk pembiayaan perumahan dan penyalur terbesar KPR bersubsidi.",
+   "terbaru": "Laporan bulanan Agustus 2026: laba Rp2,15 triliun, naik 8,07%.",
+   "kuartal": {
+    "2023Q4": {
+     "kredit": 333.69,
+     "dpk": 349.93,
+     "laba": 3.5,
+     "casa": 53.7,
+     "sumber": [
+      "https://infobanknews.com/adu-laba-bank-bumn-sepanjang-2024-siapa-juaranya/"
+     ]
+    },
+    "2024Q1": {
+     "laba": 0.86,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20240425/90/1760523/btn-bbtn-raup-laba-bersih-rp860-miliar-kuartal-i2024-naik-74-yoy"
+     ]
+    },
+    "2024Q2": {
+     "kredit": 352.0,
+     "laba": 1.5,
+     "sumber": [
+      "https://investortrust.id/market/35027/kredit-bank-btn-bbtn-rp-352-triliun-laba-bersih-tembus-rp-1-50-triliun-semester-i-2024"
+     ]
+    },
+    "2024Q3": {
+     "aset": 455.1,
+     "kredit": 356.06,
+     "dpk": 370.75,
+     "laba": 2.08,
+     "sumber": [
+      "https://infobanknews.com/adu-laba-bri-bank-mandiri-bni-dan-btn-di-kuartal-iii-2025-siapa-paling-cuan/"
+     ]
+    },
+    "2024Q4": {
+     "aset": 469.61,
+     "kredit": 357.97,
+     "dpk": 381.67,
+     "laba": 3.01,
+     "npl": 3.2,
+     "casa": 54.1,
+     "sumber": [
+      "https://infobanknews.com/adu-laba-bank-bumn-sepanjang-2024-siapa-juaranya/",
+      "https://investortrust.id/financial/95580/intip-kinerja-laba-bank-bank-himbara-di-2025-siapa-yang-paling-melesat"
+     ]
+    },
+    "2025Q1": {
+     "aset": 468.53,
+     "kredit": 363.11,
+     "dpk": 384.7,
+     "sumber": [
+      "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi"
+     ]
+    },
+    "2025Q2": {
+     "aset": 484.96,
+     "kredit": 376.11,
+     "dpk": 406.38,
+     "laba": 1.7,
+     "npl": 3.3,
+     "sumber": [
+      "https://katadata.co.id/finansial/bursa/6a58e985d679f/laba-btn-bbtn-meroket-40-8-di-paruh-pertama-2026-ini-penopangnya"
+     ]
+    },
+    "2025Q3": {
+     "aset": 510.85,
+     "kredit": 381.03,
+     "dpk": 429.92,
+     "laba": 2.3,
+     "sumber": [
+      "https://infobanknews.com/adu-laba-bri-bank-mandiri-bni-dan-btn-di-kuartal-iii-2025-siapa-paling-cuan/"
+     ]
+    },
+    "2025Q4": {
+     "kredit": 400.6,
+     "dpk": 437.4,
+     "laba": 3.5,
+     "npl": 3.1,
+     "sumber": [
+      "https://investortrust.id/financial/95580/intip-kinerja-laba-bank-bank-himbara-di-2025-siapa-yang-paling-melesat"
+     ]
+    },
+    "2026Q1": {
+     "aset": 517.54,
+     "kredit": 400.63,
+     "dpk": 422.63,
+     "laba": 1.11,
+     "npl": 3.1,
+     "casa": 50.2,
+     "sumber": [
+      "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi"
+     ]
+    },
+    "2026Q2": {
+     "aset": 545.16,
+     "kredit": 418.11,
+     "dpk": 433.0,
+     "laba": 2.4,
+     "npl": 2.99,
+     "ldr": 96.6,
+     "nim": 3.5,
+     "dihitung": [
+      "ldr"
+     ],
+     "tumbuh_rilis": {
+      "aset": 12.4,
+      "kredit": 11.2,
+      "dpk": 6.6,
+      "laba": 40.8
+     },
+     "sumber": [
+      "https://katadata.co.id/finansial/bursa/6a58e985d679f/laba-btn-bbtn-meroket-40-8-di-paruh-pertama-2026-ini-penopangnya",
+      "https://infobanknews.com/laba-btn-tumbuh-408-persen-jadi-rp24-triliun-di-semester-i-2026",
+      "https://www.kabarbursa.com/market-hari-ini/bbtn-bukukan-laba-bersih-rp24-triliun-catatan-npl-turun"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BRIS",
+   "nama": "BSI",
+   "lengkap": "PT Bank Syariah Indonesia Tbk",
+   "grup": "bumn",
+   "domain": "bankbsi.co.id",
+   "syariah": true,
+   "profil": "Bank syariah terbesar di Indonesia, hasil penggabungan BRI Syariah, BNI Syariah, dan Bank Syariah Mandiri pada 2021. Untuk bank syariah, kredit disebut pembiayaan dan NPL disebut NPF.",
+   "terbaru": "Laporan bulanan Agustus 2026: laba Rp5,30 triliun (naik 10,07%), pembiayaan Rp344 triliun, DPK Rp389 triliun.",
+   "keterangan": "Untuk bank syariah, kredit disebut pembiayaan, NPL disebut NPF, dan LDR disebut FDR.",
+   "kuartal": {
+    "2023Q4": {
+     "laba": 5.7,
+     "sumber": [
+      "https://investortrust.id/market/55746/ini-faktor-pemicu-laba-bsi-bris-tumbuh-22-83-jadi-rp-7-triliun-di-2024"
+     ]
+    },
+    "2024Q1": {
+     "laba": 1.71,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20240430/90/1761717/ini-penyebab-laba-bsi-bris-tumbuh-1707-jadi-rp171-triliun"
+     ]
+    },
+    "2024Q2": {
+     "kredit": 257.39,
+     "laba": 3.39,
+     "sumber": [
+      "https://investortrust.id/financial/79743/ditopang-hal-ini-laba-bersih-bsi-tumbuh-10-2-jadi-rp-3-7-triliun-di-semester-i-2025"
+     ]
+    },
+    "2024Q3": {
+     "laba": 5.11,
+     "sumber": [
+      "https://investortrust.id/market/45756/meningkat-21-60-laba-bsi-bris-tembus-rp-5-11-triliun-di-kuartal-iii-2024"
+     ]
+    },
+    "2024Q4": {
+     "aset": 408.61,
+     "kredit": 278.0,
+     "dpk": 327.0,
+     "laba": 7.0,
+     "casa": 60.24,
+     "sumber": [
+      "https://investortrust.id/market/55746/ini-faktor-pemicu-laba-bsi-bris-tumbuh-22-83-jadi-rp-7-triliun-di-2024"
+     ]
+    },
+    "2025Q1": {
+     "aset": 400.88,
+     "kredit": 286.59,
+     "dpk": 319.34,
+     "laba": 1.87,
+     "npl": 1.88,
+     "sumber": [
+      "https://investortrust.id/market/64497/laba-bsi-bris-naik-10-capai-rp-1-87-triliun-di-kuartal-i"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 293.24,
+     "dpk": 322.91,
+     "laba": 3.74,
+     "npl": 1.87,
+     "sumber": [
+      "https://investortrust.id/financial/79743/ditopang-hal-ini-laba-bersih-bsi-tumbuh-10-2-jadi-rp-3-7-triliun-di-semester-i-2025"
+     ]
+    },
+    "2025Q3": {
+     "aset": 417.0,
+     "kredit": 301.0,
+     "dpk": 348.0,
+     "laba": 5.57,
+     "npl": 1.84,
+     "casa": 59.48,
+     "ldr": 86.29,
+     "sumber": [
+      "https://infobanknews.com/bsi-cetak-laba-rp557-triliun-di-kuartal-iii-2025-tumbuh-904-persen/"
+     ]
+    },
+    "2025Q4": {
+     "aset": 456.0,
+     "kredit": 318.22,
+     "dpk": 380.0,
+     "laba": 7.96,
+     "sumber": [
+      "https://investortrust.id/financial/95580/intip-kinerja-laba-bank-bank-himbara-di-2025-siapa-yang-paling-melesat"
+     ]
+    },
+    "2026Q1": {
+     "aset": 460.13,
+     "kredit": 328.54,
+     "dpk": 376.8,
+     "laba": 2.2,
+     "npl": 1.8,
+     "sumber": [
+      "https://investortrust.id/market/103139/kinerja-bank-himbara-kuartal-i-2026-bri-bbri-cetak-laba-paling-jumbo-btn-bbtn-catat-lompatan-tertinggi"
+     ]
+    },
+    "2026Q2": {
+     "aset": 464.5,
+     "kredit": 340.0,
+     "dpk": 393.0,
+     "laba": 4.16,
+     "npl": 1.8,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bsi-cetak-laba-rp-416-triliun-di-semester-i-2026-tumbuh-1108"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BBCA",
+   "nama": "BCA",
+   "lengkap": "PT Bank Central Asia Tbk",
+   "grup": "swasta",
+   "domain": "bca.co.id",
+   "profil": "Bank swasta terbesar di Indonesia, berdiri pada 1957. Unggul di layanan transaksi dan tabungan, sehingga porsi dana murahnya termasuk yang tertinggi di industri.",
+   "terbaru": "Laporan bulanan Agustus 2026 (bank saja): laba Rp40,17 triliun, naik 2,85%; kredit Rp1.017,7 triliun, naik 10,52%; CASA 85,47%; NIM 5,33%. Kinerja kuartal III belum dirilis saat halaman ini diperbarui.",
+   "kuartal": {
+    "2023Q4": {
+     "aset": 1408.0,
+     "kredit": 810.4,
+     "dpk": 1102.0,
+     "laba": 48.6,
+     "npl": 1.9,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/laba-bank-central-asia-bbca-melesat-194-jadi-rp-486-triliun-pada-2023?page=all"
+     ]
+    },
+    "2024Q1": {
+     "kredit": 835.7,
+     "dpk": 1121.0,
+     "laba": 12.9,
+     "npl": 1.9,
+     "sumber": [
+      "https://infobanknews.com/bca-bukukan-laba-bersih-rp129-triliun-di-kuartal-i-2024-tumbuh-117-persen/"
+     ]
+    },
+    "2024Q2": {
+     "laba": 26.9,
+     "sumber": [
+      "https://infobanknews.com/bca-cetak-laba-rp29-triliun-di-semester-i-2025-tumbuh-8-persen/"
+     ]
+    },
+    "2024Q3": {
+     "kredit": 877.0,
+     "dpk": 1125.0,
+     "laba": 41.1,
+     "npl": 2.1,
+     "casa": 82.0,
+     "sumber": [
+      "https://infobanknews.com/bca-raup-laba-bersih-rp411-triliun-di-kuartal-iii-2024-naik-128-persen"
+     ]
+    },
+    "2024Q4": {
+     "aset": 1449.3,
+     "kredit": 922.0,
+     "laba": 54.84,
+     "npl": 1.8,
+     "casa": 82.0,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260301/90/1956581/aset-bank-jumbo-tembus-ribuan-triliun-pada-2025-mandiri-bmri-teratas",
+      "https://keuangan.kontan.co.id/news/laba-bank-central-asia-bbca-melesat-127-jadi-rp-548-triliun-pada-2024"
+     ]
+    },
+    "2025Q1": {
+     "kredit": 941.0,
+     "dpk": 1193.0,
+     "laba": 14.1,
+     "npl": 2.0,
+     "casa": 82.0,
+     "sumber": [
+      "https://www.investortrust.id/financial/63748/kredit-melonjak-12-6-ke-rp-941-triliun-laba-bca-di-kuartal-i-tumbuh-9-8-tembus-rp-14-1-triliun"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 959.0,
+     "dpk": 1190.0,
+     "laba": 29.0,
+     "npl": 2.2,
+     "casa": 82.5,
+     "sumber": [
+      "https://infobanknews.com/bca-cetak-laba-rp29-triliun-di-semester-i-2025-tumbuh-8-persen/"
+     ]
+    },
+    "2025Q3": {
+     "kredit": 944.0,
+     "laba": 43.4,
+     "npl": 2.1,
+     "casa": 83.8,
+     "sumber": [
+      "https://infobanknews.com/bca-bukukan-laba-bersih-rp434-triliun-di-kuartal-iii-2025-tumbuh-57-persen/"
+     ]
+    },
+    "2025Q4": {
+     "aset": 1586.8,
+     "kredit": 993.0,
+     "dpk": 1249.0,
+     "laba": 57.5,
+     "npl": 1.7,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260301/90/1956581/aset-bank-jumbo-tembus-ribuan-triliun-pada-2025-mandiri-bmri-teratas",
+      "https://www.investortrust.id/market/92638/bca-raup-laba-rp-57-5-triliun-di-2025-tumbuh-4-9"
+     ]
+    },
+    "2026Q1": {
+     "aset": 1641.0,
+     "kredit": 994.0,
+     "dpk": 1292.0,
+     "laba": 14.7,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/adu-kinerja-bank-besar-pada-kuartal-i-2026-siapa-jawaranya"
+     ]
+    },
+    "2026Q2": {
+     "kredit": 1036.0,
+     "dpk": 1284.0,
+     "laba": 29.54,
+     "npl": 1.9,
+     "casa": 84.3,
+     "ldr": 80.7,
+     "dihitung": [
+      "ldr"
+     ],
+     "tumbuh_rilis": {
+      "kredit": 8.0,
+      "dpk": 7.9,
+      "laba": 1.8
+     },
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260924/90/2006605/7-bank-dengan-laba-terbesar-di-indonesia-semester-i2026",
+      "https://infobanknews.com/bca-kantongi-laba-rp295-triliun-di-semester-i-2026-kredit-lampaui-rp1-000-triliun",
+      "https://investor.id/market/454496/laba-bca-tumbuh-285-hingga-agustus-2026",
+      "https://finansial.bisnis.com/read/20260728/90/1991742/bca-bbca-cetak-laba-rp295-triliun-kredit-tembus-rp1000-triliun-semester-i2026"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BNGA",
+   "nama": "CIMB Niaga",
+   "lengkap": "PT Bank CIMB Niaga Tbk",
+   "grup": "swasta",
+   "domain": "cimbniaga.co.id",
+   "profil": "Berakar dari Bank Niaga yang berdiri pada 1955, kini bagian dari CIMB Group asal Malaysia. Kuat di kartu kredit, KPR, dan perbankan digital OCTO.",
+   "terbaru": null,
+   "kuartal": {
+    "2023Q4": {
+     "laba": 6.55,
+     "npl": 2.0,
+     "sumber": [
+      "https://infobanknews.com/cimb-niaga-cetak-laba-rp68-triliun-sepanjang-2024-ini-penopangnya/"
+     ]
+    },
+    "2024Q1": {
+     "aset": 333.0,
+     "kredit": 211.6,
+     "dpk": 248.0,
+     "laba": 1.69,
+     "car": 24.5,
+     "casa": 64.6,
+     "ldr": 84.2,
+     "sumber": [
+      "https://infobanknews.com/naik-78-persen-cimb-niaga-cetak-laba-rp22-triliun-di-kuartal-i-2024"
+     ]
+    },
+    "2024Q2": {
+     "laba": 3.41,
+     "npl": 2.15,
+     "casa": 65.19,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20240730/90/1786562/cimb-niaga-bnga-catat-laba-rp341-triliun-pada-semester-i2024-tumbuh-538"
+     ]
+    },
+    "2024Q3": {
+     "laba": 5.18,
+     "npl": 2.0,
+     "sumber": [
+      "https://infobanknews.com/cimb-niaga-cetak-laba-bersih-rp533-t-di-kuartal-iii-2025/"
+     ]
+    },
+    "2024Q4": {
+     "kredit": 228.0,
+     "dpk": 260.6,
+     "laba": 6.89,
+     "npl": 1.8,
+     "car": 23.3,
+     "casa": 66.0,
+     "ldr": 86.3,
+     "sumber": [
+      "https://infobanknews.com/cimb-niaga-cetak-laba-rp68-triliun-sepanjang-2024-ini-penopangnya/"
+     ]
+    },
+    "2025Q1": {
+     "aset": 370.9,
+     "dpk": 254.2,
+     "laba": 1.8,
+     "npl": 1.85,
+     "ldr": 89.28,
+     "nim": 3.99,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250429/90/1872894/laba-cimb-niaga-bnga-naik-736-ke-rp18-triliun-per-kuartal-i2025"
+     ]
+    },
+    "2025Q2": {
+     "aset": 357.87,
+     "kredit": 231.84,
+     "dpk": 261.89,
+     "laba": 3.51,
+     "npl": 1.88,
+     "car": 24.02,
+     "casa": 68.98,
+     "ldr": 87.27,
+     "sumber": [
+      "https://infobanknews.com/cimb-niaga-cetak-laba-rp351-triliun-di-juni-2025-tumbuh-195-persen/"
+     ]
+    },
+    "2025Q3": {
+     "aset": 369.5,
+     "kredit": 228.7,
+     "dpk": 278.0,
+     "laba": 5.33,
+     "npl": 1.98,
+     "car": 24.7,
+     "ldr": 81.1,
+     "sumber": [
+      "https://infobanknews.com/cimb-niaga-cetak-laba-bersih-rp533-t-di-kuartal-iii-2025/"
+     ]
+    },
+    "2025Q4": {
+     "aset": 372.7,
+     "kredit": 238.3,
+     "dpk": 270.5,
+     "laba": 6.93,
+     "npl": 1.81,
+     "car": 24.8,
+     "casa": 70.0,
+     "ldr": 86.8,
+     "sumber": [
+      "https://infobanknews.com/laba-cimb-niaga-bnga-2025-tumbuh-tipis-jadi-rp693-triliun/"
+     ]
+    },
+    "2026Q1": {
+     "aset": 368.2,
+     "kredit": 235.1,
+     "dpk": 260.1,
+     "laba": 1.77,
+     "car": 25.3,
+     "casa": 73.9,
+     "ldr": 89.2,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260501/90/1970541/cimb-niaga-bnga-bukukan-laba-bersih-konsolidasian-rp177-triliun-di-kuartal-i2026"
+     ]
+    },
+    "2026Q2": {
+     "aset": 382.0,
+     "kredit": 247.2,
+     "dpk": 269.3,
+     "laba": 3.43,
+     "npl": 1.83,
+     "car": 23.5,
+     "casa": 71.7,
+     "ldr": 90.4,
+     "tumbuh_rilis": {
+      "aset": 6.7,
+      "kredit": 6.6,
+      "dpk": 2.8
+     },
+     "sumber": [
+      "https://infobanknews.com/laba-cimb-niaga-capai-rp343-triliun-di-semester-i-2026-ini-penopangnya",
+      "https://finansial.bisnis.com/read/20260814/90/1996224/cimb-niaga-bnga-raih-laba-bersih-rp343-triliun-semester-i2026-dirut-lani-fokus-strategi-forward30"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "NISP",
+   "nama": "OCBC Indonesia",
+   "lengkap": "PT Bank OCBC NISP Tbk",
+   "grup": "swasta",
+   "domain": "ocbc.id",
+   "profil": "Berdiri di Bandung pada 1941 dan kini dimiliki OCBC asal Singapura. Dikenal dengan permodalan yang kuat dan pertumbuhan dana murah yang cepat.",
+   "terbaru": null,
+   "kuartal": {
+    "2023Q4": {
+     "aset": 249.757,
+     "kredit": 154.094,
+     "dpk": 181.755,
+     "laba": 4.091,
+     "npl": 1.6,
+     "car": 23.7,
+     "casa": 55.8,
+     "ldr": 83.8,
+     "nim": 4.4,
+     "sumber": [
+      "https://ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2024/01/30/factsheet-q4-2023-ocbc.pdf"
+     ]
+    },
+    "2024Q1": {
+     "aset": 252.406,
+     "kredit": 152.631,
+     "dpk": 179.914,
+     "laba": 1.167,
+     "npl": 1.8,
+     "car": 23.2,
+     "casa": 56.6,
+     "ldr": 84.0,
+     "nim": 4.4,
+     "sumber": [
+      "https://www.ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2025/04/30/factsheet-q1-2025-bank-ocbc"
+     ]
+    },
+    "2024Q2": {
+     "laba": 2.4,
+     "npl": 2.0,
+     "nim": 4.4,
+     "sumber": [
+      "https://investortrust.id/market/35619/bank-ocbc-nisp-cetak-laba-bersih-rp-2-4-triliun-pada-semester-i-2024"
+     ]
+    },
+    "2024Q3": {
+     "aset": 287.005,
+     "kredit": 161.78,
+     "dpk": 199.405,
+     "laba": 3.818,
+     "npl": 1.8,
+     "car": 23.7,
+     "casa": 56.1,
+     "ldr": 80.4,
+     "nim": 4.4,
+     "sumber": [
+      "https://www.ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2025/10/31/factsheet-q3-2025-bank-ocbc"
+     ]
+    },
+    "2024Q4": {
+     "aset": 281.008,
+     "kredit": 170.461,
+     "dpk": 205.932,
+     "laba": 4.867,
+     "npl": 1.6,
+     "car": 23.6,
+     "casa": 55.3,
+     "ldr": 81.9,
+     "nim": 4.4,
+     "sumber": [
+      "https://ocbc.id/asset/media/feature/pdf/adhoc/2025/01/31/factsheet-2024-ocbc-indonesia"
+     ]
+    },
+    "2025Q1": {
+     "aset": 293.097,
+     "kredit": 168.907,
+     "dpk": 217.7,
+     "laba": 1.291,
+     "npl": 1.7,
+     "car": 22.6,
+     "casa": 49.8,
+     "ldr": 76.7,
+     "nim": 4.1,
+     "sumber": [
+      "https://www.ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2025/04/30/factsheet-q1-2025-bank-ocbc"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 166.34,
+     "dpk": 216.28,
+     "laba": 2.57,
+     "npl": 1.9,
+     "car": 23.6,
+     "nim": 4.01,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-ocbc-nisp-nisp-catat-laba-bersih-rp-257-triliun-pada-semester-i-2025"
+     ]
+    },
+    "2025Q3": {
+     "aset": 293.805,
+     "kredit": 164.739,
+     "dpk": 230.124,
+     "laba": 3.824,
+     "npl": 2.0,
+     "car": 25.1,
+     "casa": 55.7,
+     "ldr": 70.8,
+     "nim": 3.9,
+     "sumber": [
+      "https://www.ocbc.id/asset/media/feature/aboutocbc/siaran-pers/2025/10/31/factsheet-q3-2025-bank-ocbc"
+     ]
+    },
+    "2025Q4": {
+     "aset": 308.1,
+     "kredit": 173.4,
+     "dpk": 243.5,
+     "laba": 5.1,
+     "npl": 1.9,
+     "car": 24.5,
+     "casa": 58.0,
+     "sumber": [
+      "https://infobanknews.com/laba-ocbc-tumbuh-4-persen-jadi-rp51-triliun-di-2025/"
+     ]
+    },
+    "2026Q1": {
+     "aset": 312.9,
+     "kredit": 171.0,
+     "dpk": 226.4,
+     "laba": 1.36,
+     "npl": 2.1,
+     "car": 25.0,
+     "casa": 61.9,
+     "sumber": [
+      "https://infobanknews.com/ocbc-cetak-laba-rp136-triliun-di-kuartal-i-2026-tumbuh-5-persen"
+     ]
+    },
+    "2026Q2": {
+     "aset": 329.5,
+     "kredit": 185.3,
+     "dpk": 239.9,
+     "laba": 2.73,
+     "npl": 1.9,
+     "car": 23.1,
+     "casa": 60.5,
+     "tumbuh_rilis": {
+      "aset": 11,
+      "kredit": 11,
+      "dpk": 11
+     },
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260924/90/2006605/7-bank-dengan-laba-terbesar-di-indonesia-semester-i2026",
+      "https://investortrust.id/financial/111258/ocbc-nisp-bukukan-laba-rp-2-7-triliun-kredit-dan-dpk-tumbuh-11-pada-semester-i-2026"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BNLI",
+   "nama": "PermataBank",
+   "lengkap": "PT Bank Permata Tbk",
+   "grup": "swasta",
+   "domain": "permatabank.com",
+   "profil": "Dibentuk pada 2002 dari penggabungan lima bank, termasuk Bank Bali. Sejak 2020 dimiliki Bangkok Bank asal Thailand.",
+   "terbaru": null,
+   "kuartal": {
+    "2023Q4": {
+     "npl": 2.9,
+     "sumber": [
+      "https://infobanknews.com/permata-bank-cetak-laba-rp36-triliun-di-2024-kredit-tumbuh-9-persen/"
+     ]
+    },
+    "2024Q2": {
+     "casa": 56.3,
+     "ldr": 78.2,
+     "sumber": [
+      "https://investortrust.id/financial/73424/permata-bank-bukukan-laba-rp-1-6-triliun-kredit-tumbuh-7-4-di-semester-i-2025"
+     ]
+    },
+    "2024Q3": {
+     "npl": 2.1,
+     "casa": 55.1,
+     "sumber": [
+      "https://infobanknews.com/laba-bank-permata-tumbuh-35-persen-jadi-rp29-triliun-di-kuartal-iii-2025/"
+     ]
+    },
+    "2024Q4": {
+     "kredit": 155.0,
+     "laba": 3.56,
+     "npl": 2.1,
+     "car": 35.0,
+     "casa": 55.3,
+     "sumber": [
+      "https://infobanknews.com/permata-bank-cetak-laba-rp36-triliun-di-2024-kredit-tumbuh-9-persen/",
+      "https://keuangan.kontan.co.id/news/bank-permata-cetak-laba-bersih-rp-358-triliun-di-tahun-2025"
+     ]
+    },
+    "2025Q1": {
+     "kredit": 156.6,
+     "npl": 2.0,
+     "casa": 58.6,
+     "ldr": 83.2,
+     "sumber": [
+      "https://investortrust.id/financial/63704/permata-bank-bnli-salurkan-kredit-rp-156-6-triliun-di-kuartal-i-2025"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 162.6,
+     "dpk": 189.3,
+     "laba": 1.65,
+     "npl": 2.1,
+     "car": 33.5,
+     "casa": 62.7,
+     "ldr": 85.6,
+     "sumber": [
+      "https://investortrust.id/financial/73424/permata-bank-bukukan-laba-rp-1-6-triliun-kredit-tumbuh-7-4-di-semester-i-2025"
+     ]
+    },
+    "2025Q3": {
+     "aset": 269.3,
+     "kredit": 158.9,
+     "dpk": 195.9,
+     "laba": 2.9,
+     "npl": 2.1,
+     "casa": 60.5,
+     "ldr": 80.9,
+     "sumber": [
+      "https://infobanknews.com/laba-bank-permata-tumbuh-35-persen-jadi-rp29-triliun-di-kuartal-iii-2025/"
+     ]
+    },
+    "2025Q4": {
+     "aset": 268.3,
+     "kredit": 163.3,
+     "dpk": 192.8,
+     "laba": 3.58,
+     "npl": 2.1,
+     "car": 34.6,
+     "casa": 63.9,
+     "ldr": 84.5,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-permata-cetak-laba-bersih-rp-358-triliun-di-tahun-2025"
+     ]
+    },
+    "2026Q1": {
+     "kredit": 161.0,
+     "laba": 0.92,
+     "npl": 2.2,
+     "casa": 65.5,
+     "ldr": 87.1,
+     "sumber": [
+      "https://infobanknews.com/permata-bank-bukukan-laba-rp920-miliar-pada-kuartal-i-2026-tumbuh-166-persen"
+     ]
+    },
+    "2026Q2": {
+     "kredit": 171.2,
+     "dpk": 189.24,
+     "laba": 1.72,
+     "npl": 2.1,
+     "casa": 57.9,
+     "ldr": 90.3,
+     "tumbuh_rilis": {
+      "kredit": 5.3,
+      "dpk": -0.01,
+      "laba": 4.48
+     },
+     "sumber": [
+      "https://investortrust.id/financial/112215/permata-bank-bnli-cetak-laba-rp-1-72-triliun-di-semester-i-2026-tumbuh-4-48"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BDMN",
+   "nama": "Danamon",
+   "lengkap": "PT Bank Danamon Indonesia Tbk",
+   "grup": "swasta",
+   "domain": "danamon.co.id",
+   "profil": "Berdiri pada 1956 dan menjadi bagian dari MUFG asal Jepang sejak 2019. Angka konsolidasinya ikut memuat Adira Finance, sehingga margin bunganya jauh di atas bank lain.",
+   "terbaru": null,
+   "keterangan": "Angka konsolidasi memuat Adira Finance. Kredit konsolidasi lebih besar dari DPK karena pembiayaan Adira didanai obligasi dan pinjaman, bukan simpanan.",
+   "kuartal": {
+    "2023Q4": {
+     "kredit": 174.9,
+     "dpk": 140.4,
+     "laba": 3.5,
+     "npl": 2.2,
+     "nim": 8.2,
+     "sumber": [
+      "https://infobanknews.com/ditopang-pertumbuhan-kredit-laba-bank-danamon-sepanjang-2023-tembus-rp35-triliun/"
+     ]
+    },
+    "2024Q2": {
+     "kredit": 183.9,
+     "dpk": 146.1,
+     "laba": 1.5,
+     "npl": 2.2,
+     "sumber": [
+      "https://investortrust.id/financial/35586/bank-danamon-bukukan-laba-rp-1-5-triliun-di-semester-i-2024"
+     ]
+    },
+    "2024Q3": {
+     "laba": 2.3,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20241030/90/1811996/kinerja-kuartal-iii2024-bank-danamon-kredit-tumbuh-12-laba-rp23-triliun"
+     ]
+    },
+    "2024Q4": {
+     "kredit": 189.4,
+     "dpk": 153.2,
+     "laba": 3.2,
+     "npl": 1.9,
+     "nim": 7.3,
+     "sumber": [
+      "https://infobanknews.com/didukung-pertumbuhan-kredit-laba-danamon-tembus-rp32-triliun/"
+     ]
+    },
+    "2025Q1": {
+     "laba": 0.757,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250430/90/1873364/laba-bank-danamon-bdmn-rp757-miliar-sepanjang-kuartal-i2025"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 195.7,
+     "sumber": [
+      "https://www.fortuneidn.com/finance/danamon-salurkan-kredit-rp195-7-triliun-sepanjang-paruh-pertama-2025-00-5mjpg-d196c5"
+     ]
+    },
+    "2025Q3": {
+     "kredit": 196.2,
+     "dpk": 170.3,
+     "laba": 2.8,
+     "npl": 1.8,
+     "sumber": [
+      "https://infobanknews.com/bank-danamon-catat-laba-bersih-tumbuh-double-digit-jadi-rp28-t-di-q3-2025/"
+     ]
+    },
+    "2025Q4": {
+     "kredit": 212.7,
+     "dpk": 176.9,
+     "laba": 4.0,
+     "npl": 1.7,
+     "nim": 7.7,
+     "sumber": [
+      "https://investortrust.id/financial/94954/laba-bersih-danamon-bdmn-tumbuh-14-jadi-rp-4-triliun-di-2025"
+     ]
+    },
+    "2026Q1": {
+     "kredit": 216.2,
+     "dpk": 176.1,
+     "laba": 1.1,
+     "npl": 1.6,
+     "nim": 7.6,
+     "sumber": [
+      "https://investortrust.id/financial/101830/bank-danamon-bdmn-catat-laba-rp-1-1-triliun-naik-35-pada-kuartal-i-2026"
+     ]
+    },
+    "2026Q2": {
+     "kredit": 230.1,
+     "dpk": 181.7,
+     "laba": 2.4,
+     "nim": 8.1,
+     "tumbuh_rilis": {
+      "kredit": 12,
+      "dpk": 14,
+      "laba": 33
+     },
+     "sumber": [
+      "https://investortrust.id/financial/111261/laba-bank-danamon-bdmn-naik-33-pada-semester-i-2026-kredit-tumbuh-12"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BNII",
+   "nama": "Maybank Indonesia",
+   "lengkap": "PT Bank Maybank Indonesia Tbk",
+   "grup": "swasta",
+   "domain": "maybank.co.id",
+   "profil": "Dahulu Bank Internasional Indonesia (BII) yang berdiri pada 1959, kini bagian dari Maybank asal Malaysia.",
+   "terbaru": null,
+   "keterangan": "Kredit konsolidasi memuat pembiayaan anak usaha. LDR yang dipakai adalah angka bank saja.",
+   "kuartal": {
+    "2023Q4": {
+     "aset": 171.803,
+     "kredit": 116.0,
+     "dpk": 115.503,
+     "laba": 1.743,
+     "npl": 2.92,
+     "car": 27.74,
+     "casa": 51.08,
+     "ldr": 84.25,
+     "nim": 4.96,
+     "sumber": [
+      "https://sbn.maybank.co.id/-/media/Downloaded-Content/Presentasi-Perusahaan/Maybank-Indonesia-Financial-Result-FY-2024.pdf"
+     ]
+    },
+    "2024Q1": {
+     "kredit": 122.3,
+     "npl": 2.67,
+     "car": 25.65,
+     "ldr": 88.67,
+     "sumber": [
+      "https://sbn.maybank.co.id/-/media/Downloaded-Content/Presentasi-Perusahaan/Maybank-Indonesia-Financial-Result-FY-2024.pdf"
+     ]
+    },
+    "2024Q2": {
+     "kredit": 123.0,
+     "laba": 0.128,
+     "npl": 2.66,
+     "car": 23.48,
+     "casa": 51.3,
+     "ldr": 90.77,
+     "sumber": [
+      "https://sbn.maybank.co.id/-/media/Downloaded-Content/Presentasi-Perusahaan/Maybank-Indonesia-Financial-Result-FY-2024.pdf"
+     ]
+    },
+    "2024Q3": {
+     "aset": 189.318,
+     "kredit": 122.4,
+     "dpk": 115.882,
+     "laba": 0.558,
+     "npl": 2.91,
+     "car": 24.78,
+     "casa": 52.74,
+     "ldr": 89.51,
+     "nim": 4.45,
+     "sumber": [
+      "https://sbn.maybank.co.id/-/media/Downloaded-Content/Presentasi-Perusahaan/Maybank-Indonesia-Financial-Result-FY-2024.pdf"
+     ]
+    },
+    "2024Q4": {
+     "aset": 197.18,
+     "kredit": 127.581,
+     "dpk": 119.004,
+     "laba": 1.116,
+     "npl": 2.68,
+     "car": 25.55,
+     "casa": 52.86,
+     "ldr": 89.84,
+     "nim": 4.37,
+     "sumber": [
+      "https://sbn.maybank.co.id/-/media/Downloaded-Content/Presentasi-Perusahaan/Maybank-Indonesia-Financial-Result-FY-2024.pdf"
+     ]
+    },
+    "2025Q1": {
+     "npl": 2.4,
+     "casa": 53.0,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/maybank-indonesia-bnii-bukukan-patami-rp299-miliar-pada-kuartal-i2026"
+     ]
+    },
+    "2025Q2": {
+     "kredit": 121.69,
+     "dpk": 114.7,
+     "laba": 0.576,
+     "npl": 2.4,
+     "car": 26.6,
+     "casa": 56.2,
+     "ldr": 89.1,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250731/90/1898143/maybank-indonesia-bnii-raup-laba-rp576-miliar-pada-semester-i2025"
+     ]
+    },
+    "2025Q3": {
+     "kredit": 120.42,
+     "laba": 0.989,
+     "npl": 2.4,
+     "car": 27.1,
+     "nim": 4.3,
+     "sumber": [
+      "https://infobanknews.com/maybank-indonesia-raup-laba-sebelum-pajak-kuartal-iii-2025-rp130-t-ini-penopangnya/"
+     ]
+    },
+    "2025Q4": {
+     "kredit": 123.64,
+     "dpk": 116.19,
+     "laba": 1.66,
+     "npl": 2.2,
+     "casa": 57.6,
+     "ldr": 90.3,
+     "nim": 4.3,
+     "sumber": [
+      "https://www.cnbcindonesia.com/market/20260226085652-17-714031/maybank-kantongi-laba-rp-166-t-sepanjang-2025"
+     ]
+    },
+    "2026Q1": {
+     "aset": 192.17,
+     "kredit": 121.99,
+     "dpk": 118.35,
+     "laba": 0.299,
+     "npl": 2.3,
+     "car": 26.3,
+     "casa": 61.2,
+     "ldr": 85.5,
+     "nim": 4.3,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/maybank-indonesia-bnii-bukukan-patami-rp299-miliar-pada-kuartal-i2026"
+     ]
+    },
+    "2026Q2": {
+     "kredit": 126.28,
+     "dpk": 124.1,
+     "laba": 0.698,
+     "npl": 2.1,
+     "car": 24.3,
+     "casa": 63.6,
+     "ldr": 86.6,
+     "nim": 4.3,
+     "tumbuh_rilis": {
+      "kredit": 3.8,
+      "dpk": 8.2,
+      "laba": 21.2
+     },
+     "sumber": [
+      "https://investortrust.id/market/111378/laba-maybank-indonesia-naik-21-2-pada-semester-i-2026-kredit-tumbuh-3-8"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "PNBN",
+   "nama": "PaninBank",
+   "lengkap": "PT Bank Pan Indonesia Tbk",
+   "grup": "swasta",
+   "domain": "panin.co.id",
+   "profil": "Berdiri pada 1971 dari penggabungan tiga bank swasta. ANZ termasuk pemegang saham besarnya. Permodalannya termasuk yang paling tebal di antara bank besar.",
+   "terbaru": "Kredit turun 3,75% dan DPK turun 7,87% dibanding akhir 2025.",
+   "kuartal": {
+    "2023Q4": {
+     "laba": 3.01,
+     "npl": 3.09,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250226/90/1842919/bank-panin-pnbn-bukukan-laba-bersih-rp287-triliun-pada-2024"
+     ]
+    },
+    "2024Q2": {
+     "aset": 219.22,
+     "kredit": 147.63,
+     "dpk": 143.54,
+     "laba": 1.36,
+     "npl": 4.08,
+     "nim": 4.53,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/laba-bersih-panin-bank-pnbn-turun-3493-jadi-rp-136-triliun-pada-semester-i-2024"
+     ]
+    },
+    "2024Q3": {
+     "kredit": 149.02,
+     "dpk": 153.08,
+     "laba": 2.18,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20251028/90/1923909/ragam-kinerja-bank-besar-bbca-bmri-hingga-pnbn-kuartal-iii2025"
+     ]
+    },
+    "2024Q4": {
+     "aset": 243.96,
+     "kredit": 148.9,
+     "dpk": 152.37,
+     "laba": 2.87,
+     "npl": 3.05,
+     "car": 34.54,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250226/90/1842919/bank-panin-pnbn-bukukan-laba-bersih-rp287-triliun-pada-2024"
+     ]
+    },
+    "2025Q1": {
+     "aset": 228.88,
+     "kredit": 145.06,
+     "dpk": 149.58,
+     "laba": 0.7494,
+     "car": 35.88,
+     "ldr": 90.45,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250430/90/1873509/bank-panin-pnbn-raup-laba-rp7494-miliar-sepanjang-kuartal-i2025"
+     ]
+    },
+    "2025Q2": {
+     "laba": 1.42,
+     "npl": 2.81,
+     "nim": 4.23,
+     "sumber": [
+      "https://www.cnbcindonesia.com/market/20260803091626-17-755925/pertumbuhan-bisnis-bank-panin-seret--pnbn--kredit-dan-dpk-tergerus/amp"
+     ]
+    },
+    "2025Q3": {
+     "kredit": 141.98,
+     "dpk": 149.99,
+     "laba": 2.11,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20251028/90/1923909/ragam-kinerja-bank-besar-bbca-bmri-hingga-pnbn-kuartal-iii2025"
+     ]
+    },
+    "2025Q4": {
+     "aset": 237.33,
+     "kredit": 145.08,
+     "dpk": 156.92,
+     "laba": 2.87,
+     "npl": 2.82,
+     "car": 37.49,
+     "casa": 40.0,
+     "sumber": [
+      "https://infobanknews.com/bank-panin-bukukan-laba-bersih-rp287-triliun-sepanjang-2025/"
+     ]
+    },
+    "2026Q2": {
+     "kredit": 139.64,
+     "dpk": 144.57,
+     "laba": 1.44,
+     "npl": 3.22,
+     "car": 35.93,
+     "casa": 42.0,
+     "nim": 4.55,
+     "tumbuh_rilis": {
+      "laba": 1.0
+     },
+     "sumber": [
+      "https://www.cnbcindonesia.com/market/20260803091626-17-755925/pertumbuhan-bisnis-bank-panin-seret--pnbn--kredit-dan-dpk-tergerus/amp",
+      "https://infobanknews.com/paninbank-bukukan-laba-rp144-triliun-di-semester-i-2026-nim-naik-455-persen"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BJBR",
+   "nama": "bank bjb",
+   "lengkap": "PT Bank Pembangunan Daerah Jawa Barat dan Banten Tbk",
+   "grup": "bpd",
+   "domain": "bankbjb.co.id",
+   "profil": "Bank pembangunan daerah milik Provinsi Jawa Barat, Provinsi Banten, serta kabupaten dan kota di kedua provinsi. Berdiri pada 1961.",
+   "terbaru": null,
+   "keterangan": "Laba memakai angka laba bersih konsolidasi yang dilaporkan tiap kuartal. Laba yang diatribusikan ke pemilik induk semester I 2026 adalah Rp783 miliar.",
+   "kuartal": {
+    "2024Q1": {
+     "aset": 202.5,
+     "laba": 0.36426,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20240430/90/1761652/bank-bjb-bjbr-raih-laba-rp36426-miliar-pada-kuartal-i2024"
+     ]
+    },
+    "2024Q2": {
+     "aset": 207.3,
+     "kredit": 136.1,
+     "dpk": 150.2,
+     "laba": 0.771,
+     "npl": 1.5,
+     "car": 17.2,
+     "ldr": 86.2,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-bjb-raup-laba-rp-931-miliar-pada-semester-i-2024"
+     ]
+    },
+    "2024Q3": {
+     "laba": 1.16,
+     "sumber": [
+      "https://investortrust.id/market/50275/bank-bjb-bjbr-bukukan-laba-rp-1-16-triliun-di-kuartal-iii-2024"
+     ]
+    },
+    "2024Q4": {
+     "laba": 1.36,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250313/90/1860913/bank-bjb-bjbr-cetak-laba-bersih-rp136-triliun-pada-2024"
+     ]
+    },
+    "2025Q1": {
+     "laba": 0.3984,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-bjb-cetak-laba-rp-39841-miliar-pada-kuartal-i-2025"
+     ]
+    },
+    "2025Q2": {
+     "laba": 0.71207,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20250729/90/1897340/bank-bjb-bjbr-raup-laba-bersih-rp71207-miliar-per-semester-i2025"
+     ]
+    },
+    "2025Q3": {
+     "aset": 215.9,
+     "kredit": 142.9,
+     "dpk": 160.2,
+     "laba": 1.14,
+     "ldr": 85.3,
+     "sumber": [
+      "https://investortrust.id/financial/83821/bank-bjb-catat-laba-konsolidasi-rp-1-37-triliun-di-kuartal-iii-2025",
+      "https://finansial.bisnis.com/read/20251029/90/1924288/laba-bersih-bjb-bjbr-rp114-triliun-per-september-2025"
+     ]
+    },
+    "2025Q4": {
+     "aset": 221.4,
+     "kredit": 140.7,
+     "laba": 1.58,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-bjb-catat-laba-bersih-rp-158-triliun-pada-2025"
+     ]
+    },
+    "2026Q1": {
+     "kredit": 141.24,
+     "dpk": 159.87,
+     "laba": 0.41015,
+     "npl": 3.07,
+     "ldr": 83.5,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-bjb-cetak-laba-rp-41015-miliar-di-kuartal-i-2026"
+     ]
+    },
+    "2026Q2": {
+     "aset": 228.2,
+     "kredit": 140.4,
+     "dpk": 160.9,
+     "laba": 0.992,
+     "ldr": 87.3,
+     "dihitung": [
+      "ldr"
+     ],
+     "tumbuh_rilis": {
+      "laba": 58.8
+     },
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260729/90/1991989/laba-bank-bjb-melonjak-39-jadi-rp992-miliar-pada-semester-i2026",
+      "https://www.rctiplus.com/news/detail/ekonomi/5439516/aset-capai-rp228-triliun--laba-bank-bjb-tumbuh-58-8-di-semester-i-2026",
+      "https://keuangan.kontan.co.id/news/laba-bank-bjb-melesat-588-semester-i-2026-ini-pendorongnya"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BJTM",
+   "nama": "Bank Jatim",
+   "lengkap": "PT Bank Pembangunan Daerah Jawa Timur Tbk",
+   "grup": "bpd",
+   "domain": "bankjatim.co.id",
+   "profil": "Bank pembangunan daerah milik Provinsi Jawa Timur dan pemerintah kabupaten dan kota di Jawa Timur, berdiri pada 1961. Kini memimpin kelompok usaha bank (KUB) bersama beberapa bank daerah lain, sehingga angka konsolidasinya melonjak.",
+   "terbaru": "Tanpa anggota KUB (bank saja), aset Juni 2026 Rp101,76 triliun dan laba Rp708 miliar, hampir sama dengan tahun lalu. Lonjakan angka konsolidasi datang dari anggota KUB: Bank NTB Syariah, Bank Lampung, Bank Sultra, Bank NTT, dan Bank Banten.",
+   "keterangan": "Mulai akhir 2025 angka konsolidasi memuat anggota kelompok usaha bank (KUB), sehingga aset, kredit, DPK, dan NPL melonjak dibanding kuartal sebelumnya.",
+   "kuartal": {
+    "2023Q4": {
+     "laba": 1.47,
+     "sumber": [
+      "https://investortrust.id/market/60425/raup-rp-1-28-triliun-di-2024-bank-jatim-bjtm-catat-labaterbesardi-antara-bpd"
+     ]
+    },
+    "2024Q1": {
+     "laba": 0.31,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-jatim-bjtm-catatkan-laba-rp-310-miliar-pada-kuartal-i-2024"
+     ]
+    },
+    "2024Q3": {
+     "aset": 106.63,
+     "dpk": 87.5,
+     "laba": 0.93,
+     "npl": 1.52,
+     "nim": 5.72,
+     "sumber": [
+      "https://infobanknews.com/ditopang-faktor-ini-laba-bank-jatim-melonjak-2366-persen-jadi-rp115-t-di-q3-2025/"
+     ]
+    },
+    "2024Q4": {
+     "aset": 118.142,
+     "kredit": 75.35,
+     "dpk": 90.0,
+     "laba": 1.296,
+     "nim": 5.86,
+     "sumber": [
+      "https://investortrust.id/financial/98429/laba-bank-jatim-bjtm-naik-20-65-di-2025-tembus-rp-1-54-triliun"
+     ]
+    },
+    "2025Q1": {
+     "dpk": 89.25,
+     "laba": 0.347,
+     "sumber": [
+      "https://infobanknews.com/bank-jatim-raup-laba-bersih-rp661-miliar-di-kuartal-i-2026/"
+     ]
+    },
+    "2025Q3": {
+     "aset": 125.11,
+     "kredit": 80.2,
+     "dpk": 99.32,
+     "laba": 1.15,
+     "npl": 2.0,
+     "car": 23.14,
+     "casa": 58.39,
+     "nim": 6.09,
+     "sumber": [
+      "https://infobanknews.com/ditopang-faktor-ini-laba-bank-jatim-melonjak-2366-persen-jadi-rp115-t-di-q3-2025/",
+      "https://finansial.bisnis.com/read/20251031/90/1925031/penyaluran-kredit-bank-jatim-tembus-rp802-triliun-pada-kuartal-iii2025"
+     ]
+    },
+    "2025Q4": {
+     "aset": 168.855,
+     "kredit": 110.503,
+     "laba": 1.617,
+     "sumber": [
+      "https://investortrust.id/financial/98429/laba-bank-jatim-bjtm-naik-20-65-di-2025-tembus-rp-1-54-triliun"
+     ]
+    },
+    "2026Q1": {
+     "aset": 164.07,
+     "kredit": 109.22,
+     "dpk": 122.8,
+     "laba": 0.661,
+     "sumber": [
+      "https://infobanknews.com/bank-jatim-raup-laba-bersih-rp661-miliar-di-kuartal-i-2026/"
+     ]
+    },
+    "2026Q2": {
+     "aset": 162.06,
+     "kredit": 111.29,
+     "dpk": 120.42,
+     "laba": 1.25,
+     "npl": 4.38,
+     "car": 23.72,
+     "casa": 58.72,
+     "ldr": 91.24,
+     "nim": 5.9,
+     "roe": 11.43,
+     "tumbuh_rilis": {
+      "aset": 37.16,
+      "kredit": 41.68,
+      "dpk": 31.47,
+      "laba": 53.49
+     },
+     "sumber": [
+      "https://infobanknews.com/laba-bank-jatim-naik-5349-persen-jadi-rp125-triliun-di-semester-i-2026-ditopang-kub",
+      "https://investortrust.id/financial/115673/bank-jatim-bjtm-klaim-fundamental-solid-laba-tumbuh-53-4-dan-kredit-naik-41-68-di-semester-i-2026",
+      "https://www.idxchannel.com/banking/bank-jatim-bjtm-bukukan-laba-bersih-rp708-miliar-di-semester-i-2026/all"
+     ]
+    }
+   }
+  }
+ ]
 }

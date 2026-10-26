@@ -5,7 +5,8 @@ import {
   totalSeries, groupRows, provinceValues, commonLatest
 } from './logic.js';
 import { orbit } from './orbit.js';
-import { renderBanks, openBank, tileBack, periodKey } from './bank.js';
+import { renderBanks, openBank, tileBack, qLabel } from './bank.js';
+import { liquidSeg, edgeLight } from './ui.js';
 
 let DATA = null;
 let YM = null;
@@ -227,15 +228,17 @@ async function mainBanks() {
     $('#per-bank').hidden = true;
     return null;
   }
-  const latest = data.bank.map((b) => b.periode).sort((a, b) => periodKey(b) - periodKey(a))[0];
-  $('#bank-eyebrow').textContent = `${data.bank.length} bank · laporan sampai ${latest} · diperbarui ${tanggal(data.diperbarui)}`;
-  const stage = orbit($('#orbit-field'), data.bank, { onPick: openBank, back: tileBack, keep: $('#orbit-copy') });
+  const qs = data.kuartal;
+  $('#bank-eyebrow').textContent = `${data.bank.length} bank · ${qs.length} kuartal, ${qLabel(qs[0])}–${qLabel(qs[qs.length - 1])} · diperbarui ${tanggal(data.diperbarui)}`;
+  const stage = orbit($('#orbit-field'), data.bank, { onPick: openBank, back: (b) => tileBack(b, qs), keep: $('#orbit-copy') });
   renderBanks(data, { onGroup: (g) => stage.focus(g) });
   return data;
 }
 
 async function main() {
   const banks = await mainBanks();
+  $$('.seg').forEach(liquidSeg);
+  edgeLight(document.body, '.bcard, .card');
   let status = null;
   try { status = await getJSON('data/status.json'); } catch { /* belum ada */ }
   try {
@@ -264,6 +267,7 @@ async function main() {
   seg('#trend-seg', 'trend', renderTrend);
   seg('#prov-seg', 'prov', renderProvinces);
   seg('#rate-seg', 'rate', renderRateChart);
+  $$('.seg').forEach(liquidSeg);
 }
 
 main();

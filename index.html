@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Peta Perbankan Indonesia</title>
   <meta name="description" content="Laporan keuangan terbaru BRI, Mandiri, BNI, BCA, dan bank besar lain, dibandingkan dalam kelompoknya, plus kredit, simpanan, dan suku bunga per kelompok bank dari Bank Indonesia.">
-  <meta name="theme-color" content="#F4F4F2">
+  <meta name="theme-color" content="#EAE6DE">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="preload" href="google-sans-flex.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="top">
     <a class="brand" href="./">
-      <span class="brand-mark"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 4l9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/></svg></span>
+      <span class="brand-mark"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></span>
       <span class="brand-text"><b>Peta Perbankan</b><span id="updated">Memuat data…</span></span>
     </a>
     <nav class="top-nav" aria-label="Bagian">
@@ -30,9 +29,9 @@
     <section class="orbit" id="orbit" aria-label="Bank yang dibandingkan">
       <div class="orbit-copy" id="orbit-copy">
         <span class="eyebrow"><i class="dot"></i><span id="bank-eyebrow">Laporan keuangan terbaru tiap bank</span></span>
-        <h1 class="display">Bank mana yang paling <b>besar</b>, paling <b>untung</b>, paling <b>sehat</b></h1>
-        <p class="lede">Ketuk logo untuk membuka laporan keuangan terbaru tiap bank. Di bawahnya, bandingkan BUMN dengan BUMN, swasta dengan swasta, dan bank daerah dengan bank daerah.</p>
-        <div class="orbit-actions"><a class="btn dark" href="#per-bank">Bandingkan per bank</a><a class="btn light" href="#industri">Data seluruh industri</a></div>
+        <h1 class="display">Bank mana yang paling <b>besar</b>, paling <b class="coral">untung</b>, paling <b class="outline">sehat</b></h1>
+        <p class="lede">Ketuk logo untuk membuka riwayat laporan keuangan tiap bank, kuartal demi kuartal sejak akhir 2023. Di bawahnya, bandingkan BUMN dengan BUMN, swasta dengan swasta, dan bank daerah dengan bank daerah.</p>
+        <div class="orbit-actions"><a class="btn dark" href="#per-bank">Bandingkan per bank <svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="btn light" href="#industri">Data seluruh industri</a></div>
       </div>
       <div class="orbit-field" id="orbit-field"></div>
     </section>
@@ -41,25 +40,58 @@
       <div class="card">
         <div class="card-head">
           <div>
-            <h2>Per bank</h2>
+            <span class="kicker">Per bank</span>
+            <h2>Bandingkan dalam kelompoknya</h2>
             <p id="bank-sub">Memuat…</p>
           </div>
           <div class="seg" id="bank-group" role="group" aria-label="Kelompok bank"></div>
+        </div>
+        <div class="qbar">
+          <span class="qbar-label"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M16 2v3"/><path d="M3 9h18"/><path d="M8 2v3"/></svg>Kuartal</span>
+          <div class="seg qseg" id="bank-quarter" role="group" aria-label="Kuartal"></div>
         </div>
         <div class="bcards" id="bank-cards"></div>
       </div>
       <div class="card">
         <div class="card-head">
           <div>
+            <span class="kicker">Peringkat</span>
             <h2 id="bank-bars-title">Perbandingan</h2>
             <p id="bank-bars-note"></p>
           </div>
           <div class="seg" id="bank-metric" role="group" aria-label="Ukuran"></div>
         </div>
         <ul class="bbars" id="bank-bars"></ul>
-        <h3 class="bd-h3 tbl-title">Semua angka</h3>
+      </div>
+      <div class="grid wide-left">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <span class="kicker">Tren</span>
+              <h2 id="bank-trend-title">Tren per kuartal</h2>
+              <p id="bank-trend-note"></p>
+            </div>
+          </div>
+          <div id="bank-trend"></div>
+        </div>
+        <div class="card how">
+          <span class="kicker">Cara membaca</span>
+          <h2 class="h2">Laba dihitung sejak Januari</h2>
+          <p>Bank merilis laba kumulatif: Q1 berisi tiga bulan, Q2 semester I, Q3 sembilan bulan, Q4 setahun penuh. Karena itu kartu dan tabel membandingkan bank pada kuartal yang sama, dan pertumbuhan dihitung terhadap kuartal yang sama tahun lalu.</p>
+          <p>Grafik laba memakai laba per kuartal, yaitu selisih laba kumulatif antar kuartal, supaya naik turunnya terlihat.</p>
+          <p class="note">Angka yang tidak disebut di rilis dibiarkan kosong, tidak ditebak.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <span class="kicker">Tabel</span>
+            <h2 id="bank-table-title">Semua angka</h2>
+            <p>Angka terbaik di kelompoknya ditebalkan. Ketuk nama bank untuk riwayat lengkap dan sumbernya.</p>
+          </div>
+        </div>
         <div class="table-wrap"><table class="tbl bank-tbl" id="bank-table"></table></div>
-        <p class="note" id="bank-date">Angka diambil dari laporan keuangan publikasi dan rilis kinerja resmi tiap bank. Kredit, simpanan, dan aset dalam triliun rupiah; pertumbuhan dibanding periode yang sama tahun lalu. Angka tercetak tebal adalah yang terbaik di kelompoknya.</p>
+        <p class="note" id="bank-date">Aset, kredit, DPK, dan laba dalam triliun rupiah (M = miliar). Pertumbuhan dibanding kuartal yang sama tahun lalu. Sumber: rilis kinerja resmi bank, laporan keuangan publikasi, dan media keuangan yang mengutipnya.</p>
       </div>
     </section>
 
@@ -177,13 +209,13 @@
   </main>
 
   <dialog class="sheet bank-sheet" id="bank-sheet" aria-label="Detail bank">
-    <form method="dialog"><button class="sheet-close btn light sm" aria-label="Tutup">Tutup</button></form>
+    <form method="dialog"><button class="sheet-close btn light sm icon-only" aria-label="Tutup"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></form>
     <div id="bank-sheet-body"></div>
   </dialog>
 
   <footer class="foot">
     <span>Sumber: <a href="https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx" target="_blank" rel="noopener">Statistik Ekonomi dan Keuangan Indonesia (SEKI), Bank Indonesia</a>. <span id="src-list"></span></span>
-    <span>Data per bank dari laporan keuangan publikasi dan rilis resmi tiap bank, diperbarui setiap kuartal; sumber tercantum di halaman tiap bank. Data per kelompok diperiksa otomatis dua kali seminggu; BI menerbitkan SEKI setiap bulan. Logo bank dari koleksi <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noopener">idn-finlogos</a> (CC BY-NC 4.0); merek dan logo milik bank masing-masing.</span>
+    <span>Data per bank per kuartal (Q4 2023 sampai kuartal terbaru) dari rilis kinerja resmi dan laporan keuangan publikasi tiap bank, diperbarui setiap musim laporan; sumber per kuartal tercantum di halaman tiap bank. Data per kelompok diperiksa otomatis dua kali seminggu; BI menerbitkan SEKI setiap bulan. Logo bank dari koleksi <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noopener">idn-finlogos</a> (CC BY-NC 4.0); merek dan logo milik bank masing-masing. Ikon dari <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>.</span>
   </footer>
 
   <script type="module" src="app.js"></script>

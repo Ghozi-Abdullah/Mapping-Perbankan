@@ -156,17 +156,27 @@ export function lineChart(host, opts) {
   const labelW = Math.max(...labels.map((l) => String(l).length)) * 6.6 + 34;
   const every = Math.max(1, Math.ceil(labels.length / Math.max(2, Math.floor((W - pad.l - pad.r) / labelW))));
   const showLabel = (i) => i === last || (i % every === 0 && last - i >= every);
-  const path = (vs) => vs.map((v, i) => (v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`)).reduce((acc, p) => {
+  // breaks: indeks tempat garis sengaja diputus (misalnya perubahan cakupan data), meski kedua sisi berisi angka.
+  const path = (vs, breaks = []) => vs.map((v, i) => (v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`)).reduce((acc, p, i) => {
     if (p == null) { acc.push(''); return acc; }
+    if (breaks.includes(i) && acc[acc.length - 1]) acc.push('');
     acc[acc.length - 1] += (acc[acc.length - 1] ? ' L' : 'M') + p;
     return acc;
   }, ['']).filter(Boolean).join(' ');
+  // dots: 'isolated' menandai titik yang tidak tersambung garis (tetangganya kosong) supaya tetap terlihat.
+  const lone = (s) => (opts.dots !== 'isolated' ? '' : s.values.map((v, i) => {
+    if (v == null) return '';
+    const br = s.breaks || [];
+    const left = i > 0 && s.values[i - 1] != null && !br.includes(i);
+    const right = i < last && s.values[i + 1] != null && !br.includes(i + 1);
+    return left || right ? '' : `<circle class="lone" cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="3.5"${s.color ? ` style="fill:${s.color}"` : ''}/>`;
+  }).join(''));
   host.classList.add('chart');
   host.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(opts.label || 'Grafik')}">
     <g class="axis">${ticks.map((t) => `<line class="grid-line" x1="${pad.l}" x2="${W - pad.r}" y1="${y(t)}" y2="${y(t)}"/><text x="${pad.l - 8}" y="${y(t) + 4}" text-anchor="end">${esc(opts.tick ? opts.tick(t) : num(t, step < 1 ? 1 : 0))}</text>`).join('')}
       ${labels.map((l, i) => (showLabel(i) ? `<text x="${x(i)}" y="${H - 6}" text-anchor="${i === last ? 'end' : i === 0 ? 'start' : 'middle'}">${esc(l)}</text>` : '')).join('')}</g>
     ${area && series.length === 1 ? `<path class="area" d="${path(series[0].values)} L${x(last)},${y(lo)} L${x(0)},${y(lo)} Z"/>` : ''}
-    ${series.map((s) => `<path class="series ${s.cls || ''}" d="${path(s.values)}"${s.color ? ` style="stroke:${s.color}"` : ''}/>`).join('')}
+    ${series.map((s) => `<path class="series ${s.cls || ''}" d="${path(s.values, s.breaks)}"${s.color ? ` style="stroke:${s.color}"` : ''}/>${lone(s)}`).join('')}
     <line class="cursor" y1="${pad.t}" y2="${H - pad.b}" x1="0" x2="0" visibility="hidden"/>
   </svg><div class="tip" hidden></div>`;
   if (series.length > 1) {

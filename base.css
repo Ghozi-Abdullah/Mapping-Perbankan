@@ -242,3 +242,4 @@ dialog.sheet::backdrop { background: rgba(21, 17, 14, .45); }
 @media (max-width: 720px) {
   dialog.sheet { padding: 20px; border-radius: 26px; width: calc(100% - 16px); max-height: calc(100% - 24px); }
 }
+.chart .lone { fill: var(--accent); stroke: var(--card); stroke-width: 2; }

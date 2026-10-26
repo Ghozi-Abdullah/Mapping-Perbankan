@@ -1,5 +1,88 @@
-/* Peta Perbankan: aksen biru tua. */
-:root { --accent: #2A5BD7; --accent-soft: #E4EBFB; }
+/* Peta Perbankan: palet editorial dari panduan pengguna (Warm Ivory #EAE6DE, Deep Editorial Blue #226192,
+   Coral Orange #EF8557) dan huruf gaya Apple: SF di perangkat Apple, Aptos bila terpasang (Windows dengan Office),
+   lalu Inter (OFL, di-host di repo) untuk sisanya. */
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('./inter-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Aptos', 'Inter Variable', 'Inter', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  --ivory: #EAE6DE; --blue: #226192; --coral: #EF8557;
+  --ink: #12263A; --ink-2: #4B5A69; --ink-3: #7F8A94;
+  --line: rgba(18, 38, 58, .09); --line-2: rgba(18, 38, 58, .16);
+  --bg: #EAE6DE; --bg-2: #DED9CE; --card: #F8F6F1; --paper: #FFFFFF;
+  --accent: #226192; --accent-ink: #1A4E77; --accent-soft: #D7E3EE;
+  --coral-ink: #B9532B; --coral-soft: #FADCCC;
+  --good: #1F7A55; --good-soft: #DCEFE3; --bad: #C2412D; --bad-soft: #F9DDD5; --warn: #9A6200; --warn-soft: #F7E6C4;
+  --shadow: 0 1px 2px rgba(18, 38, 58, .05), 0 24px 48px -30px rgba(18, 38, 58, .3);
+  /* Seri kategorikal, urutan tetap; lulus uji buta warna untuk pasangan bersebelahan di atas kartu #F8F6F1. */
+  --s1: #226192; --s2: #EF8557; --s3: #7B5FC4; --s4: #C99A12; --s5: #178A73; --s6: #3A9AD9; --s7: #C94F7C; --s8: #5E7F14;
+}
+
+/* ---------- Tipografi dan elemen dasar ---------- */
+body { letter-spacing: -.006em; }
+.display { font-weight: 600; letter-spacing: -.045em; line-height: 1.02; }
+.display b { font-weight: 700; color: var(--accent); }
+.display b.coral { color: var(--coral); }
+@supports (-webkit-text-stroke: 1px black) {
+  .display b.outline { color: transparent; -webkit-text-stroke: 1.6px var(--accent); }
+}
+.card-head h2, .h2 { font-weight: 600; letter-spacing: -.025em; }
+.kicker { display: block; margin-bottom: 4px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+.eyebrow { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow .dot { background: var(--coral); }
+.lc { width: 18px; height: 18px; flex-shrink: 0; }
+.tag .lc { width: 14px; height: 14px; margin-right: 6px; }
+.brand-mark { background: var(--accent); }
+.brand-mark .lc { width: 22px; height: 22px; }
+.top-nav [aria-current="page"], .top-nav [aria-pressed="true"] { background: var(--accent); }
+.top-nav a:hover { color: var(--accent); }
+.btn.dark { background: var(--accent); color: #fff; }
+.btn.dark:hover { background: var(--accent-ink); }
+.btn.light { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.btn.light:hover { background: var(--accent-soft); }
+.btn .lc { transition: transform .25s cubic-bezier(.34, 1.56, .64, 1); }
+.btn:hover .lc { transform: translateX(3px); }
+.btn.icon-only { width: 40px; padding: 0; }
+.btn.icon-only:hover .lc { transform: rotate(90deg); }
+.chart .series { stroke-width: 2.2; }
+.tip { background: var(--ink); }
+a { text-decoration-color: var(--line-2); }
+
+/* Tombol pilihan dengan indikator cair (lihat ui.js). */
+.seg { position: relative; isolation: isolate; }
+.seg-blob {
+  position: absolute; z-index: 0; border-radius: 999px; background: var(--paper); pointer-events: none;
+  box-shadow: 0 1px 2px rgba(18, 38, 58, .1), 0 4px 12px -6px rgba(18, 38, 58, .25);
+  transition: left .46s cubic-bezier(.34, 1.56, .64, 1), width .46s cubic-bezier(.34, 1.56, .64, 1), transform .3s ease, opacity .2s;
+}
+.seg-blob.stretch { transition: left .13s ease-out, width .13s ease-out, transform .13s ease-out; transform: scaleY(.84); }
+.seg.liquid button { position: relative; z-index: 1; transition: color .25s; }
+.seg.liquid button[aria-pressed="true"] { background: none; box-shadow: none; }
+.seg button[aria-pressed="true"] { color: var(--accent); font-weight: 500; }
+.seg button small { margin-left: 6px; font-size: 12px; color: var(--ink-3); }
+
+/* Tepi kartu menyala mengikuti kursor (lihat ui.js). */
+.bcard, .card.stat { position: relative; }
+.bcard::after, .card.stat::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none; opacity: 0;
+  background: radial-gradient(170px circle at var(--ex, -300px) var(--ey, -300px), rgba(239, 133, 87, .95), rgba(239, 133, 87, 0) 72%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; transition: opacity .35s;
+}
+.bcard:hover::after, .card.stat:hover::after { opacity: 1; }
+
+/* Kartu muncul dari blur secara berurutan (lihat ui.js). */
+@keyframes develop {
+  from { opacity: 0; filter: blur(10px); transform: translateY(8px) scale(.985); }
+  60% { filter: blur(0); }
+  to { opacity: 1; filter: none; transform: none; }
+}
+.develop { animation: develop .55s cubic-bezier(.2, .8, .2, 1) both; animation-delay: var(--d, 0ms); }
+.bar i { transition: width .6s cubic-bezier(.2, .8, .2, 1); }
 
 .stat-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .stat .spark { width: 100%; height: 36px; margin-top: 6px; }
@@ -70,16 +153,16 @@
   gap: 8px; padding: 12px; text-align: center; backface-visibility: hidden; -webkit-backface-visibility: hidden;
   transition: opacity .4s;
 }
-.tile .front { background: #fff; box-shadow: inset 0 0 0 1px var(--line), 0 14px 30px -20px rgba(20, 20, 20, .38); }
-.tile .front small { font-size: 11.5px; font-weight: 500; letter-spacing: .05em; color: var(--ink-3); }
-.tile .back { transform: rotateY(180deg); gap: 2px; background: var(--ink); color: #fff; }
+.tile .front { background: #FFFDF9; box-shadow: inset 0 0 0 1px var(--line), 0 14px 30px -20px rgba(18, 38, 58, .4); }
+.tile .front small { font-size: 10.5px; font-weight: 600; letter-spacing: .14em; color: var(--ink-3); }
+.tile .back { transform: rotateY(180deg); gap: 2px; background: var(--accent); color: #fff; }
 .tile .back small { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .62); }
 .tile .back b { font-size: 18px; font-weight: 600; letter-spacing: -.02em; }
 .tile .back span { font-size: 11.5px; color: rgba(255, 255, 255, .7); }
-.tile .back em { margin-top: 4px; font-style: normal; font-size: 11.5px; font-weight: 500; color: #9BE7BD; }
-.tile .back em.neg { color: #FFB4A3; }
+.tile .back em { margin-top: 4px; font-style: normal; font-size: 11.5px; font-weight: 600; color: #FFC2A6; }
+.tile .back em.neg { color: #fff; opacity: .8; }
 .tile.dim .face { opacity: .3; }
-.tile:focus-visible .front { box-shadow: 0 0 0 3px var(--accent), 0 14px 30px -20px rgba(20, 20, 20, .38); }
+.tile:focus-visible .front { box-shadow: 0 0 0 3px var(--coral), 0 14px 30px -20px rgba(18, 38, 58, .4); }
 
 /* ---------- Logo bank (SVG lokal) ---------- */
 /* Flex (bukan grid) supaya tinggi 100% pada gambar mengikuti tinggi wadah, termasuk logo yang hampir persegi. */
@@ -87,7 +170,7 @@
 .logo img, .logo-lg img, .logo-sm img, .logo-xs img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; }
 /* Logo melebar dibuat lebar penuh; logo yang hampir persegi dibuat lebih tinggi supaya ukurannya seimbang. */
 .logo { width: 108px; height: clamp(40px, calc(108px / var(--ratio, 2.4)), 58px); }
-.logo-sm { width: 92px; height: 50px; padding: 9px 10px; border-radius: 15px; background: #fff; }
+.logo-sm { width: 92px; height: 50px; padding: 9px 10px; border-radius: 15px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
 .logo-xs { width: 54px; height: 32px; padding: 5px 7px; border-radius: 10px; background: #fff; box-shadow: inset 0 0 0 1px var(--line); }
 .logo-lg { width: 184px; height: 100px; padding: 18px 22px; border-radius: 26px; background: #fff; box-shadow: inset 0 0 0 1px var(--line-2); }
 .mono { background: var(--bg-2); box-shadow: none; border-radius: 14px; }
@@ -100,22 +183,27 @@
 
 /* ---------- Per bank ---------- */
 .per-bank { display: grid; gap: 20px; }
-.seg button small { margin-left: 6px; font-size: 12px; color: var(--ink-3); }
 .bcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
 .bcard {
-  display: grid; gap: 16px; align-content: start; padding: 18px; border: 0; border-radius: 24px; background: var(--bg);
-  text-align: left; cursor: pointer; font: inherit; color: inherit; transition: background .2s, transform .2s;
+  display: grid; gap: 16px; align-content: start; padding: 18px; border: 0; border-radius: 24px; background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--line); text-align: left; cursor: pointer; font: inherit; color: inherit;
+  transition: transform .25s cubic-bezier(.34, 1.56, .64, 1), box-shadow .25s;
 }
-.bcard:hover { background: var(--bg-2); transform: translateY(-2px); }
-.bcard:focus-visible, .bb:focus-visible, .tb-name:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.bcard:hover { transform: translateY(-3px); box-shadow: inset 0 0 0 1px var(--line), 0 18px 34px -24px rgba(18, 38, 58, .45); }
+.bcard.empty-q { background: transparent; }
+.bcard.empty-q .bc-stats { opacity: .45; }
+.bcard:focus-visible, .bb:focus-visible, .tb-name:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
 .bc-head { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.bc-title { display: grid; min-width: 0; }
-.bc-title b { font-size: 16.5px; font-weight: 500; }
-.bc-title small { font-size: 12.5px; color: var(--ink-3); }
+.bc-title { display: grid; min-width: 0; flex: 1; }
+.bc-title b { font-size: 16.5px; font-weight: 600; letter-spacing: -.015em; }
+.bc-title small { font-size: 12px; color: var(--ink-3); }
+.bc-go { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent-soft); transition: background .2s, color .2s, transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+.bc-go .lc { width: 16px; height: 16px; }
+.bcard:hover .bc-go { background: var(--accent); color: #fff; transform: rotate(45deg); }
 .bc-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
 .bc-stats > span { display: grid; gap: 3px; align-content: start; justify-items: start; }
-.bc-stats small { font-size: 12px; color: var(--ink-2); }
-.bc-stats b { font-size: 17px; font-weight: 500; letter-spacing: -.01em; }
+.bc-stats small { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.bc-stats b { font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
 .delta.sm { height: 20px; padding: 0 7px; font-size: 11.5px; }
 
 .bbars { display: grid; gap: 4px; margin-bottom: 26px; }
@@ -135,8 +223,8 @@
 
 .tbl-title { margin-bottom: 8px; }
 .bank-tbl td { vertical-align: middle; font-variant-numeric: tabular-nums; }
-.bank-tbl th.on, .bank-tbl td.on { background: var(--bg); }
-.bank-tbl td.best { font-weight: 600; color: var(--ink); }
+.bank-tbl th.on, .bank-tbl td.on { background: rgba(34, 97, 146, .06); }
+.bank-tbl td.best { font-weight: 700; color: var(--accent); }
 .bank-tbl th:first-child, .bank-tbl td:first-child { position: sticky; left: 0; z-index: 1; background: var(--card); }
 .tb-name { display: flex; align-items: center; gap: 10px; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; font: inherit; color: inherit; }
 .tb-name > span { display: grid; }
@@ -155,8 +243,9 @@
 .bd-title { display: grid; gap: 6px; min-width: 0; }
 .bd-name { font-size: clamp(26px, 3vw, 34px); font-weight: 500; letter-spacing: -.03em; line-height: 1.1; }
 .bd-profile { font-size: 15.5px; color: var(--ink-2); max-width: 70ch; }
-.bd-news { display: grid; gap: 4px; padding: 14px 16px; border-radius: 20px; background: var(--accent-soft); font-size: 14px; max-width: 76ch; }
-.bd-news b { font-weight: 500; font-size: 12.5px; }
+.bd-news { display: grid; gap: 4px; padding: 14px 16px; border-radius: 20px; background: var(--coral-soft); font-size: 14px; max-width: 76ch; }
+.bd-news b { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--coral-ink); }
+.bd-news b .lc { width: 15px; height: 15px; }
 .bd-stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
 .ds { display: grid; gap: 4px; align-content: start; padding: 14px; border-radius: 20px; background: var(--bg); }
 .ds > b { font-size: 19px; font-weight: 500; letter-spacing: -.02em; white-space: nowrap; }
@@ -201,6 +290,55 @@
 @media (prefers-reduced-motion: reduce) {
   .bcard:hover { transform: none; }
 }
-.bd-key { font-size: 13.5px; color: var(--ink-2); max-width: 76ch; padding-left: 12px; box-shadow: inset 2px 0 0 var(--line-2); }
+.bd-key { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--ink-2); max-width: 76ch; }
+.bd-key .lc { width: 16px; height: 16px; margin-top: 2px; color: var(--accent); }
 .bbars + .tbl-title { margin-top: 4px; }
 .bb-missing { margin-bottom: 6px; }
+
+/* ---------- Kuartal, tren, dan kartu penjelasan ---------- */
+.qbar { display: flex; align-items: center; gap: 12px; margin: -2px 0 18px; min-width: 0; }
+.qbar-label { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); flex-shrink: 0; }
+.qbar-label .lc { width: 15px; height: 15px; }
+.qseg { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.qseg::-webkit-scrollbar { display: none; }
+.qseg button { min-width: 62px; white-space: nowrap; }
+#bank-trend { position: relative; }
+.how { background: var(--accent); color: #EEF3F8; display: grid; gap: 10px; align-content: start; }
+.how .kicker { color: #FFC2A6; }
+.how .h2 { color: #fff; }
+.how p { font-size: 14px; color: #D9E4EE; }
+.how .note { color: #AFC4D8; }
+.grid.wide-left { align-items: stretch; }
+.bbars + .tbl-title { margin-top: 4px; }
+
+/* ---------- Lembar detail: tren dan tabel kuartal ---------- */
+.bd-sec { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.bd-sec .bd-h3 span { font-weight: 400; color: var(--ink-3); }
+.bd-sec small { font-size: 12px; color: var(--ink-3); }
+.seg.sm button { height: 30px; padding: 0 12px; font-size: 13px; }
+.bd-chart { position: relative; }
+.bd-more { border-radius: 18px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); }
+.bd-more summary { display: flex; align-items: center; gap: 8px; padding: 12px 16px; cursor: pointer; font-weight: 500; list-style: none; }
+.bd-more summary::-webkit-details-marker { display: none; }
+.bd-more summary::after { content: '+'; margin-left: auto; font-size: 18px; color: var(--accent); transition: transform .25s; }
+.bd-more[open] summary::after { transform: rotate(45deg); }
+.bd-more summary .lc { width: 16px; height: 16px; color: var(--accent); }
+.bd-more > .table-wrap, .bd-more > .bd-sources { padding: 0 16px 14px; }
+.bd-tbl td small { display: block; font-size: 11px; color: var(--ink-3); }
+.bd-sources { display: grid; gap: 10px; }
+.bd-sources li { display: grid; gap: 3px; font-size: 13.5px; }
+.bd-sources li b { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.bd-stats .ds { background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); }
+dialog.sheet { background: var(--card); }
+.film-actions .btn .lc { width: 16px; height: 16px; }
+
+@media (max-width: 720px) {
+  .qbar { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .qbar .qseg { width: 100%; }
+  .how { order: 2; }
+}
+/* Isi lembar detail tidak boleh melebar melewati dialog di layar sempit. */
+.bank-detail { grid-template-columns: minmax(0, 1fr); }
+.bd-sec .seg { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.bd-sec .seg::-webkit-scrollbar { display: none; }
+.bd-sec .seg button { white-space: nowrap; }
