@@ -1,7 +1,8 @@
 """Tarik tabel SEKI Bank Indonesia untuk Peta Perbankan, lalu tulis data/perbankan.json.
 
-Riwayat bulan lama disimpan: tabel SEKI hanya memuat sekitar 18 bulan terakhir, jadi setiap tarikan
-menggabungkan bulan baru ke data yang sudah ada.
+Setiap berkas SEKI bisa berisi beberapa lembar (riwayat lama dan lembar terbaru). Semua lembar dibaca dan
+digabung, lalu hanya bulan sejak CUTOFF yang disimpan. Riwayat dari tarikan sebelumnya ikut digabung, dan angka
+baru menimpa yang lama karena BI kadang merevisi bulan sebelumnya.
 """
 
 import sys
@@ -22,6 +23,16 @@ TABLES = {
     "bunga_tabungan": ("TABEL1_30", "I.30 Suku bunga tabungan rupiah menurut kelompok bank"),
 }
 GROUP_KEYS = ("persero", "bpd", "busn", "kcba", "bpr", "umum", "total")
+CUTOFF = "2019-01"
+
+
+def prune(tree, cutoff=CUTOFF):
+    """Buang bulan sebelum cutoff dari semua deret di dalam pohon data."""
+    if not isinstance(tree, dict):
+        return tree
+    if tree and all(isinstance(k, str) and len(k) == 7 and k[4] == "-" for k in tree):
+        return {m: v for m, v in tree.items() if m >= cutoff}
+    return {k: prune(v, cutoff) for k, v in tree.items()}
 
 
 def merge(old, new):
@@ -94,13 +105,27 @@ def main():
         url = f"{BASE}{code}.xls"
         try:
             raw = http_get(url, timeout=60, headers={"Referer": "https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx"})
-            rows = seki.data_rows(seki.read_grid(raw))
-            diag[name] = structure(rows)
-            part = extract(name, rows)
-            check(name, part)
-            data[name] = merge_tree(data.get(name), part)
+            sheets = seki.sheet_rows(raw)
+            part, used, errors = {}, [], []
+            for latest, rows in sheets:  # dari lembar terlama ke terbaru, supaya lembar terbaru menimpa
+                try:
+                    p = extract(name, rows)
+                    check(name, p)
+                except (ValueError, KeyError) as e:
+                    errors.append(f"{latest}: {e}")
+                    continue
+                part = merge_tree(part, p)
+                used.append(latest)
+            diag[name] = {"lembar": [latest for latest, _ in sheets], "dipakai": used, "gagal": errors,
+                          "struktur_lembar_terbaru": structure(sheets[-1][1])}
+            if not used:
+                raise ValueError("; ".join(errors) or "tidak ada lembar terbaca")
+            part = prune(part)
+            data[name] = merge_tree(prune(data.get(name)), part)
             months = sorted({m for s in _series(part) for m in s})
-            status.ok(name, f"{code}: {months[0]} s.d. {months[-1]}" if months else code, len(rows))
+            if not months:
+                raise ValueError(f"tidak ada bulan sejak {CUTOFF}")
+            status.ok(name, f"{code}: {months[0]} s.d. {months[-1]} dari {len(used)} lembar", len(sheets[-1][1]))
         except (FetchError, ValueError, ImportError, KeyError) as e:
             status.fail(name, f"{code}: {e}")
     status.save()

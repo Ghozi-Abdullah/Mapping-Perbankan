@@ -217,6 +217,52 @@ class Files(unittest.TestCase):
         self.assertEqual(max(out["total"]), "2026-08")
 
 
+class MultiSheet(unittest.TestCase):
+    """Berkas BI berisi lembar riwayat lama yang lebih panjang dan lembar terbaru yang lebih pendek."""
+
+    def workbook(self):
+        import io
+
+        import xlwt
+
+        wb = xlwt.Workbook()
+        names = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"]
+        old_months = [f"{names[(i) % 12]} {2015 + i // 12}" for i in range(30)]  # Jan 2015 .. Jun 2017
+        ws = wb.add_sheet("1999-2017")
+        g = sheet([(label, ramp(100 * k)) for k, (label, _) in enumerate(KREDIT, 1)], months=old_months, years=False, title="I.4 lama")
+        for r, row in enumerate(g):
+            for c, v in enumerate(row):
+                if v != "":
+                    ws.write(r, c, v)
+        ws2 = wb.add_sheet("2017-")
+        g = sheet(KREDIT, title="I.4")
+        g[2] = []
+        for r, row in enumerate(g):
+            for c, v in enumerate(row):
+                if v != "":
+                    ws2.write(r, c, v)
+        ws2.write_merge(2, 2, 2, 11, 2025)
+        ws2.write_merge(2, 2, 12, 19, 2026)
+        buf = io.BytesIO()
+        wb.save(buf)
+        return buf.getvalue()
+
+    @unittest.skipUnless(__import__("importlib").util.find_spec("xlwt"), "xlwt tidak terpasang")
+    def test_newest_sheet_wins_and_all_sheets_read(self):
+        raw = self.workbook()
+        self.assertEqual(max(seki.by_group_totals(seki.data_rows(seki.read_grid(raw, TODAY), TODAY))["total"]), "2026-08")
+        sheets = seki.sheet_rows(raw, TODAY)
+        self.assertEqual([latest for latest, _ in sheets], ["2017-06", "2026-08"])
+        part = {}
+        for _, rows in sheets:
+            part = fetch.merge_tree(part, seki.by_group_totals(rows))
+        self.assertIn("2015-01", part["persero"])
+        self.assertIn("2026-08", part["persero"])
+        pruned = fetch.prune(part)
+        self.assertNotIn("2017-06", pruned["persero"])
+        self.assertEqual(min(pruned["persero"]), "2025-03")
+
+
 class Merge(unittest.TestCase):
     def test_history_kept_and_revised(self):
         old = {"persero": {"2024-01": 1.0, "2025-03": 2.0}}

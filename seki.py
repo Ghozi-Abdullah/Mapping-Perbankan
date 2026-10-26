@@ -3,6 +3,10 @@
 Tabel SEKI berbentuk lembar Excel lama (.xls) dengan baris judul, baris tahun, baris bulan, lalu baris data
 berlabel di kiri (Indonesia) dan kanan (Inggris). Pembaca ini tidak bergantung pada nomor baris atau kolom:
 ia mencari baris bulan, menentukan tahun tiap kolom, lalu membaca label dan angka tiap baris.
+
+Satu berkas bisa berisi beberapa lembar: riwayat lama (misalnya klasifikasi lapangan usaha sebelum 2017) dan
+lembar terbaru. Semua lembar dibaca, lalu digabung dari yang terlama ke yang terbaru supaya bulan terbaru selalu
+masuk dan angka revisi di lembar terbaru yang dipakai.
 """
 
 import html.parser
@@ -93,13 +97,46 @@ class _Table(html.parser.HTMLParser):
             self.cell.append(data)
 
 
-def _sheet_score(grid):
+def latest_month(grid, today=None):
+    """Bulan terbaru di header lembar ("YYYY-MM"), atau None bila lembar bukan tabel."""
     h = find_header(grid)
-    return sum(1 for c in grid[h] if month_token(c)) if h is not None else 0
+    if h is None:
+        return None
+    cols = month_columns(grid, h, today)
+    return max(cols.values()) if cols else None
 
 
-def read_grid(raw):
-    """Lembar berisi tabel (baris bulan terbanyak) sebagai list baris. Mendukung .xls, .xlsx, dan tabel HTML berakhiran .xls."""
+def _sheet_score(grid, today=None):
+    """Urutan pilihan lembar: bulan terbaru dulu, lalu jumlah kolom bulan terbanyak."""
+    h = find_header(grid)
+    if h is None:
+        return ("", 0)
+    return (latest_month(grid, today) or "", sum(1 for c in grid[h] if month_token(c)))
+
+
+def read_grid(raw, today=None):
+    """Lembar dengan bulan terbaru sebagai list baris."""
+    return max(read_grids(raw), key=lambda g: _sheet_score(g, today))
+
+
+def sheet_rows(raw, today=None):
+    """[(bulan terbaru, baris data)] untuk setiap lembar bertabel, urut dari lembar terlama ke terbaru."""
+    out = []
+    for grid in read_grids(raw):
+        latest = latest_month(grid, today)
+        if latest is None:
+            continue
+        try:
+            out.append((latest, data_rows(grid, today)))
+        except ValueError:
+            continue
+    if not out:
+        raise ValueError("baris bulan tidak ditemukan di lembar mana pun")
+    return sorted(out, key=lambda x: x[0])
+
+
+def read_grids(raw):
+    """Semua lembar sebagai list baris. Mendukung .xls, .xlsx, dan tabel HTML berakhiran .xls."""
     head = raw[:8]
     grids = []
     if head.startswith(b"\xd0\xcf\x11\xe0"):
@@ -135,7 +172,7 @@ def read_grid(raw):
         grids = [p.rows]
     if not grids:
         raise ValueError("berkas tidak berisi lembar")
-    return max(grids, key=_sheet_score)
+    return grids
 
 
 # ---------------------------------------------------------------- struktur tabel
