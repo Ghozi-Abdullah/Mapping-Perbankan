@@ -1,53 +1,53 @@
 {
- "updated": "2026-10-25T01:50:22Z",
+ "updated": "2026-10-26T04:53:40Z",
  "sources": {
   "kredit": {
-   "ok": true,
-   "at": "2026-10-25T01:50:08Z",
-   "note": "TABEL1_4: 2002-01 s.d. 2017-06",
-   "count": 113
+   "ok": false,
+   "at": "2026-10-26T04:53:25Z",
+   "error": "TABEL1_4: ValueError: bulan terbaru terbaca 2025-03, terlalu lama; berkas mentah disimpan untuk diperiksa",
+   "last_ok": "2026-10-25T01:50:08Z"
   },
   "simpanan": {
    "ok": true,
-   "at": "2026-10-25T01:50:10Z",
-   "note": "TABEL1_17: 2010-01 s.d. 2025-03",
-   "count": 77
+   "at": "2026-10-26T04:53:28Z",
+   "note": "TABEL1_17: 2019-01 s.d. 2026-08 dari 6 lembar",
+   "count": 35
   },
   "kredit_prov": {
    "ok": true,
-   "at": "2026-10-25T01:50:14Z",
-   "note": "TABEL1_12: 1999-01 s.d. 2018-02",
-   "count": 38
+   "at": "2026-10-26T04:53:30Z",
+   "note": "TABEL1_12: 2019-01 s.d. 2026-08 dari 3 lembar",
+   "count": 36
   },
   "simpanan_prov": {
    "ok": true,
-   "at": "2026-10-25T01:50:16Z",
-   "note": "TABEL1_19: 1990-01 s.d. 2008-12",
-   "count": 40
+   "at": "2026-10-26T04:53:31Z",
+   "note": "TABEL1_19: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "count": 39
   },
   "kpr": {
    "ok": true,
-   "at": "2026-10-25T01:50:18Z",
-   "note": "TABEL1_15: 2010-01 s.d. 2025-03",
-   "count": 77
+   "at": "2026-10-26T04:53:35Z",
+   "note": "TABEL1_15: 2019-01 s.d. 2026-08 dari 5 lembar",
+   "count": 26
   },
   "bunga_kredit": {
    "ok": true,
-   "at": "2026-10-25T01:50:19Z",
-   "note": "TABEL1_26: 1990-01 s.d. 2008-12",
-   "count": 22
+   "at": "2026-10-26T04:53:37Z",
+   "note": "TABEL1_26: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "count": 21
   },
   "bunga_deposito": {
    "ok": true,
-   "at": "2026-10-25T01:50:21Z",
-   "note": "TABEL1_28: 1990-01 s.d. 2008-12",
-   "count": 32
+   "at": "2026-10-26T04:53:38Z",
+   "note": "TABEL1_28: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "count": 31
   },
   "bunga_tabungan": {
    "ok": true,
-   "at": "2026-10-25T01:50:22Z",
-   "note": "TABEL1_30: 1990-01 s.d. 2008-12",
-   "count": 7
+   "at": "2026-10-26T04:53:40Z",
+   "note": "TABEL1_30: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "count": 6
   }
  }
 }
