@@ -2,7 +2,7 @@
 
 # Peta Perbankan
 
-**Laporan keuangan 14 bank besar Indonesia per kuartal sejak akhir 2023, dibandingkan dalam kelompoknya, plus peta kredit dan tabungan seluruh industri.**
+**Daftar seluruh 105 bank umum di Indonesia, laporan keuangan 14 bank besar per kuartal sejak akhir 2023 yang dibandingkan dalam kelompoknya, plus peta kredit dan tabungan seluruh industri.**
 
 [**Coba sekarang →**](https://ghozi-abdullah.github.io/Mapping-Perbankan/)
 
@@ -31,6 +31,11 @@ Pilih kuartal (Q4 2023 sampai kuartal terbaru) dan kelompok (BUMN, swasta, BPD, 
 ### Halaman tiap bank
 Setiap bank punya halaman sendiri, misalnya `profil.html?kode=BMRI`. Isinya profil singkat, kabar terbaru, sembilan angka utama dengan pertumbuhan tahunan dan peringkat di kelompoknya untuk kuartal mana pun, grafik tren di samping posisinya di antara bank sekelompok, tabel semua kuartal, sumber untuk setiap kuartal, dan tautan ke laporan keuangan di Bursa Efek Indonesia. Deretan logo di atas halaman memudahkan pindah ke bank lain. Perubahan cakupan data, seperti BSI yang keluar dari konsolidasi Bank Mandiri pada 2026, ditandai dengan garis yang diputus.
 
+### Semua bank
+Seluruh 105 bank umum yang beroperasi di Indonesia dalam satu halaman: BUMN dan anak usahanya, swasta nasional, 27 bank pembangunan daerah, bank syariah, bank digital, bank milik grup asing, dan kantor cabang bank asing. Tiap bank tampil dengan logo, nama resmi, kode transfer, kode SWIFT, kode saham bila tercatat di bursa, wilayah untuk bank daerah, perusahaan induk, dan nama lamanya (misalnya hibank dulu Bank Mayora, KBank Indonesia dulu Bank Maspion). Cari dengan nama, nama lama, kode, atau provinsi, lalu saring per kelompok atau sifat; tautan saringan bisa dibagikan. Bank yang punya laporan per kuartal langsung tertaut ke halamannya.
+
+Daftar ini dicocokkan otomatis dengan daftar resmi kantor pusat bank umum dan syariah dari OJK. Bila ada bank baru, bank yang berganti nama, atau bank yang bergabung, perbedaannya langsung terlihat di bagian bawah halaman.
+
 ### Industri
 Total kredit, total simpanan masyarakat, rasio kredit terhadap simpanan, dan porsi dana murah, lengkap dengan perubahan dari tahun lalu. Pangsa kredit dan simpanan BUMN, swasta, BPD, cabang bank asing, dan BPR, beserta grafik bulanan pertumbuhan kredit, nilai kredit, simpanan, dan rasio kredit/simpanan per kelompok.
 
@@ -42,7 +47,9 @@ Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bu
 
 ## Sumber data
 
-**Per bank.** Rilis kinerja kuartalan, factsheet, dan laporan keuangan publikasi BRI, Bank Mandiri, BNI, BTN, BSI, BCA, CIMB Niaga, OCBC Indonesia, PermataBank, Danamon, Maybank Indonesia, PaninBank, bank bjb, dan Bank Jatim, serta media keuangan yang mengutipnya (Infobank, Kontan, Bisnis, Investor Trust, Katadata, CNBC Indonesia). Setiap angka di `bank.json` menyimpan tautan sumbernya. Angka yang tidak disebut di rilis dibiarkan kosong. Data diperbarui setiap musim laporan kuartalan. Logo bank berupa SVG dari koleksi [idn-finlogos](https://github.com/hafidznoor/idn-finlogos), disimpan di `logos.js` sehingga tajam di semua ukuran dan tidak dimuat dari situs lain.
+**Per bank.** Rilis kinerja kuartalan, factsheet, dan laporan keuangan publikasi BRI, Bank Mandiri, BNI, BTN, BSI, BCA, CIMB Niaga, OCBC Indonesia, PermataBank, Danamon, Maybank Indonesia, PaninBank, bank bjb, dan Bank Jatim, serta media keuangan yang mengutipnya (Infobank, Kontan, Bisnis, Investor Trust, Katadata, CNBC Indonesia). Setiap angka di `bank.json` menyimpan tautan sumbernya. Angka yang tidak disebut di rilis dibiarkan kosong. Data diperbarui setiap musim laporan kuartalan. Logo bank dari koleksi [idn-finlogos](https://github.com/hafidznoor/idn-finlogos), disimpan di `logos.js` (14 bank utama) dan `logos-semua.js` (seluruh bank umum, dimuat hanya di halaman Semua bank) sehingga tidak dimuat dari situs lain.
+
+**Daftar bank.** Daftar Alamat Kantor Pusat Bank Umum dan Syariah dari [OJK](https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah.aspx), ditarik otomatis dua kali seminggu ke `data/ojk-bank.json`. Nama, kelompok, dan perubahan nama terbaru di `daftar-bank.json` dikumpulkan dari situs dan rilis resmi bank serta pemberitaan hingga Oktober 2026. Kode transfer dan SWIFT berasal dari metadata idn-finlogos. Unit usaha syariah ikut bank induknya; BPR dan BPR syariah tidak termasuk.
 
 **Per kelompok.** Bank Indonesia, [Statistik Ekonomi dan Keuangan Indonesia](https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx):
 

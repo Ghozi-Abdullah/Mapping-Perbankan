@@ -276,11 +276,19 @@ function bankMissing() {
   const el = $('#banner');
   if (!el) return;
   el.hidden = false;
-  el.innerHTML = '<span><b>Data per bank gagal dimuat.</b> Periksa bahwa bank.json ikut terunggah.</span>';
+  el.innerHTML = `<span><b>Data per bank gagal dimuat.</b> Periksa bahwa ${PAGE === 'daftar' ? 'daftar-bank.json dan logos-semua.js' : 'bank.json'} ikut terunggah.</span>`;
+}
+
+/** Di layar sempit menu bisa digeser; pastikan halaman yang aktif terlihat. */
+function showActiveNav() {
+  const nav = $('.top-nav');
+  const a = $('.top-nav [aria-current="page"]');
+  if (nav && a && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2;
 }
 
 async function main() {
   if (PAGE === 'beranda' && redirectOldHash()) return;
+  showActiveNav();
   edgeLight(document.body, '.bcard, .card, .fact');
 
   if (PAGE === 'beranda') {
@@ -296,6 +304,18 @@ async function main() {
     }
     if (await loadSeki()) renderStats();
     else $$('.seki').forEach((el) => { el.hidden = true; });
+  } else if (PAGE === 'daftar') {
+    try {
+      const [mod, data] = await Promise.all([import('./daftar.js'), getJSON('daftar-bank.json')]);
+      let ojk = null;
+      try { ojk = await getJSON('data/ojk-bank.json'); } catch { /* belum ditarik */ }
+      setText('#updated', `Daftar per ${tanggal(data.diperbarui)}`);
+      setText('#daftar-eyebrow', `${data.bank.length} bank umum`);
+      mod.renderDaftar(data, ojk);
+    } catch (e) {
+      console.error(e);
+      bankMissing();
+    }
   } else if (PAGE === 'bank' || PAGE === 'profil') {
     const banks = await loadBanks();
     if (!banks) bankMissing();

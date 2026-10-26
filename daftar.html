@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Semua bank umum di Indonesia · Peta Perbankan</title>
+  <meta name="description" content="Daftar seluruh bank umum di Indonesia: BUMN, swasta nasional, bank daerah, bank syariah, bank digital, dan cabang bank asing, lengkap dengan kode transfer, SWIFT, dan kode saham.">
+  <meta name="theme-color" content="#F5F5F3">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="daftar">
+  <header class="top">
+    <a class="brand" href="./">
+      <span class="brand-mark"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></span>
+      <span class="brand-text"><b>Peta Perbankan</b><span id="updated">Memuat data…</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Halaman">
+      <a href="./">Beranda</a>
+      <a href="bank.html">Per bank</a>
+      <a href="daftar.html" aria-current="page">Semua bank</a>
+      <a href="industri.html">Industri</a>
+      <a href="provinsi.html">Provinsi</a>
+      <a href="bunga.html">Suku bunga</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="page-head">
+      <div class="ph-copy">
+        <span class="eyebrow"><i class="dot"></i><span id="daftar-eyebrow">Semua bank umum</span></span>
+        <h1 class="page-title">Semua bank di Indonesia</h1>
+        <p class="lede">Seluruh bank umum yang beroperasi: BUMN dan anak usahanya, swasta nasional, bank daerah, bank syariah, bank digital, dan cabang bank asing. Laporan per kuartal saat ini tersedia untuk 14 bank besar; bank lain menyusul.</p>
+      </div>
+    </section>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <section class="dsum-grid needs-bank" id="dsum" aria-label="Ringkasan, ketuk untuk menyaring"></section>
+
+    <section class="card dtools needs-bank" id="dtools" aria-label="Cari dan saring">
+      <label class="dsearch"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input id="dq" type="search" placeholder="Cari nama, kode transfer, SWIFT, kode saham, atau provinsi" aria-label="Cari bank" autocomplete="off" spellcheck="false"></label>
+      <div class="dfilters">
+        <div class="seg" id="dgrup" role="group" aria-label="Kelompok"></div>
+        <div class="dchips" id="dsifat" role="group" aria-label="Sifat"></div>
+        <div class="dsort"><span id="dcount" class="note"></span><div class="seg sm" id="durut" role="group" aria-label="Urutan"><button type="button" data-v="nama" aria-pressed="true">A–Z</button><button type="button" data-v="grup" aria-pressed="false">Per kelompok</button></div></div>
+      </div>
+    </section>
+
+    <section class="dgrid needs-bank" id="dgrid" aria-live="polite"></section>
+
+    <section class="card needs-bank" aria-labelledby="ojk-h">
+      <div class="card-head"><div><span class="kicker">Daftar resmi</span><h2 id="ojk-h">Dicocokkan dengan daftar OJK</h2><p>Daftar alamat kantor pusat bank umum dan syariah dari OJK ditarik otomatis dua kali seminggu, lalu dicocokkan dengan daftar di atas.</p></div></div>
+      <div id="ojk" class="ojk"></div>
+    </section>
+
+    <aside class="info-strip"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><p><b>Sumber.</b> Nama, kelompok, dan status bank dari OJK, situs dan rilis resmi bank, serta pemberitaan perubahan nama hingga Oktober 2026. Kode transfer dan SWIFT dari metadata koleksi logo idn-finlogos. Unit usaha syariah (UUS) ikut bank induknya, bukan bank tersendiri. BPR dan BPR syariah tidak termasuk.</p></aside>
+  </main>
+
+  <footer class="foot">
+    <span>Sumber per kelompok: <a href="https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx" target="_blank" rel="noopener">Statistik Ekonomi dan Keuangan Indonesia (SEKI), Bank Indonesia</a>, diperiksa otomatis dua kali seminggu. <span id="src-list"></span></span>
+    <span>Sumber per bank: rilis kinerja resmi dan laporan keuangan publikasi tiap bank, diperbarui setiap musim laporan; sumber tiap kuartal tercantum di halaman bank masing-masing.</span>
+    <span>Logo bank dari <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noopener">idn-finlogos</a> (CC BY-NC 4.0), merek milik bank masing-masing. Ikon <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>. Huruf <a href="https://github.com/tokotype/PlusJakartaSans" target="_blank" rel="noopener">Plus Jakarta Sans</a>.</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
