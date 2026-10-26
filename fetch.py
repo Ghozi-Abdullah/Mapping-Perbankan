@@ -103,6 +103,11 @@ def check(name, part):
         raise ValueError("tidak ada baris suku bunga terbaca")
 
 
+def join_sheets(parts):
+    """Baris dari beberapa lembar yang memuat kelompok bank berbeda untuk bulan yang sama, disambung berurutan."""
+    return [row for rows in parts for row in rows]
+
+
 def structure(rows, limit=60):
     """Ringkasan label untuk berkas diagnosa, supaya perubahan format BI cepat ketahuan."""
     return [[label, len(vals), max(vals) if vals else None] for label, vals in rows[:limit]]
@@ -120,15 +125,30 @@ def main():
             raw = http_get(url, timeout=90, retries=4, headers={"Referer": "https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx"})
             sheets = seki.sheet_rows(raw)
             part, used, errors = {}, [], []
+            failed = {}
             for latest, rows in sheets:  # dari lembar terlama ke terbaru, supaya lembar terbaru menimpa
                 try:
                     p = extract(name, rows)
                     check(name, p)
                 except (ValueError, KeyError) as e:
                     errors.append(f"{latest}: {e}")
+                    failed.setdefault(latest, []).append(rows)
                     continue
                 part = merge_tree(part, p)
                 used.append(latest)
+            # BI kadang memecah satu tabel ke beberapa lembar dengan bulan yang sama (I.4_1 BUMN dan BPD, I.4_2 swasta
+            # dan cabang asing, I.4_3 BPR dan total). Lembar yang tidak lengkap sendiri-sendiri dicoba digabung.
+            for latest, parts in sorted(failed.items()):
+                if len(parts) < 2:
+                    continue
+                try:
+                    p = extract(name, join_sheets(parts))
+                    check(name, p)
+                except (ValueError, KeyError) as e:
+                    errors.append(f"{latest}, {len(parts)} lembar digabung: {e}")
+                    continue
+                part = merge_tree(part, p)
+                used.append(f"{latest} ({len(parts)} lembar digabung)")
             diag[name] = {"lembar": [latest for latest, _ in sheets], "dipakai": used, "gagal": errors,
                           "info_lembar": seki.sheet_info(raw), "struktur_lembar_terbaru": structure(sheets[-1][1])}
             if not used:

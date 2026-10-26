@@ -44,12 +44,16 @@ class Table(unittest.TestCase):
             ["KANTOR CABANG BANK YANG BERKEDUDUKAN DI LUAR NEGERI"],
             [3, "Citibank, N.A.", "Jl. Jenderal Sudirman Kav. 54-55", "Jakarta Selatan", "", ""],
             [4, "PT BANK TANPA ALAMAT TBK"],
+            [5, "PT BPD RIAU KEPRI SYARIAH 5)", "Jl. Sudirman", "Pekanbaru"],
+            ["1) Berdasarkan KDK No.4/KDK.03/2021, PT Bank BRISyariah Tbk dan lainnya merger menjadi PT Bank Syariah Indonesia Tbk"],
+            ["5) PT BPD Riau Kepri terdapat perubahan izin usaha menjadi PT BPD Riau Kepri Syariah"],
             ["Sumber: OJK"],
         ]
         sheets = ojk.read_rows(workbook(rows))
         banks, header = ojk.parse_table(sheets[0])
         self.assertEqual([b["nama"] for b in banks], [
-            "PT Bank Rakyat Indonesia (Persero) Tbk", "PT Bank Mandiri (Persero) Tbk", "Citibank, N.A.", "PT BANK TANPA ALAMAT TBK"])
+            "PT Bank Rakyat Indonesia (Persero) Tbk", "PT Bank Mandiri (Persero) Tbk", "Citibank, N.A.", "PT BANK TANPA ALAMAT TBK",
+            "PT BPD RIAU KEPRI SYARIAH"], "catatan kaki dilewati, penanda catatan di nama dibuang")
         self.assertEqual(banks[0]["kelompok"], "Bank Persero")
         self.assertEqual(banks[0]["situs"], "www.bri.co.id")
         self.assertEqual(banks[0]["kota"], "Jakarta Pusat")

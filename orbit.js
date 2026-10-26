@@ -17,12 +17,20 @@ export const initials = (name) => {
   return words.map((w) => w[0]).join('').slice(0, 3).toUpperCase();
 };
 
+// Logo bank lain (logos-semua.js) dipasang dari app.js supaya hanya dimuat di halaman yang membutuhkannya.
+let EXTRA = null;
+export function useExtraLogos(mod) { EXTRA = mod; }
+
 /** Logo bank (SVG lokal). Bila logonya belum ada, tampil inisial. */
 export function logoImg(b, cls = 'logo') {
   const url = logoUrl(b.kode);
-  if (!url) return `<span class="${cls} mono" data-initials="${esc(initials(b.nama))}"></span>`;
-  const l = LOGOS[b.kode];
-  return `<span class="${cls}${l.mark ? ' is-mark' : ''}" style="--ratio:${l.ratio}"><img src="${url}" alt="Logo ${esc(b.nama)}" decoding="async" draggable="false"></span>`;
+  if (url) {
+    const l = LOGOS[b.kode];
+    return `<span class="${cls}${l.mark ? ' is-mark' : ''}" style="--ratio:${l.ratio}"><img src="${url}" alt="Logo ${esc(b.nama)}" decoding="async" draggable="false"></span>`;
+  }
+  const src = EXTRA && b.logo ? EXTRA.logoSrc(b.logo) : null;
+  if (src) return `<span class="${cls}" style="--ratio:${EXTRA.LOGO[b.logo].r}"><img src="${src}" alt="Logo ${esc(b.nama)}" decoding="async" draggable="false"></span>`;
+  return `<span class="${cls} mono" data-initials="${esc(initials(b.nama))}"></span>`;
 }
 
 const rand = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
@@ -39,6 +47,8 @@ export function orbit(host, banks, { onPick, back, keep = null }) {
       <span class="face back">${back(b)}</span>
     </button>`).join('')}</div>`;
   const tiles = [...host.querySelectorAll('.tile')];
+  // Banyak bank: kartu sedikit diperkecil supaya cincin tidak terlalu padat.
+  host.classList.toggle('many', banks.length > 14);
   const r = rand(11);
 
   const items = tiles.map((el, i) => ({

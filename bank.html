@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Bandingkan bank per kuartal · Peta Perbankan</title>
-  <meta name="description" content="Aset, kredit, DPK, laba, NPL, CAR, CASA, dan LDR bank BUMN, swasta, dan BPD per kuartal sejak Q4 2023, dibandingkan dalam kelompoknya.">
+  <meta name="description" content="Aset, kredit, DPK, laba, NPL, CAR, CASA, dan LDR bank BUMN, swasta nasional, bank milik asing, dan BPD per kuartal, dibandingkan dalam kelompoknya.">
   <meta name="theme-color" content="#F5F5F3">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="preload" href="plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,6 +20,7 @@
     <nav class="top-nav" aria-label="Halaman">
       <a href="./">Beranda</a>
       <a href="bank.html" aria-current="page">Per bank</a>
+      <a href="banding.html">Adu bank</a>
       <a href="daftar.html">Semua bank</a>
       <a href="industri.html">Industri</a>
       <a href="provinsi.html">Provinsi</a>
@@ -37,6 +38,8 @@
       <div class="ph-tools"><div class="seg" id="bank-group" role="group" aria-label="Kelompok bank"></div></div>
     </section>
 
+    <aside class="cmp-promo needs-bank"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg><p><b>Mau adu bank dari kelompok berbeda?</b> Pilih 2–3 bank mana saja, misalnya BCA, BRI, dan OCBC, lalu lihat angkanya berdampingan.</p><a class="btn dark sm" href="banding.html">Adu 2–3 bank <svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></aside>
+
     <div id="banner" class="banner" hidden></div>
 
     <div class="qbar needs-bank">
@@ -45,6 +48,10 @@
     </div>
 
     <section class="bcards needs-bank" id="bank-cards" aria-label="Kartu bank"></section>
+    <div class="bcards-foot needs-bank">
+      <button type="button" class="btn light sm" id="bank-cards-more" hidden></button>
+      <p class="note" id="bank-cards-missing"></p>
+    </div>
 
     <section class="sect needs-bank" aria-labelledby="rank-h">
       <div class="sect-head">

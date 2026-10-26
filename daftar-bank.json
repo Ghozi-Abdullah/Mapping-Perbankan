@@ -81,7 +81,8 @@
    "dulu": "Bank Victoria Syariah dan UUS BTN",
    "kota": "Jakarta",
    "kode": "405",
-   "swift": "SWAGIDJ1"
+   "swift": "SWAGIDJ1",
+   "laporan": "BSN"
   },
   {
    "id": "raya",
@@ -96,7 +97,8 @@
    "dulu": "BRI Agroniaga",
    "kota": "Jakarta",
    "kode": "494",
-   "swift": "AGTBIDJA"
+   "swift": "AGTBIDJA",
+   "laporan": "AGRO"
   },
   {
    "id": "hibank",
@@ -121,7 +123,9 @@
    "dulu": "Bank Sinar Harapan Bali",
    "kota": "Jakarta",
    "kode": "564",
-   "swift": "SIHBIDJ1"
+   "swift": "SIHBIDJ1",
+   "laporan": "MANTAP",
+   "situs": "bankmandiritaspen.co.id"
   },
   {
    "id": "bca",
@@ -251,7 +255,8 @@
    "situs": "bankmega.com",
    "kota": "Jakarta",
    "kode": "426",
-   "swift": "MEGAIDJA"
+   "swift": "MEGAIDJA",
+   "laporan": "MEGA"
   },
   {
    "id": "kb",
@@ -264,7 +269,9 @@
    "dulu": "Bank Bukopin, KB Bukopin",
    "kota": "Jakarta",
    "kode": "441",
-   "swift": "BBUKIDJA"
+   "swift": "BBUKIDJA",
+   "laporan": "BBKP",
+   "situs": "kbbank.co.id"
   },
   {
    "id": "sinarmas",
@@ -290,7 +297,8 @@
    "dulu": "Bank BTPN",
    "kota": "Jakarta",
    "kode": "213",
-   "swift": "SUNIIDJA"
+   "swift": "SUNIIDJA",
+   "laporan": "BTPN"
   },
   {
    "id": "jago",
@@ -304,7 +312,8 @@
    "dulu": "Bank Artos Indonesia",
    "kota": "Jakarta",
    "kode": "542",
-   "swift": "JAGBIDJA"
+   "swift": "JAGBIDJA",
+   "laporan": "ARTO"
   },
   {
    "id": "allo",
@@ -318,7 +327,8 @@
    "dulu": "Bank Harda Internasional",
    "kota": "Jakarta",
    "kode": "567",
-   "swift": "ALOBIDJA"
+   "swift": "ALOBIDJA",
+   "laporan": "BBHI"
   },
   {
    "id": "bnc",
@@ -332,7 +342,8 @@
    "dulu": "Bank Yudha Bhakti",
    "kota": "Jakarta",
    "kode": "490",
-   "swift": "YUDBIDJ1"
+   "swift": "YUDBIDJ1",
+   "laporan": "BBYB"
   },
   {
    "id": "seabank",
@@ -346,7 +357,8 @@
    "dulu": "Bank Kesejahteraan Ekonomi",
    "kota": "Jakarta",
    "kode": "535",
-   "swift": "SSPIIDJA"
+   "swift": "SSPIIDJA",
+   "laporan": "SEABANK"
   },
   {
    "id": "superbank",
@@ -359,7 +371,9 @@
    "dulu": "Bank Fama International",
    "kota": "Jakarta",
    "kode": "562",
-   "swift": "FAMAIDJ1"
+   "swift": "FAMAIDJ1",
+   "saham": "SUPA",
+   "laporan": "SUPA"
   },
   {
    "id": "blu",
@@ -376,7 +390,8 @@
    "swift": "BBLUIDJA",
    "cocok": [
     "BCA Digital"
-   ]
+   ],
+   "laporan": "BLU"
   },
   {
    "id": "amar",
@@ -390,7 +405,9 @@
    "dulu": "Bank Anglomas Internasional",
    "kota": "Jakarta",
    "kode": "531",
-   "swift": "LOMAIDJ1"
+   "swift": "LOMAIDJ1",
+   "laporan": "AMAR",
+   "milik": "Singapura"
   },
   {
    "id": "krom",
@@ -417,7 +434,8 @@
    "dulu": "Bank Jasa Jakarta",
    "kota": "Jakarta",
    "kode": "472",
-   "swift": "JSABIDJ1"
+   "swift": "JSABIDJ1",
+   "laporan": "SAQU"
   },
   {
    "id": "kbank",
@@ -428,7 +446,9 @@
    "saham": "BMAS",
    "dulu": "Bank Maspion Indonesia",
    "kode": "157",
-   "swift": "MASDIDJ1"
+   "swift": "MASDIDJ1",
+   "laporan": "BMAS",
+   "situs": "kasikornbank.co.id"
   },
   {
    "id": "mnc",
@@ -442,7 +462,8 @@
    "dulu": "Bank ICB Bumiputera",
    "kota": "Jakarta",
    "kode": "485",
-   "swift": "BUMIIDJA"
+   "swift": "BUMIIDJA",
+   "laporan": "BABP"
   },
   {
    "id": "victoria",
@@ -454,7 +475,8 @@
    "situs": "victoriabank.co.id",
    "kota": "Jakarta",
    "kode": "566",
-   "swift": "VICTIDJ1"
+   "swift": "VICTIDJ1",
+   "laporan": "BVIC"
   },
   {
    "id": "capital",
@@ -504,7 +526,8 @@
    "situs": "bankganesha.co.id",
    "kota": "Jakarta",
    "kode": "161",
-   "swift": "GNESIDJA"
+   "swift": "GNESIDJA",
+   "laporan": "BGTG"
   },
   {
    "id": "ina",
@@ -516,7 +539,8 @@
    "situs": "bankina.co.id",
    "kota": "Jakarta",
    "kode": "513",
-   "swift": "IAPTIDJA"
+   "swift": "IAPTIDJA",
+   "laporan": "BINA"
   },
   {
    "id": "mestika",
@@ -527,7 +551,8 @@
    "logo": "bank-mestika-dharma",
    "kota": "Medan",
    "kode": "151",
-   "swift": "MEDHIDS1"
+   "swift": "MEDHIDS1",
+   "situs": "bankmestika.co.id"
   },
   {
    "id": "nobu",
@@ -540,7 +565,8 @@
    "dulu": "Bank Alfindo Sejahtera",
    "kota": "Jakarta",
    "kode": "503",
-   "swift": "LFIBIDJ1"
+   "swift": "LFIBIDJ1",
+   "laporan": "NOBU"
   },
   {
    "id": "mayapada",
@@ -552,7 +578,8 @@
    "situs": "bankmayapada.com",
    "kota": "Jakarta",
    "kode": "097",
-   "swift": "MAYAIDJA"
+   "swift": "MAYAIDJA",
+   "laporan": "MAYA"
   },
   {
    "id": "mas",
@@ -578,7 +605,8 @@
    "dulu": "Bank Mutiara, Bank Century",
    "kota": "Jakarta",
    "kode": "095",
-   "swift": "CICTIDJA"
+   "swift": "CICTIDJA",
+   "laporan": "BCIC"
   },
   {
    "id": "arthagraha",
@@ -590,7 +618,8 @@
    "situs": "arthagraha.com",
    "kota": "Jakarta",
    "kode": "037",
-   "swift": "ARTGIDJA"
+   "swift": "ARTGIDJA",
+   "laporan": "INPC"
   },
   {
    "id": "index",
@@ -600,7 +629,8 @@
    "logo": "bank-index-selindo",
    "kota": "Jakarta",
    "kode": "555",
-   "swift": "BIDXIDJA"
+   "swift": "BIDXIDJA",
+   "situs": "bankindex.co.id"
   },
   {
    "id": "sampoerna",
@@ -612,7 +642,8 @@
    "dulu": "Bank Dipo Internasional",
    "kota": "Jakarta",
    "kode": "523",
-   "swift": "SAHMIDJA"
+   "swift": "SAHMIDJA",
+   "laporan": "SAMPOERNA"
   },
   {
    "id": "woori",
@@ -638,7 +669,8 @@
    "situs": "hanabank.co.id",
    "kota": "Jakarta",
    "kode": "484",
-   "swift": "HNBNIDJA"
+   "swift": "HNBNIDJA",
+   "laporan": "HANA"
   },
   {
    "id": "shinhan",
@@ -650,7 +682,9 @@
    "dulu": "Bank Metro Express",
    "kota": "Jakarta",
    "kode": "152",
-   "swift": "MEEKIDJ1"
+   "swift": "MEEKIDJ1",
+   "laporan": "SHINHAN",
+   "situs": "shinhan.co.id"
   },
   {
    "id": "ibk",
@@ -663,7 +697,8 @@
    "dulu": "Bank Agris",
    "kota": "Jakarta",
    "kode": "945",
-   "swift": "IBKOIDJA"
+   "swift": "IBKOIDJA",
+   "situs": "ibk.co.id"
   },
   {
    "id": "resona",
@@ -674,7 +709,8 @@
    "logo": "bank-resona-perdania",
    "kota": "Jakarta",
    "kode": "047",
-   "swift": "BPIAIDJA"
+   "swift": "BPIAIDJA",
+   "situs": "perdania.co.id"
   },
   {
    "id": "mizuho",
@@ -685,7 +721,8 @@
    "logo": "mizuho-bank",
    "kota": "Jakarta",
    "kode": "048",
-   "swift": "MHCCIDJA"
+   "swift": "MHCCIDJA",
+   "situs": "mizuhobank.co.id"
   },
   {
    "id": "dbs",
@@ -697,7 +734,8 @@
    "situs": "dbs.id",
    "kota": "Jakarta",
    "kode": "046",
-   "swift": "DBSBIDJA"
+   "swift": "DBSBIDJA",
+   "laporan": "DBS"
   },
   {
    "id": "hsbc",
@@ -710,7 +748,8 @@
    "dulu": "Bank Ekonomi Raharja",
    "kota": "Jakarta",
    "kode": "087",
-   "swift": "HSBCIDJA"
+   "swift": "HSBCIDJA",
+   "laporan": "HSBC"
   },
   {
    "id": "ctbc",
@@ -722,7 +761,8 @@
    "situs": "ctbcbank.co.id",
    "kota": "Jakarta",
    "kode": "949",
-   "swift": "CTCBIDJA"
+   "swift": "CTCBIDJA",
+   "laporan": "CTBC"
   },
   {
    "id": "icbc",
@@ -748,7 +788,8 @@
    "dulu": "Bank Windu Kentjana Internasional",
    "kota": "Jakarta",
    "kode": "036",
-   "swift": "MCORIDJA"
+   "swift": "MCORIDJA",
+   "situs": "bankccbi.co.id"
   },
   {
    "id": "boi",
@@ -761,7 +802,8 @@
    "dulu": "Bank Swadesi",
    "kota": "Jakarta",
    "kode": "146",
-   "swift": "BKIDIDJA"
+   "swift": "BKIDIDJA",
+   "situs": "boiindonesia.co.id"
   },
   {
    "id": "sbi",
@@ -773,7 +815,8 @@
    "dulu": "Bank Indomonex",
    "kota": "Jakarta",
    "kode": "498",
-   "swift": "SBIDIDJA"
+   "swift": "SBIDIDJA",
+   "situs": "sbiindo.com"
   },
   {
    "id": "qnb",
@@ -786,7 +829,9 @@
    "dulu": "Bank Kesawan",
    "kota": "Jakarta",
    "kode": "167",
-   "swift": "AWANIDJA"
+   "swift": "AWANIDJA",
+   "laporan": "BKSW",
+   "situs": "qnb.co.id"
   },
   {
    "id": "bnp",
@@ -797,7 +842,8 @@
    "logo": "bnp-paribas",
    "kota": "Jakarta",
    "kode": "057",
-   "swift": "BNPAIDJA"
+   "swift": "BNPAIDJA",
+   "situs": "bnpparibas.co.id"
   },
   {
    "id": "anz",
@@ -808,7 +854,8 @@
    "logo": "anz",
    "kota": "Jakarta",
    "kode": "061",
-   "swift": "ANZBIDJX"
+   "swift": "ANZBIDJX",
+   "situs": "anz.com"
   },
   {
    "id": "muamalat",
@@ -836,7 +883,8 @@
    "dulu": "Bank Sahabat Purba Danarta",
    "kota": "Jakarta",
    "kode": "547",
-   "swift": "PUBAIDJ1"
+   "swift": "PUBAIDJ1",
+   "laporan": "BTPS"
   },
   {
    "id": "bcas",
@@ -850,7 +898,8 @@
    "dulu": "Bank UIB",
    "kota": "Jakarta",
    "kode": "536",
-   "swift": "BSYAIDJA"
+   "swift": "BSYAIDJA",
+   "laporan": "BCAS"
   },
   {
    "id": "megas",
@@ -863,7 +912,8 @@
    "dulu": "Bank Umum Tugu",
    "kota": "Jakarta",
    "kode": "506",
-   "swift": "BUTGIDJ1"
+   "swift": "BUTGIDJ1",
+   "laporan": "MEGAS"
   },
   {
    "id": "kbs",
@@ -890,7 +940,9 @@
    "logo": "panin-dubai-syariah",
    "kota": "Jakarta",
    "kode": "517",
-   "swift": "ARFAIDJ1"
+   "swift": "ARFAIDJ1",
+   "laporan": "PNBS",
+   "situs": "pdsb.co.id"
   },
   {
    "id": "aladin",
@@ -905,7 +957,8 @@
    "dulu": "Bank Net Indonesia Syariah, Bank Maybank Syariah Indonesia",
    "kota": "Jakarta",
    "kode": "947",
-   "swift": "NETBIDJA"
+   "swift": "NETBIDJA",
+   "laporan": "BANK"
   },
   {
    "id": "bjbs",
@@ -949,7 +1002,8 @@
    "kota": "Banda Aceh",
    "wilayah": "Aceh",
    "kode": "116",
-   "swift": "SYACIDJ1"
+   "swift": "SYACIDJ1",
+   "laporan": "ACEH"
   },
   {
    "id": "sumut",
@@ -964,7 +1018,8 @@
    "swift": "PDSUIDJ1",
    "cocok": [
     "BPD Sumut"
-   ]
+   ],
+   "laporan": "SUMUT"
   },
   {
    "id": "nagari",
@@ -977,7 +1032,8 @@
    "kota": "Padang",
    "wilayah": "Sumatera Barat",
    "kode": "118",
-   "swift": "PDSBIDJ1"
+   "swift": "PDSBIDJ1",
+   "laporan": "NAGARI"
   },
   {
    "id": "brks",
@@ -1018,7 +1074,8 @@
    "swift": "BSSPIDSP",
    "cocok": [
     "BPD Sumsel Babel"
-   ]
+   ],
+   "laporan": "SUMSELBABEL"
   },
   {
    "id": "bengkulu",
@@ -1042,7 +1099,8 @@
    "kota": "Bandar Lampung",
    "wilayah": "Lampung",
    "kode": "121",
-   "swift": "PDLPIDJ1"
+   "swift": "PDLPIDJ1",
+   "laporan": "LAMPUNG"
   },
   {
    "id": "jakarta",
@@ -1054,7 +1112,9 @@
    "kota": "Jakarta",
    "wilayah": "DKI Jakarta",
    "kode": "111",
-   "swift": "BDKIIDJ1"
+   "swift": "BDKIIDJ1",
+   "laporan": "JAKARTA",
+   "situs": "bankdki.co.id"
   },
   {
    "id": "bjb",
@@ -1082,7 +1142,8 @@
    "kota": "Serang",
    "wilayah": "Banten",
    "kode": "137",
-   "swift": "PDBBIDJ1"
+   "swift": "PDBBIDJ1",
+   "laporan": "BEKS"
   },
   {
    "id": "jateng",
@@ -1097,7 +1158,8 @@
    "swift": "PDJGIDJ1",
    "cocok": [
     "BPD Jateng"
-   ]
+   ],
+   "laporan": "JATENG"
   },
   {
    "id": "diy",
@@ -1113,7 +1175,8 @@
    "cocok": [
     "BPD Yogyakarta",
     "BPD DIY"
-   ]
+   ],
+   "laporan": "DIY"
   },
   {
    "id": "jatim",
@@ -1142,7 +1205,8 @@
    "kota": "Denpasar",
    "wilayah": "Bali",
    "kode": "129",
-   "swift": "ABALIDBS"
+   "swift": "ABALIDBS",
+   "laporan": "BALI"
   },
   {
    "id": "ntbs",
@@ -1171,7 +1235,8 @@
    "swift": "PDNTIDJA",
    "cocok": [
     "BPD NTT"
-   ]
+   ],
+   "laporan": "NTT"
   },
   {
    "id": "kalbar",
@@ -1200,7 +1265,9 @@
    "swift": "PDKGIDJ1",
    "cocok": [
     "BPD Kalteng"
-   ]
+   ],
+   "laporan": "KALTENG",
+   "situs": "bankkalteng.co.id"
   },
   {
    "id": "kalsel",
@@ -1215,7 +1282,8 @@
    "swift": "PDKSIDJ1",
    "cocok": [
     "BPD Kalsel"
-   ]
+   ],
+   "laporan": "KALSEL"
   },
   {
    "id": "kaltimtara",
@@ -1247,7 +1315,8 @@
    "cocok": [
     "BPD Sulut",
     "Bank Sulut"
-   ]
+   ],
+   "laporan": "SULUTGO"
   },
   {
    "id": "sulteng",
@@ -1291,7 +1360,8 @@
    "swift": "PDWRIDJ1",
    "cocok": [
     "BPD Sultra"
-   ]
+   ],
+   "situs": "banksultra.co.id"
   },
   {
    "id": "maluku",
@@ -1305,7 +1375,8 @@
    "swift": "PDMLIDJ1",
    "cocok": [
     "BPD Maluku"
-   ]
+   ],
+   "situs": "bankmalukumalut.co.id"
   },
   {
    "id": "papua",
@@ -1329,7 +1400,8 @@
    "situs": "citibank.co.id",
    "kota": "Jakarta",
    "kode": "031",
-   "swift": "CITIIDJX"
+   "swift": "CITIIDJX",
+   "laporan": "CITI"
   },
   {
    "id": "jpm",
@@ -1355,7 +1427,8 @@
    "logo": "bank-of-america",
    "kota": "Jakarta",
    "kode": "033",
-   "swift": "BOFAID2X"
+   "swift": "BOFAID2X",
+   "situs": "bankofamerica.co.id"
   },
   {
    "id": "mufg",
@@ -1366,7 +1439,8 @@
    "logo": "mufg",
    "kota": "Jakarta",
    "kode": "042",
-   "swift": "BOTKIDJX"
+   "swift": "BOTKIDJX",
+   "situs": "mufg.co.id"
   },
   {
    "id": "boc",
@@ -1381,7 +1455,8 @@
    "cocok": [
     "Bank of China Hong Kong",
     "Bank of China"
-   ]
+   ],
+   "situs": "bankofchina.co.id"
   },
   {
    "id": "deutsche",
@@ -1392,7 +1467,8 @@
    "logo": "deutsche-bank",
    "kota": "Jakarta",
    "kode": "067",
-   "swift": "DEUTIDJA"
+   "swift": "DEUTIDJA",
+   "situs": "deutsche-bank.co.id/indonesia"
   },
   {
    "id": "scb",

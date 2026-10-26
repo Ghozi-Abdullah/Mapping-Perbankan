@@ -1,6 +1,6 @@
 {
- "catatan": "Data per bank per kuartal, dikumpulkan dari rilis kinerja resmi bank dan media keuangan yang mengutipnya. Laba adalah laba bersih kumulatif sejak Januari (Q1 = 3 bulan, Q2 = semester I, Q3 = 9 bulan, Q4 = setahun). Aset, kredit, DPK, dan laba dalam triliun rupiah; rasio dalam persen. Kuartal tanpa angka berarti angka itu tidak ditemukan di rilis yang dikutip. Diperbarui setiap musim laporan kuartalan.",
- "diperbarui": "2026-10-25",
+ "catatan": "Data per bank per kuartal, dikumpulkan dari rilis kinerja resmi bank dan media keuangan yang mengutipnya. Laba adalah laba bersih kumulatif sejak Januari (Q1 = 3 bulan, Q2 = semester I, Q3 = 9 bulan, Q4 = setahun). Aset, kredit, DPK, dan laba dalam triliun rupiah; rasio dalam persen. Kuartal tanpa angka berarti angka itu tidak ditemukan di rilis yang dikutip. Diperbarui setiap musim laporan kuartalan. Sejak Oktober 2026 ditambah bank lain dengan angka posisi Juni 2026 (ringkas: true).",
+ "diperbarui": "2026-10-26",
  "kuartal": [
   "2023Q4",
   "2024Q1",
@@ -144,7 +144,64 @@
   "https://www.idxchannel.com/banking/bank-jatim-bjtm-bukukan-laba-bersih-rp708-miliar-di-semester-i-2026/all": "Bank Jatim bukukan laba bersih Rp708 miliar di semester I 2026 (IDX Channel)",
   "https://katadata.co.id/finansial/korporasi/6adb72519e4aa/kinerja-bank-mandiri-menguat-di-q3-2026-kredit-dpk-dan-laba-naik": "Kinerja Bank Mandiri menguat di Q3 2026 (Katadata)",
   "https://www.cnbcindonesia.com/market/20261023155239-17-778967/laba-bank-mandiri-meroket-207-tembus-rp-455-triliun-di-kuartal-iii": "Laba Bank Mandiri meroket 20,7% di kuartal III (CNBC Indonesia)",
-  "https://www.rctiplus.com/news/detail/idxchannel/5486712/bsi--bris--raup-laba-rp5-3-triliun-hingga-agustus-2026--naik-10-persen": "BSI raup laba Rp5,3 triliun hingga Agustus 2026 (IDX Channel)"
+  "https://www.rctiplus.com/news/detail/idxchannel/5486712/bsi--bris--raup-laba-rp5-3-triliun-hingga-agustus-2026--naik-10-persen": "BSI raup laba Rp5,3 triliun hingga Agustus 2026 (IDX Channel)",
+  "https://infobanknews.com/pertahankan-kinerja-kinclong-semester-i-2026-bank-bsn-gelar-business-review-forum": "Pertahankan kinerja kinclong semester I 2026, Bank BSN gelar business review forum (Infobank)",
+  "https://keuangan.kontan.co.id/news/bank-mantap-kejar-pertumbuhan-bisnis-sambil-perkuat-tjsl": "Bank Mantap kejar pertumbuhan bisnis sambil perkuat TJSL (Kontan)",
+  "https://keuangan.kontan.co.id/news/bank-raya-raup-laba-rp-12-miliar-kuartal-ii-2026-kredit-digital-tumbuh-226": "Bank Raya raup laba Rp12 miliar kuartal II 2026 (Kontan)",
+  "https://finansial.bisnis.com/read/20260817/90/1996917/bank-mega-mega-milik-ct-catatkan-laba-rp127-triliun-turun-624-yoy-pada-semester-i2026": "Bank Mega catatkan laba Rp1,27 triliun, turun 6,24% pada semester I 2026 (Bisnis)",
+  "https://www.cnbcindonesia.com/market/20260731153554-17-755522/smbc-indonesia--btpn--kantongi-laba-rp14-triliun-di-semester-1-2026": "SMBC Indonesia (BTPN) kantongi laba Rp1,4 triliun di semester I 2026 (CNBC Indonesia)",
+  "https://finansial.bisnis.com/read/20260725/90/1991023/btpn-syariah-bukukan-laba-rp655-miliar-pembiayaan-tumbuh-9-pada-semester-i2026": "BTPN Syariah bukukan laba Rp655 miliar, pembiayaan tumbuh 9% pada semester I 2026 (Bisnis)",
+  "https://finansial.bisnis.com/read/20260724/90/1990870/bank-saqu-merugi-juni-2026-kredit-dan-simpanan-masih-naik": "Bank Saqu merugi Juni 2026, kredit dan simpanan masih naik (Bisnis)",
+  "https://www.kabarbursa.com/market-hari-ini/kredit-tumbuh-kb-bank-bbkp-ikut-cetak-aset-naik-1271-persen-ke-rp8611-triliun": "Kredit tumbuh, KB Bank (BBKP) ikut cetak aset naik 12,71% ke Rp86,11 triliun (Kabar Bursa)",
+  "https://finansial.bisnis.com/read/20260920/90/2005622/laba-bersih-kb-bank-menyusut-jadi-rp1902-miliar-per-juni-2026": "Laba bersih KB Bank menyusut jadi Rp19,02 miliar per Juni 2026 (Bisnis)",
+  "https://m.antaranews.com/amp/berita/5689088/bca-syariah-bukukan-laba-rp1094-miliar-pada-semester-i-2026": "BCA Syariah bukukan laba Rp109,4 miliar pada semester I 2026 (Antara)",
+  "https://www.bloombergtechnoz.com/detail-news/116698/bank-digital-kompak-cetak-laba-tapi-saham-kurang-dapat-apresiasi": "Bank digital kompak cetak laba, tapi saham kurang dapat apresiasi (Bloomberg Technoz)",
+  "https://keuangan.kontan.co.id/news/bank-aladin-syariah-cetak-laba-rp-3838-miliar-pada-semester-i-2026": "Bank Aladin Syariah cetak laba Rp38,38 miliar pada semester I 2026 (Kontan)",
+  "https://stockwatch.id/public/alhamdulillah-laba-bersih-bank-panin-dubai-syariah-pnbs-melejit-209-di-semester-i-2026": "Laba bersih Bank Panin Dubai Syariah (PNBS) melejit 209% di semester I 2026 (Stockwatch)",
+  "https://finansial.bisnis.com/read/20260729/90/1991998/superbank-supa-cetak-laba-bersih-rp18260-miliar-semester-i2026": "Superbank (SUPA) cetak laba bersih Rp182,60 miliar semester I 2026 (Bisnis)",
+  "https://keuangan.kontan.co.id/news/laba-seabank-capai-rp-749-miliar-pada-semester-i-2026-kredit-tumbuh-53": "Laba SeaBank capai Rp749 miliar pada semester I 2026, kredit tumbuh 53% (Kontan)",
+  "https://infobanknews.com/laba-bersih-allo-bank-tembus-rp234-m-pada-semester-i-2026-kredit-melesat-28-persen": "Laba bersih Allo Bank tembus Rp234 M pada semester I 2026, kredit melesat 28% (Infobank)",
+  "https://infobanknews.com/bank-neo-commerce-kantongi-laba-rp29485-miliar-di-juni-2026-tumbuh-681-persen": "Bank Neo Commerce kantongi laba Rp294,85 miliar di Juni 2026 (Infobank)",
+  "https://keuangan.kontan.co.id/news/laba-bca-digital-tumbuh-5313-jadi-rp12959-miliar-pada-semester-i-2026": "Laba BCA Digital tumbuh 53,13% jadi Rp129,59 miliar pada semester I 2026 (Kontan)",
+  "https://www.kabarbursa.com/market-hari-ini/bank-amar-amar-kantongi-laba-rp14356-miliar-kredit-tumbuh-jadi-rp406-triliun": "Bank Amar (AMAR) kantongi laba Rp143,56 miliar, kredit tumbuh jadi Rp4,06 triliun (Kabar Bursa)",
+  "https://www.nobubank.com/en/news/nobu-bank-catatkan-pertumbuhan-laba-454-pada-semester-i-2026/": "Nobu Bank catatkan pertumbuhan laba 45,4% pada semester I 2026 (Nobu Bank)",
+  "https://economy.okezone.com/read/2026/08/05/320/3234354/catat-pertumbuhan-kinerja-positif-dan-signifikan-di-kuartal-ii-2026-mnc-bank-tetap-kuat-aman-dan-tepercaya": "Catat pertumbuhan kinerja positif di kuartal II 2026, MNC Bank tetap kuat (Okezone)",
+  "https://www.cnbcindonesia.com/market/20260803130652-17-756080/laba-naik-tapi-kualitas-aset-bank-mayapada-memburuk": "Laba naik, tapi kualitas aset Bank Mayapada memburuk (CNBC Indonesia)",
+  "https://pintarsaham.id/analisis-saham-inpc-semester-i-2026-laba-melonjak-valuasi-masih-diskon/": "Analisis saham INPC semester I 2026: laba melonjak (PintarSaham)",
+  "https://pintarsaham.id/kinerja-keuangan-bcic-semester-i-2026-analisis-lengkap-dan-valuasi-saham/": "Kinerja keuangan BCIC semester I 2026 (PintarSaham)",
+  "https://finansial.bisnis.com/read/20261001/90/2008698/bank-jtrust-bcic-salurkan-kredit-rp2925-triliun-semester-i2026": "Bank JTrust (BCIC) salurkan kredit Rp29,25 triliun semester I 2026 (Bisnis)",
+  "https://keuangan.kontan.co.id/news/bank-ganesha-raup-laba-rp-11377-miliar-pada-semester-i-2026": "Bank Ganesha raup laba Rp113,77 miliar pada semester I 2026 (Kontan)",
+  "https://victoriabank.co.id/uploads/2026-07-17_template%20apolo laporan publikasi Juni 2026.pdf": "Laporan publikasi bulanan Bank Victoria, Juni 2026 (Bank Victoria)",
+  "https://infobanknews.com/laba-bank-sampoerna-tumbuh-4129-persen-jadi-rp159-miliar-di-semester-i-2026": "Laba Bank Sampoerna tumbuh 41,29% jadi Rp15,9 miliar di semester I 2026 (Infobank)",
+  "https://finansial.bisnis.com/read/20260906/90/2001719/laba-bersih-bank-ina-grup-salim-melesat-jadi-rp6500-miliar-semester-i2026": "Laba bersih Bank INA grup Salim melesat jadi Rp65,00 miliar semester I 2026 (Bisnis)",
+  "https://keuangan.kontan.co.id/news/laba-bersih-hana-bank-naik-921-pada-semester-i-2026": "Laba bersih Hana Bank naik 9,21% pada semester I 2026 (Kontan)",
+  "https://keuangan.kontan.co.id/news/laba-ctbc-bank-turun-365-di-semester-i-2026": "Laba CTBC Bank turun 36,5% di semester I 2026 (Kontan)",
+  "https://www.antaranews.com/berita/5703851/citi-indonesia-cetak-laba-bersih-rp994-miliar-di-semester-i-2026": "Citi Indonesia cetak laba bersih Rp994 miliar di semester I 2026 (Antara)",
+  "https://finansial.bisnis.com/read/20260825/90/1998746/bank-dbs-indonesia-catat-laba-bersih-rp94570-miliar-pada-semester-i2026": "Bank DBS Indonesia catat laba bersih Rp945,70 miliar pada semester I 2026 (Bisnis)",
+  "https://finansial.bisnis.com/read/20260825/90/1998761/laba-bersih-hsbc-indonesia-anjlok-2577-jadi-rp109-triliun-pada-semester-i2026": "Laba bersih HSBC Indonesia anjlok 25,77% jadi Rp1,09 triliun pada semester I 2026 (Bisnis)",
+  "https://infobanknews.com/bank-qnb-indonesia-cetak-laba-rp296-miliar-di-juni-2026-tumbuh-178-persen": "Bank QNB Indonesia cetak laba Rp29,6 miliar di Juni 2026, tumbuh 178% (Infobank)",
+  "https://shinhan.co.id/wp-content/uploads/2026/07/Laporan-Bulanan-Juni-2026-Ind.pdf": "Laporan bulanan Bank Shinhan Indonesia, Juni 2026 (Bank Shinhan Indonesia)",
+  "https://teraslampung.com/semester-i-2026-laba-bank-lampung-tumbuh-2285-persen-jadi-rp13362-miliar": "Semester I 2026, laba Bank Lampung tumbuh 22,85% jadi Rp133,62 miliar (Teras Lampung)",
+  "https://www.cnbcindonesia.com/market/20260828150329-17-763150/kredit-tumbuh-98-bpd-lampung-cetak-laba-rp133-m-di-semester-i-2026": "Kredit tumbuh 9,8%, BPD Lampung cetak laba Rp133 M di semester I 2026 (CNBC Indonesia)",
+  "https://bali.bisnis.com/read/20260721/538/1989648/bpd-bali-bukukan-laba-bersih-rp75575-miliar-pada-semester-i2026-tumbuh-1767": "BPD Bali bukukan laba bersih Rp755,75 miliar pada semester I 2026, tumbuh 17,67% (Bisnis Bali)",
+  "https://bantentoday.id/bank-banten-tumbuh-pesat-di-semester-i-2026-aset-tembus-rp104-triliun/": "Bank Banten tumbuh pesat di semester I 2026, aset tembus Rp10,4 triliun (Banten Today)",
+  "https://infobanknews.com/top-laba-bank-banten-melonjak-23916-persen-di-juni-2026-jadi-rp2136-miliar": "Laba Bank Banten melonjak 239,16% di Juni 2026 jadi Rp21,36 miliar (Infobank)",
+  "https://infobanknews.com/bank-jakarta-raup-laba-rp55546-miliar-di-semester-i-2026-tumbuh-3188-persen": "Bank Jakarta raup laba Rp555,46 miliar di semester I 2026, tumbuh 31,88% (Infobank)",
+  "https://infobanknews.com/bank-jateng-cetak-laba-rp61648-m-di-semester-i-2026-dana-murah-makin-dominan-perkuat-struktur-pendanaan": "Bank Jateng cetak laba Rp616,48 M di semester I 2026 (Infobank)",
+  "https://infobanknews.com/keren-bank-sumut-cetak-laba-rp38828-miliar-di-semester-i-2026-tumbuh-1024-persen": "Bank Sumut cetak laba Rp388,28 miliar di semester I 2026, tumbuh 10,24% (Infobank)",
+  "https://infobanknews.com/bank-nagari-cetak-laba-rp24366-miliar-di-juni-2026-naik-522-persen": "Bank Nagari cetak laba Rp243,66 miliar di Juni 2026, naik 5,22% (Infobank)",
+  "https://infobanknews.com/risiko-kredit-naik-laba-bank-sulutgo-terkoreksi-jadi-rp16808-m-di-semester-i-2026": "Risiko kredit naik, laba Bank SulutGo terkoreksi jadi Rp168,08 M di semester I 2026 (Infobank)",
+  "https://infobanknews.com/bank-kalsel-bukukan-laba-rp16819-miliar-turun-1756-persen-di-juni-2026": "Bank Kalsel bukukan laba Rp168,19 miliar, turun 17,56% di Juni 2026 (Infobank)",
+  "https://infobanknews.com/bank-kalteng-cetak-laba-rp21941-miliar-di-juni-2026-dana-murah-melesat": "Bank Kalteng cetak laba Rp219,41 miliar di Juni 2026 (Infobank)",
+  "https://infobanknews.com/bank-ntt-raup-laba-rp8120-miliar-per-juni-2026-tumbuh-3194-persen": "Bank NTT raup laba Rp81,20 miliar per Juni 2026, tumbuh 31,94% (Infobank)",
+  "https://infobanknews.com/pertahankan-kinerja-bank-bpd-diy-raih-laba-rp16515-miliar-di-juni-2026-naik-669-persen": "Bank BPD DIY raih laba Rp165,15 miliar di Juni 2026, naik 6,69% (Infobank)",
+  "https://bankaceh.co.id/wp-content/uploads/2026/07/2026-Laporan-Keuangan-Publikasi-TW-II.pdf": "Laporan keuangan publikasi triwulan II 2026 Bank Aceh Syariah (Bank Aceh)",
+  "https://banksumselbabel.com/storage/Attachment/1785738661243285222.pdf": "Pengungkapan Pilar 3 Bank Sumsel Babel, triwulan II 2026 (Bank Sumsel Babel)",
+  "https://www.investortrust.id/financial/109113/bank-mega-syariah-cetak-laba-rp-137-miliar-di-semester-i-2026-tumbuh-17-56": "Bank Mega Syariah cetak laba Rp137 miliar di semester I 2026, tumbuh 17,56% (Investor Trust)",
+  "https://emitennews.com/news/bmas-masuk-10-besar-daftar-saham-hsc-intip-kinerja-semester-i": "BMAS masuk 10 besar daftar saham HSC, intip kinerja semester I (EmitenNews)",
+  "https://samuel.co.id/wp-content/uploads/2026/08/BMRI_20260807.pdf": "BMRI: hasil 2Q26, CAR bank saja 17,5%, CASA 69,2%, LDR 94,9%, NIM 4,3% (Samuel Sekuritas)",
+  "https://www.kabarbursa.com/market-hari-ini/nim-bsi-bris-turun-31-bp-di-2q26-bisnis-emas-tumbuh-81-persen": "NIM BSI (BRIS) turun 31 bp di 2Q26, bisnis emas tumbuh 81 persen (Kabar Bursa)",
+  "https://www.bareksa.com/berita/saham/2026-07-29/bbca-cetak-laba-rp295-triliun-di-semester-i-2026-rekomendasi-buy-target-harga-segini": "BBCA cetak laba Rp29,5 triliun di semester I 2026, NIM 5,7% (Bareksa)"
  },
  "bank": [
   {
@@ -416,13 +473,18 @@
      "npl": 0.98,
      "sumber": [
       "https://www.cnbcindonesia.com/research/20260723140840-128-753258/makin-jumbo-aset-bank-mandiri-tembus-rp2527-triliun",
-      "https://katadata.co.id/finansial/bursa/6a950c3890930/himbara-bukukan-laba-rp-74-4-t-semester-i-bbri-bmri-hingga-bbtn-siapa-unggul"
+      "https://katadata.co.id/finansial/bursa/6a950c3890930/himbara-bukukan-laba-rp-74-4-t-semester-i-bbri-bmri-hingga-bbtn-siapa-unggul",
+      "https://samuel.co.id/wp-content/uploads/2026/08/BMRI_20260807.pdf"
      ],
      "tumbuh_rilis": {
       "aset": 18.09,
       "kredit": 18.8,
       "dpk": 17.1
-     }
+     },
+     "car": 17.5,
+     "casa": 69.2,
+     "ldr": 94.9,
+     "nim": 4.3
     },
     "2026Q3": {
      "laba": 45.5,
@@ -802,8 +864,10 @@
      "laba": 4.16,
      "npl": 1.8,
      "sumber": [
-      "https://keuangan.kontan.co.id/news/bsi-cetak-laba-rp-416-triliun-di-semester-i-2026-tumbuh-1108"
-     ]
+      "https://keuangan.kontan.co.id/news/bsi-cetak-laba-rp-416-triliun-di-semester-i-2026-tumbuh-1108",
+      "https://www.kabarbursa.com/market-hari-ini/nim-bsi-bris-turun-31-bp-di-2q26-bisnis-emas-tumbuh-81-persen"
+     ],
+     "nim": 5.4
     }
    }
   },
@@ -930,8 +994,10 @@
       "https://finansial.bisnis.com/read/20260924/90/2006605/7-bank-dengan-laba-terbesar-di-indonesia-semester-i2026",
       "https://infobanknews.com/bca-kantongi-laba-rp295-triliun-di-semester-i-2026-kredit-lampaui-rp1-000-triliun",
       "https://investor.id/market/454496/laba-bca-tumbuh-285-hingga-agustus-2026",
-      "https://finansial.bisnis.com/read/20260728/90/1991742/bca-bbca-cetak-laba-rp295-triliun-kredit-tembus-rp1000-triliun-semester-i2026"
-     ]
+      "https://finansial.bisnis.com/read/20260728/90/1991742/bca-bbca-cetak-laba-rp295-triliun-kredit-tembus-rp1000-triliun-semester-i2026",
+      "https://www.bareksa.com/berita/saham/2026-07-29/bbca-cetak-laba-rp295-triliun-di-semester-i-2026-rekomendasi-buy-target-harga-segini"
+     ],
+     "nim": 5.7
     }
    }
   },
@@ -939,7 +1005,8 @@
    "kode": "BNGA",
    "nama": "CIMB Niaga",
    "lengkap": "PT Bank CIMB Niaga Tbk",
-   "grup": "swasta",
+   "grup": "asing",
+   "milik": "Malaysia",
    "domain": "cimbniaga.co.id",
    "profil": "Berakar dari Bank Niaga yang berdiri pada 1955, kini bagian dari CIMB Group asal Malaysia. Kuat di kartu kredit, KPR, dan perbankan digital OCTO.",
    "terbaru": null,
@@ -1076,7 +1143,8 @@
    "kode": "NISP",
    "nama": "OCBC Indonesia",
    "lengkap": "PT Bank OCBC NISP Tbk",
-   "grup": "swasta",
+   "grup": "asing",
+   "milik": "Singapura",
    "domain": "ocbc.id",
    "profil": "Berdiri di Bandung pada 1941 dan kini dimiliki OCBC asal Singapura. Dikenal dengan permodalan yang kuat dan pertumbuhan dana murah yang cepat.",
    "terbaru": null,
@@ -1232,7 +1300,8 @@
    "kode": "BNLI",
    "nama": "PermataBank",
    "lengkap": "PT Bank Permata Tbk",
-   "grup": "swasta",
+   "grup": "asing",
+   "milik": "Thailand",
    "domain": "permatabank.com",
    "profil": "Dibentuk pada 2002 dari penggabungan lima bank, termasuk Bank Bali. Sejak 2020 dimiliki Bangkok Bank asal Thailand.",
    "terbaru": null,
@@ -1346,7 +1415,8 @@
    "kode": "BDMN",
    "nama": "Danamon",
    "lengkap": "PT Bank Danamon Indonesia Tbk",
-   "grup": "swasta",
+   "grup": "asing",
+   "milik": "Jepang",
    "domain": "danamon.co.id",
    "profil": "Berdiri pada 1956 dan menjadi bagian dari MUFG asal Jepang sejak 2019. Angka konsolidasinya ikut memuat Adira Finance, sehingga margin bunganya jauh di atas bank lain.",
    "terbaru": null,
@@ -1448,7 +1518,8 @@
    "kode": "BNII",
    "nama": "Maybank Indonesia",
    "lengkap": "PT Bank Maybank Indonesia Tbk",
-   "grup": "swasta",
+   "grup": "asing",
+   "milik": "Malaysia",
    "domain": "maybank.co.id",
    "profil": "Dahulu Bank Internasional Indonesia (BII) yang berdiri pada 1959, kini bagian dari Maybank asal Malaysia.",
    "terbaru": null,
@@ -1900,6 +1971,1404 @@
      ]
     }
    }
+  },
+  {
+   "kode": "BSN",
+   "nama": "BSN",
+   "lengkap": "PT Bank Syariah Nasional",
+   "grup": "bumn",
+   "domain": "",
+   "logo": "bsn",
+   "profil": "Bank umum syariah, anak usaha BTN. Dulu: Bank Victoria Syariah dan UUS BTN.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 78.8,
+     "kredit": 59.6,
+     "dpk": 61.6,
+     "laba": 0.444,
+     "sumber": [
+      "https://infobanknews.com/pertahankan-kinerja-kinclong-semester-i-2026-bank-bsn-gelar-business-review-forum"
+     ],
+     "tumbuh_rilis": {
+      "aset": 20.1,
+      "kredit": 23.0,
+      "dpk": 11.5,
+      "laba": 10.7
+     }
+    }
+   },
+   "syariah": true
+  },
+  {
+   "kode": "MANTAP",
+   "nama": "Bank Mandiri Taspen",
+   "lengkap": "PT Bank Mandiri Taspen",
+   "grup": "bumn",
+   "domain": "bankmandiritaspen.co.id",
+   "logo": "mantap",
+   "profil": "Bank umum, anak usaha Bank Mandiri. Dulu: Bank Sinar Harapan Bali.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 76.9,
+     "kredit": 52.9,
+     "dpk": 57.2,
+     "laba": 0.85178,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-mantap-kejar-pertumbuhan-bisnis-sambil-perkuat-tjsl"
+     ],
+     "tumbuh_rilis": {
+      "aset": 15.9,
+      "kredit": 10.5,
+      "dpk": 14.8,
+      "laba": 6.4
+     }
+    }
+   }
+  },
+  {
+   "kode": "AGRO",
+   "nama": "Bank Raya",
+   "lengkap": "PT Bank Raya Indonesia Tbk",
+   "grup": "bumn",
+   "saham": "AGRO",
+   "domain": "bankraya.co.id",
+   "logo": "raya",
+   "profil": "Bank digital, anak usaha BRI. Dulu: BRI Agroniaga. Saham tercatat di BEI dengan kode AGRO.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "laba": 0.01201,
+     "car": 40.8,
+     "casa": 38.09,
+     "ldr": 83.31,
+     "nim": 5.95,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-raya-raup-laba-rp-12-miliar-kuartal-ii-2026-kredit-digital-tumbuh-226"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "MEGA",
+   "nama": "Bank Mega",
+   "lengkap": "PT Bank Mega Tbk",
+   "grup": "swasta",
+   "saham": "MEGA",
+   "domain": "bankmega.com",
+   "logo": "mega",
+   "profil": "Bank umum swasta nasional. Saham tercatat di BEI dengan kode MEGA.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 144.89,
+     "kredit": 73.45,
+     "dpk": 91.97,
+     "laba": 1.27,
+     "npl": 1.56,
+     "car": 25.03,
+     "nim": 4.36,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260817/90/1996917/bank-mega-mega-milik-ct-catatkan-laba-rp127-triliun-turun-624-yoy-pada-semester-i2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 11.73,
+      "kredit": 8.99,
+      "dpk": 6.57,
+      "laba": -6.24
+     }
+    }
+   }
+  },
+  {
+   "kode": "BTPN",
+   "nama": "SMBC Indonesia",
+   "lengkap": "PT Bank SMBC Indonesia Tbk",
+   "grup": "asing",
+   "milik": "Jepang",
+   "saham": "BTPN",
+   "domain": "smbci.com",
+   "logo": "smbci",
+   "profil": "Bank umum milik grup Jepang yang berbadan hukum Indonesia. Dulu: Bank BTPN. Saham tercatat di BEI dengan kode BTPN.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 245.5,
+     "kredit": 185.3,
+     "laba": 1.4,
+     "car": 30.7,
+     "casa": 47.5,
+     "sumber": [
+      "https://www.cnbcindonesia.com/market/20260731153554-17-755522/smbc-indonesia--btpn--kantongi-laba-rp14-triliun-di-semester-1-2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 4.7,
+      "laba": 40.3
+     }
+    }
+   }
+  },
+  {
+   "kode": "BTPS",
+   "nama": "BTPN Syariah",
+   "lengkap": "PT Bank BTPN Syariah Tbk",
+   "grup": "asing",
+   "milik": "Jepang",
+   "saham": "BTPS",
+   "domain": "btpnsyariah.com",
+   "logo": "btpns",
+   "profil": "Bank umum syariah, anak usaha SMBC Indonesia. Dulu: Bank Sahabat Purba Danarta. Saham tercatat di BEI dengan kode BTPS.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 23.0,
+     "kredit": 11.0,
+     "laba": 0.655,
+     "car": 58.7,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260725/90/1991023/btpn-syariah-bukukan-laba-rp655-miliar-pembiayaan-tumbuh-9-pada-semester-i2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 8,
+      "kredit": 9
+     }
+    }
+   },
+   "syariah": true
+  },
+  {
+   "kode": "SAQU",
+   "nama": "Bank Saqu",
+   "lengkap": "PT Bank Saqu Indonesia",
+   "grup": "swasta",
+   "domain": "banksaqu.co.id",
+   "logo": "saqu",
+   "profil": "Bank digital, anak usaha Astra Financial. Dulu: Bank Jasa Jakarta.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 16.68,
+     "kredit": 8.65,
+     "dpk": 8.96,
+     "laba": -0.12961,
+     "casa": 25.3,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260724/90/1990870/bank-saqu-merugi-juni-2026-kredit-dan-simpanan-masih-naik"
+     ],
+     "tumbuh_rilis": {
+      "aset": 25.31,
+      "kredit": 70.86,
+      "dpk": 36.06
+     }
+    }
+   }
+  },
+  {
+   "kode": "BBKP",
+   "nama": "KB Bank",
+   "lengkap": "PT Bank KB Indonesia Tbk",
+   "grup": "asing",
+   "milik": "Korea Selatan",
+   "saham": "BBKP",
+   "domain": "kbbank.co.id",
+   "logo": "kb",
+   "profil": "Bank umum milik grup Korea Selatan yang berbadan hukum Indonesia. Dulu: Bank Bukopin, KB Bukopin. Saham tercatat di BEI dengan kode BBKP.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 86.11,
+     "kredit": 44.97,
+     "dpk": 45.57,
+     "laba": 0.01902,
+     "casa": 32.27,
+     "nim": 1.96,
+     "sumber": [
+      "https://www.kabarbursa.com/market-hari-ini/kredit-tumbuh-kb-bank-bbkp-ikut-cetak-aset-naik-1271-persen-ke-rp8611-triliun",
+      "https://finansial.bisnis.com/read/20260920/90/2005622/laba-bersih-kb-bank-menyusut-jadi-rp1902-miliar-per-juni-2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 12.71,
+      "kredit": 4.38,
+      "dpk": 12.44
+     }
+    }
+   }
+  },
+  {
+   "kode": "BCAS",
+   "nama": "BCA Syariah",
+   "lengkap": "PT Bank BCA Syariah",
+   "grup": "swasta",
+   "domain": "bcasyariah.co.id",
+   "logo": "bcas",
+   "profil": "Bank umum syariah, anak usaha BCA. Dulu: Bank UIB.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "laba": 0.1094,
+     "npl": 1.84,
+     "sumber": [
+      "https://m.antaranews.com/amp/berita/5689088/bca-syariah-bukukan-laba-rp1094-miliar-pada-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": 9.2
+     }
+    }
+   },
+   "syariah": true
+  },
+  {
+   "kode": "ARTO",
+   "nama": "Bank Jago",
+   "lengkap": "PT Bank Jago Tbk",
+   "grup": "swasta",
+   "saham": "ARTO",
+   "domain": "jago.com",
+   "logo": "jago",
+   "profil": "Bank digital swasta nasional. Dulu: Bank Artos Indonesia. Saham tercatat di BEI dengan kode ARTO.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 41.4,
+     "kredit": 26.6,
+     "dpk": 27.6,
+     "laba": 0.189,
+     "sumber": [
+      "https://www.bloombergtechnoz.com/detail-news/116698/bank-digital-kompak-cetak-laba-tapi-saham-kurang-dapat-apresiasi"
+     ],
+     "tumbuh_rilis": {
+      "kredit": 24,
+      "dpk": 23,
+      "laba": 49
+     }
+    }
+   }
+  },
+  {
+   "kode": "BANK",
+   "nama": "Bank Aladin Syariah",
+   "lengkap": "PT Bank Aladin Syariah Tbk",
+   "grup": "swasta",
+   "saham": "BANK",
+   "domain": "aladinbank.id",
+   "logo": "aladin",
+   "profil": "Bank digital syariah swasta nasional. Dulu: Bank Net Indonesia Syariah, Bank Maybank Syariah Indonesia. Saham tercatat di BEI dengan kode BANK.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 15.14,
+     "kredit": 4.98,
+     "dpk": 9.97,
+     "laba": 0.03838,
+     "ldr": 55.76,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-aladin-syariah-cetak-laba-rp-3838-miliar-pada-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": -52.04
+     }
+    }
+   },
+   "syariah": true
+  },
+  {
+   "kode": "PNBS",
+   "nama": "Panin Dubai Syariah",
+   "lengkap": "PT Bank Panin Dubai Syariah Tbk",
+   "grup": "swasta",
+   "saham": "PNBS",
+   "domain": "pdsb.co.id",
+   "logo": "pds",
+   "profil": "Bank umum syariah, anak usaha PaninBank. Saham tercatat di BEI dengan kode PNBS.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 20.46,
+     "laba": 0.08078,
+     "npl": 2.86,
+     "car": 17.45,
+     "sumber": [
+      "https://stockwatch.id/public/alhamdulillah-laba-bersih-bank-panin-dubai-syariah-pnbs-melejit-209-di-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": 209.1
+     }
+    }
+   },
+   "syariah": true
+  },
+  {
+   "kode": "SUPA",
+   "nama": "Superbank",
+   "lengkap": "PT Super Bank Indonesia",
+   "grup": "swasta",
+   "saham": "SUPA",
+   "domain": "superbank.id",
+   "logo": "superbank",
+   "profil": "Bank digital swasta nasional. Dulu: Bank Fama International. Saham tercatat di BEI dengan kode SUPA.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "kredit": 13.43,
+     "dpk": 15.93,
+     "laba": 0.1826,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260729/90/1991998/superbank-supa-cetak-laba-bersih-rp18260-miliar-semester-i2026"
+     ],
+     "tumbuh_rilis": {
+      "kredit": 60.94,
+      "dpk": 89.1,
+      "laba": 790.42
+     }
+    }
+   }
+  },
+  {
+   "kode": "SEABANK",
+   "nama": "SeaBank",
+   "lengkap": "PT Bank Seabank Indonesia",
+   "grup": "asing",
+   "milik": "Singapura",
+   "domain": "seabank.co.id",
+   "logo": "seabank",
+   "profil": "Bank digital milik grup Singapura yang berbadan hukum Indonesia. Dulu: Bank Kesejahteraan Ekonomi.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 52.97,
+     "kredit": 39.81,
+     "dpk": 41.8,
+     "laba": 0.74926,
+     "npl": 1.65,
+     "casa": 69.6,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/laba-seabank-capai-rp-749-miliar-pada-semester-i-2026-kredit-tumbuh-53"
+     ],
+     "tumbuh_rilis": {
+      "kredit": 53.1,
+      "dpk": 47.6,
+      "laba": 250.1
+     }
+    }
+   }
+  },
+  {
+   "kode": "BBHI",
+   "nama": "Allo Bank",
+   "lengkap": "PT Allo Bank Indonesia Tbk",
+   "grup": "swasta",
+   "saham": "BBHI",
+   "domain": "allobank.com",
+   "logo": "allo",
+   "profil": "Bank digital swasta nasional. Dulu: Bank Harda Internasional. Saham tercatat di BEI dengan kode BBHI.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 15.57,
+     "kredit": 9.547,
+     "dpk": 5.83,
+     "laba": 0.234,
+     "npl": 1.73,
+     "nim": 10.9,
+     "sumber": [
+      "https://infobanknews.com/laba-bersih-allo-bank-tembus-rp234-m-pada-semester-i-2026-kredit-melesat-28-persen"
+     ],
+     "tumbuh_rilis": {
+      "aset": 10,
+      "kredit": 28
+     }
+    }
+   }
+  },
+  {
+   "kode": "BBYB",
+   "nama": "Bank Neo Commerce",
+   "lengkap": "PT Bank Neo Commerce Tbk",
+   "grup": "swasta",
+   "saham": "BBYB",
+   "domain": "bankneocommerce.co.id",
+   "logo": "bnc",
+   "profil": "Bank digital swasta nasional. Dulu: Bank Yudha Bhakti. Saham tercatat di BEI dengan kode BBYB.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 17.45,
+     "kredit": 7.13,
+     "dpk": 12.3,
+     "laba": 0.29485,
+     "npl": 2.99,
+     "sumber": [
+      "https://infobanknews.com/bank-neo-commerce-kantongi-laba-rp29485-miliar-di-juni-2026-tumbuh-681-persen"
+     ],
+     "tumbuh_rilis": {
+      "kredit": -11.79,
+      "laba": 6.81
+     }
+    }
+   }
+  },
+  {
+   "kode": "BLU",
+   "nama": "BCA Digital (blu)",
+   "lengkap": "PT Bank Digital BCA",
+   "grup": "swasta",
+   "domain": "blubybcadigital.id",
+   "logo": "blu",
+   "profil": "Bank digital, anak usaha BCA. Dulu: Bank Royal Indonesia.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 20.82,
+     "kredit": 8.99,
+     "dpk": 15.78,
+     "laba": 0.12959,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/laba-bca-digital-tumbuh-5313-jadi-rp12959-miliar-pada-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 16.9,
+      "kredit": 3.31,
+      "dpk": 20.2,
+      "laba": 53.13
+     }
+    }
+   }
+  },
+  {
+   "kode": "AMAR",
+   "nama": "Amar Bank",
+   "lengkap": "PT Bank Amar Indonesia Tbk",
+   "grup": "asing",
+   "milik": "Singapura",
+   "saham": "AMAR",
+   "domain": "amarbank.co.id",
+   "logo": "amar",
+   "profil": "Bank digital yang dikendalikan Tolaram Group asal Singapura. Dulu: Bank Anglomas Internasional. Saham tercatat di BEI dengan kode AMAR.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 6.61,
+     "kredit": 4.06,
+     "laba": 0.14356,
+     "car": 89.86,
+     "sumber": [
+      "https://www.kabarbursa.com/market-hari-ini/bank-amar-amar-kantongi-laba-rp14356-miliar-kredit-tumbuh-jadi-rp406-triliun"
+     ],
+     "tumbuh_rilis": {
+      "laba": 21.66
+     }
+    }
+   }
+  },
+  {
+   "kode": "NOBU",
+   "nama": "Nobu Bank",
+   "lengkap": "PT Bank Nationalnobu Tbk",
+   "grup": "swasta",
+   "saham": "NOBU",
+   "domain": "nobubank.com",
+   "logo": "nobu",
+   "profil": "Bank umum swasta nasional. Dulu: Bank Alfindo Sejahtera. Saham tercatat di BEI dengan kode NOBU.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 43.16,
+     "kredit": 24.48,
+     "dpk": 29.98,
+     "laba": 0.3391,
+     "npl": 0.53,
+     "car": 23.04,
+     "nim": 3.53,
+     "sumber": [
+      "https://www.nobubank.com/en/news/nobu-bank-catatkan-pertumbuhan-laba-454-pada-semester-i-2026/"
+     ],
+     "tumbuh_rilis": {
+      "aset": 19.4,
+      "kredit": 19.1,
+      "dpk": 18.8,
+      "laba": 45.4
+     }
+    }
+   }
+  },
+  {
+   "kode": "BABP",
+   "nama": "MNC Bank",
+   "lengkap": "PT Bank MNC Internasional Tbk",
+   "grup": "swasta",
+   "saham": "BABP",
+   "domain": "mncbank.co.id",
+   "logo": "mnc",
+   "profil": "Bank digital swasta nasional. Dulu: Bank ICB Bumiputera. Saham tercatat di BEI dengan kode BABP.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 21.68,
+     "kredit": 13.1,
+     "laba": 0.04187,
+     "sumber": [
+      "https://economy.okezone.com/read/2026/08/05/320/3234354/catat-pertumbuhan-kinerja-positif-dan-signifikan-di-kuartal-ii-2026-mnc-bank-tetap-kuat-aman-dan-tepercaya"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "MAYA",
+   "nama": "Bank Mayapada",
+   "lengkap": "PT Bank Mayapada Internasional Tbk",
+   "grup": "swasta",
+   "saham": "MAYA",
+   "domain": "bankmayapada.com",
+   "logo": "mayapada",
+   "profil": "Bank umum swasta nasional. Saham tercatat di BEI dengan kode MAYA.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "kredit": 110.41,
+     "laba": 0.06119,
+     "npl": 4.02,
+     "sumber": [
+      "https://www.cnbcindonesia.com/market/20260803130652-17-756080/laba-naik-tapi-kualitas-aset-bank-mayapada-memburuk"
+     ],
+     "tumbuh_rilis": {
+      "kredit": 5.84,
+      "laba": 158
+     }
+    }
+   }
+  },
+  {
+   "kode": "INPC",
+   "nama": "Bank Artha Graha",
+   "lengkap": "PT Bank Artha Graha Internasional Tbk",
+   "grup": "swasta",
+   "saham": "INPC",
+   "domain": "arthagraha.com",
+   "logo": "arthagraha",
+   "profil": "Bank umum swasta nasional. Saham tercatat di BEI dengan kode INPC.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 28.32,
+     "kredit": 8.9,
+     "dpk": 23.11,
+     "laba": 0.075287,
+     "sumber": [
+      "https://pintarsaham.id/analisis-saham-inpc-semester-i-2026-laba-melonjak-valuasi-masih-diskon/"
+     ],
+     "tumbuh_rilis": {
+      "laba": 48.82
+     }
+    }
+   }
+  },
+  {
+   "kode": "BCIC",
+   "nama": "J Trust Bank",
+   "lengkap": "PT Bank JTrust Indonesia Tbk",
+   "grup": "asing",
+   "milik": "Jepang",
+   "saham": "BCIC",
+   "domain": "jtrustbank.co.id",
+   "logo": "jtrust",
+   "profil": "Bank umum milik grup Jepang yang berbadan hukum Indonesia. Dulu: Bank Mutiara, Bank Century. Saham tercatat di BEI dengan kode BCIC.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 39.84,
+     "kredit": 28.89,
+     "dpk": 33.92,
+     "laba": 0.080236,
+     "npl": 2.82,
+     "car": 14.85,
+     "ldr": 85.17,
+     "nim": 2.15,
+     "sumber": [
+      "https://pintarsaham.id/kinerja-keuangan-bcic-semester-i-2026-analisis-lengkap-dan-valuasi-saham/",
+      "https://finansial.bisnis.com/read/20261001/90/2008698/bank-jtrust-bcic-salurkan-kredit-rp2925-triliun-semester-i2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": -28.91
+     }
+    }
+   }
+  },
+  {
+   "kode": "BGTG",
+   "nama": "Bank Ganesha",
+   "lengkap": "PT Bank Ganesha Tbk",
+   "grup": "swasta",
+   "saham": "BGTG",
+   "domain": "bankganesha.co.id",
+   "logo": "ganesha",
+   "profil": "Bank umum swasta nasional. Saham tercatat di BEI dengan kode BGTG.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "laba": 0.11377,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/bank-ganesha-raup-laba-rp-11377-miliar-pada-semester-i-2026"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "BVIC",
+   "nama": "Bank Victoria",
+   "lengkap": "PT Bank Victoria International Tbk",
+   "grup": "swasta",
+   "saham": "BVIC",
+   "domain": "victoriabank.co.id",
+   "logo": "victoria",
+   "profil": "Bank umum swasta nasional. Saham tercatat di BEI dengan kode BVIC.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 34.929,
+     "kredit": 22.28,
+     "dpk": 22.093,
+     "laba": 0.063645,
+     "sumber": [
+      "https://victoriabank.co.id/uploads/2026-07-17_template%20apolo laporan publikasi Juni 2026.pdf"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "SAMPOERNA",
+   "nama": "Bank Sampoerna",
+   "lengkap": "PT Bank Sahabat Sampoerna",
+   "grup": "swasta",
+   "domain": "banksampoerna.com",
+   "logo": "sampoerna",
+   "profil": "Bank umum swasta nasional. Dulu: Bank Dipo Internasional.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "kredit": 10.6,
+     "laba": 0.0159,
+     "ldr": 87.93,
+     "sumber": [
+      "https://infobanknews.com/laba-bank-sampoerna-tumbuh-4129-persen-jadi-rp159-miliar-di-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": 41.29
+     }
+    }
+   }
+  },
+  {
+   "kode": "BINA",
+   "nama": "Bank INA",
+   "lengkap": "PT Bank Ina Perdana Tbk",
+   "grup": "swasta",
+   "saham": "BINA",
+   "domain": "bankina.co.id",
+   "logo": "ina",
+   "profil": "Bank umum swasta nasional. Saham tercatat di BEI dengan kode BINA.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "laba": 0.065,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260906/90/2001719/laba-bersih-bank-ina-grup-salim-melesat-jadi-rp6500-miliar-semester-i2026"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "HANA",
+   "nama": "KEB Hana Bank",
+   "lengkap": "PT Bank KEB Hana Indonesia",
+   "grup": "asing",
+   "milik": "Korea Selatan",
+   "domain": "hanabank.co.id",
+   "logo": "hana",
+   "profil": "Bank umum milik grup Korea Selatan yang berbadan hukum Indonesia.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 56.58,
+     "kredit": 43.23,
+     "dpk": 27.77,
+     "laba": 0.36076,
+     "npl": 0.68,
+     "car": 25.78,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/laba-bersih-hana-bank-naik-921-pada-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 8.54,
+      "kredit": 8.81,
+      "laba": 9.21
+     }
+    }
+   }
+  },
+  {
+   "kode": "CTBC",
+   "nama": "CTBC Indonesia",
+   "lengkap": "PT Bank CTBC Indonesia",
+   "grup": "asing",
+   "milik": "Taiwan",
+   "domain": "ctbcbank.co.id",
+   "logo": "ctbc",
+   "profil": "Bank umum milik grup Taiwan yang berbadan hukum Indonesia.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 28.68,
+     "kredit": 20.4,
+     "dpk": 20.39,
+     "laba": 0.03755,
+     "npl": 1.96,
+     "ldr": 100.69,
+     "nim": 3.69,
+     "sumber": [
+      "https://keuangan.kontan.co.id/news/laba-ctbc-bank-turun-365-di-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": -36.5
+     }
+    }
+   }
+  },
+  {
+   "kode": "CITI",
+   "nama": "Citibank",
+   "lengkap": "Citibank, N.A.",
+   "grup": "asing",
+   "milik": "Amerika Serikat",
+   "cabang": true,
+   "domain": "citibank.co.id",
+   "logo": "citi",
+   "profil": "Kantor cabang di Indonesia dari Citibank, N.A., bank asal Amerika Serikat.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "kredit": 29.9,
+     "dpk": 72.6,
+     "laba": 0.994,
+     "npl": 0.19,
+     "car": 31.43,
+     "casa": 83.23,
+     "sumber": [
+      "https://www.antaranews.com/berita/5703851/citi-indonesia-cetak-laba-bersih-rp994-miliar-di-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "kredit": 8.05,
+      "dpk": 23.29
+     }
+    }
+   }
+  },
+  {
+   "kode": "DBS",
+   "nama": "DBS Indonesia",
+   "lengkap": "PT Bank DBS Indonesia",
+   "grup": "asing",
+   "milik": "Singapura",
+   "domain": "dbs.id",
+   "logo": "dbs",
+   "profil": "Bank umum milik grup Singapura yang berbadan hukum Indonesia.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 162.34,
+     "kredit": 98.54,
+     "dpk": 112.19,
+     "laba": 0.9457,
+     "npl": 1.58,
+     "car": 17.93,
+     "nim": 4.46,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260825/90/1998746/bank-dbs-indonesia-catat-laba-bersih-rp94570-miliar-pada-semester-i2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 15.68,
+      "kredit": 24.44,
+      "dpk": 13.53,
+      "laba": 18.56
+     }
+    }
+   }
+  },
+  {
+   "kode": "HSBC",
+   "nama": "HSBC Indonesia",
+   "lengkap": "PT Bank HSBC Indonesia",
+   "grup": "asing",
+   "milik": "Inggris",
+   "domain": "hsbc.co.id",
+   "logo": "hsbc",
+   "profil": "Bank umum milik grup Inggris yang berbadan hukum Indonesia. Dulu: Bank Ekonomi Raharja.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "laba": 1.09,
+     "sumber": [
+      "https://finansial.bisnis.com/read/20260825/90/1998761/laba-bersih-hsbc-indonesia-anjlok-2577-jadi-rp109-triliun-pada-semester-i2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": -25.77
+     }
+    }
+   }
+  },
+  {
+   "kode": "BKSW",
+   "nama": "QNB Indonesia",
+   "lengkap": "PT Bank QNB Indonesia Tbk",
+   "grup": "asing",
+   "milik": "Qatar",
+   "saham": "BKSW",
+   "domain": "qnb.co.id",
+   "logo": "qnb",
+   "profil": "Bank umum milik grup Qatar yang berbadan hukum Indonesia. Dulu: Bank Kesawan. Saham tercatat di BEI dengan kode BKSW.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 14.4,
+     "kredit": 10.0,
+     "dpk": 8.5,
+     "laba": 0.0296,
+     "npl": 1.84,
+     "car": 53.85,
+     "sumber": [
+      "https://infobanknews.com/bank-qnb-indonesia-cetak-laba-rp296-miliar-di-juni-2026-tumbuh-178-persen"
+     ],
+     "tumbuh_rilis": {
+      "laba": 178
+     }
+    }
+   }
+  },
+  {
+   "kode": "SHINHAN",
+   "nama": "Bank Shinhan",
+   "lengkap": "PT Bank Shinhan Indonesia",
+   "grup": "asing",
+   "milik": "Korea Selatan",
+   "domain": "shinhan.co.id",
+   "logo": "shinhan",
+   "profil": "Bank umum milik grup Korea Selatan yang berbadan hukum Indonesia. Dulu: Bank Metro Express.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 27.86,
+     "kredit": 21.175,
+     "dpk": 13.872,
+     "laba": 0.134778,
+     "sumber": [
+      "https://shinhan.co.id/wp-content/uploads/2026/07/Laporan-Bulanan-Juni-2026-Ind.pdf"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "LAMPUNG",
+   "nama": "Bank Lampung",
+   "lengkap": "PT Bank Pembangunan Daerah Lampung",
+   "grup": "bpd",
+   "domain": "banklampung.co.id",
+   "logo": "lampung",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Lampung, berkantor pusat di Bandar Lampung.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "laba": 0.13362,
+     "sumber": [
+      "https://teraslampung.com/semester-i-2026-laba-bank-lampung-tumbuh-2285-persen-jadi-rp13362-miliar",
+      "https://www.cnbcindonesia.com/market/20260828150329-17-763150/kredit-tumbuh-98-bpd-lampung-cetak-laba-rp133-m-di-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "laba": 22.85
+     }
+    }
+   }
+  },
+  {
+   "kode": "BALI",
+   "nama": "BPD Bali",
+   "lengkap": "PT Bank Pembangunan Daerah Bali",
+   "grup": "bpd",
+   "domain": "bpdbali.co.id",
+   "logo": "bali",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Bali, berkantor pusat di Denpasar.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 42.73,
+     "kredit": 25.85,
+     "dpk": 35.05,
+     "laba": 0.75575,
+     "sumber": [
+      "https://bali.bisnis.com/read/20260721/538/1989648/bpd-bali-bukukan-laba-bersih-rp75575-miliar-pada-semester-i2026-tumbuh-1767"
+     ],
+     "tumbuh_rilis": {
+      "aset": 5.75,
+      "kredit": 7.08,
+      "dpk": 3.88,
+      "laba": 17.67
+     }
+    }
+   }
+  },
+  {
+   "kode": "BEKS",
+   "nama": "Bank Banten",
+   "lengkap": "PT Bank Pembangunan Daerah Banten Tbk",
+   "grup": "bpd",
+   "saham": "BEKS",
+   "domain": "bankbanten.co.id",
+   "logo": "banten",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Banten, berkantor pusat di Serang. Dulu: Bank Pundi Indonesia. Saham tercatat di BEI dengan kode BEKS.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 10.4,
+     "kredit": 5.9,
+     "dpk": 6.8,
+     "laba": 0.02136,
+     "sumber": [
+      "https://bantentoday.id/bank-banten-tumbuh-pesat-di-semester-i-2026-aset-tembus-rp104-triliun/",
+      "https://infobanknews.com/top-laba-bank-banten-melonjak-23916-persen-di-juni-2026-jadi-rp2136-miliar"
+     ],
+     "tumbuh_rilis": {
+      "laba": 239.16
+     }
+    }
+   }
+  },
+  {
+   "kode": "JAKARTA",
+   "nama": "Bank Jakarta",
+   "lengkap": "PT Bank DKI",
+   "grup": "bpd",
+   "domain": "bankdki.co.id",
+   "logo": "jakarta",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di DKI Jakarta, berkantor pusat di Jakarta. Dulu: Bank DKI.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 98.88,
+     "kredit": 62.94,
+     "dpk": 75.22,
+     "laba": 0.55546,
+     "npl": 2.54,
+     "car": 24.8,
+     "casa": 49.67,
+     "ldr": 75.09,
+     "sumber": [
+      "https://infobanknews.com/bank-jakarta-raup-laba-rp55546-miliar-di-semester-i-2026-tumbuh-3188-persen"
+     ],
+     "tumbuh_rilis": {
+      "aset": 16.71,
+      "kredit": 18.99,
+      "dpk": 11.13,
+      "laba": 31.88
+     }
+    }
+   }
+  },
+  {
+   "kode": "JATENG",
+   "nama": "Bank Jateng",
+   "lengkap": "PT Bank Pembangunan Daerah Jawa Tengah",
+   "grup": "bpd",
+   "domain": "bankjateng.co.id",
+   "logo": "jateng",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Jawa Tengah, berkantor pusat di Semarang.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 95.03,
+     "kredit": 63.41,
+     "dpk": 72.51,
+     "laba": 0.61648,
+     "npl": 3.96,
+     "car": 22.53,
+     "casa": 53.57,
+     "ldr": 86.59,
+     "nim": 5.45,
+     "sumber": [
+      "https://infobanknews.com/bank-jateng-cetak-laba-rp61648-m-di-semester-i-2026-dana-murah-makin-dominan-perkuat-struktur-pendanaan"
+     ],
+     "tumbuh_rilis": {
+      "aset": 0.41,
+      "kredit": -0.08,
+      "dpk": -6.27,
+      "laba": -15.79
+     }
+    }
+   }
+  },
+  {
+   "kode": "SUMUT",
+   "nama": "Bank Sumut",
+   "lengkap": "PT Bank Pembangunan Daerah Sumatera Utara",
+   "grup": "bpd",
+   "domain": "banksumut.co.id",
+   "logo": "sumut",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Sumatera Utara, berkantor pusat di Medan.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 46.39,
+     "kredit": 32.15,
+     "dpk": 36.42,
+     "laba": 0.38828,
+     "npl": 3.05,
+     "car": 20.98,
+     "casa": 74.33,
+     "ldr": 87.71,
+     "sumber": [
+      "https://infobanknews.com/keren-bank-sumut-cetak-laba-rp38828-miliar-di-semester-i-2026-tumbuh-1024-persen"
+     ],
+     "tumbuh_rilis": {
+      "aset": 2.36,
+      "kredit": -0.03,
+      "dpk": -1.45,
+      "laba": 10.24
+     }
+    }
+   }
+  },
+  {
+   "kode": "NAGARI",
+   "nama": "Bank Nagari",
+   "lengkap": "PT Bank Nagari",
+   "grup": "bpd",
+   "domain": "banknagari.co.id",
+   "logo": "nagari",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Sumatera Barat, berkantor pusat di Padang. Dulu: BPD Sumatera Barat.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 33.04,
+     "kredit": 25.47,
+     "dpk": 26.32,
+     "laba": 0.24366,
+     "npl": 2.76,
+     "car": 22.63,
+     "casa": 48.42,
+     "ldr": 96.79,
+     "sumber": [
+      "https://infobanknews.com/bank-nagari-cetak-laba-rp24366-miliar-di-juni-2026-naik-522-persen"
+     ],
+     "tumbuh_rilis": {
+      "aset": -2.62,
+      "kredit": 0.21,
+      "dpk": -2.7,
+      "laba": 5.22
+     }
+    }
+   }
+  },
+  {
+   "kode": "SULUTGO",
+   "nama": "Bank SulutGo",
+   "lengkap": "PT Bank Pembangunan Daerah Sulawesi Utara dan Gorontalo",
+   "grup": "bpd",
+   "domain": "banksulutgo.co.id",
+   "logo": "sulutgo",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Sulawesi Utara dan Gorontalo, berkantor pusat di Manado.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 22.18,
+     "kredit": 16.59,
+     "dpk": 15.33,
+     "laba": 0.16808,
+     "npl": 3.92,
+     "car": 16.18,
+     "ldr": 108.02,
+     "sumber": [
+      "https://infobanknews.com/risiko-kredit-naik-laba-bank-sulutgo-terkoreksi-jadi-rp16808-m-di-semester-i-2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": 0.45,
+      "kredit": 3.82,
+      "dpk": -10.4,
+      "laba": -6.31
+     }
+    }
+   }
+  },
+  {
+   "kode": "KALSEL",
+   "nama": "Bank Kalsel",
+   "lengkap": "PT Bank Pembangunan Daerah Kalimantan Selatan",
+   "grup": "bpd",
+   "domain": "bankkalsel.co.id",
+   "logo": "kalsel",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Kalimantan Selatan, berkantor pusat di Banjarmasin.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 27.07,
+     "kredit": 14.41,
+     "dpk": 20.16,
+     "laba": 0.16819,
+     "npl": 3.02,
+     "car": 30.73,
+     "casa": 75.19,
+     "ldr": 71.47,
+     "sumber": [
+      "https://infobanknews.com/bank-kalsel-bukukan-laba-rp16819-miliar-turun-1756-persen-di-juni-2026"
+     ],
+     "tumbuh_rilis": {
+      "aset": -7.48,
+      "kredit": 0.6,
+      "dpk": -8.54,
+      "laba": -17.56
+     }
+    }
+   }
+  },
+  {
+   "kode": "KALTENG",
+   "nama": "Bank Kalteng",
+   "lengkap": "PT Bank Pembangunan Daerah Kalimantan Tengah",
+   "grup": "bpd",
+   "domain": "bankkalteng.co.id",
+   "logo": "kalteng",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Kalimantan Tengah, berkantor pusat di Palangka Raya.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 19.35,
+     "kredit": 12.43,
+     "dpk": 12.29,
+     "laba": 0.21941,
+     "npl": 2.4,
+     "car": 42.99,
+     "casa": 83.46,
+     "ldr": 101.17,
+     "sumber": [
+      "https://infobanknews.com/bank-kalteng-cetak-laba-rp21941-miliar-di-juni-2026-dana-murah-melesat"
+     ],
+     "tumbuh_rilis": {
+      "aset": -0.64,
+      "kredit": 12.3,
+      "dpk": -9.07,
+      "laba": 7.31
+     }
+    }
+   }
+  },
+  {
+   "kode": "NTT",
+   "nama": "Bank NTT",
+   "lengkap": "PT Bank Pembangunan Daerah Nusa Tenggara Timur",
+   "grup": "bpd",
+   "domain": "bankntt.co.id",
+   "logo": "ntt",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Nusa Tenggara Timur, berkantor pusat di Kupang.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 18.85,
+     "kredit": 13.84,
+     "dpk": 15.1,
+     "laba": 0.0812,
+     "npl": 3.49,
+     "car": 25.97,
+     "ldr": 91.69,
+     "nim": 4.66,
+     "sumber": [
+      "https://infobanknews.com/bank-ntt-raup-laba-rp8120-miliar-per-juni-2026-tumbuh-3194-persen"
+     ],
+     "tumbuh_rilis": {
+      "aset": 7.3,
+      "kredit": 8.35,
+      "dpk": 14.97,
+      "laba": 31.94
+     }
+    }
+   }
+  },
+  {
+   "kode": "DIY",
+   "nama": "Bank BPD DIY",
+   "lengkap": "PT Bank Pembangunan Daerah Daerah Istimewa Yogyakarta",
+   "grup": "bpd",
+   "domain": "bpddiy.co.id",
+   "logo": "diy",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di DI Yogyakarta, berkantor pusat di Yogyakarta.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 21.26,
+     "kredit": 11.04,
+     "dpk": 13.98,
+     "laba": 0.16515,
+     "npl": 3.69,
+     "car": 40.54,
+     "casa": 73.97,
+     "ldr": 78.54,
+     "sumber": [
+      "https://infobanknews.com/pertahankan-kinerja-bank-bpd-diy-raih-laba-rp16515-miliar-di-juni-2026-naik-669-persen"
+     ],
+     "tumbuh_rilis": {
+      "aset": 5.91,
+      "kredit": -5.21,
+      "dpk": 0.73,
+      "laba": 6.69
+     }
+    }
+   }
+  },
+  {
+   "kode": "ACEH",
+   "nama": "Bank Aceh Syariah",
+   "lengkap": "PT Bank Aceh Syariah",
+   "grup": "bpd",
+   "domain": "bankaceh.co.id",
+   "logo": "aceh",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Aceh, berkantor pusat di Banda Aceh. Beroperasi penuh dengan prinsip syariah. Dulu: BPD Aceh.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 29.751,
+     "kredit": 21.877,
+     "dpk": 25.031,
+     "laba": 0.171332,
+     "npl": 2.8,
+     "car": 19.23,
+     "ldr": 87.4,
+     "sumber": [
+      "https://bankaceh.co.id/wp-content/uploads/2026/07/2026-Laporan-Keuangan-Publikasi-TW-II.pdf"
+     ]
+    }
+   },
+   "syariah": true
+  },
+  {
+   "kode": "SUMSELBABEL",
+   "nama": "Bank Sumsel Babel",
+   "lengkap": "PT Bank Pembangunan Daerah Sumatera Selatan dan Bangka Belitung",
+   "grup": "bpd",
+   "domain": "banksumselbabel.com",
+   "logo": "sumselbabel",
+   "profil": "Bank pembangunan daerah milik pemerintah daerah di Sumatera Selatan dan Bangka Belitung, berkantor pusat di Palembang.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 39.891,
+     "kredit": 25.734,
+     "dpk": 29.43,
+     "laba": 0.289129,
+     "car": 22.86,
+     "sumber": [
+      "https://banksumselbabel.com/storage/Attachment/1785738661243285222.pdf"
+     ]
+    }
+   }
+  },
+  {
+   "kode": "MEGAS",
+   "nama": "Bank Mega Syariah",
+   "lengkap": "PT Bank Mega Syariah",
+   "grup": "swasta",
+   "domain": "megasyariah.co.id",
+   "logo": "megas",
+   "profil": "Bank umum syariah swasta nasional. Dulu: Bank Umum Tugu.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "laba": 0.137,
+     "sumber": [
+      "https://www.investortrust.id/financial/109113/bank-mega-syariah-cetak-laba-rp-137-miliar-di-semester-i-2026-tumbuh-17-56"
+     ],
+     "tumbuh_rilis": {
+      "laba": 17.56
+     }
+    }
+   },
+   "syariah": true
+  },
+  {
+   "kode": "BMAS",
+   "nama": "KBank Indonesia",
+   "lengkap": "PT Bank Kasikorn Indonesia Tbk",
+   "grup": "asing",
+   "milik": "Thailand",
+   "saham": "BMAS",
+   "domain": "kasikornbank.co.id",
+   "logo": "kbank",
+   "profil": "Bank umum milik grup Thailand yang berbadan hukum Indonesia. Dulu: Bank Maspion Indonesia. Saham tercatat di BEI dengan kode BMAS.",
+   "ringkas": true,
+   "keterangan": "Angka yang sudah dikumpulkan baru posisi Juni 2026 (kuartal II); kuartal sebelumnya menyusul. Pertumbuhan tahunan memakai angka yang disebut di sumber.",
+   "kuartal": {
+    "2026Q2": {
+     "aset": 26.6,
+     "kredit": 18.92,
+     "laba": 0.00639,
+     "sumber": [
+      "https://emitennews.com/news/bmas-masuk-10-besar-daftar-saham-hsc-intip-kinerja-semester-i"
+     ],
+     "tumbuh_rilis": {
+      "laba": -74.48
+     }
+    }
+   }
   }
- ]
+ ],
+ "kelompok": {
+  "bumn": "BUMN dan anak usahanya",
+  "swasta": "Swasta nasional (milik lokal)",
+  "asing": "Bank milik asing: anak usaha bank asing dan kantor cabang bank asing",
+  "bpd": "Bank pembangunan daerah"
+ }
 }

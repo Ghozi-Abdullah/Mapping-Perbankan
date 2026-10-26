@@ -1,19 +1,26 @@
-// Data per bank: perbandingan antarbank dalam satu kelompok (BUMN, swasta, BPD) per kuartal (bank.html),
-// halaman tiap bank (profil.html), dan sorotan di beranda.
+// Data per bank: perbandingan antarbank dalam satu kelompok (BUMN, swasta nasional, milik asing, BPD) per kuartal
+// (bank.html), halaman tiap bank (profil.html), dan sorotan di beranda. Perbandingan bebas 2–3 bank ada di banding.js.
 
 import { $, $$, esc, lineChart } from './kit.js';
 import { logoImg } from './orbit.js';
 import { lucide } from './icons.js';
 import { develop } from './ui.js';
 
+// Kelompok perbandingan. "Asing" = bank milik asing: anak usaha bank luar negeri yang berbadan hukum Indonesia
+// ditambah kantor cabang bank asing. Swasta nasional = bank swasta milik lokal.
 export const BANK_GROUPS = [
   { key: 'bumn', name: 'BUMN' },
   { key: 'swasta', name: 'Swasta' },
+  { key: 'asing', name: 'Asing' },
   { key: 'bpd', name: 'BPD' },
   { key: 'semua', name: 'Semua' }
 ];
-export const GROUP_NAME = { bumn: 'BUMN', swasta: 'Swasta nasional', bpd: 'Bank pembangunan daerah' };
-const GROUP_SHORT = { bumn: 'BUMN', swasta: 'swasta', bpd: 'BPD' };
+export const GROUP_NAME = { bumn: 'BUMN dan anak usahanya', swasta: 'Swasta nasional', asing: 'Bank milik asing', bpd: 'Bank pembangunan daerah' };
+const GROUP_SHORT = { bumn: 'BUMN', swasta: 'swasta', asing: 'asing', bpd: 'BPD' };
+const GROUP_TITLE = { bumn: 'BUMN', swasta: 'Swasta', asing: 'Asing', bpd: 'BPD' };
+export const GROUPS = ['bumn', 'swasta', 'asing', 'bpd'];
+/** Keterangan kelompok satu bank; bank asing menyebut negara asal pemiliknya. */
+export const groupLabel = (b) => (b.grup === 'asing' && b.milik ? (b.cabang ? `Cabang bank ${b.milik}` : `Milik ${b.milik}`) : GROUP_NAME[b.grup]);
 
 // key, label, satuan, arah baik (tinggi/rendah/null), keterangan
 export const METRICS = [
@@ -82,12 +89,15 @@ const nf = (d) => new Intl.NumberFormat('id-ID', { minimumFractionDigits: 0, max
 export const fmtMetric = (key, v) => {
   if (v == null) return '–';
   if (M[key].unit === 'T') {
-    if (Math.abs(v) < 1) return `Rp${nf(0).format(v * 1000)} M`;
-    return `Rp${nf(Math.abs(v) >= 100 ? 0 : Math.abs(v) >= 10 ? 1 : 2).format(v)} T`;
+    // Rugi ditulis dengan tanda minus di depan: −Rp130 M.
+    const sign = v < 0 ? '−' : '';
+    const a = Math.abs(v);
+    if (a < 1) return `${sign}Rp${nf(0).format(a * 1000)} M`;
+    return `${sign}Rp${nf(a >= 100 ? 0 : a >= 10 ? 1 : 2).format(a)} T`;
   }
   return `${nf(2).format(v)}%`;
 };
-const growthTag = (key, g) => {
+export const growthTag = (key, g) => {
   if (g == null) return '';
   const pct = M[key].unit === '%';
   const goodUp = M[key].good !== 'rendah';
@@ -95,8 +105,8 @@ const growthTag = (key, g) => {
   const txt = pct ? `${g > 0 ? '+' : ''}${nf(2).format(g)} poin` : `${g > 0 ? '+' : ''}${nf(1).format(g)}%`;
   return `<span class="delta sm ${goodUp ? 'good-up ' : ''}${M[key].good ? dir : 'flat'}" title="Dibanding kuartal yang sama tahun lalu">${txt}</span>`;
 };
-const star = (b, q, key) => ((b.kuartal?.[q]?.dihitung || []).includes(key) ? '<sup title="Dihitung dari angka laporan">*</sup>' : '');
-const metricLabel = (b, key) => (b.syariah && key === 'npl' ? 'NPF' : b.syariah && key === 'kredit' ? 'Pembiayaan' : b.syariah && key === 'ldr' ? 'FDR' : M[key].label);
+export const star = (b, q, key) => ((b.kuartal?.[q]?.dihitung || []).includes(key) ? '<sup title="Dihitung dari angka laporan">*</sup>' : '');
+export const metricLabel = (b, key) => (b.syariah && key === 'npl' ? 'NPF' : b.syariah && key === 'kredit' ? 'Pembiayaan' : b.syariah && key === 'ldr' ? 'FDR' : M[key].label);
 
 /* ---------- Peringkat ---------- */
 /** Urutkan menurut arah metrik pada kuartal q: terbaik dulu. Metrik tanpa arah (LDR) diurutkan dari terbesar. */
@@ -128,6 +138,8 @@ export function bestOf(list, q) {
 export const profileUrl = (kode, q) => `profil.html?kode=${encodeURIComponent(kode)}${q ? `&q=${q}` : ''}`;
 /** Alamat halaman perbandingan dengan kelompok dan kuartal tertentu. */
 export const compareUrl = (grup, q) => `bank.html?grup=${grup}${q ? `&q=${q}` : ''}`;
+/** Alamat halaman adu 2–3 bank, misalnya banding.html?b=BBRI,BBCA. */
+export const pairUrl = (kodes, q) => `banding.html?b=${kodes.map(encodeURIComponent).join(',')}${q ? `&q=${q}` : ''}`;
 
 /** Jumlah kolom supaya baris kartu terisi rata: 5 kartu muat 5 kolom → 5; 6 kartu muat 5 kolom → 3 + 3. */
 export function balancedCols(n, max) {
@@ -147,28 +159,46 @@ function setData(data) {
   BANKS = data.bank;
   QS = data.kuartal;
   // Warna mengikuti bank, bukan peringkat: urutan tetap di dalam kelompoknya.
-  for (const g of ['bumn', 'swasta', 'bpd']) BANKS.filter((b) => b.grup === g).forEach((b, i) => { COLOR[b.kode] = SERIES[i % SERIES.length]; });
+  for (const g of GROUPS) BANKS.filter((b) => b.grup === g).forEach((b, i) => { COLOR[b.kode] = SERIES[i % SERIES.length]; });
 }
-const tick = (key) => (v) => (M[key].unit === '%' ? `${nf(1).format(v)}%` : nf(v >= 100 ? 0 : 1).format(v));
+export const tick = (key) => (v) => (M[key].unit === '%' ? `${nf(1).format(v)}%` : nf(v >= 100 ? 0 : 1).format(v));
 const pressed = (host, v) => $$('button', host).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
 const onSeg = (host, fn) => host.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) fn(b.dataset.v); });
+/** Ukuran bank untuk mengurutkan: aset, atau kredit bila aset tidak disebut. */
+export const sizeAt = (b, q) => valueAt(b, q, 'aset') ?? (valueAt(b, q, 'kredit') != null ? valueAt(b, q, 'kredit') * 1.4 : null) ?? valueAt(b, q, 'dpk') ?? 0;
+const bySize = (list, q) => [...list].sort((a, b) => sizeAt(b, q) - sizeAt(a, q));
+/** Kode saham bila bank tercatat di bursa (14 bank utama memakai kode saham sebagai kode). */
+export const tickerOf = (b) => b.saham || (b.ringkas ? null : b.kode);
+/** Banyaknya kuartal yang berisi angka. */
+const depth = (b) => QS.filter((x) => b.kuartal?.[x]).length;
 
-/** Batang peringkat untuk satu metrik pada kuartal q. Baris bank `mark` disorot. */
-function rankBars(list, key, q, mark = null) {
+/** Batang peringkat untuk satu metrik pada kuartal q. Baris bank `mark` disorot dan selalu tampil. */
+function rankBars(list, key, q, mark = null, limit = Infinity) {
   const m = M[key];
   const sorted = sortBy(list, key, q);
   const max = Math.max(...sorted.map((b) => Math.abs(valueAt(b, q, key))), 1e-4);
   const missing = list.filter((b) => valueAt(b, q, key) == null);
-  return sorted.map((b, i) => `<li><a class="bb${b.kode === mark ? ' on' : ''}" href="${profileUrl(b.kode, q)}"${b.kode === mark ? ' aria-current="page"' : ''}>
+  const shown = sorted.filter((b, i) => i < limit || b.kode === mark);
+  const row = (b) => {
+    const i = sorted.indexOf(b);
+    const v = valueAt(b, q, key);
+    return `<li><a class="bb${b.kode === mark ? ' on' : ''}" href="${profileUrl(b.kode, q)}"${b.kode === mark ? ' aria-current="page"' : ''}>
       <span class="bb-rank">${m.good ? i + 1 : ''}</span>${logoImg(b, 'logo-xs')}
-      <span class="bb-name"><b>${esc(b.nama)}</b><small>${esc(GROUP_NAME[b.grup])}</small></span>
-      <span class="bar"><i style="width:${Math.max(2, (Math.abs(valueAt(b, q, key)) / max) * 100).toFixed(1)}%"></i></span>
-      <span class="bb-val"><b>${fmtMetric(key, valueAt(b, q, key))}${star(b, q, key)}</b>${growthTag(key, yoyAt(b, q, key))}</span>
-    </a></li>`).join('') + (missing.length ? `<li class="bb-missing">Belum ada angka ${qLabel(q)}: ${missing.map((b) => esc(b.nama)).join(', ')}</li>` : '');
+      <span class="bb-name"><b>${esc(b.nama)}</b><small>${esc(groupLabel(b))}</small></span>
+      <span class="bar${v < 0 ? ' neg' : ''}"><i style="width:${Math.max(2, (Math.abs(v) / max) * 100).toFixed(1)}%"></i></span>
+      <span class="bb-val"><b>${fmtMetric(key, v)}${star(b, q, key)}</b>${growthTag(key, yoyAt(b, q, key))}</span>
+    </a></li>`;
+  };
+  const more = sorted.length - shown.length;
+  return shown.map(row).join('')
+    + (more > 0 ? `<li><button type="button" class="bb-more" data-more="1">Tampilkan ${more} bank lainnya</button></li>` : '')
+    + (missing.length ? `<li class="bb-missing">Belum ada angka ${M[key].label.toLowerCase()} ${qLabel(q)}: ${missing.length > 12 ? `${missing.length} bank` : missing.map((b) => esc(b.nama)).join(', ')}</li>` : '');
 }
 
 /* ---------- Halaman perbandingan (bank.html) ---------- */
-const state = { group: 'bumn', metric: 'kredit', quarter: null };
+const state = { group: 'bumn', metric: 'kredit', quarter: null, allCards: false, allBars: false };
+const CARD_LIMIT = 12;
+const BAR_LIMIT = 15;
 
 export function renderBanks(data) {
   setData(data);
@@ -179,12 +209,14 @@ export function renderBanks(data) {
   $('#bank-group').innerHTML = BANK_GROUPS.map((g) => `<button type="button" data-v="${g.key}" aria-pressed="false">${g.name}<small>${g.key === 'semua' ? BANKS.length : BANKS.filter((b) => b.grup === g.key).length}</small></button>`).join('');
   $('#bank-metric').innerHTML = PICKABLE.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${M[k].label}</button>`).join('');
   $('#bank-quarter').innerHTML = QS.map((q) => {
-    const n = BANKS.filter((b) => valueAt(b, q, 'laba') != null).length;
-    return `<button type="button" data-v="${q}" aria-pressed="false" title="${n} dari ${BANKS.length} bank sudah melapor">${qShort(q)}</button>`;
+    const n = BANKS.filter((b) => b.kuartal?.[q]).length;
+    return `<button type="button" data-v="${q}" aria-pressed="false" title="${n} bank punya angka ${qLabel(q)}">${qShort(q)}</button>`;
   }).join('');
-  onSeg($('#bank-group'), (v) => { state.group = v; draw(); });
+  onSeg($('#bank-group'), (v) => { state.group = v; state.allCards = false; state.allBars = false; draw(); });
   onSeg($('#bank-metric'), (v) => { state.metric = v; draw(false); });
   onSeg($('#bank-quarter'), (v) => { state.quarter = v; draw(); });
+  $('#bank-cards-more').addEventListener('click', () => { state.allCards = !state.allCards; draw(false); });
+  $('#bank-bars').addEventListener('click', (e) => { if (e.target.closest('[data-more]')) { state.allBars = true; draw(false); } });
   new ResizeObserver(fitCards).observe($('#bank-cards'));
   draw();
   // Gulir pilihan kuartal ke kanan supaya kuartal terbaru terlihat di layar sempit.
@@ -213,52 +245,58 @@ function draw(animateCards = true) {
   const q = state.quarter;
   const key = state.metric;
   const m = M[key];
-  const reported = list.filter((b) => b.kuartal?.[q]);
+  const reported = bySize(list.filter((b) => b.kuartal?.[q]), q);
+  const missing = list.filter((b) => !b.kuartal?.[q]);
   const who = state.group === 'semua' ? 'bank' : `bank ${GROUP_SHORT[state.group]}`;
-  $('#bank-sub').textContent = `${qLabel(q)} (${qSpan(q)}) · ${reported.length} dari ${list.length} ${who} sudah melapor`;
+  $('#bank-sub').textContent = `${qLabel(q)} (${qSpan(q)}) · ${reported.length} dari ${list.length} ${who} punya angka`;
 
-  // Kartu bank.
-  $('#bank-cards').innerHTML = list.map((b) => {
-    const has = Boolean(b.kuartal?.[q]);
+  // Kartu bank yang punya angka di kuartal ini, terbesar dulu.
+  const cards = state.allCards ? reported : reported.slice(0, CARD_LIMIT);
+  $('#bank-cards').innerHTML = cards.map((b) => {
     const stat = (k) => `<span><small>${metricLabel(b, k)}</small><b>${fmtMetric(k, valueAt(b, q, k))}${star(b, q, k)}</b>${growthTag(k, yoyAt(b, q, k))}</span>`;
-    return `<a class="bcard${has ? '' : ' empty-q'}" href="${profileUrl(b.kode, has ? q : null)}">
-      <span class="bc-head">${logoImg(b, 'logo-sm')}<span class="bc-title"><b>${esc(b.nama)}</b><small>${esc(b.kode)} · ${has ? qLabel(q) : `belum melapor ${qLabel(q)}`}</small></span><span class="bc-go">${lucide('arrow-up-right')}</span></span>
+    return `<a class="bcard" href="${profileUrl(b.kode, q)}">
+      <span class="bc-head">${logoImg(b, 'logo-sm')}<span class="bc-title"><b>${esc(b.nama)}</b><small>${esc(b.grup === 'asing' ? groupLabel(b) : tickerOf(b) || GROUP_NAME[b.grup])} · ${qLabel(q)}</small></span><span class="bc-go">${lucide('arrow-up-right')}</span></span>
       <span class="bc-stats">${stat('laba')}${stat('kredit')}${stat('npl')}${stat('car')}</span>
     </a>`;
   }).join('');
+  const hidden = reported.length - cards.length;
+  $('#bank-cards-more').hidden = reported.length <= CARD_LIMIT;
+  $('#bank-cards-more').textContent = state.allCards ? 'Tampilkan lebih sedikit' : `Tampilkan ${hidden} bank lainnya`;
+  $('#bank-cards-missing').textContent = missing.length
+    ? `Belum ada angka ${qLabel(q)} untuk ${missing.length > 8 ? `${missing.length} bank` : missing.map((b) => b.nama).join(', ')}${missing.some((b) => b.ringkas) ? '. Bank tambahan baru punya angka Juni 2026 (Q2 26); kuartal lain menyusul' : ''}.`
+    : '';
   fitCards();
   if (animateCards) develop($('#bank-cards'));
 
   // Batang perbandingan untuk metrik terpilih.
   $('#bank-bars-title').textContent = `${m.label}, ${state.group === 'semua' ? 'semua bank' : `antarbank ${GROUP_SHORT[state.group]}`}, ${qLabel(q)}`;
   $('#bank-bars-note').textContent = m.note;
-  $('#bank-bars').innerHTML = rankBars(list, key, q);
+  $('#bank-bars').innerHTML = rankBars(reported, key, q, null, state.allBars ? Infinity : BAR_LIMIT);
 
   drawTrend(list);
 
   // Tabel lengkap untuk kuartal terpilih.
-  const best = bestOf(list, q);
+  const best = bestOf(reported, q);
   $('#bank-table').innerHTML = `<thead><tr><th>Bank</th>${METRICS.map((c) => `<th class="num${c.key === key ? ' on' : ''}" title="${esc(c.note)}">${c.label}</th>`).join('')}</tr></thead>
-    <tbody>${list.map((b) => `<tr>
-      <td><a class="tb-name" href="${profileUrl(b.kode, q)}">${logoImg(b, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${esc(b.kode)}</small></span></a></td>
+    <tbody>${reported.map((b) => `<tr>
+      <td><a class="tb-name" href="${profileUrl(b.kode, q)}">${logoImg(b, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${esc(b.grup === 'asing' ? groupLabel(b) : tickerOf(b) || GROUP_SHORT[b.grup])}</small></span></a></td>
       ${METRICS.map((c) => { const v = valueAt(b, q, c.key); return `<td class="num${best[c.key] != null && v === best[c.key] ? ' best' : ''}${c.key === key ? ' on' : ''}">${fmtMetric(c.key, v)}${star(b, q, c.key)}</td>`; }).join('')}
     </tr>`).join('')}</tbody>`;
-  $('#bank-table-title').textContent = `Semua angka, ${qLabel(q)}`;
+  $('#bank-table-title').textContent = `Semua angka, ${qLabel(q)} (${reported.length} bank)`;
 }
 
-/** Garis tren kuartalan metrik terpilih untuk bank-bank di kelompok. Laba ditampilkan per kuartal, bukan kumulatif. */
+/** Garis tren kuartalan metrik terpilih. Hanya bank yang punya riwayat beberapa kuartal; paling banyak delapan terbesar. */
 function drawTrend(list) {
   const key = state.metric;
-  let banks = list;
+  const q = state.quarter;
+  const withHistory = list.filter((b) => depth(b) >= 4);
+  const banks = bySize(withHistory, q).slice(0, 8);
   let note = '';
-  if (state.group === 'semua') {
-    const q = state.quarter;
-    banks = [...list].sort((a, b) => (valueAt(b, q, 'aset') ?? valueAt(b, q, 'kredit') ?? 0) - (valueAt(a, q, 'aset') ?? valueAt(a, q, 'kredit') ?? 0)).slice(0, 6);
-    note = ' Enam bank terbesar saja supaya garisnya terbaca; pilih satu kelompok untuk melihat semuanya.';
-  }
-  const val = (b, q) => (key === 'laba' ? quarterProfit(b, q) : valueAt(b, q, key));
+  if (withHistory.length > banks.length) note += ' Delapan bank terbesar saja supaya garisnya terbaca.';
+  if (list.length > withHistory.length) note += ` ${list.length - withHistory.length} bank lain belum punya riwayat kuartalan di sini.`;
+  const val = (b, x) => (key === 'laba' ? quarterProfit(b, x) : valueAt(b, x, key));
   const brk = (b) => (b.putus && b.putus.metrik.includes(key) ? [QS.indexOf(b.putus.kuartal)] : []);
-  const series = banks.map((b, i) => ({ name: b.nama, values: QS.map((q) => val(b, q)), breaks: brk(b), color: state.group === 'semua' ? SERIES[i] : COLOR[b.kode] }))
+  const series = banks.map((b, i) => ({ name: b.nama, values: QS.map((x) => val(b, x)), breaks: brk(b), color: state.group === 'semua' ? SERIES[i] : COLOR[b.kode] }))
     .filter((s) => s.values.some((v) => v != null));
   const broken = banks.filter((b) => brk(b).length);
   if (broken.length) note += ` Garis ${broken.map((b) => b.nama).join(', ')} diputus di ${broken.map((b) => qLabel(b.putus.kuartal)).join(', ')} karena ${broken.map((b) => b.putus.alasan).join('; ')}.`;
@@ -266,6 +304,10 @@ function drawTrend(list) {
   $('#bank-trend-note').textContent = (key === 'laba'
     ? 'Laba tiap kuartal saja, dihitung dari selisih laba kumulatif. Celah berarti salah satu kuartal tidak ditemukan di rilis.'
     : 'Celah berarti angka kuartal itu tidak ditemukan di rilis yang dikutip.') + note;
+  if (!series.length) {
+    $('#bank-trend').innerHTML = '<p class="note">Belum ada bank di kelompok ini dengan riwayat beberapa kuartal.</p>';
+    return;
+  }
   lineChart($('#bank-trend'), {
     labels: QS.map(qShort),
     series,
@@ -279,7 +321,7 @@ function drawTrend(list) {
 }
 
 /* ---------- Halaman tiap bank (profil.html) ---------- */
-const prof = { bank: null, q: null, metric: 'kredit' };
+const prof = { bank: null, q: null, metric: 'kredit', allPeers: false };
 const PROFILE_TREND = ['kredit', 'aset', 'dpk', 'laba', 'npl', 'car', 'casa'];
 const TABLE_KEYS = ['aset', 'kredit', 'dpk', 'laba', 'npl', 'car', 'casa', 'ldr', 'nim'];
 
@@ -295,28 +337,44 @@ export function renderProfile(data) {
   prof.q = qsWith.includes(p.get('q')) ? p.get('q') : qsWith.includes(common) ? common : latestOf(b, QS);
   if (b.kode !== asked) history.replaceState(null, '', `?kode=${b.kode}`);
   document.title = `${b.nama}: laporan keuangan per kuartal · Peta Perbankan`;
-  $('meta[name="description"]')?.setAttribute('content', `Aset, kredit, DPK, laba, NPL, CAR, CASA, dan LDR ${b.lengkap} per kuartal sejak ${qLabel(qsWith[0])}, dibandingkan dengan bank ${GROUP_SHORT[b.grup]} lain.`);
+  $('meta[name="description"]')?.setAttribute('content', `Aset, kredit, DPK, laba, NPL, CAR, CASA, dan LDR ${b.lengkap}, dibandingkan dengan bank ${GROUP_SHORT[b.grup]} lain.`);
 
-  // Pindah bank tanpa kembali ke daftar.
-  $('#bank-switch').innerHTML = ['bumn', 'swasta', 'bpd'].map((g) => `<div class="sw-group"><span class="sw-label">${GROUP_SHORT[g] === 'swasta' ? 'Swasta' : GROUP_SHORT[g]}</span>${BANKS.filter((x) => x.grup === g).map((x) => `<a class="sw${x.kode === b.kode ? ' on' : ''}" href="${profileUrl(x.kode)}"${x.kode === b.kode ? ' aria-current="page"' : ''} title="${esc(x.nama)}">${logoImg(x, 'logo-xs')}<span>${esc(x.nama)}</span></a>`).join('')}</div>`).join('');
-  $('#bank-switch .sw.on')?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  // Pindah bank: logo bank sekelompok (terbesar dulu) dan pilihan semua bank.
+  const q0 = defaultQuarter(BANKS, QS);
+  const peersSw = bySize(BANKS.filter((x) => x.grup === b.grup), q0).slice(0, 12);
+  if (!peersSw.includes(b)) peersSw.push(b);
+  const opts = GROUPS.map((g) => {
+    const xs = BANKS.filter((x) => x.grup === g).sort((a, c) => a.nama.localeCompare(c.nama, 'id'));
+    return xs.length ? `<optgroup label="${esc(GROUP_NAME[g])}">${xs.map((x) => `<option value="${esc(x.kode)}"${x.kode === b.kode ? ' selected' : ''}>${esc(x.nama)}</option>`).join('')}</optgroup>` : '';
+  }).join('');
+  $('#bank-switch').innerHTML = `<label class="sw-pick"><span class="sr-only">Pilih bank</span><select class="select" id="sw-select">${opts}</select></label>
+    <div class="sw-group"><span class="sw-label">${esc(GROUP_TITLE[b.grup])}</span>${peersSw.map((x) => `<a class="sw${x.kode === b.kode ? ' on' : ''}" href="${profileUrl(x.kode)}"${x.kode === b.kode ? ' aria-current="page"' : ''} title="${esc(x.nama)}">${logoImg(x, 'logo-xs')}<span>${esc(x.nama)}</span></a>`).join('')}</div>`;
+  $('#sw-select').addEventListener('change', (e) => { location.href = profileUrl(e.target.value); });
+  const on = $('#bank-switch .sw.on');
+  if (on) { const host = $('#bank-switch'); host.scrollLeft = on.offsetLeft - host.clientWidth / 2; }
 
   const first = qsWith[0];
   const src = (u) => esc(DATA.sumber?.[u] || u);
-  $('#pf-id').innerHTML = `<div class="pf-title">${logoImg(b, 'logo-lg')}<div><span class="kicker">${esc(GROUP_NAME[b.grup])}</span><h1 class="pf-name">${esc(b.nama)}</h1><p class="sub">${esc(b.lengkap)} · kode saham ${esc(b.kode)}</p></div></div>
+  const ticker = tickerOf(b);
+  $('#pf-id').innerHTML = `<div class="pf-title">${logoImg(b, 'logo-lg')}<div><span class="kicker">${esc(b.grup === 'asing' && b.milik ? `${GROUP_NAME.asing} · ${b.milik}${b.cabang ? ', kantor cabang' : ''}` : GROUP_NAME[b.grup])}</span><h1 class="pf-name">${esc(b.nama)}</h1><p class="sub">${esc(b.lengkap)}${ticker ? ` · kode saham ${esc(ticker)}` : ''}</p></div></div>
     <p class="pf-profile">${esc(b.profil)}</p>
     ${b.terbaru ? `<p class="bd-news"><b>${lucide('trending-up')}Kabar terbaru</b>${esc(b.terbaru)}</p>` : ''}
     ${b.keterangan ? `<p class="bd-key">${lucide('info')}<span>${esc(b.keterangan)}</span></p>` : ''}
-    <div class="pf-actions"><a class="btn dark sm" href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/${esc(b.kode)}" target="_blank" rel="noopener">Laporan di IDX ${lucide('arrow-up-right')}</a><a class="btn light sm" href="https://${esc(b.domain)}" target="_blank" rel="noopener">Situs bank ${lucide('arrow-up-right')}</a><a class="btn light sm" href="${compareUrl(b.grup, prof.q)}">Bandingkan ${GROUP_SHORT[b.grup] === 'swasta' ? 'swasta' : GROUP_SHORT[b.grup]} ${lucide('arrow-right')}</a></div>`;
+    <div class="pf-actions">${ticker ? `<a class="btn dark sm" href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/${esc(ticker)}" target="_blank" rel="noopener">Laporan di IDX ${lucide('arrow-up-right')}</a>` : ''}${b.domain ? `<a class="btn ${ticker ? 'light' : 'dark'} sm" href="https://${esc(b.domain)}" target="_blank" rel="noopener">Situs bank ${lucide('arrow-up-right')}</a>` : ''}<a class="btn light sm" href="${pairUrl([b.kode])}">${lucide('scale')}Adu dengan bank lain</a><a class="btn light sm" href="${compareUrl(b.grup, prof.q)}">Semua bank ${esc(GROUP_SHORT[b.grup])} ${lucide('arrow-right')}</a></div>`;
   $('#pf-quarter').innerHTML = qsWith.map((x) => `<button type="button" data-v="${x}" aria-pressed="false">${qShort(x)}</button>`).join('');
-  $('#pf-metric').innerHTML = PROFILE_TREND.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${k === 'laba' ? 'Laba per kuartal' : metricLabel(b, k)}</button>`).join('');
+  $('#pf-quarter').hidden = qsWith.length < 2;
+  $('#pf-metric').innerHTML = PROFILE_TREND.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${k === 'laba' ? (qsWith.length > 1 ? 'Laba per kuartal' : 'Laba') : metricLabel(b, k)}</button>`).join('');
   onSeg($('#pf-quarter'), (v) => { prof.q = v; drawProfile(); });
   onSeg($('#pf-metric'), (v) => { prof.metric = v; drawProfile(false); });
   $('#pf-stats-sub').addEventListener('click', (e) => { const x = e.target.closest('[data-q]'); if (x) { prof.q = x.dataset.q; drawProfile(); } });
+  $('#pf-peers').addEventListener('click', (e) => { if (e.target.closest('[data-more]')) { prof.allPeers = true; drawProfile(false); } });
+  // Satu kuartal saja: grafik tren belum berarti, jadi posisi di antara bank sekelompok tampil selebar halaman.
+  $('#pf-trend-card').hidden = qsWith.length < 2;
+  $('#pf-grid').classList.toggle('one', qsWith.length < 2);
 
   $('#pf-table').innerHTML = `<thead><tr><th>Kuartal</th>${TABLE_KEYS.map((k) => `<th class="num">${metricLabel(b, k)}</th>`).join('')}</tr></thead>
     <tbody>${[...qsWith].reverse().map((x) => `<tr><td><b>${qLabel(x)}</b><small>${qSpan(x)}</small></td>${TABLE_KEYS.map((k) => `<td class="num">${fmtMetric(k, valueAt(b, x, k))}${star(b, x, k)}</td>`).join('')}</tr>`).join('')}</tbody>`;
-  $('#pf-table-sub').textContent = `${qsWith.length} kuartal, ${qLabel(first)} sampai ${qLabel(qsWith.at(-1))}. Laba kumulatif sejak Januari. Tanda – berarti angka itu tidak ditemukan di rilis yang dikutip; tanda * berarti dihitung dari angka laporan.`;
+  $('#pf-table-sub').textContent = `${qsWith.length} kuartal${qsWith.length > 1 ? `, ${qLabel(first)} sampai ${qLabel(qsWith.at(-1))}` : `, ${qLabel(first)}`}. Laba kumulatif sejak Januari. Tanda – berarti angka itu tidak ditemukan di sumber yang dikutip; tanda * berarti dihitung dari angka laporan.`;
   $('#pf-sources').innerHTML = [...qsWith].reverse().map((x) => `<li><b>${qLabel(x)}</b>${(b.kuartal[x].sumber || []).map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${src(u)}</a>`).join('')}</li>`).join('');
   drawProfile();
   const qs = $('#pf-quarter');
@@ -327,7 +385,7 @@ function drawProfile(all = true) {
   const b = prof.bank;
   const q = prof.q;
   const key = prof.metric;
-  const peers = BANKS.filter((x) => x.grup === b.grup);
+  const peers = BANKS.filter((x) => x.grup === b.grup && x.kuartal?.[q]);
   pressed($('#pf-quarter'), q);
   pressed($('#pf-metric'), key);
   if (all) {
@@ -344,15 +402,16 @@ function drawProfile(all = true) {
     develop($('#pf-stats'));
   }
   // Tren bank ini.
-  const values = QS.map((x) => (key === 'laba' ? quarterProfit(b, x) : valueAt(b, x, key)));
-  const breaks = b.putus && b.putus.metrik.includes(key) ? [QS.indexOf(b.putus.kuartal)] : [];
-  $('#pf-trend-title').textContent = key === 'laba' ? 'Laba per kuartal' : `${metricLabel(b, key)} per kuartal`;
-  lineChart($('#pf-chart'), { labels: QS.map(qShort), series: [{ name: b.nama, values, breaks, color: 'var(--accent)' }], area: false, dots: 'isolated', height: 230, fmt: (v) => fmtMetric(key, v), tick: tick(key), label: `${M[key].label} ${b.nama}` });
+  if (!$('#pf-trend-card').hidden) {
+    const values = QS.map((x) => (key === 'laba' ? quarterProfit(b, x) : valueAt(b, x, key)));
+    const breaks = b.putus && b.putus.metrik.includes(key) ? [QS.indexOf(b.putus.kuartal)] : [];
+    $('#pf-trend-title').textContent = key === 'laba' ? 'Laba per kuartal' : `${metricLabel(b, key)} per kuartal`;
+    lineChart($('#pf-chart'), { labels: QS.map(qShort), series: [{ name: b.nama, values, breaks, color: 'var(--accent)' }], area: false, dots: 'isolated', height: 230, fmt: (v) => fmtMetric(key, v), tick: tick(key), label: `${M[key].label} ${b.nama}` });
+  }
   // Posisi di antara bank sekelompok untuk ukuran yang sama.
-  const peerKey = key === 'laba' ? 'laba' : key;
-  $('#pf-peers-title').textContent = `${metricLabel(b, peerKey)} antarbank ${GROUP_SHORT[b.grup]}, ${qLabel(q)}`;
-  $('#pf-peers-note').textContent = peerKey === 'laba' ? 'Laba kumulatif sejak Januari, dibandingkan pada kuartal yang sama.' : M[peerKey].note;
-  $('#pf-peers').innerHTML = rankBars(peers, peerKey, q, b.kode);
+  $('#pf-peers-title').textContent = `${metricLabel(b, key)} antarbank ${GROUP_SHORT[b.grup]}, ${qLabel(q)}`;
+  $('#pf-peers-note').textContent = key === 'laba' ? 'Laba kumulatif sejak Januari, dibandingkan pada kuartal yang sama.' : M[key].note;
+  $('#pf-peers').innerHTML = rankBars(peers, key, q, b.kode, prof.allPeers ? Infinity : BAR_LIMIT);
 }
 
 /* ---------- Beranda ---------- */
@@ -367,28 +426,40 @@ export function renderHome(data) {
     { key: 'npl', label: 'NPL terendah' }
   ].map((f) => ({ ...f, b: top(f.key) })).filter((f) => f.b);
   $('#hero-facts').innerHTML = facts.map((f) => `<a class="fact" href="${profileUrl(f.b.kode, q)}"><small>${esc(f.label)}</small><b>${fmtMetric(f.key, valueAt(f.b, q, f.key))}</b><span>${logoImg(f.b, 'logo-xs')}${esc(f.b.nama)}</span></a>`).join('');
-  $('#hero-facts-q').textContent = `${qLabel(q)}, ${BANKS.filter((b) => b.kuartal?.[q]).length} dari ${BANKS.length} bank`;
+  $('#hero-facts-q').textContent = `${qLabel(q)}, ${BANKS.filter((b) => b.kuartal?.[q]).length} bank`;
 
-  const COLS = ['kredit', 'laba', 'npl'];
-  $('#sorotan').innerHTML = ['bumn', 'swasta', 'bpd'].map((g) => {
-    const list = sortBy(BANKS.filter((b) => b.grup === g), 'kredit', q);
-    const rest = BANKS.filter((b) => b.grup === g && !list.includes(b));
-    const best = bestOf(list, q);
+  const COLS = ['kredit', 'laba', 'npl', 'car'];
+  const SHOW = 7;
+  $('#sorotan').innerHTML = GROUPS.map((g) => {
+    const all = BANKS.filter((b) => b.grup === g && b.kuartal?.[q]);
+    const list = sortBy(all, 'kredit', q);
+    const ordered = [...list, ...all.filter((b) => !list.includes(b))];
+    const best = bestOf(all, q);
+    const more = ordered.length - SHOW;
     return `<div class="card so">
-      <div class="so-head"><div><span class="kicker">${esc(GROUP_NAME[g])}</span><h3>${list.length + rest.length} bank, ${qLabel(q)}</h3></div><a class="so-go" href="${compareUrl(g, q)}" aria-label="Bandingkan bank ${esc(GROUP_SHORT[g])}">${lucide('arrow-right')}</a></div>
+      <div class="so-head"><div><span class="kicker">${esc(GROUP_NAME[g])}</span><h3>${all.length} bank, ${qLabel(q)}</h3></div><a class="so-go" href="${compareUrl(g, q)}" aria-label="Bandingkan bank ${esc(GROUP_SHORT[g])}">${lucide('arrow-right')}</a></div>
       <div class="table-wrap"><table class="tbl so-tbl"><thead><tr><th>Bank</th>${COLS.map((k) => `<th class="num">${M[k].label.replace('Laba bersih', 'Laba').replace('Total aset', 'Aset')}</th>`).join('')}</tr></thead>
-      <tbody>${[...list, ...rest].map((b) => `<tr><td><a class="tb-name" href="${profileUrl(b.kode, q)}">${logoImg(b, 'logo-xs')}<b>${esc(b.nama)}</b></a></td>${COLS.map((k) => { const v = valueAt(b, q, k); return `<td class="num${best[k] != null && v === best[k] ? ' best' : ''}">${fmtMetric(k, v)}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>
+      <tbody>${ordered.slice(0, SHOW).map((b) => `<tr><td><a class="tb-name" href="${profileUrl(b.kode, q)}">${logoImg(b, 'logo-xs')}<b>${esc(b.nama)}</b></a></td>${COLS.map((k) => { const v = valueAt(b, q, k); return `<td class="num${best[k] != null && v === best[k] ? ' best' : ''}">${fmtMetric(k, v)}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>
+      ${more > 0 ? `<a class="so-more" href="${compareUrl(g, q)}">dan ${more} bank lainnya ${lucide('arrow-right')}</a>` : ''}
     </div>`;
   }).join('');
-  $('#sorotan-sub').textContent = `Laba ${qSpan(q)} (kumulatif sejak Januari). Angka terbaik di kelompoknya ditebalkan. Ketuk nama bank untuk riwayat lengkapnya.`;
+  $('#sorotan-sub').textContent = `Tujuh bank dengan kredit terbesar di tiap kelompok. Laba ${qSpan(q)} (kumulatif sejak Januari). Angka terbaik di kelompoknya ditebalkan. Bank asing = anak usaha bank luar negeri dan kantor cabang bank asing.`;
   return q;
+}
+
+/** Bank yang tampil di panggung logo: yang terbesar menurut aset atau kredit di kuartal pembanding. */
+export function orbitBanks(data, n = 20) {
+  setData(data);
+  const q = defaultQuarter(BANKS, QS);
+  return bySize(BANKS.filter((b) => b.kuartal?.[q]), q).slice(0, n);
 }
 
 /** Isi sisi belakang kartu di panggung 3D: laba kuartal terakhir bank itu. */
 export function tileBack(b, quarters) {
   const q = latestOf(b, quarters);
   const g = q ? yoyAt(b, q, 'laba') : null;
-  return `<small>${esc(GROUP_SHORT[b.grup] === 'swasta' ? 'Swasta' : GROUP_SHORT[b.grup])}</small>
+  const grp = GROUP_TITLE[b.grup];
+  return `<small>${esc(grp)}</small>
   <b>${fmtMetric('laba', q ? valueAt(b, q, 'laba') : null)}</b><span>laba ${q ? qLabel(q) : ''}</span>
   ${g != null ? `<em class="${g < 0 ? 'neg' : ''}">${g > 0 ? '+' : ''}${nf(1).format(g)}% setahun</em>` : ''}`;
 }

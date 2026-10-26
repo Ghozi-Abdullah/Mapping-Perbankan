@@ -223,6 +223,48 @@ class Files(unittest.TestCase):
         self.assertEqual(max(out["total"]), "2026-08")
 
 
+class SplitSheets(unittest.TestCase):
+    """Tabel I.4 versi 2026: kelompok bank dipecah ke tiga lembar dengan bulan yang sama."""
+
+    def workbook(self):
+        import io
+
+        import xlwt
+
+        wb = xlwt.Workbook()
+        groups = [[], [], []]
+        part = 0
+        for label, vals in KREDIT:
+            low = label.lower()
+            if "swasta" in low:
+                part = 1
+            elif "perkreditan" in low or "bpr" in low:
+                part = 2
+            groups[part].append((label, vals))
+        for i, rows in enumerate(groups, 1):
+            ws = wb.add_sheet(f"I.4_{i}")
+            for r, row in enumerate(sheet(rows, title="I.4")):
+                for c, v in enumerate(row):
+                    if v != "":
+                        ws.write(r, c, v)
+        buf = io.BytesIO()
+        wb.save(buf)
+        return buf.getvalue(), groups
+
+    @unittest.skipUnless(__import__("importlib").util.find_spec("xlwt"), "xlwt tidak terpasang")
+    def test_split_sheets_are_joined(self):
+        raw, groups = self.workbook()
+        self.assertTrue(all(groups), "tiap lembar berisi sebagian kelompok")
+        sheets = seki.sheet_rows(raw, TODAY)
+        self.assertEqual(len(sheets), 3)
+        with self.assertRaises((ValueError, KeyError)):
+            fetch.check("kredit", fetch.extract("kredit", sheets[0][1]))
+        joined = fetch.extract("kredit", fetch.join_sheets([rows for _, rows in sheets]))
+        fetch.check("kredit", joined)
+        self.assertEqual(max(joined["persero"]), "2026-08")
+        self.assertEqual(set(joined) >= {"persero", "bpd", "busn", "kcba", "bpr"}, True)
+
+
 class MultiSheet(unittest.TestCase):
     """Berkas BI berisi lembar riwayat lama yang lebih panjang dan lembar terbaru yang lebih pendek."""
 

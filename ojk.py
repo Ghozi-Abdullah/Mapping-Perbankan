@@ -132,6 +132,9 @@ def parse_table(rows):
         text = " ".join(cells)
         if re.match(r"^(sumber|keterangan|catatan|total|jumlah)\b", text, flags=re.I):
             continue
+        # Catatan kaki ("5) PT BPD Riau Kepri terdapat perubahan izin usaha ...") bukan bank dan bukan judul bagian.
+        if re.match(r"^\d+\)\s", cells[0]):
+            continue
         # Judul bagian: satu sel teks saja, tanpa alamat, dan bukan nama badan hukum.
         if len(cells) == 1 and not any(others) and not re.match(r"^\d+$", cells[0]) and not looks_bank(cells[0]):
             section = cells[0].title() if cells[0].isupper() else cells[0]
@@ -143,7 +146,7 @@ def parse_table(rows):
             continue
         if re.match(r"^\d+$", nama) or nama.lower() == header[cols["nama"]].lower():
             continue
-        item = {"nama": nama}
+        item = {"nama": re.sub(r"\s*\d+\)\s*$", "", nama)}
         for k in ("alamat", "kota", "telepon", "situs", "sandi"):
             v = get(row, k)
             if v:

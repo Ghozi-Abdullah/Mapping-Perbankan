@@ -4,8 +4,8 @@ import {
   GROUPS, monthLabel, monthsOf, at, yoy, yoyPoints, ratio, ratioSeries, yoySeries,
   totalSeries, groupRows, provinceValues, commonLatest
 } from './logic.js';
-import { orbit } from './orbit.js';
-import { renderBanks, renderProfile, renderHome, tileBack, qLabel, profileUrl } from './bank.js';
+import { orbit, useExtraLogos } from './orbit.js';
+import { renderBanks, renderProfile, renderHome, orbitBanks, tileBack, qLabel, profileUrl } from './bank.js';
 import { liquidSeg, edgeLight } from './ui.js';
 
 // Situs ini terdiri dari beberapa halaman; tiap halaman menandai dirinya di <body data-page="...">.
@@ -235,7 +235,9 @@ function redirectOldHash() {
 
 async function loadBanks() {
   try {
-    const data = await getJSON('bank.json');
+    // Logo seluruh bank dimuat bersamaan dengan data; bila gagal, bank tanpa logo tampil dengan inisial.
+    const [data, logos] = await Promise.all([getJSON('bank.json'), import('./logos-semua.js').catch(() => null)]);
+    if (logos) useExtraLogos(logos);
     setText('#updated', `Data bank per ${tanggal(data.diperbarui)}`);
     return data;
   } catch {
@@ -295,9 +297,11 @@ async function main() {
     const banks = await loadBanks();
     if (banks) {
       const qs = banks.kuartal;
-      setText('#bank-eyebrow', `${banks.bank.length} bank · ${qs.length} kuartal, ${qLabel(qs[0])}–${qLabel(qs[qs.length - 1])}`);
-      setText('#orbit-count', `${banks.bank.length} bank`);
-      orbit($('#orbit-field'), banks.bank, { onPick: (kode) => { location.href = profileUrl(kode); }, back: (b) => tileBack(b, qs), keep: $('#orbit-core') });
+      setText('#bank-eyebrow', `${banks.bank.length} bank · ${qLabel(qs[0])}–${qLabel(qs[qs.length - 1])}`);
+      setText('#hero-nbank', String(banks.bank.length));
+      const stage = orbitBanks(banks, 16);
+      setText('#orbit-count', `${stage.length} bank terbesar`);
+      orbit($('#orbit-field'), stage, { onPick: (kode) => { location.href = profileUrl(kode); }, back: (b) => tileBack(b, qs), keep: $('#orbit-core') });
       renderHome(banks);
     } else {
       bankMissing();
@@ -321,6 +325,10 @@ async function main() {
     if (!banks) bankMissing();
     else if (PAGE === 'bank') renderBanks(banks);
     else renderProfile(banks);
+  } else if (PAGE === 'banding') {
+    const [banks, mod] = await Promise.all([loadBanks(), import('./banding.js')]);
+    if (!banks) bankMissing();
+    else mod.renderBanding(banks);
   } else if (!(await loadSeki())) {
     setText('#updated', 'Menunggu data pertama');
     sekiMissing();

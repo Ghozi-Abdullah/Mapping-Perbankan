@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   fmtMetric, sortBy, rankIn, bestOf, METRICS, qLabel, qShort, prevQ, prevYearQ, valueAt, yoyAt,
-  quarterProfit, defaultQuarter, latestOf, balancedCols, profileUrl, compareUrl
+  quarterProfit, defaultQuarter, latestOf, balancedCols, profileUrl, compareUrl, orbitBanks, tickerOf, sizeAt
 } from './bank.js';
 import { initials } from './orbit.js';
 import { LOGOS } from './logos.js';
+import { LOGO } from './logos-semua.js';
 
 const DATA = JSON.parse(readFileSync(new URL('./bank.json', import.meta.url)));
 const KEYS = METRICS.map((m) => m.key);
@@ -18,6 +19,8 @@ test('format angka bank', () => {
   assert.equal(fmtMetric('laba', 0.698), 'Rp698 M');
   assert.equal(fmtMetric('npl', 0.98), '0,98%');
   assert.equal(fmtMetric('car', null), '–');
+  assert.equal(fmtMetric('laba', -0.13), '−Rp130 M', 'rugi bertanda minus');
+  assert.equal(fmtMetric('laba', -2.5), '−Rp2,5 T');
 });
 
 test('label dan urutan kuartal', () => {
@@ -91,13 +94,21 @@ test('bank.json: struktur kuartal lengkap dan masuk akal', () => {
   const kode = new Set();
   for (const b of DATA.bank) {
     const at = b.kode;
-    assert.match(b.kode, /^[A-Z]{4}$/, at);
+    assert.match(b.kode, /^[A-Z0-9]{3,12}$/, at);
+    if (b.saham) assert.match(b.saham, /^[A-Z]{4}$/, at);
     assert.ok(!kode.has(b.kode), `${at} ganda`);
     kode.add(b.kode);
-    assert.ok(['bumn', 'swasta', 'bpd'].includes(b.grup), at);
-    for (const k of ['nama', 'lengkap', 'profil', 'domain']) assert.ok(b[k]?.length > 2, `${at}.${k}`);
+    assert.ok(['bumn', 'swasta', 'bpd', 'asing'].includes(b.grup), at);
+    for (const k of ['nama', 'lengkap', 'profil']) assert.ok(b[k]?.length > 2, `${at}.${k}`);
+    if (b.domain) assert.doesNotMatch(b.domain, /^https?:|\s|\/$/, `${at} domain`);
     const qs = Object.keys(b.kuartal);
-    assert.ok(qs.length >= 8, `${at} minimal 8 kuartal berisi`);
+    // Bank inti punya riwayat minimal dua tahun; bank tambahan (ringkas) baru kuartal terakhir dan wajib diberi keterangan.
+    if (b.ringkas) assert.ok(qs.length >= 1 && b.keterangan, `${at} ringkas tanpa keterangan`);
+    else {
+      assert.ok(qs.length >= 8, `${at} minimal 8 kuartal berisi`);
+      assert.ok(b.domain?.length > 2, `${at}.domain`);
+      assert.equal(tickerOf(b), b.kode, `${at} kode saham`);
+    }
     for (const q of qs) {
       assert.ok(DATA.kuartal.includes(q), `${at} ${q} di luar daftar kuartal`);
       const r = b.kuartal[q];
@@ -109,10 +120,13 @@ test('bank.json: struktur kuartal lengkap dan masuk akal', () => {
       for (const k of Object.keys(r)) assert.ok(KEYS.includes(k) || ['sumber', 'dihitung', 'tumbuh_rilis', 'roa', 'roe'].includes(k), `${at} ${q} kunci asing ${k}`);
       if (r.aset != null && r.kredit != null) assert.ok(r.aset > r.kredit, `${at} ${q} aset < kredit`);
       if (r.npl != null) assert.ok(r.npl > 0 && r.npl < 10, `${at} ${q} npl`);
-      if (r.car != null) assert.ok(r.car > 8 && r.car < 60, `${at} ${q} car`);
+      // CAR bank kecil yang baru disuntik modal bisa sangat tinggi (Amar Bank sekitar 90%).
+      if (r.car != null) assert.ok(r.car > 8 && r.car < 100, `${at} ${q} car`);
       if (r.casa != null) assert.ok(r.casa > 20 && r.casa < 100, `${at} ${q} casa`);
       if (r.ldr != null) assert.ok(r.ldr > 50 && r.ldr < 120, `${at} ${q} ldr`);
-      if (r.laba != null) assert.ok(r.laba > 0 && r.laba < 100, `${at} ${q} laba`);
+      // Bank digital muda bisa masih rugi; batas bawah menjaga salah satuan (miliar terbaca triliun).
+      if (r.laba != null) assert.ok(r.laba > -5 && r.laba < 100, `${at} ${q} laba`);
+      if (r.tumbuh_rilis) for (const [k, v] of Object.entries(r.tumbuh_rilis)) assert.ok(['aset', 'kredit', 'dpk', 'laba'].includes(k) && Number.isFinite(v), `${at} ${q} tumbuh_rilis.${k}`);
     }
     // Laba kumulatif tidak boleh turun di dalam satu tahun (Q1 ≤ Q2 ≤ Q3 ≤ Q4).
     for (const q of qs) {
@@ -131,15 +145,31 @@ test('bank.json: struktur kuartal lengkap dan masuk akal', () => {
     }
     assert.ok(latestOf(b, DATA.kuartal), `${at} tanpa data`);
   }
-  for (const g of ['bumn', 'swasta', 'bpd']) assert.ok(DATA.bank.filter((b) => b.grup === g).length >= 2, `kelompok ${g} minimal dua bank`);
+  for (const g of ['bumn', 'swasta', 'asing', 'bpd']) assert.ok(DATA.bank.filter((b) => b.grup === g).length >= 2, `kelompok ${g} minimal dua bank`);
+  // Bank asing menyebut negara asal pemiliknya.
+  for (const b of DATA.bank.filter((x) => x.grup === 'asing')) assert.ok(b.milik?.length > 2, `${b.kode} milik`);
+  assert.ok(DATA.bank.length >= 60, 'perbandingan memuat puluhan bank, bukan hanya bank inti');
   assert.equal(defaultQuarter(DATA.bank, DATA.kuartal), '2026Q2', 'kuartal awal = kuartal terakhir yang dilaporkan mayoritas bank');
 });
 
-test('setiap bank punya logo SVG yang aman', () => {
+test('logo bank aman; yang belum punya logo tampil dengan inisial', () => {
+  const without = DATA.bank.filter((b) => !LOGOS[b.kode] && !(b.logo && LOGO[b.logo])).map((b) => b.kode);
+  // KBank Indonesia (dulu Bank Maspion) baru berganti merek, logonya belum ada di koleksi logo.
+  assert.ok(without.length <= 2, `tanpa logo: ${without.join(', ')}`);
   for (const b of DATA.bank) {
     const l = LOGOS[b.kode];
-    assert.ok(l, `${b.kode} tanpa logo`);
+    if (!l) continue;
     assert.match(l.svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/, b.kode);
     assert.doesNotMatch(l.svg, /<script|\son\w+=|href=|<image|<foreignObject/i, b.kode);
   }
+});
+
+test('panggung beranda: bank terbesar pada kuartal awal', () => {
+  const stage = orbitBanks(DATA, 20);
+  assert.equal(stage.length, 20);
+  assert.deepEqual(stage.slice(0, 4).map((b) => b.kode).sort(), ['BBCA', 'BBNI', 'BBRI', 'BMRI'], 'empat bank terbesar di depan');
+  const q = defaultQuarter(DATA.bank, DATA.kuartal);
+  // Ukuran = aset; bila rilis tidak menyebut aset, perkiraan dari kredit.
+  const sizes = stage.map((b) => sizeAt(b, q));
+  assert.ok(sizes.every((v, i) => v > 0 && (!i || v <= sizes[i - 1])), 'urut ukuran menurun');
 });

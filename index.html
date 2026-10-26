@@ -20,6 +20,7 @@
     <nav class="top-nav" aria-label="Halaman">
       <a href="./" aria-current="page">Beranda</a>
       <a href="bank.html">Per bank</a>
+      <a href="banding.html">Adu bank</a>
       <a href="daftar.html">Semua bank</a>
       <a href="industri.html">Industri</a>
       <a href="provinsi.html">Provinsi</a>
@@ -32,15 +33,15 @@
       <div class="hero-copy">
         <span class="eyebrow"><i class="dot"></i><span id="bank-eyebrow">Laporan keuangan tiap bank</span></span>
         <h1 class="display">Bank mana yang paling <b>besar</b>, paling <b>untung</b>, paling <b>sehat</b>?</h1>
-        <p class="lede">Laporan keuangan 14 bank besar per kuartal sejak akhir 2023. BUMN dibandingkan dengan BUMN, swasta dengan swasta, bank daerah dengan bank daerah.</p>
-        <div class="hero-actions"><a class="btn dark" href="bank.html">Bandingkan per bank <svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="btn light" href="industri.html">Data seluruh industri</a></div>
+        <p class="lede">Laporan keuangan <span id="hero-nbank">64</span> bank umum, dari BRI sampai bank daerah dan bank digital. BUMN dibandingkan dengan BUMN, swasta dengan swasta, bank daerah dengan bank daerah.</p>
+        <div class="hero-actions"><a class="btn dark" href="bank.html">Bandingkan per kelompok <svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="btn light" href="banding.html"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>Adu 2–3 bank</a><a class="btn light" href="industri.html">Data industri</a></div>
         <div class="facts needs-bank">
           <span class="facts-label">Rekor <span id="hero-facts-q">kuartal terakhir</span></span>
           <div class="fact-row" id="hero-facts"></div>
         </div>
       </div>
       <div class="orbit-wrap needs-bank">
-        <div class="orbit-core" id="orbit-core"><b id="orbit-count">14 bank</b><span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/></svg>Ketuk logo untuk laporannya</span></div>
+        <div class="orbit-core" id="orbit-core"><b id="orbit-count">20 bank terbesar</b><span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/></svg>Ketuk logo untuk laporannya</span></div>
         <div class="orbit-field" id="orbit-field"></div>
       </div>
     </section>
@@ -52,7 +53,7 @@
         <div><span class="kicker">Kuartal terakhir</span><h2 id="sorotan-h">Sorotan per kelompok</h2><p id="sorotan-sub"></p></div>
         <div class="sect-actions"><a class="btn light sm" href="daftar.html">Semua 105 bank</a><a class="btn light sm" href="bank.html">Semua perbandingan <svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
       </div>
-      <div class="grid three" id="sorotan"></div>
+      <div class="grid two so-grid" id="sorotan"></div>
     </section>
 
     <section class="sect seki" aria-labelledby="industri-h">

@@ -14,6 +14,7 @@ export const GRUP = [
 ];
 const GRUP_NAME = Object.fromEntries(GRUP.map((g) => [g.key, g]));
 export const SIFAT = [
+  { key: 'laporan', name: 'Ada angka keuangan', test: (b) => Boolean(b.laporan), chipOnly: true },
   { key: 'syariah', name: 'Syariah', test: (b) => b.syariah },
   { key: 'digital', name: 'Digital', test: (b) => b.digital },
   { key: 'milik', name: 'Milik asing', test: (b) => Boolean(b.milik) && b.grup !== 'asing' },
@@ -189,10 +190,10 @@ export function renderDaftar(data, ojk) {
   const count = (fn) => BANKS.filter(fn).length;
   $('#dsum').innerHTML = [
     ...GRUP.map((g) => ({ v: g.key, kind: 'grup', n: count((b) => b.grup === g.key), label: g.long })),
-    ...SIFAT.map((s) => ({ v: s.key, kind: 'sifat', n: count(s.test), label: s.name }))
+    ...SIFAT.filter((s) => !s.chipOnly).map((s) => ({ v: s.key, kind: 'sifat', n: count(s.test), label: s.name }))
   ].map((x) => `<button type="button" class="dsum" data-kind="${x.kind}" data-v="${x.v}"><b>${x.n}</b><span>${esc(x.label)}</span></button>`).join('');
   $('#dgrup').innerHTML = [{ key: 'semua', name: 'Semua' }, ...GRUP].map((g) => `<button type="button" data-v="${g.key}" aria-pressed="false">${esc(g.name)}<small>${g.key === 'semua' ? BANKS.length : count((b) => b.grup === g.key)}</small></button>`).join('');
-  $('#dsifat').innerHTML = SIFAT.map((s) => `<button type="button" class="chip" data-v="${s.key}" aria-pressed="false">${esc(s.name)}</button>`).join('');
+  $('#dsifat').innerHTML = SIFAT.map((s) => `<button type="button" class="chip" data-v="${s.key}" aria-pressed="false">${esc(s.name)}${s.chipOnly ? ` <small>${count(s.test)}</small>` : ''}</button>`).join('');
   $('#dq').value = state.q;
 
   $('#dq').addEventListener('input', (e) => { state.q = e.target.value.trim(); draw(false); });

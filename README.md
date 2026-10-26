@@ -2,13 +2,13 @@
 
 # Peta Perbankan
 
-**Daftar seluruh 105 bank umum di Indonesia, laporan keuangan 14 bank besar per kuartal sejak akhir 2023 yang dibandingkan dalam kelompoknya, plus peta kredit dan tabungan seluruh industri.**
+**Laporan keuangan 64 bank di Indonesia yang bisa dibandingkan per kelompok atau diadu 2–3 bank sekaligus, daftar seluruh 105 bank umum, plus peta kredit dan tabungan seluruh industri.**
 
 [**Coba sekarang →**](https://ghozi-abdullah.github.io/Mapping-Perbankan/)
 
 </div>
 
-Peta Perbankan merangkum laporan keuangan bank dan statistik resmi Bank Indonesia menjadi beberapa halaman yang mudah dibaca. Bandingkan BRI dengan Mandiri, BCA dengan CIMB Niaga, atau bank bjb dengan Bank Jatim: siapa yang paling besar, paling untung, dan paling sehat. Lalu lihat gambaran seluruh industri: seberapa besar bank BUMN dibanding bank swasta, bank daerah, dan cabang bank asing; bagaimana kredit tumbuh setiap bulan; provinsi mana yang paling banyak menerima kredit; dan berapa bunga kredit serta deposito di tiap kelompok bank.
+Peta Perbankan merangkum laporan keuangan bank dan statistik resmi Bank Indonesia menjadi beberapa halaman yang mudah dibaca. Bandingkan BRI dengan Mandiri, BCA dengan OCBC, Bank Jago dengan SeaBank, atau bank bjb dengan Bank Jatim: siapa yang paling besar, paling untung, dan paling sehat. Lalu lihat gambaran seluruh industri: seberapa besar bank BUMN dibanding bank swasta, bank daerah, dan cabang bank asing; bagaimana kredit tumbuh setiap bulan; provinsi mana yang paling banyak menerima kredit; dan berapa bunga kredit serta deposito di tiap kelompok bank.
 
 Dibuat untuk mahasiswa, analis, jurnalis, dan siapa saja yang ingin memahami peta perbankan Indonesia tanpa membuka puluhan tabel Excel.
 
@@ -18,21 +18,24 @@ Dibuat untuk mahasiswa, analis, jurnalis, dan siapa saja yang ingin memahami pet
 
 **Selalu terbaru.** Halaman memeriksa rilis SEKI dua kali seminggu dan menambahkan bulan baru secara otomatis. Riwayat bulan lama tetap disimpan, jadi grafik makin panjang dari waktu ke waktu.
 
-**Bandingkan yang setara.** BUMN dibandingkan dengan BUMN, swasta dengan swasta, bank daerah dengan bank daerah. Peringkat tiap bank dihitung di dalam kelompoknya sendiri.
+**Bandingkan yang setara, atau adu bebas.** Bank dikelompokkan menjadi BUMN, swasta nasional, bank milik asing, dan bank daerah; peringkat dihitung di dalam kelompoknya sendiri. Ingin lintas kelompok? Halaman Adu bank menaruh 2–3 bank mana saja berdampingan.
 
 ## Halaman
 
 ### Beranda
-Logo 14 bank mengorbit dan berputar dalam ruang 3D di samping judul. Sisi depan menampilkan logo, sisi belakang laba terbaru; klik logo untuk membuka halaman bank itu. Di ponsel, logo tersusun dalam silinder yang bisa diputar dengan geseran jari. Di bawahnya: tiga rekor kuartal terakhir (kredit terbesar, laba tertinggi, NPL terendah), ringkasan tiap kelompok bank dalam satu tabel kecil, dan empat angka utama seluruh industri.
+Logo 16 bank terbesar mengorbit dan berputar dalam ruang 3D di samping judul. Sisi depan menampilkan logo, sisi belakang laba terbaru; klik logo untuk membuka halaman bank itu. Di ponsel, logo tersusun dalam silinder yang bisa diputar dengan geseran jari. Di bawahnya: tiga rekor kuartal terakhir (kredit terbesar, laba tertinggi, NPL terendah), tabel tujuh bank terbesar di tiap kelompok (BUMN, swasta nasional, milik asing, BPD) dengan kredit, laba, NPL, dan CAR, lalu empat angka utama seluruh industri.
 
 ### Per bank
-Pilih kuartal (Q4 2023 sampai kuartal terbaru) dan kelompok (BUMN, swasta, BPD, atau semua). Kartu tiap bank berisi laba, kredit, NPL, dan CAR beserta perubahannya dibanding kuartal yang sama tahun lalu. Pilih ukuran (kredit, aset, DPK, laba, NPL, CAR, CASA, LDR) untuk melihat peringkat dan grafik trennya berdampingan, lalu tabel lengkap dengan angka terbaik di tiap kolom ditebalkan. Karena semua bank dibandingkan pada kuartal yang sama, laba tiga bulan tidak pernah diadu dengan laba sembilan bulan. Pilihan kelompok, kuartal, dan ukuran tersimpan di alamat halaman, jadi tampilan yang sama bisa dibagikan.
+Pilih kuartal (Q4 2023 sampai kuartal terbaru) dan kelompok (BUMN, swasta nasional, milik asing, BPD, atau semua). Kartu tiap bank berisi laba, kredit, NPL, dan CAR beserta perubahannya dibanding kuartal yang sama tahun lalu. Pilih ukuran (kredit, aset, DPK, laba, NPL, CAR, CASA, LDR) untuk melihat peringkat dan grafik trennya berdampingan, lalu tabel lengkap dengan angka terbaik di tiap kolom ditebalkan. Karena semua bank dibandingkan pada kuartal yang sama, laba tiga bulan tidak pernah diadu dengan laba sembilan bulan. Pilihan kelompok, kuartal, dan ukuran tersimpan di alamat halaman, jadi tampilan yang sama bisa dibagikan.
+
+### Adu bank
+Pilih dua atau tiga bank dari kelompok mana saja, misalnya BCA, BRI, dan OCBC, lewat kotak cari (nama, kode saham, atau negara pemilik) atau perbandingan siap pakai: tiga bank terbesar, BUMN, bank digital, bank syariah, bank daerah, bank asing. Ringkasan di atas menyebut siapa yang unggul di tiap ukuran (aset, kredit, simpanan, laba, NPL, modal, dana murah, margin bunga). Di bawahnya sembilan angka utama berdampingan dengan batang pembanding dan pertumbuhan setahun, grafik tren per kuartal, dan sumber tiap angka. Gelar unggul hanya diberikan bila semua bank punya angkanya, jadi angka yang hilang tidak membuat bank lain tampak menang. Alamatnya bisa dibagikan, misalnya `banding.html?b=BBCA,BBRI,NISP`.
 
 ### Halaman tiap bank
-Setiap bank punya halaman sendiri, misalnya `profil.html?kode=BMRI`. Isinya profil singkat, kabar terbaru, sembilan angka utama dengan pertumbuhan tahunan dan peringkat di kelompoknya untuk kuartal mana pun, grafik tren di samping posisinya di antara bank sekelompok, tabel semua kuartal, sumber untuk setiap kuartal, dan tautan ke laporan keuangan di Bursa Efek Indonesia. Deretan logo di atas halaman memudahkan pindah ke bank lain. Perubahan cakupan data, seperti BSI yang keluar dari konsolidasi Bank Mandiri pada 2026, ditandai dengan garis yang diputus.
+Setiap bank punya halaman sendiri, misalnya `profil.html?kode=BMRI`. Isinya profil singkat, kabar terbaru, sembilan angka utama dengan pertumbuhan tahunan dan peringkat di kelompoknya untuk kuartal mana pun, grafik tren di samping posisinya di antara bank sekelompok, tabel semua kuartal, sumber untuk setiap kuartal, dan tautan ke laporan keuangan di Bursa Efek Indonesia. Deretan logo dan pilihan semua bank di atas halaman memudahkan pindah ke bank lain, dan tombol Adu membuka perbandingan dengan bank sepadan. Perubahan cakupan data, seperti BSI yang keluar dari konsolidasi Bank Mandiri pada 2026, ditandai dengan garis yang diputus.
 
 ### Semua bank
-Seluruh 105 bank umum yang beroperasi di Indonesia dalam satu halaman: BUMN dan anak usahanya, swasta nasional, 27 bank pembangunan daerah, bank syariah, bank digital, bank milik grup asing, dan kantor cabang bank asing. Tiap bank tampil dengan logo, nama resmi, kode transfer, kode SWIFT, kode saham bila tercatat di bursa, wilayah untuk bank daerah, perusahaan induk, dan nama lamanya (misalnya hibank dulu Bank Mayora, KBank Indonesia dulu Bank Maspion). Cari dengan nama, nama lama, kode, atau provinsi, lalu saring per kelompok atau sifat; tautan saringan bisa dibagikan. Bank yang punya laporan per kuartal langsung tertaut ke halamannya.
+Seluruh 105 bank umum yang beroperasi di Indonesia dalam satu halaman: BUMN dan anak usahanya, swasta nasional, 27 bank pembangunan daerah, bank syariah, bank digital, bank milik grup asing, dan kantor cabang bank asing. Tiap bank tampil dengan logo, nama resmi, kode transfer, kode SWIFT, kode saham bila tercatat di bursa, wilayah untuk bank daerah, perusahaan induk, dan nama lamanya (misalnya hibank dulu Bank Mayora, KBank Indonesia dulu Bank Maspion). Cari dengan nama, nama lama, kode, atau provinsi, lalu saring per kelompok atau sifat; tautan saringan bisa dibagikan. Bank yang sudah punya angka keuangan (saring dengan "Ada angka keuangan") langsung tertaut ke halamannya.
 
 Daftar ini dicocokkan otomatis dengan daftar resmi kantor pusat bank umum dan syariah dari OJK. Bila ada bank baru, bank yang berganti nama, atau bank yang bergabung, perbedaannya langsung terlihat di bagian bawah halaman.
 
@@ -47,7 +50,7 @@ Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bu
 
 ## Sumber data
 
-**Per bank.** Rilis kinerja kuartalan, factsheet, dan laporan keuangan publikasi BRI, Bank Mandiri, BNI, BTN, BSI, BCA, CIMB Niaga, OCBC Indonesia, PermataBank, Danamon, Maybank Indonesia, PaninBank, bank bjb, dan Bank Jatim, serta media keuangan yang mengutipnya (Infobank, Kontan, Bisnis, Investor Trust, Katadata, CNBC Indonesia). Setiap angka di `bank.json` menyimpan tautan sumbernya. Angka yang tidak disebut di rilis dibiarkan kosong. Data diperbarui setiap musim laporan kuartalan. Logo bank dari koleksi [idn-finlogos](https://github.com/hafidznoor/idn-finlogos), disimpan di `logos.js` (14 bank utama) dan `logos-semua.js` (seluruh bank umum, dimuat hanya di halaman Semua bank) sehingga tidak dimuat dari situs lain.
+**Per bank.** Rilis kinerja kuartalan, factsheet, dan laporan keuangan publikasi tiap bank, serta media keuangan yang mengutipnya (Infobank, Kontan, Bisnis, Investor Trust, Katadata, CNBC Indonesia). Empat belas bank besar (BRI, Bank Mandiri, BNI, BTN, BSI, BCA, CIMB Niaga, OCBC Indonesia, PermataBank, Danamon, Maybank Indonesia, PaninBank, bank bjb, Bank Jatim) punya riwayat sejak Q4 2023; 50 bank lain, dari bank digital sampai bank daerah dan cabang bank asing, mulai dengan angka Juni 2026 dan riwayatnya menyusul. Setiap angka di `bank.json` menyimpan tautan sumbernya. Angka yang tidak disebut di rilis dibiarkan kosong. Data diperbarui setiap musim laporan kuartalan. Logo bank dari koleksi [idn-finlogos](https://github.com/hafidznoor/idn-finlogos), disimpan di `logos.js` (14 bank utama) dan `logos-semua.js` (seluruh bank umum) sehingga tidak dimuat dari situs lain.
 
 **Daftar bank.** Daftar Alamat Kantor Pusat Bank Umum dan Syariah dari [OJK](https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah.aspx), ditarik otomatis dua kali seminggu ke `data/ojk-bank.json`. Nama, kelompok, dan perubahan nama terbaru di `daftar-bank.json` dikumpulkan dari situs dan rilis resmi bank serta pemberitaan hingga Oktober 2026. Kode transfer dan SWIFT berasal dari metadata idn-finlogos. Unit usaha syariah ikut bank induknya; BPR dan BPR syariah tidak termasuk.
 
@@ -64,7 +67,7 @@ Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bu
 | I.28 | Suku bunga deposito rupiah menurut kelompok bank |
 | I.30 | Suku bunga tabungan rupiah menurut kelompok bank |
 
-Tabel SEKI disajikan per kelompok bank, bukan per bank. Bila Bank Indonesia mengubah susunan tabelnya, penarik data menolak angka yang ketinggalan zaman, tetap menampilkan data terakhir yang benar, dan menyimpan file asli beserta catatan strukturnya untuk diperiksa. Bank swasta milik grup asing yang berbadan hukum Indonesia, seperti CIMB Niaga dan Danamon, termasuk kelompok bank swasta nasional.
+Tabel SEKI disajikan per kelompok bank, bukan per bank. Bila Bank Indonesia mengubah susunan tabelnya, penarik data menolak angka yang ketinggalan zaman, tetap menampilkan data terakhir yang benar, dan menyimpan file asli beserta catatan strukturnya untuk diperiksa. Di tabel SEKI, bank swasta milik grup asing yang berbadan hukum Indonesia, seperti CIMB Niaga dan Danamon, termasuk kelompok bank swasta nasional. Di halaman per bank, bank seperti ini dipisah ke kelompok bank milik asing bersama kantor cabang bank asing.
 
 ## Tampilan
 
