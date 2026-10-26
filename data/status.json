@@ -1,51 +1,51 @@
 {
- "updated": "2026-10-26T04:53:40Z",
+ "updated": "2026-10-26T05:05:44Z",
  "sources": {
   "kredit": {
    "ok": false,
-   "at": "2026-10-26T04:53:25Z",
+   "at": "2026-10-26T05:05:31Z",
    "error": "TABEL1_4: ValueError: bulan terbaru terbaca 2025-03, terlalu lama; berkas mentah disimpan untuk diperiksa",
    "last_ok": "2026-10-25T01:50:08Z"
   },
   "simpanan": {
    "ok": true,
-   "at": "2026-10-26T04:53:28Z",
+   "at": "2026-10-26T05:05:33Z",
    "note": "TABEL1_17: 2019-01 s.d. 2026-08 dari 6 lembar",
    "count": 35
   },
   "kredit_prov": {
    "ok": true,
-   "at": "2026-10-26T04:53:30Z",
+   "at": "2026-10-26T05:05:35Z",
    "note": "TABEL1_12: 2019-01 s.d. 2026-08 dari 3 lembar",
    "count": 36
   },
   "simpanan_prov": {
    "ok": true,
-   "at": "2026-10-26T04:53:31Z",
+   "at": "2026-10-26T05:05:37Z",
    "note": "TABEL1_19: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 39
   },
   "kpr": {
    "ok": true,
-   "at": "2026-10-26T04:53:35Z",
+   "at": "2026-10-26T05:05:38Z",
    "note": "TABEL1_15: 2019-01 s.d. 2026-08 dari 5 lembar",
    "count": 26
   },
   "bunga_kredit": {
    "ok": true,
-   "at": "2026-10-26T04:53:37Z",
+   "at": "2026-10-26T05:05:40Z",
    "note": "TABEL1_26: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 21
   },
   "bunga_deposito": {
    "ok": true,
-   "at": "2026-10-26T04:53:38Z",
+   "at": "2026-10-26T05:05:43Z",
    "note": "TABEL1_28: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 31
   },
   "bunga_tabungan": {
    "ok": true,
-   "at": "2026-10-26T04:53:40Z",
+   "at": "2026-10-26T05:05:44Z",
    "note": "TABEL1_30: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 6
   }
