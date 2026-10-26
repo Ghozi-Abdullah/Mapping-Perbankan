@@ -1,6 +1,7 @@
 """Alat bantu penarik data seri #30Hari30Website. Hanya pustaka standar Python, jadi GitHub Actions tidak perlu instal apa pun."""
 
 import gzip
+import http.client
 import json
 import os
 import re
@@ -64,9 +65,10 @@ def http_get(url, params=None, headers=None, timeout=30, retries=3, data=None, m
                 break
             wait = e.headers.get("Retry-After") if e.headers else None
             time.sleep(min(int(wait), 30) if wait and wait.isdigit() else 2 * (attempt + 1))
-        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
-            last = str(getattr(e, "reason", e))
-            time.sleep(2 * (attempt + 1))
+        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, http.client.HTTPException) as e:
+            # HTTPException mencakup IncompleteRead: server memutus kiriman di tengah jalan, jadi coba lagi.
+            last = f"{type(e).__name__}: {getattr(e, 'reason', e)}"[:200]
+            time.sleep(3 * (attempt + 1))
     raise FetchError(f"{url.split('?')[0]}: {last}")
 
 

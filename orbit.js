@@ -1,6 +1,6 @@
 // Panggung logo bank yang melayang dan berputar dalam ruang 3D.
-// Layar lebar: kartu mengorbit di sekeliling judul tanpa menutupinya.
-// Layar sempit: kartu tersusun di dua cincin silinder yang berputar dan bisa digeser.
+// Panggung lebar: kartu mengorbit di sekeliling isi tengah (keep) tanpa menutupinya.
+// Panggung sempit: kartu tersusun di dua cincin silinder yang berputar dan bisa digeser.
 // Tiap kartu punya dua sisi: depan logo, belakang laba terbaru.
 //
 // Supaya ringan: tiap kartu punya perspektifnya sendiri (tidak ada satu ruang 3D bersama yang harus
@@ -28,7 +28,7 @@ export function logoImg(b, cls = 'logo') {
 const rand = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
 
 /**
- * host: wadah ruang 3D. keep: elemen judul yang tidak boleh tertutup (opsional).
+ * host: wadah ruang 3D. keep: elemen di tengah panggung yang tidak boleh tertutup (opsional).
  * Mengembalikan { focus(grup|null) } untuk meredupkan bank di luar kelompok terpilih.
  */
 export function orbit(host, banks, { onPick, back, keep = null }) {
@@ -56,37 +56,38 @@ export function orbit(host, banks, { onPick, back, keep = null }) {
   // Ukuran ruang dan kotak judul (relatif terhadap pusat ruang).
   let W = 0; let H = 0; let tw = 0; let th = 0; let box = null; let mode = 'ring'; let P = 1100; let rect = null;
   const measure = () => {
+    // Tinggi minimum dari ukuran sebelumnya dilepas dulu supaya tinggi asli yang terbaca.
+    host.style.minHeight = '';
     W = host.clientWidth;
     H = host.clientHeight;
     tw = tiles[0]?.offsetWidth || 140;
     th = tiles[0]?.offsetHeight || 110;
     rect = host.getBoundingClientRect();
     box = null;
-    mode = 'carousel';
-    if (keep) {
-      // Kotak gabungan isi judul (bukan wadahnya, yang bisa selebar panggung).
+    // Panggung cukup lebar: kartu mengorbit. Sempit: silinder yang bisa digeser.
+    mode = W >= 560 ? 'ring' : 'carousel';
+    host.dataset.mode = mode;
+    if (mode === 'ring' && keep) {
+      // Kotak gabungan isi yang harus tetap terbaca (bukan wadahnya, yang bisa selebar panggung).
       const rs = [...keep.children].map((c) => c.getBoundingClientRect()).filter((x) => x.width && x.height);
-      const kb = rs.length ? {
-        left: Math.min(...rs.map((x) => x.left)), right: Math.max(...rs.map((x) => x.right)),
-        top: Math.min(...rs.map((x) => x.top)), bottom: Math.max(...rs.map((x) => x.bottom))
-      } : keep.getBoundingClientRect();
-      if (kb.bottom > rect.top && kb.top < rect.bottom) {
+      if (rs.length) {
+        const kb = {
+          left: Math.min(...rs.map((x) => x.left)), right: Math.max(...rs.map((x) => x.right)),
+          top: Math.min(...rs.map((x) => x.top)), bottom: Math.max(...rs.map((x) => x.bottom))
+        };
         const cx = rect.left + rect.width / 2;
         const cy = rect.top + rect.height / 2;
         const m = 18;
-        // Setengah lebar dan tinggi isi judul di layar, ditambah jarak aman.
+        // Setengah lebar dan tinggi isi di layar, ditambah jarak aman.
         box = {
           x: Math.max(Math.abs(kb.left - cx), Math.abs(kb.right - cx)) + m,
           y: Math.max(Math.abs(kb.top - cy), Math.abs(kb.bottom - cy)) + m
         };
-        mode = 'ring';
-        // Pastikan ruang cukup tinggi supaya kartu di atas dan di bawah judul tidak terpotong.
+        // Pastikan ruang cukup tinggi supaya kartu di atas dan di bawahnya tidak terpotong.
         const need = Math.ceil(2 * (box.y + th * 1.3 + 16));
         if (H < need) { host.style.minHeight = `${need}px`; H = need; }
       }
     }
-    if (mode === 'carousel') host.style.minHeight = '';
-    host.dataset.mode = mode;
     P = mode === 'ring' ? 1100 : 900;
   };
   measure();

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Suku bunga kredit dan deposito per kelompok bank · Peta Perbankan</title>
+  <meta name="description" content="Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bulan; dan bunga tabungan per kelompok bank, dari data bulanan Bank Indonesia.">
+  <meta name="theme-color" content="#F5F5F3">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="bunga">
+  <header class="top">
+    <a class="brand" href="./">
+      <span class="brand-mark"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></span>
+      <span class="brand-text"><b>Peta Perbankan</b><span id="updated">Memuat data…</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Halaman">
+      <a href="./">Beranda</a>
+      <a href="bank.html">Per bank</a>
+      <a href="industri.html">Industri</a>
+      <a href="provinsi.html">Provinsi</a>
+      <a href="bunga.html" aria-current="page">Suku bunga</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="page-head">
+      <div class="ph-copy">
+        <span class="eyebrow"><i class="dot"></i><span id="eyebrow">Data Bank Indonesia</span></span>
+        <h1 class="page-title">Suku bunga per kelompok bank</h1>
+        <p class="lede">Rata-rata tertimbang bunga kredit dan simpanan rupiah. Angka kecil di bawah tiap bunga adalah perubahannya dalam setahun, dalam poin persen.</p>
+      </div>
+    </section>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <section class="grid two seki" id="bunga">
+      <div class="card">
+        <div class="card-head"><div><h2>Bunga kredit</h2><p id="bunga-k-sub">Persen per tahun</p></div></div>
+        <div class="table-wrap"><table class="tbl" id="loan-rates"></table></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h2>Bunga simpanan</h2><p id="bunga-s-sub">Deposito per tenor dan tabungan, persen per tahun</p></div></div>
+        <div class="table-wrap"><table class="tbl" id="dep-rates"></table></div>
+      </div>
+    </section>
+
+    <section class="card seki" id="tren-bunga">
+      <div class="card-head">
+        <div><h2>Tren suku bunga</h2><p>Per kelompok bank, tiga tahun terakhir</p></div>
+        <div class="seg" id="rate-seg" role="group" aria-label="Jenis bunga">
+          <button aria-pressed="true" data-v="modal_kerja">Kredit modal kerja</button>
+          <button aria-pressed="false" data-v="konsumsi">Kredit konsumsi</button>
+          <button aria-pressed="false" data-v="d1">Deposito 1 bulan</button>
+          <button aria-pressed="false" data-v="d12">Deposito 12 bulan</button>
+        </div>
+      </div>
+      <div id="rate-chart"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Sumber per kelompok: <a href="https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx" target="_blank" rel="noopener">Statistik Ekonomi dan Keuangan Indonesia (SEKI), Bank Indonesia</a>, diperiksa otomatis dua kali seminggu. <span id="src-list"></span></span>
+    <span>Sumber per bank: rilis kinerja resmi dan laporan keuangan publikasi tiap bank, diperbarui setiap musim laporan; sumber tiap kuartal tercantum di halaman bank masing-masing.</span>
+    <span>Logo bank dari <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noopener">idn-finlogos</a> (CC BY-NC 4.0), merek milik bank masing-masing. Ikon <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>. Huruf <a href="https://github.com/tokotype/PlusJakartaSans" target="_blank" rel="noopener">Plus Jakarta Sans</a>.</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

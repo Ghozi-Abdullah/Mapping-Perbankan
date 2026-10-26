@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   fmtMetric, sortBy, rankIn, bestOf, METRICS, qLabel, qShort, prevQ, prevYearQ, valueAt, yoyAt,
-  quarterProfit, defaultQuarter, latestOf
+  quarterProfit, defaultQuarter, latestOf, balancedCols, profileUrl, compareUrl
 } from './bank.js';
 import { initials } from './orbit.js';
 import { LOGOS } from './logos.js';
@@ -60,6 +60,18 @@ test('urutan dan peringkat pada kuartal tertentu', () => {
   assert.equal(best.npl, 1.0);
   assert.equal(best.car, 25);
   assert.equal(best.ldr, undefined);
+});
+
+test('kartu dibagi rata per baris dan alamat halaman', () => {
+  assert.equal(balancedCols(5, 5), 5);
+  assert.equal(balancedCols(6, 5), 3, '6 kartu: 3 + 3, bukan 5 + 1');
+  assert.equal(balancedCols(14, 5), 5, '14 kartu: 5 + 5 + 4');
+  assert.equal(balancedCols(5, 4), 3, '5 kartu: 3 + 2, bukan 4 + 1');
+  assert.equal(balancedCols(3, 4), 3);
+  assert.equal(balancedCols(4, 1), 1);
+  assert.equal(profileUrl('BBRI'), 'profil.html?kode=BBRI');
+  assert.equal(profileUrl('BMRI', '2026Q2'), 'profil.html?kode=BMRI&q=2026Q2');
+  assert.equal(compareUrl('swasta', '2025Q4'), 'bank.html?grup=swasta&q=2025Q4');
 });
 
 test('inisial logo cadangan', () => {

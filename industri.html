@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Industri perbankan per kelompok bank · Peta Perbankan</title>
+  <meta name="description" content="Kredit, simpanan, rasio kredit terhadap simpanan, dan dana murah seluruh bank di Indonesia per kelompok: BUMN, swasta, BPD, cabang asing, dan BPR. Data bulanan Bank Indonesia.">
+  <meta name="theme-color" content="#F5F5F3">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="industri">
+  <header class="top">
+    <a class="brand" href="./">
+      <span class="brand-mark"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></span>
+      <span class="brand-text"><b>Peta Perbankan</b><span id="updated">Memuat data…</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Halaman">
+      <a href="./">Beranda</a>
+      <a href="bank.html">Per bank</a>
+      <a href="industri.html" aria-current="page">Industri</a>
+      <a href="provinsi.html">Provinsi</a>
+      <a href="bunga.html">Suku bunga</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="page-head">
+      <div class="ph-copy">
+        <span class="eyebrow"><i class="dot"></i><span id="eyebrow">Data Bank Indonesia</span></span>
+        <h1 class="page-title">Seluruh industri, per kelompok bank</h1>
+        <p class="lede">Gabungan semua bank di tiap kelompok, termasuk yang tidak tercatat di bursa: BUMN, swasta nasional, bank daerah, cabang bank asing, dan BPR.</p>
+      </div>
+    </section>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <section class="grid four seki" id="stats" aria-label="Angka utama">
+      <div class="card stat"><div class="skeleton" style="height:96px"></div></div>
+      <div class="card stat"><div class="skeleton" style="height:96px"></div></div>
+      <div class="card stat"><div class="skeleton" style="height:96px"></div></div>
+      <div class="card stat"><div class="skeleton" style="height:96px"></div></div>
+    </section>
+
+    <section class="card seki" id="kelompok">
+      <div class="card-head">
+        <div><h2>Per kelompok bank</h2><p id="kelompok-sub">Pangsa kredit</p></div>
+        <div class="seg" id="share-seg" role="group" aria-label="Pangsa">
+          <button aria-pressed="true" data-v="kredit">Kredit</button>
+          <button aria-pressed="false" data-v="simpanan">Simpanan</button>
+        </div>
+      </div>
+      <div class="share" id="share"></div>
+      <div class="table-wrap"><table class="tbl" id="group-table"></table></div>
+      <p class="note" id="group-note"></p>
+    </section>
+
+    <section class="card seki" id="tren">
+      <div class="card-head">
+        <div><h2>Tren bulanan</h2><p id="tren-sub"></p></div>
+        <div class="seg" id="trend-seg" role="group" aria-label="Ukuran">
+          <button aria-pressed="true" data-v="tumbuh">Pertumbuhan kredit</button>
+          <button aria-pressed="false" data-v="kredit">Kredit</button>
+          <button aria-pressed="false" data-v="simpanan">Simpanan</button>
+          <button aria-pressed="false" data-v="ldr">Kredit/simpanan</button>
+        </div>
+      </div>
+      <div id="trend-chart"></div>
+    </section>
+
+    <section class="card explain-card" aria-labelledby="baca-h">
+      <h2 class="h2" id="baca-h">Cara membaca</h2>
+      <div class="explain">
+        <p><b>Kredit</b> adalah pinjaman yang masih berjalan (outstanding), dalam rupiah dan valuta asing. <b>Simpanan</b> adalah dana masyarakat di bank: giro, tabungan, dan deposito.</p>
+        <p><b>Kredit/simpanan</b> menunjukkan berapa bagian simpanan yang disalurkan lagi sebagai kredit. Angka mendekati atau di atas 100% berarti bank meminjamkan hampir semua dananya; mirip LDR, tapi dihitung langsung dari tabel BI.</p>
+        <p><b>Dana murah</b> adalah porsi giro dan tabungan dari total simpanan (sering disebut CASA). Makin tinggi, makin murah biaya dana bank.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Sumber per kelompok: <a href="https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx" target="_blank" rel="noopener">Statistik Ekonomi dan Keuangan Indonesia (SEKI), Bank Indonesia</a>, diperiksa otomatis dua kali seminggu. <span id="src-list"></span></span>
+    <span>Sumber per bank: rilis kinerja resmi dan laporan keuangan publikasi tiap bank, diperbarui setiap musim laporan; sumber tiap kuartal tercantum di halaman bank masing-masing.</span>
+    <span>Logo bank dari <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noopener">idn-finlogos</a> (CC BY-NC 4.0), merek milik bank masing-masing. Ikon <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>. Huruf <a href="https://github.com/tokotype/PlusJakartaSans" target="_blank" rel="noopener">Plus Jakarta Sans</a>.</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

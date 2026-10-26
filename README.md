@@ -8,7 +8,7 @@
 
 </div>
 
-Peta Perbankan merangkum laporan keuangan bank dan statistik resmi Bank Indonesia menjadi satu halaman yang mudah dibaca. Bandingkan BRI dengan Mandiri, BCA dengan CIMB Niaga, atau bank bjb dengan Bank Jatim: siapa yang paling besar, paling untung, dan paling sehat. Lalu lihat gambaran seluruh industri: seberapa besar bank BUMN dibanding bank swasta, bank daerah, dan cabang bank asing; bagaimana kredit tumbuh setiap bulan; provinsi mana yang paling banyak menerima kredit; dan berapa bunga kredit serta deposito di tiap kelompok bank.
+Peta Perbankan merangkum laporan keuangan bank dan statistik resmi Bank Indonesia menjadi beberapa halaman yang mudah dibaca. Bandingkan BRI dengan Mandiri, BCA dengan CIMB Niaga, atau bank bjb dengan Bank Jatim: siapa yang paling besar, paling untung, dan paling sehat. Lalu lihat gambaran seluruh industri: seberapa besar bank BUMN dibanding bank swasta, bank daerah, dan cabang bank asing; bagaimana kredit tumbuh setiap bulan; provinsi mana yang paling banyak menerima kredit; dan berapa bunga kredit serta deposito di tiap kelompok bank.
 
 Dibuat untuk mahasiswa, analis, jurnalis, dan siapa saja yang ingin memahami peta perbankan Indonesia tanpa membuka puluhan tabel Excel.
 
@@ -20,34 +20,25 @@ Dibuat untuk mahasiswa, analis, jurnalis, dan siapa saja yang ingin memahami pet
 
 **Bandingkan yang setara.** BUMN dibandingkan dengan BUMN, swasta dengan swasta, bank daerah dengan bank daerah. Peringkat tiap bank dihitung di dalam kelompoknya sendiri.
 
-## Fitur
+## Halaman
 
-### Logo bank yang melayang
-Logo 14 bank mengorbit dan berputar dalam ruang 3D di halaman pembuka. Sisi depan menampilkan logo, sisi belakang laba terbaru. Putarannya melambat saat logo menghadap depan, jadi logo lebih sering terlihat. Arahkan kursor untuk menghentikan putarannya, lalu klik untuk membuka laporan bank itu. Di ponsel, logo tersusun dalam silinder yang bisa diputar dengan geseran jari.
+### Beranda
+Logo 14 bank mengorbit dan berputar dalam ruang 3D di samping judul. Sisi depan menampilkan logo, sisi belakang laba terbaru; klik logo untuk membuka halaman bank itu. Di ponsel, logo tersusun dalam silinder yang bisa diputar dengan geseran jari. Di bawahnya: tiga rekor kuartal terakhir (kredit terbesar, laba tertinggi, NPL terendah), ringkasan tiap kelompok bank dalam satu tabel kecil, dan empat angka utama seluruh industri.
 
-### Per bank, per kuartal
-Pilih kuartal (Q4 2023 sampai kuartal terbaru) dan kelompok (BUMN, swasta, BPD, atau semua). Kartu tiap bank berisi laba, kredit, NPL, dan CAR beserta perubahannya dibanding kuartal yang sama tahun lalu. Pilih ukuran (kredit, aset, DPK, laba, NPL, CAR, CASA, LDR) untuk melihat peringkatnya, lalu baca tabel lengkapnya dengan angka terbaik di tiap kolom ditebalkan. Karena semua bank dibandingkan pada kuartal yang sama, laba tiga bulan tidak pernah diadu dengan laba sembilan bulan.
-
-### Tren kuartalan
-Grafik garis untuk setiap bank di kelompok yang dipilih. Laba ditampilkan per kuartal (bukan kumulatif) supaya naik turunnya terlihat. Perubahan cakupan data, seperti BSI yang keluar dari konsolidasi Bank Mandiri pada 2026, ditandai dengan garis yang diputus.
+### Per bank
+Pilih kuartal (Q4 2023 sampai kuartal terbaru) dan kelompok (BUMN, swasta, BPD, atau semua). Kartu tiap bank berisi laba, kredit, NPL, dan CAR beserta perubahannya dibanding kuartal yang sama tahun lalu. Pilih ukuran (kredit, aset, DPK, laba, NPL, CAR, CASA, LDR) untuk melihat peringkat dan grafik trennya berdampingan, lalu tabel lengkap dengan angka terbaik di tiap kolom ditebalkan. Karena semua bank dibandingkan pada kuartal yang sama, laba tiga bulan tidak pernah diadu dengan laba sembilan bulan. Pilihan kelompok, kuartal, dan ukuran tersimpan di alamat halaman, jadi tampilan yang sama bisa dibagikan.
 
 ### Halaman tiap bank
-Profil singkat, sembilan angka utama dengan pertumbuhan tahunan dan peringkat di kelompoknya, grafik tren, tabel semua kuartal, kabar terbaru dari laporan bulanan, sumber untuk setiap kuartal, dan tautan langsung ke laporan keuangan di Bursa Efek Indonesia. Setiap bank punya alamat sendiri, misalnya `#bank-BMRI`, jadi mudah dibagikan.
+Setiap bank punya halaman sendiri, misalnya `profil.html?kode=BMRI`. Isinya profil singkat, kabar terbaru, sembilan angka utama dengan pertumbuhan tahunan dan peringkat di kelompoknya untuk kuartal mana pun, grafik tren di samping posisinya di antara bank sekelompok, tabel semua kuartal, sumber untuk setiap kuartal, dan tautan ke laporan keuangan di Bursa Efek Indonesia. Deretan logo di atas halaman memudahkan pindah ke bank lain. Perubahan cakupan data, seperti BSI yang keluar dari konsolidasi Bank Mandiri pada 2026, ditandai dengan garis yang diputus.
 
-### Ringkasan nasional
-Total kredit, total simpanan masyarakat, rasio kredit terhadap simpanan, dan porsi dana murah (giro dan tabungan), lengkap dengan perubahan dari tahun lalu dan grafik kecil dua tahun terakhir.
+### Industri
+Total kredit, total simpanan masyarakat, rasio kredit terhadap simpanan, dan porsi dana murah, lengkap dengan perubahan dari tahun lalu. Pangsa kredit dan simpanan BUMN, swasta, BPD, cabang bank asing, dan BPR, beserta grafik bulanan pertumbuhan kredit, nilai kredit, simpanan, dan rasio kredit/simpanan per kelompok.
 
-### BUMN vs swasta vs BPD vs asing
-Pangsa kredit dan simpanan tiap kelompok bank, pertumbuhan tahunan, rasio kredit/simpanan, dan porsi dana murah dalam satu tabel.
-
-### Tren bulanan
-Grafik pertumbuhan kredit, nilai kredit, simpanan, dan rasio kredit/simpanan per kelompok bank. Arahkan kursor atau sentuh grafik untuk melihat angka tiap bulan.
-
-### Peta provinsi
-Peta petak 34 provinsi untuk kredit, simpanan, rasio kredit/simpanan, dan pertumbuhan kredit. Pilih provinsi untuk melihat rinciannya, termasuk porsinya dari kredit nasional.
+### Provinsi
+Peta petak seluruh provinsi untuk kredit, simpanan, rasio kredit/simpanan, dan pertumbuhan kredit. Pilih provinsi untuk melihat rinciannya, termasuk porsinya dari kredit nasional.
 
 ### Suku bunga
-Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bulan; serta bunga tabungan, per kelompok bank, beserta perubahannya dalam setahun.
+Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bulan; serta bunga tabungan, per kelompok bank, beserta perubahannya dalam setahun dan grafik trennya.
 
 ## Sumber data
 
@@ -66,12 +57,12 @@ Bunga kredit modal kerja, investasi, dan konsumsi; bunga deposito 1 sampai 12 bu
 | I.28 | Suku bunga deposito rupiah menurut kelompok bank |
 | I.30 | Suku bunga tabungan rupiah menurut kelompok bank |
 
-Tabel SEKI disajikan per kelompok bank, bukan per bank. Bank swasta milik grup asing yang berbadan hukum Indonesia, seperti CIMB Niaga dan Danamon, termasuk kelompok bank swasta nasional.
+Tabel SEKI disajikan per kelompok bank, bukan per bank. Bila Bank Indonesia mengubah susunan tabelnya, penarik data menolak angka yang ketinggalan zaman, tetap menampilkan data terakhir yang benar, dan menyimpan file asli beserta catatan strukturnya untuk diperiksa. Bank swasta milik grup asing yang berbadan hukum Indonesia, seperti CIMB Niaga dan Danamon, termasuk kelompok bank swasta nasional.
 
 ## Tampilan
 
-Palet editorial Warm Ivory, Deep Editorial Blue, dan Coral Orange. Huruf mengikuti perangkat: SF di Apple, Aptos bila terpasang, dan Inter untuk sisanya. Interaksi kecil seperti tombol pilihan yang indikatornya meregang, tepi kartu yang menyala mengikuti kursor, dan kartu yang muncul dari blur terinspirasi dari [Bencho](https://bencho.dev). Semua animasi berhenti bila perangkat memakai pengaturan "kurangi gerakan".
+Latar putih tulang dengan kartu putih, teks biru tua, dan satu warna aksen biru untuk tombol, grafik, dan angka terbaik; oranye hanya muncul sebagai sorotan kecil. Huruf Plus Jakarta Sans, rancangan Tokotype untuk identitas kota Jakarta, disimpan di repo ini sehingga tampil sama di semua perangkat. Interaksi kecil seperti tombol pilihan yang indikatornya meregang, tepi kartu yang menyala mengikuti kursor, dan kartu yang muncul dari blur terinspirasi dari [Bencho](https://bencho.dev). Semua animasi berhenti bila perangkat memakai pengaturan "kurangi gerakan".
 
 ## Lisensi
 
-Kode dirilis dengan lisensi MIT. Huruf Inter dirilis dengan SIL Open Font License (lihat `LICENSE-inter.txt`). Ikon dari Lucide dengan lisensi ISC. Logo bank dari idn-finlogos dirilis dengan lisensi CC BY-NC 4.0 untuk penggunaan nonkomersial; merek dan logo tetap milik bank masing-masing (lihat `LICENSE-logo-bank.txt`).
+Kode dirilis dengan lisensi MIT. Huruf Plus Jakarta Sans dirilis dengan SIL Open Font License (lihat `LICENSE-plus-jakarta-sans.txt`). Ikon dari Lucide dengan lisensi ISC. Logo bank dari idn-finlogos dirilis dengan lisensi CC BY-NC 4.0 untuk penggunaan nonkomersial; merek dan logo tetap milik bank masing-masing (lihat `LICENSE-logo-bank.txt`).

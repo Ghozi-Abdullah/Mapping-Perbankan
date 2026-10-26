@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Laporan keuangan bank · Peta Perbankan</title>
+  <meta name="description" content="Laporan keuangan tiap bank per kuartal: aset, kredit, DPK, laba, NPL, CAR, CASA, dan LDR, dibandingkan dengan bank sekelompok.">
+  <meta name="theme-color" content="#F5F5F3">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="profil">
+  <header class="top">
+    <a class="brand" href="./">
+      <span class="brand-mark"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></span>
+      <span class="brand-text"><b>Peta Perbankan</b><span id="updated">Memuat data…</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Halaman">
+      <a href="./">Beranda</a>
+      <a href="bank.html" aria-current="page">Per bank</a>
+      <a href="industri.html">Industri</a>
+      <a href="provinsi.html">Provinsi</a>
+      <a href="bunga.html">Suku bunga</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <nav class="bank-switch needs-bank" id="bank-switch" aria-label="Pilih bank"></nav>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <section class="pf-top needs-bank">
+      <div class="card pf-id" id="pf-id"></div>
+      <div class="card pf-nums">
+        <div class="card-head">
+          <div><h2>Angka utama</h2><p id="pf-stats-sub"></p></div>
+        </div>
+        <div class="seg qseg" id="pf-quarter" role="group" aria-label="Kuartal"></div>
+        <div class="bd-stats" id="pf-stats"></div>
+      </div>
+    </section>
+
+    <section class="sect needs-bank" aria-labelledby="pf-trend-h">
+      <div class="sect-head">
+        <div><span class="kicker">Tren dan posisi</span><h2 id="pf-trend-h">Pilih ukuran</h2></div>
+        <div class="seg" id="pf-metric" role="group" aria-label="Ukuran"></div>
+      </div>
+      <div class="grid two">
+        <div class="card">
+          <div class="card-head"><div><h2 id="pf-trend-title">Tren per kuartal</h2><p>Celah berarti angka kuartal itu tidak ditemukan di rilis yang dikutip.</p></div></div>
+          <div id="pf-chart" class="bd-chart"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><h2 id="pf-peers-title">Dibanding bank sekelompok</h2><p id="pf-peers-note"></p></div></div>
+          <ul class="bbars" id="pf-peers"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card needs-bank" aria-labelledby="pf-table-h">
+      <div class="card-head"><div><h2 id="pf-table-h">Semua kuartal</h2><p id="pf-table-sub"></p></div></div>
+      <div class="table-wrap"><table class="tbl bd-tbl" id="pf-table"></table></div>
+    </section>
+
+    <section class="card needs-bank" aria-labelledby="pf-src-h">
+      <div class="card-head"><div><h2 id="pf-src-h">Sumber per kuartal</h2><p>Rilis kinerja, laporan keuangan publikasi, dan media keuangan yang mengutipnya.</p></div></div>
+      <ul class="bd-sources" id="pf-sources"></ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Sumber per kelompok: <a href="https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx" target="_blank" rel="noopener">Statistik Ekonomi dan Keuangan Indonesia (SEKI), Bank Indonesia</a>, diperiksa otomatis dua kali seminggu. <span id="src-list"></span></span>
+    <span>Sumber per bank: rilis kinerja resmi dan laporan keuangan publikasi tiap bank, diperbarui setiap musim laporan; sumber tiap kuartal tercantum di halaman bank masing-masing.</span>
+    <span>Logo bank dari <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noopener">idn-finlogos</a> (CC BY-NC 4.0), merek milik bank masing-masing. Ikon <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>. Huruf <a href="https://github.com/tokotype/PlusJakartaSans" target="_blank" rel="noopener">Plus Jakarta Sans</a>.</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

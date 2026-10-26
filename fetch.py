@@ -5,7 +5,9 @@ digabung, lalu hanya bulan sejak CUTOFF yang disimpan. Riwayat dari tarikan sebe
 baru menimpa yang lama karena BI kadang merevisi bulan sebelumnya.
 """
 
+import os
 import sys
+from datetime import date
 
 import seki
 from fetchlib import FetchError, Status, http_get, iso_now, kode_provinsi, log, read_json, write_json
@@ -24,6 +26,16 @@ TABLES = {
 }
 GROUP_KEYS = ("persero", "bpd", "busn", "kcba", "bpr", "umum", "total")
 CUTOFF = "2019-01"
+RAW_DIR = "data/mentah"
+
+
+def stale(latest, today=None, months=4):
+    """True bila bulan terbaru tertinggal lebih dari `months` bulan: tanda salah baca atau format BI berubah."""
+    today = today or date.today()
+    if not latest:
+        return True
+    y, m = map(int, latest.split("-"))
+    return (today.year * 12 + today.month) - (y * 12 + m) > months
 
 
 def prune(tree, cutoff=CUTOFF):
@@ -103,8 +115,9 @@ def main():
     diag = {}
     for name, (code, title) in TABLES.items():
         url = f"{BASE}{code}.xls"
+        raw = None
         try:
-            raw = http_get(url, timeout=60, headers={"Referer": "https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx"})
+            raw = http_get(url, timeout=90, retries=4, headers={"Referer": "https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx"})
             sheets = seki.sheet_rows(raw)
             part, used, errors = {}, [], []
             for latest, rows in sheets:  # dari lembar terlama ke terbaru, supaya lembar terbaru menimpa
@@ -117,22 +130,35 @@ def main():
                 part = merge_tree(part, p)
                 used.append(latest)
             diag[name] = {"lembar": [latest for latest, _ in sheets], "dipakai": used, "gagal": errors,
-                          "struktur_lembar_terbaru": structure(sheets[-1][1])}
+                          "info_lembar": seki.sheet_info(raw), "struktur_lembar_terbaru": structure(sheets[-1][1])}
             if not used:
                 raise ValueError("; ".join(errors) or "tidak ada lembar terbaca")
             part = prune(part)
-            data[name] = merge_tree(prune(data.get(name)), part)
             months = sorted({m for s in _series(part) for m in s})
             if not months:
                 raise ValueError(f"tidak ada bulan sejak {CUTOFF}")
+            if stale(months[-1]):
+                raise ValueError(f"bulan terbaru terbaca {months[-1]}, terlalu lama; berkas mentah disimpan untuk diperiksa")
+            data[name] = merge_tree(prune(data.get(name)), part)
             status.ok(name, f"{code}: {months[0]} s.d. {months[-1]} dari {len(used)} lembar", len(sheets[-1][1]))
-        except (FetchError, ValueError, ImportError, KeyError) as e:
-            status.fail(name, f"{code}: {e}")
+        except Exception as e:  # satu tabel gagal tidak boleh menghentikan tabel lain
+            status.fail(name, f"{code}: {type(e).__name__}: {e}"[:300])
+            if raw:
+                # Simpan berkas asli supaya tata letaknya bisa diperiksa tanpa akses ke situs BI.
+                os.makedirs(RAW_DIR, exist_ok=True)
+                with open(os.path.join(RAW_DIR, f"{code}.xls"), "wb") as f:
+                    f.write(raw)
+                if name not in diag:
+                    try:
+                        diag[name] = {"info_lembar": seki.sheet_info(raw)}
+                    except Exception as e2:
+                        diag[name] = {"error": str(e2)}
     status.save()
     write_json("data/diagnosa.json", {"updated": iso_now(), "tabel": diag}, pretty=True)
     if not status.any_ok:
         log("Semua tabel gagal; data lama dibiarkan.")
         return 1
+    data = prune(data)
     latest = max((m for s in _series(data) for m in s), default=None)
     write_json(OUT, {
         "updated": iso_now(),

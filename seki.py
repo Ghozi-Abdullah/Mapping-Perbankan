@@ -41,7 +41,7 @@ def month_token(cell):
     """(tahun atau None, bulan) dari isi sel header; None bila bukan bulan."""
     if isinstance(cell, (date, datetime)):
         return cell.year, cell.month
-    s = str(cell or "").strip().lower()
+    s = _strip_marks(str(cell or "").strip().lower())
     if not s:
         return None
     m = MONTH_RE.match(s)
@@ -53,10 +53,19 @@ def month_token(cell):
     return (year or None), MONTHS[m.group(1)]
 
 
+def _strip_marks(s):
+    """Buang tanda catatan kaki di akhir sel header: "Agu*)", "Sep**", "2026 r)", "Okt 1)", "Des^"."""
+    prev = None
+    while prev != s:
+        prev = s
+        s = re.sub(r"(\s*[\*\^]+\)?|\s*\(?\b[a-z0-9]\)|\s*\(\*+\))$", "", s).strip()
+    return s
+
+
 def year_token(cell):
     if isinstance(cell, (int, float)) and not isinstance(cell, bool) and 1990 <= cell <= 2100 and float(cell).is_integer():
         return int(cell)
-    m = YEAR_RE.match(str(cell or ""))
+    m = YEAR_RE.match(_strip_marks(str(cell or "").strip().lower()))
     return int(m.group(1)) if m else None
 
 
@@ -119,17 +128,43 @@ def read_grid(raw, today=None):
     return max(read_grids(raw), key=lambda g: _sheet_score(g, today))
 
 
+def header_rows(grid, min_months=4):
+    """Semua baris header bulan di lembar. Satu lembar bisa berisi beberapa blok tabel yang ditumpuk ke bawah,
+    misalnya blok lama dan blok dengan klasifikasi baru; baris header yang bersebelahan dianggap satu."""
+    out = []
+    for i, row in enumerate(grid):
+        if sum(1 for c in row if month_token(c)) >= min_months:
+            if out and i - out[-1] <= 1:
+                continue
+            out.append(i)
+    return out
+
+
+def blocks(grid):
+    """Potong lembar menjadi blok: tiap blok dimulai beberapa baris di atas header (baris tahun) sampai blok berikutnya."""
+    hs = header_rows(grid)
+    if len(hs) <= 1:
+        return [grid]
+    out = []
+    for k, h in enumerate(hs):
+        start = max(hs[k - 1] + 1 if k else 0, h - 4)
+        end = max(hs[k + 1] - 4, h + 1) if k + 1 < len(hs) else len(grid)
+        out.append(grid[start:end])
+    return out
+
+
 def sheet_rows(raw, today=None):
-    """[(bulan terbaru, baris data)] untuk setiap lembar bertabel, urut dari lembar terlama ke terbaru."""
+    """[(bulan terbaru, baris data)] untuk setiap blok tabel di setiap lembar, urut dari yang terlama ke terbaru."""
     out = []
     for grid in read_grids(raw):
-        latest = latest_month(grid, today)
-        if latest is None:
-            continue
-        try:
-            out.append((latest, data_rows(grid, today)))
-        except ValueError:
-            continue
+        for block in blocks(grid):
+            latest = latest_month(block, today)
+            if latest is None:
+                continue
+            try:
+                out.append((latest, data_rows(block, today)))
+            except ValueError:
+                continue
     if not out:
         raise ValueError("baris bulan tidak ditemukan di lembar mana pun")
     return sorted(out, key=lambda x: x[0])
@@ -137,13 +172,48 @@ def sheet_rows(raw, today=None):
 
 def read_grids(raw):
     """Semua lembar sebagai list baris. Mendukung .xls, .xlsx, dan tabel HTML berakhiran .xls."""
+    return [grid for _, grid in read_sheets(raw)]
+
+
+def _txt(v):
+    if isinstance(v, (date, datetime)):
+        return v.strftime("%Y-%m-%d")
+    if isinstance(v, float) and v.is_integer():
+        return str(int(v))
+    return re.sub(r"\s+", " ", str(v)).strip()
+
+
+def sheet_info(raw, today=None):
+    """Ringkasan tiap lembar untuk berkas diagnosa: ukuran, baris header, isi sel bulan dan tahun, rentang bulan terbaca."""
+    out = []
+    for name, grid in read_sheets(raw):
+        h = find_header(grid)
+        info = {"nama": name, "baris": len(grid), "kolom": max((len(r) for r in grid), default=0), "header": h,
+                "blok": [[hb, *(lambda m: [m[0], m[-1], len(m)] if m else [None])(sorted(month_columns(grid, hb, today).values()))]
+                         for hb in header_rows(grid)][:10]}
+        if h is not None:
+            info["sel_header"] = [[c, _txt(v)] for c, v in enumerate(grid[h]) if _txt(v)][:80]
+            info["sel_atas"] = [[r, c, _txt(v)] for r in range(max(0, h - 4), h) for c, v in enumerate(grid[r]) if _txt(v)][:40]
+            cols = month_columns(grid, h, today)
+            months = sorted(cols.values())
+            info["bulan"] = [months[0], months[-1], len(months)] if months else None
+            info["contoh_baris"] = [[_txt(v) for v in row][:6] + ["…"] + [_txt(v) for v in row][-4:] for row in grid[h + 1:h + 4]]
+        else:
+            info["awal"] = [[_txt(v) for v in row if _txt(v)][:8] for row in grid[:6]]
+        out.append(info)
+    return out
+
+
+def read_sheets(raw):
+    """[(nama lembar, list baris)] dari berkas .xls, .xlsx, atau tabel HTML berakhiran .xls."""
     head = raw[:8]
-    grids = []
+    grids, names = [], []
     if head.startswith(b"\xd0\xcf\x11\xe0"):
         import xlrd
 
         book = xlrd.open_workbook(file_contents=raw)
         for sheet in book.sheets():
+            names.append(sheet.name)
             grid = []
             for r in range(sheet.nrows):
                 row = []
@@ -163,16 +233,17 @@ def read_grids(raw):
 
         book = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
         grids = [[list(r) for r in ws.iter_rows(values_only=True)] for ws in book.worksheets]
+        names = [ws.title for ws in book.worksheets]
     else:
         text = raw.decode("utf-8", "replace") if b"<" in raw[:2000] else ""
         if "<t" not in text.lower():
             raise ValueError("format berkas tidak dikenal")
         p = _Table()
         p.feed(text)
-        grids = [p.rows]
+        grids, names = [p.rows], ["html"]
     if not grids:
         raise ValueError("berkas tidak berisi lembar")
-    return grids
+    return list(zip(names, grids))
 
 
 # ---------------------------------------------------------------- struktur tabel

@@ -5,8 +5,11 @@ import {
   totalSeries, groupRows, provinceValues, commonLatest
 } from './logic.js';
 import { orbit } from './orbit.js';
-import { renderBanks, openBank, tileBack, qLabel } from './bank.js';
+import { renderBanks, renderProfile, renderHome, tileBack, qLabel, profileUrl } from './bank.js';
 import { liquidSeg, edgeLight } from './ui.js';
+
+// Situs ini terdiri dari beberapa halaman; tiap halaman menandai dirinya di <body data-page="...">.
+const PAGE = document.body.dataset.page || 'beranda';
 
 let DATA = null;
 let YM = null;
@@ -209,64 +212,112 @@ function renderRateChart() {
 
 function banner(status) {
   const failed = Object.entries(status?.sources || {}).filter(([, s]) => !s.ok);
-  if (!failed.length) return;
   const el = $('#banner');
+  if (!failed.length || !el) return;
   el.hidden = false;
   el.innerHTML = `<span>Sebagian tabel BI gagal diperbarui pada penarikan terakhir (${failed.map(([k]) => esc(k.replace('_', ' '))).join(', ')}). Bagian itu menampilkan data terakhir yang berhasil ditarik.</span>`;
 }
 
 const BLN = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
 const tanggal = (iso) => { const [y, m, d] = iso.split('-').map(Number); return `${d} ${BLN[m - 1]} ${y}`; };
+const setText = (sel, text) => { const el = $(sel); if (el) el.textContent = text; };
 
-/** Bagian per bank: panggung logo 3D, perbandingan dalam kelompok, dan lembar detail. */
-async function mainBanks() {
-  let data;
-  try {
-    data = await getJSON('bank.json');
-  } catch {
-    $('#orbit').hidden = true;
-    $('#per-bank').hidden = true;
-    return null;
-  }
-  const qs = data.kuartal;
-  $('#bank-eyebrow').textContent = `${data.bank.length} bank · ${qs.length} kuartal, ${qLabel(qs[0])}–${qLabel(qs[qs.length - 1])} · diperbarui ${tanggal(data.diperbarui)}`;
-  const stage = orbit($('#orbit-field'), data.bank, { onPick: openBank, back: (b) => tileBack(b, qs), keep: $('#orbit-copy') });
-  renderBanks(data, { onGroup: (g) => stage.focus(g) });
-  return data;
+/** Alamat lama versi satu halaman (#bank-BMRI, #provinsi, ...) diarahkan ke halaman barunya. */
+function redirectOldHash() {
+  const h = location.hash.slice(1);
+  if (!h) return false;
+  const m = h.match(/^bank-([A-Z0-9]{4})$/i);
+  const to = m ? profileUrl(m[1].toUpperCase())
+    : { 'per-bank': 'bank.html', industri: 'industri.html', kelompok: 'industri.html', tren: 'industri.html', stats: 'industri.html', provinsi: 'provinsi.html', bunga: 'bunga.html', 'tren-bunga': 'bunga.html' }[h];
+  if (to) location.replace(to);
+  return Boolean(to);
 }
 
-async function main() {
-  const banks = await mainBanks();
-  $$('.seg').forEach(liquidSeg);
-  edgeLight(document.body, '.bcard, .card');
+async function loadBanks() {
+  try {
+    const data = await getJSON('bank.json');
+    setText('#updated', `Data bank per ${tanggal(data.diperbarui)}`);
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+/** Data SEKI per kelompok bank. Mengembalikan false bila belum ada. */
+async function loadSeki() {
   let status = null;
   try { status = await getJSON('data/status.json'); } catch { /* belum ada */ }
   try {
     DATA = await getJSON('data/perbankan.json');
   } catch {
-    $('#updated').textContent = banks ? `Data bank per ${tanggal(banks.diperbarui)}` : 'Menunggu data pertama';
-    $$('.seki').forEach((el) => { el.hidden = true; });
-    $('#banner').hidden = false;
-    $('#banner').innerHTML = '<b>Data per kelompok belum tersedia.</b> Penarikan pertama dari Bank Indonesia berjalan otomatis lewat GitHub Actions. Muat ulang halaman ini beberapa menit lagi.';
-    return;
+    return false;
   }
   const k = DATA.kredit || {};
   const s = DATA.simpanan || {};
   YM = commonLatest([k.persero, k.busn, k.bpd, s.persero?.total, s.busn?.total, DATA.kredit_prov?.total].filter(Boolean)) || DATA.periode;
-  $('#updated').textContent = updatedText(DATA.updated);
-  $('#eyebrow').textContent = `Data Bank Indonesia, posisi ${monthLabel(YM, true)}`;
-  $('#src-list').innerHTML = (DATA.sumber || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener" title="${esc(x.judul)}">${esc(x.kode.replace('TABEL', 'Tabel ').replace('_', '.'))}</a>`).join(', ');
+  if (PAGE !== 'beranda') setText('#updated', updatedText(DATA.updated));
+  setText('#eyebrow', `Data Bank Indonesia, posisi ${monthLabel(YM, true)}`);
+  const src = $('#src-list');
+  if (src) src.innerHTML = (DATA.sumber || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener" title="${esc(x.judul)}">${esc(x.kode.replace('TABEL', 'Tabel ').replace('_', '.'))}</a>`).join(', ');
   banner(status);
-  renderStats();
-  renderGroups();
-  renderTrend();
-  renderProvinces();
-  renderRates();
-  renderRateChart();
-  seg('#share-seg', 'share', renderGroups);
-  seg('#trend-seg', 'trend', renderTrend);
-  seg('#prov-seg', 'prov', renderProvinces);
-  seg('#rate-seg', 'rate', renderRateChart);
+  return true;
+}
+
+function sekiMissing() {
+  $$('.seki').forEach((el) => { el.hidden = true; });
+  const el = $('#banner');
+  if (!el) return;
+  el.hidden = false;
+  el.innerHTML = '<span><b>Data Bank Indonesia belum tersedia.</b> Penarikan dari SEKI berjalan otomatis lewat GitHub Actions. Muat ulang halaman ini beberapa menit lagi.</span>';
+}
+
+function bankMissing() {
+  $$('.needs-bank').forEach((el) => { el.hidden = true; });
+  const el = $('#banner');
+  if (!el) return;
+  el.hidden = false;
+  el.innerHTML = '<span><b>Data per bank gagal dimuat.</b> Periksa bahwa bank.json ikut terunggah.</span>';
+}
+
+async function main() {
+  if (PAGE === 'beranda' && redirectOldHash()) return;
+  edgeLight(document.body, '.bcard, .card, .fact');
+
+  if (PAGE === 'beranda') {
+    const banks = await loadBanks();
+    if (banks) {
+      const qs = banks.kuartal;
+      setText('#bank-eyebrow', `${banks.bank.length} bank · ${qs.length} kuartal, ${qLabel(qs[0])}–${qLabel(qs[qs.length - 1])}`);
+      setText('#orbit-count', `${banks.bank.length} bank`);
+      orbit($('#orbit-field'), banks.bank, { onPick: (kode) => { location.href = profileUrl(kode); }, back: (b) => tileBack(b, qs), keep: $('#orbit-core') });
+      renderHome(banks);
+    } else {
+      bankMissing();
+    }
+    if (await loadSeki()) renderStats();
+    else $$('.seki').forEach((el) => { el.hidden = true; });
+  } else if (PAGE === 'bank' || PAGE === 'profil') {
+    const banks = await loadBanks();
+    if (!banks) bankMissing();
+    else if (PAGE === 'bank') renderBanks(banks);
+    else renderProfile(banks);
+  } else if (!(await loadSeki())) {
+    setText('#updated', 'Menunggu data pertama');
+    sekiMissing();
+  } else if (PAGE === 'industri') {
+    renderStats();
+    renderGroups();
+    renderTrend();
+    seg('#share-seg', 'share', renderGroups);
+    seg('#trend-seg', 'trend', renderTrend);
+  } else if (PAGE === 'provinsi') {
+    renderProvinces();
+    seg('#prov-seg', 'prov', renderProvinces);
+  } else if (PAGE === 'bunga') {
+    renderRates();
+    renderRateChart();
+    seg('#rate-seg', 'rate', renderRateChart);
+  }
   $$('.seg').forEach(liquidSeg);
 }
 

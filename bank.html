@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bandingkan bank per kuartal · Peta Perbankan</title>
+  <meta name="description" content="Aset, kredit, DPK, laba, NPL, CAR, CASA, dan LDR bank BUMN, swasta, dan BPD per kuartal sejak Q4 2023, dibandingkan dalam kelompoknya.">
+  <meta name="theme-color" content="#F5F5F3">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="bank">
+  <header class="top">
+    <a class="brand" href="./">
+      <span class="brand-mark"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></span>
+      <span class="brand-text"><b>Peta Perbankan</b><span id="updated">Memuat data…</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Halaman">
+      <a href="./">Beranda</a>
+      <a href="bank.html" aria-current="page">Per bank</a>
+      <a href="industri.html">Industri</a>
+      <a href="provinsi.html">Provinsi</a>
+      <a href="bunga.html">Suku bunga</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="page-head">
+      <div class="ph-copy">
+        <span class="eyebrow"><i class="dot"></i><span id="bank-eyebrow">Per bank · laporan kuartalan</span></span>
+        <h1 class="page-title">Bandingkan dalam kelompoknya</h1>
+        <p class="lede"><span id="bank-sub">Memuat…</span></p>
+      </div>
+      <div class="ph-tools"><div class="seg" id="bank-group" role="group" aria-label="Kelompok bank"></div></div>
+    </section>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <div class="qbar needs-bank">
+      <span class="qbar-label"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M16 2v3"/><path d="M3 9h18"/><path d="M8 2v3"/></svg>Kuartal</span>
+      <div class="seg qseg" id="bank-quarter" role="group" aria-label="Kuartal"></div>
+    </div>
+
+    <section class="bcards needs-bank" id="bank-cards" aria-label="Kartu bank"></section>
+
+    <section class="sect needs-bank" aria-labelledby="rank-h">
+      <div class="sect-head">
+        <div><span class="kicker">Peringkat dan tren</span><h2 id="rank-h">Pilih ukuran</h2></div>
+        <div class="seg" id="bank-metric" role="group" aria-label="Ukuran"></div>
+      </div>
+      <div class="grid two">
+        <div class="card">
+          <div class="card-head"><div><h2 id="bank-bars-title">Perbandingan</h2><p id="bank-bars-note"></p></div></div>
+          <ul class="bbars" id="bank-bars"></ul>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><h2 id="bank-trend-title">Tren per kuartal</h2><p id="bank-trend-note"></p></div></div>
+          <div id="bank-trend"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card needs-bank" aria-labelledby="bank-table-title">
+      <div class="card-head">
+        <div><h2 id="bank-table-title">Semua angka</h2><p>Angka terbaik di kelompoknya ditebalkan. Ketuk nama bank untuk riwayat lengkap dan sumbernya.</p></div>
+      </div>
+      <div class="table-wrap"><table class="tbl bank-tbl" id="bank-table"></table></div>
+    </section>
+
+    <aside class="info-strip"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><p><b>Laba dihitung sejak Januari.</b> Q1 berisi tiga bulan, Q2 semester I, Q3 sembilan bulan, Q4 setahun penuh, jadi bank selalu dibandingkan pada kuartal yang sama dan pertumbuhan dihitung terhadap kuartal yang sama tahun lalu. Grafik laba memakai laba per kuartal (selisih laba kumulatif). Aset, kredit, DPK, dan laba dalam triliun rupiah (M = miliar). Angka yang tidak disebut di rilis dibiarkan kosong, tidak ditebak.</p></aside>
+  </main>
+
+  <footer class="foot">
+    <span>Sumber per kelompok: <a href="https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/default.aspx" target="_blank" rel="noopener">Statistik Ekonomi dan Keuangan Indonesia (SEKI), Bank Indonesia</a>, diperiksa otomatis dua kali seminggu. <span id="src-list"></span></span>
+    <span>Sumber per bank: rilis kinerja resmi dan laporan keuangan publikasi tiap bank, diperbarui setiap musim laporan; sumber tiap kuartal tercantum di halaman bank masing-masing.</span>
+    <span>Logo bank dari <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noopener">idn-finlogos</a> (CC BY-NC 4.0), merek milik bank masing-masing. Ikon <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>. Huruf <a href="https://github.com/tokotype/PlusJakartaSans" target="_blank" rel="noopener">Plus Jakarta Sans</a>.</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

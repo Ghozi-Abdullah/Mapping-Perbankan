@@ -86,6 +86,12 @@ class Header(unittest.TestCase):
         vals = list(seki.month_columns(g, 3, TODAY).values())
         self.assertEqual((vals[0], vals[-1]), ("2025-03", "2026-08"))
 
+    def test_footnote_marks(self):
+        for cell, want in [("Agu*)", (None, 8)), ("Sep**", (None, 9)), ("Okt 1)", (None, 10)), ("Des^", (None, 12)), ("Jan 2026*)", (2026, 1)), ("Mar r)", (None, 3))]:
+            self.assertEqual(seki.month_token(cell), want, cell)
+        for cell, want in [("2026*)", 2026), ("2025 r)", 2025), ("2026**", 2026), ("2024 (*)", 2024)]:
+            self.assertEqual(seki.year_token(cell), want, cell)
+
     def test_month_tokens(self):
         self.assertEqual(seki.month_token("Agt"), (None, 8))
         self.assertEqual(seki.month_token("Jan*"), (None, 1))
@@ -261,6 +267,21 @@ class MultiSheet(unittest.TestCase):
         pruned = fetch.prune(part)
         self.assertNotIn("2017-06", pruned["persero"])
         self.assertEqual(min(pruned["persero"]), "2025-03")
+
+
+class StackedBlocks(unittest.TestCase):
+    def test_two_blocks_in_one_sheet(self):
+        """Blok lama (Mar 2025 s.d. Agu 2026 versi lama) ditumpuk di atas blok baru dengan bulan berbeda."""
+        old_months = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"]
+        top = sheet([("Bank Persero", ramp(100)), ("Bank Pemerintah Daerah", ramp(50)), ("Bank Swasta Nasional", ramp(80))], months=old_months, years=False)
+        top[3] = ["No", "Kelompok Bank"] + [f"{m} 2024" for m in old_months] + ["Group"]
+        bottom = sheet([("Bank Persero", ramp(200)), ("Bank Pemerintah Daerah", ramp(60)), ("Bank Swasta Nasional", ramp(90))])
+        grid = top + [[], []] + bottom
+        self.assertEqual(len(seki.header_rows(grid)), 2)
+        parts = [seki.by_group_totals(seki.data_rows(b, TODAY)) for b in seki.blocks(grid)]
+        self.assertEqual(max(parts[0]["persero"]), "2024-12")
+        self.assertEqual(max(parts[1]["persero"]), "2026-08")
+        self.assertEqual(parts[1]["persero"]["2025-03"], 200)
 
 
 class Merge(unittest.TestCase):
