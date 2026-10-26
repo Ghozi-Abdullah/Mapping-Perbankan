@@ -1,0 +1,882 @@
+{
+ "diambil": "2026-10-26T06:10:39Z",
+ "halaman": "https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah.aspx",
+ "ok": true,
+ "sumber": "https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/Documents/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah/Daftar%20Alamat%20Kantor%20Pusat%20Bank%20Umum%20Dan%20Syariah%20-%20Juni%202026.xlsx",
+ "judul": "Daftar Alamat Kantor Pusat Bank Umum Dan Syariah - Juni 2026",
+ "periode": "Juni 2026",
+ "kolom": [
+  "No.",
+  "Sandi Bank",
+  "Nama Bank",
+  "Alamat",
+  "Nomor Telepon",
+  "Website"
+ ],
+ "bank": [
+  {
+   "nama": "PT BANK RAKYAT INDONESIA (PERSERO) Tbk",
+   "alamat": "Jl. Jend. Sudirman Kav. 44-46, Jakarta 10210",
+   "telepon": "(021) 2510244, 2510254, 2510269-264, 2510279",
+   "situs": "www.bri.co.id",
+   "sandi": "002",
+   "kelompok": "Bank Umum Persero"
+  },
+  {
+   "nama": "PT BANK MANDIRI (PERSERO) Tbk",
+   "alamat": "Menara Mandiri 1 Jalan Jenderal Sudirman Kav 54-55 Jakarta 12190 Indonesia",
+   "telepon": "(021) 52997777",
+   "situs": "www.bankmandiri.co.id",
+   "sandi": "008",
+   "kelompok": "Bank Umum Persero"
+  },
+  {
+   "nama": "PT BANK NEGARA INDONESIA (PERSERO) Tbk",
+   "alamat": "Gedung Grha BNI Jl. Jend. Sudirman Kav. 1, Jakarta 10220",
+   "telepon": "(021) 2511946, 5728387",
+   "situs": "www.bni.co.id",
+   "sandi": "009",
+   "kelompok": "Bank Umum Persero"
+  },
+  {
+   "nama": "PT BANK TABUNGAN NEGARA (PERSERO) Tbk",
+   "alamat": "Gedung Menara BTN, Jl. Gajah Mada No. 1, Jakarta 10130",
+   "telepon": "(021) 1500286",
+   "situs": "www.btn.co.id",
+   "sandi": "200",
+   "kelompok": "Bank Umum Persero"
+  },
+  {
+   "nama": "PT BANK DANAMON INDONESIA Tbk",
+   "alamat": "Menara Bank Danamon, Jl. HR. Rasuna Said Blok C No. 10, Karet Setiabudi, Jakarta Selatan 12920",
+   "telepon": "(021) 80645000",
+   "situs": "www.danamon.co.id",
+   "sandi": "011",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK PERMATA Tbk",
+   "alamat": "Gedung World Trade Center II (WTC II) Lt.21-30, Jl. Jend. Sudirman Kav. 29 - 31, Setia Budi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12920.",
+   "telepon": "(021) 5237788",
+   "situs": "www.permatabank.com",
+   "sandi": "013",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK CENTRAL ASIA Tbk",
+   "alamat": "Menara BCA, Grand Indonesia, Lt. 23 Jl. M.H Thamrin No. 1, Jakarta 10310",
+   "telepon": "(021) 2358-8000",
+   "situs": "www.bca.co.id",
+   "sandi": "014",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MAYBANK INDONESIA Tbk",
+   "alamat": "Gedung Sentral Senayan 3, Lt. 26, Jl. Asia Afrika No. 8, Gelora Bung Karno - Senayan, Jakarta Pusat 10270",
+   "telepon": "(021) 29228888",
+   "situs": "www.maybank.co.id",
+   "sandi": "016",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK PAN INDONESIA Tbk",
+   "alamat": "Panin Bank Centre, Jl. Jend. Sudirman Kav. 1 (Senayan), Jakarta 10270",
+   "telepon": "(021) 2700545 (10 lines), 5735555",
+   "situs": "www.panin.co.id",
+   "sandi": "019",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK CIMB NIAGA Tbk",
+   "alamat": "Graha Niaga / Niaga Tower Jl. Jend. Sudirman Kav. 58, Jakarta 12190",
+   "telepon": "(021) 2505252, 2505353",
+   "situs": "www.cimbniaga.co.id",
+   "sandi": "022",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK UOB INDONESIA",
+   "alamat": "Gedung UOB Plaza, Jl. M.H. Thamrin No. 10 Jakarta 10230",
+   "telepon": "(021) 2350 6000",
+   "situs": "www.uob.co.id",
+   "sandi": "023",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK OCBC NISP Tbk",
+   "alamat": "OCBC NISP Tower, Jl. Prof.Dr. Satrio Kav. 25, Jakarta Selatan 12940",
+   "telepon": "(021) 25533888",
+   "situs": "www.ocbc.id",
+   "sandi": "028",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK ARTHA GRAHA INTERNASIONAL Tbk",
+   "alamat": "Gedung Arha Graha, Lt. 5, Jl. Sudirman Kav. 52-53, Senayan, Jakarta 12190",
+   "telepon": "(021) 5152168",
+   "situs": "www.arthagraha.com",
+   "sandi": "037",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK BUMI ARTA Tbk",
+   "alamat": "Jl. KH. Wahid Hasyim No. 234-236, Jakarta 10250",
+   "telepon": "(021) 2300893, 2300455",
+   "situs": "www.bankbba.co.id",
+   "sandi": "076",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK HSBC INDONESIA",
+   "alamat": "World Trade Centre 3, Lantai 9 Jl. Jendral Sudirman Kav. 29-31 Jakarta 12920 Indonesia",
+   "telepon": "(021) 25514777",
+   "situs": "www.hsbc.co.id",
+   "sandi": "087",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK JTRUST INDONESIA Tbk",
+   "alamat": "Gedung Sahid Sudirman Center Lt. 33 Jl. Sudirman No. 86, Jakarta Pusat 10220",
+   "telepon": "(021) 29261111(HUNTING)",
+   "situs": "www.jtrustbank.co.id",
+   "sandi": "095",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MAYAPADA INTERNATIONAL Tbk",
+   "alamat": "Mayapada Tower 1, Jl. Jend. Sudirman Kav. 28, Jakarta 12920.",
+   "telepon": "(021) 5212288, 5212300",
+   "situs": "www.bankmayapada.com",
+   "sandi": "097",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK OF INDIA INDONESIA Tbk",
+   "alamat": "Jl. H. Samanhudi No. 37, Pasar Baru, Sawah Besar, Jakarta Pusat 10710",
+   "telepon": "(021) 3500007 (HUNTING)",
+   "situs": "www.boiindonesia.co.id",
+   "sandi": "146",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MUAMALAT INDONESIA Tbk",
+   "alamat": "Gedung Muamalat Tower, Jl. Prof. Dr. Satrio Kav. 18, Kelurahan Karet Kuningan, Kecamatan Setiabudi Kota Administrasi Jakarta Selatan , Provinsi DKI Jakarta, 12940",
+   "telepon": "(021) 80666000",
+   "situs": "www.bankmuamalat.co.id",
+   "sandi": "147",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MESTIKA DHARMA Tbk",
+   "alamat": "Jl. Zainul Arifin 118, Medan 20112",
+   "telepon": "(061) 4525800",
+   "situs": "www.bankmestika.co.id",
+   "sandi": "151",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SHINHAN INDONESIA",
+   "alamat": "Ged. International Financial Centre (IFC) Tower 2 Lt. Dasar, Mezzanine, 30-32 Jl. Jend. Sudirman Kav. 22-23 Jakarta Selatan 12920",
+   "telepon": "(021) 29751500 , 29751623, 29751632",
+   "situs": "www.shinhan.co.id",
+   "sandi": "152",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SINARMAS Tbk",
+   "alamat": "Sinarmas Land Plaza, Menara I, Lt. 1 &2 Jl. MH. Thamrin Kav. 51, Jakarta 10350",
+   "telepon": "(021) 31990101",
+   "situs": "www.banksinarmas.com",
+   "sandi": "153",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK KASIKORN INDONESIA Tbk",
+   "alamat": "Gedung Pacific Century Place Lantai 39, Sudirman Central Business District (SCBD) Jl. Jendral Sudirman Kav.52-53, Senayan, Jakarta Selatan",
+   "telepon": "1500 889",
+   "situs": "www.kasikornbank.co.id",
+   "sandi": "157",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK GANESHA Tbk",
+   "alamat": "Wisma Hayam Wuruk Lt.1 & 2, Jl. Hayam Wuruk No. 8, Jakarta Pusat 10120",
+   "telepon": "(021) 29109900 (hunting)",
+   "situs": "www.bankganesha.co.id",
+   "sandi": "161",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK ICBC INDONESIA",
+   "alamat": "ICBC Tower Lt. 32, Jl. M.H. Thamrin No. 81, Jakarta Pusat 10310",
+   "telepon": "021-23556000",
+   "situs": "www.icbc.co.id",
+   "sandi": "164",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK QNB INDONESIA Tbk",
+   "alamat": "Revenue Tower District 8 Lt.8, SCBD Lot 13, Jl. Jend. Sudirman Kav. 52-53 Jakarta 12190",
+   "telepon": "(021) 5155155",
+   "situs": "www.qnb.co.id",
+   "sandi": "167",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK WOORI SAUDARA INDONESIA 1906 Tbk",
+   "alamat": "Treasury Tower Lt. 26, 27 & 38 SCBD, Jl. Jend. Sudirman No. 52-53, Senayan, Kebayoran Baru, Jakarta Selatan",
+   "telepon": "(021) 50871906",
+   "situs": "www.bankwoorisaudara.com",
+   "sandi": "212",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MEGA Tbk",
+   "alamat": "Menara Bank Mega Lt.15, Jl. Kapten Tendean Kav. 12-14 A, Jakarta 12790",
+   "telepon": "(021) 7917500",
+   "situs": "www.bankmega.com",
+   "sandi": "426",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK KB INDONESIA Tbk 11)",
+   "alamat": "Gedung KB Bank Jl. MT. Haryono Kav. 50-51, Jakarta 12770",
+   "telepon": "(021) 7988266",
+   "situs": "www.kbbank.co.id",
+   "sandi": "441",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SYARIAH INDONESIA Tbk 1)",
+   "alamat": "Gedung The Tower, Jl. Gatot Subroto No.27 Kel. Karet Semanggi, Kec. Setiabudi, Jakarta Selatan 12930",
+   "telepon": "(021) 30405999 +6281584114040",
+   "situs": "www.bankbsi.co.id",
+   "sandi": "451",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK KEB HANA INDONESIA",
+   "alamat": "Mangkuluhur City Tower One Lantai GF, Jl. Jend. Gatot Subroto Kav. 1-3 Kel. Karet Semanggi, Jakarta Selatan 12930",
+   "telepon": "(021) 5220222, 50811111",
+   "situs": "www.hanabank.co.id",
+   "sandi": "484",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MNC INTERNASIONAL Tbk",
+   "alamat": "MNC Bank Tower, JI. Kebon Sirih No. 21-27, Kb. Sirih, Kec. Menteng, Jakarta Pusat,DKI Jakarta 10340",
+   "telepon": "(021) 29805588",
+   "situs": "www.mncbank.co.id",
+   "sandi": "485",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK RAYA INDONESIA Tbk",
+   "alamat": "Gedung Menara BRILiaN, Lantai 20, Jalan Gatot Subroto No.117A, Menteng Dalam, Tebet, Jakarta Selatan. 12870",
+   "telepon": "(021) 50931300",
+   "situs": "www.bankraya.co.id",
+   "sandi": "494",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SBI INDONESIA",
+   "alamat": "Gedung Graha Mandiri Lantai 11, 15 & 24 Jl. Imam Bonjol No.61 Kota Adm. Jakarta Pusat, DKI Jakarta.",
+   "telepon": "(021) 39838747",
+   "situs": "www.sbiindo.com",
+   "sandi": "498",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MEGA SYARIAH",
+   "alamat": "Menara Mega Syariah, Jl. HR Rasuna Said Kav. 19A, Jakarta 12950",
+   "telepon": "(021) 29852000",
+   "situs": "www.megasyariah.co.id",
+   "sandi": "506",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK INDEX SELINDO",
+   "alamat": "Plaza Bank Index Jl. M. H. Thamrin No. 57 Jakarta Pusat 10350",
+   "telepon": "(021) 3922328",
+   "situs": "www.bankindex.co.id",
+   "sandi": "555",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK HIBANK INDONESIA 8)",
+   "alamat": "Rajawali Place Lantai 22-23 Jl. H. R. Rasuna Said Kav. B4, Setiabudi, Kecamatan Setiabudi, Jakarta Selatan 12910",
+   "telepon": "(021) 86657888, 86657899",
+   "situs": "www.hibank.co.id",
+   "sandi": "553",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK CHINA CONSTRUCTION BANK INDONESIA Tbk",
+   "alamat": "Gedung Perkantoran sahid Sudirman Center Lt. 15, Jl. Jenderal Sudirman Kav. 86, Jakarta Pusat 10220",
+   "telepon": "(021) 50821000",
+   "situs": "https://bankccbi.co.id/",
+   "sandi": "036",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK DBS INDONESIA",
+   "alamat": "DBS Bank Tower, Lobby Level Lt 31-37 Ciputra World 1, Jl. Prof. Dr. Satrio Kav 3-5 Jakarta 12940",
+   "telepon": "(021) 29885000",
+   "situs": "www.dbs.id",
+   "sandi": "046",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK RESONA PERDANIA",
+   "alamat": "Jakarta Mori Tower Lantai 30, 31, dan 32 Jl. Jend. Sudirman Kav. 40-41 Bendungan Hilir, Tanah Abang, Jakarta Pusat 10210",
+   "telepon": "(021) 5701958",
+   "situs": "www.perdania.co.id",
+   "sandi": "047",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MIZUHO INDONESIA",
+   "alamat": "Menara Astra, Lantai 53, Jl. Jend. Sudirman Kav. 5-6, Jakarta 10220",
+   "telepon": "(021) 50910888",
+   "situs": "www.mizuhobank.co.id",
+   "sandi": "048",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK CAPITAL INDONESIA Tbk",
+   "alamat": "Gedung Menara Jamsostek Lt.1 dan Lt. 6, Jl. Gatot Subroto No. 38 Jakarta Selatan 12710.",
+   "telepon": "(021) 27938989",
+   "situs": "www.bankcapital.co.id",
+   "sandi": "054",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK BNP PARIBAS INDONESIA",
+   "alamat": "Sequis Tower Lt.28, SCBD Lot 11B Jl. Jenderal Sudirman Kav.71 Jakarta 12190",
+   "telepon": "(021) 50814789",
+   "situs": "www.bnpparibas.co.id",
+   "sandi": "057",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK ANZ INDONESIA",
+   "alamat": "World Trade Centre 3, Lt.31 Jl. Jend. Sudirman Kav.29-31, Karet Kuningan, Setiabudi, Jakarta Selatan 12920",
+   "telepon": "(021) 5750300",
+   "situs": "www.anz.com",
+   "sandi": "061",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK IBK INDONESIA Tbk",
+   "alamat": "Wisma GKBI Suites-UG01 Jl. Jendral Sudirman No. 28, Jakarta",
+   "telepon": "021-57908888",
+   "situs": "www.ibk.co.id",
+   "sandi": "945",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK ALADIN SYARIAH Tbk 2)",
+   "alamat": "Millennium Centennial Center Lt 7, Jl. Jendral Sudirman Kav. 25 Jakarta 12920",
+   "telepon": "(021) 85500947",
+   "situs": "www.aladinbank.id",
+   "sandi": "947",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK CTBC INDONESIA",
+   "alamat": "Tamara Center Lt. 15-17, Jl. Jend. Sudirman Kav. 24, Jakarta 12920",
+   "telepon": "(021) 25578787",
+   "situs": "www.ctbcbank.co.id",
+   "sandi": "949",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SMBC INDONESIA, Tbk",
+   "alamat": "Menara SMBC - CBD Mega Kuningan, Jl. Dr. Ide Anak Agung Gde Agung Kav. 5,5 - 5,6 Jakarta Selatan 12950",
+   "telepon": "(021) 30026200",
+   "situs": "www.smbci.com",
+   "sandi": "213",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK NANO SYARIAH 9)",
+   "alamat": "Jl. Teuku Cik Ditiro No.29, Menteng, Jakarta Pusat 10310",
+   "telepon": "(021) 392 3329",
+   "situs": "www.nanobanksyariah.id/",
+   "sandi": "253",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SYARIAH NASIONAL 12)",
+   "alamat": "Menara Bank BTN lt. 11, Jl. Gajah Mada No. 1 Jakarta Pusat 10130",
+   "telepon": "(021) - 6310800",
+   "situs": "www.bankbsn.co.id/",
+   "sandi": "405",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK JABAR BANTEN SYARIAH",
+   "alamat": "Jl. Braga No. 135 Bandung 40117",
+   "telepon": "022-4202599",
+   "situs": "www.bjbsyariah.co.id",
+   "sandi": "425",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT KROM BANK INDONESIA Tbk 6)",
+   "alamat": "Gedung Dipo Tower, Lantai 9, Jl. Gatot Subroto Kav. 50-52 Petamburan, Kecamatan Tanah Abang, Jakarta Pusat, DKI Jakarta 10260",
+   "telepon": "(021) 50996920",
+   "situs": "www.krom.id",
+   "sandi": "459",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SAQU INDONESIA 10)",
+   "alamat": "Jl. Tiang Bendera III No. 26-32, Jakarta 11230",
+   "telepon": "(021) 6902611, 6906950",
+   "situs": "www.banksaqu.co.id",
+   "sandi": "472",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK NEO COMMERCE Tbk",
+   "alamat": "Treasury Tower Lt.60, District 8 SCBD Lot 28, Jl Jendral Sudirman Kav 52-53, Jakarta Selatan",
+   "telepon": "(021) 27094950, 27094951",
+   "situs": "www.bankneocommerce.co.id",
+   "sandi": "490",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK DIGITAL BCA",
+   "alamat": "Gedung The City Tower (TCT) Lt.11 Jl. MH. Thamrin No.81 Kel. Dukuh Atas, Kec. Menteng Jakarta Pusat",
+   "telepon": "(021) 50848010",
+   "situs": "www.bcadigital.co.id",
+   "sandi": "501",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK NATIONALNOBU Tbk",
+   "alamat": "Gedung Graha Nobu JI. Boulevard, Diponegoro Nomor 101 Bencongan lndah,Kelapa Dua Kabupaten Tangerang 15810",
+   "telepon": "(021) 59990000",
+   "situs": "www.nobubank.com",
+   "sandi": "503",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK INA PERDANA Tbk",
+   "alamat": "Gedung Ariobimo Sentral, Mezzanine Floor, Jl. H.R. Rasuna Said Blok X-2 Kav 5, Jakarta Selatan 12950",
+   "telepon": "(021) 2525678",
+   "situs": "www.bankina.co.id",
+   "sandi": "513",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK PANIN DUBAI SYARIAH Tbk",
+   "alamat": "Gd.Panin Life Centre, Jl. Letjend S. Parman Kav 91 Jakarta 11420",
+   "telepon": "(021) 56956100",
+   "situs": "www.pdsb.co.id",
+   "sandi": "517",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK KB BUKOPIN SYARIAH 4)",
+   "alamat": "Jalan Salemba Raya Nomor 55, Jakarta Pusat 10440",
+   "telepon": "(021) 2300912",
+   "situs": "www.kbbukopinsyariah.com",
+   "sandi": "521",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SAHABAT SAMPOERNA",
+   "alamat": "Gedung Sampoerna Strategic Square Menara Utara, Lt. Mezzanine Jl. Jend. Sudirman Kav 45 Jakarta",
+   "telepon": "(021) 57951234",
+   "situs": "www.banksampoerna.com",
+   "sandi": "523",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK OKE INDONESIA Tbk",
+   "alamat": "Jl. Ir. H. Juanda No. 12, Jakarta 10120",
+   "telepon": "(021) 2312633",
+   "situs": "www.okbank.co.id",
+   "sandi": "526",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK AMAR INDONESIA",
+   "alamat": "RDTX Square Lt.11, Jl. Prof. DR. Satrio No.164, RT.4/RW.4, Karet Semanggi, Setiabudi, Kota Jakarta Selatan 12930",
+   "telepon": "(021) 3021-0700",
+   "situs": "www.amarbank.co.id",
+   "sandi": "531",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK SEABANK INDONESIA",
+   "alamat": "GAMA Tower lantai 35 JI. H.R. Rasuna Said No.2, Karet Kuningan, Jakarta Selatan 12940",
+   "telepon": "(021) 50995103",
+   "situs": "www.seabank.co.id",
+   "sandi": "535",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK BCA SYARIAH",
+   "alamat": "Jl. Jatinegara Timur No. 72, Jakarta 13310",
+   "telepon": "(021) 8190072, 8505030, 8505035",
+   "situs": "www.bcasyariah.co.id",
+   "sandi": "536",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK JAGO TBK",
+   "alamat": "Menara SMBC Lt. 46 Jl. Dr. Ide Anak Agung Gde Agung Kav.5,5-5,6 Jakarta Selatan 12950 Kota Adm. Jakarta Selatan DKI Jakarta",
+   "telepon": "(021) 50927460 50927490",
+   "situs": "www.jago.com",
+   "sandi": "542",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK BTPN SYARIAH Tbk",
+   "alamat": "Menara SMBC Lt. 12 CBD Mega Kuningan, Jl. Dr. Ide Anak Agung Gde Agung Kav. 5.5-5.6 Kel. Kuningan Timur, Jakarta Selatan",
+   "telepon": "(021) 30026400",
+   "situs": "www.btpnsyariah.com",
+   "sandi": "547",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MULTIARTA SENTOSA",
+   "alamat": "Graha Bank MAS Lt. 3, Jl. Setiabudi Selatan Kav. 7-8, Jakarta Selatan",
+   "telepon": "(021) 5790 6006",
+   "situs": "www.bankmas.co.id",
+   "sandi": "548",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT SUPER BANK INDONESIA 7)",
+   "alamat": "Revenue Tower Lt. 28 dan Lt. 29 SCBD, Lot 13, District 8 Jl. Jend. Sudirman Kav. 52-53 Jakarta.",
+   "telepon": "(021) 50155550",
+   "situs": "www.superbank.id",
+   "sandi": "562",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK MANDIRI TASPEN",
+   "alamat": "Graha Mantap Jl. Proklamasi No.31 Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10330",
+   "telepon": "(021) 21231772",
+   "situs": "www.bankmandiritaspen.co.id",
+   "sandi": "564",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BANK VICTORIA INTERNATIONAL Tbk",
+   "alamat": "Gedung Graha BIP Lt.10 Jl. Gatot Subroto Kav. 23 Karet Semanggi, Setiabudi Jakarta Selatan 12930",
+   "telepon": "(021) 5228888",
+   "situs": "www.victoriabank.co.id",
+   "sandi": "566",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT ALLO BANK INDONESIA Tbk 3)",
+   "alamat": "Menara Bank Mega Lt5 dan 6, Jl. Kapten Tendean Kav. 12-14 A, Jakarta 12790",
+   "telepon": "021-7990671-021-79184705-021-79182387",
+   "situs": "www.allobank.com",
+   "sandi": "567",
+   "kelompok": "Bank Umum Swasta Nasional"
+  },
+  {
+   "nama": "PT BPD JAWA BARAT DAN BANTEN Tbk",
+   "alamat": "Jl. Naripan No. 12 - 14, Bandung 40111",
+   "telepon": "(022) 4234868, 4230223",
+   "situs": "www.bankbjb.co.id",
+   "sandi": "110",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD DKI",
+   "alamat": "Gedung Prasada Sasana Karya Jl. Suryopranoto No.8 Jakarta Pusat 10130",
+   "telepon": "(021) 806 55555",
+   "situs": "www.bankdki.co.id",
+   "sandi": "111",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD DAERAH ISTIMEWA YOGYAKARTA",
+   "alamat": "Jl. Tentara Pelajar No. 7, Yogyakarta",
+   "telepon": "(0274) 561614",
+   "situs": "www.bpddiy.co.id",
+   "sandi": "112",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD JAWA TENGAH",
+   "alamat": "Gedung Grinatha Lt.1-7 Jl. Pemuda No. 142, Semarang, Jawa Tengah 50132",
+   "telepon": "(024) 3547541, 3554025",
+   "situs": "www.bankjateng.co.id",
+   "sandi": "113",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD JAWA TIMUR Tbk",
+   "alamat": "Jl. Basuki Rahmat No. 98-104, Surabaya",
+   "telepon": "(031) 5310090-99",
+   "situs": "www.bankjatim.co.id",
+   "sandi": "114",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD JAMBI",
+   "alamat": "Jl. Jend. A. Yani No. 18, Telanaipura, Jambi",
+   "telepon": "(0741) 60665, 60416",
+   "situs": "www.bankjambi.co.id",
+   "sandi": "115",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BANK ACEH SYARIAH",
+   "alamat": "Jl. Mr. Mohd. Hasan No. 89 Batoh, Lamcot, Kec. Darul Imarah, Kota Banda Aceh, Provinsi Aceh - 23245.",
+   "telepon": "(0651) 22966 (hunting)",
+   "situs": "www.bankaceh.co.id",
+   "sandi": "116",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD SUMATERA UTARA",
+   "alamat": "Jl. Imam Bonjol No. 18, Medan 20152",
+   "telepon": "(061) 4155100",
+   "situs": "www.banksumut.co.id",
+   "sandi": "117",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BANK NAGARI",
+   "alamat": "Jl. Pemuda No. 21, Padang 25117",
+   "telepon": "(0751) 25055, 31577, 31578, 34115",
+   "situs": "www.banknagari.co.id",
+   "sandi": "118",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD RIAU KEPRI SYARIAH 5)",
+   "alamat": "Menara Dang Merdu BRK, Jl. Jend. Sudirman No. 462, Kota Pekanbaru",
+   "telepon": "(0761) 47070",
+   "situs": "www.brksyariah.co.id",
+   "sandi": "119",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD SUMATERA SELATAN DAN BANGKA BELITUNG",
+   "alamat": "Jl. Gubernur H. Ahmad Bastari No. 07 Kel. Silaberanti Kec. Seberang Ulu I Jakabaring Palembang",
+   "telepon": "(0711) 5228080",
+   "situs": "www.banksumselbabel.com",
+   "sandi": "120",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD LAMPUNG",
+   "alamat": "Jl. Wolter Monginsidi No. 182, Teluk Betung, Bandar Lampung 35211",
+   "telepon": "(0721) 487175",
+   "situs": "www.banklampung.co.id",
+   "sandi": "121",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD KALIMANTAN SELATAN",
+   "alamat": "Jl. Lambung Mangkurat No. 7, Banjarmasin 70111",
+   "telepon": "(0511) 3350725",
+   "situs": "www.bankkalsel.co.id",
+   "sandi": "122",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD KALIMANTAN BARAT",
+   "alamat": "Jl. Rahadi Usman No. 10, Pontianak 78117",
+   "telepon": "(0561) 732148, 736723",
+   "situs": "www.bankkalbar.co.id",
+   "sandi": "123",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD KALIMANTAN TIMUR DAN KALIMANTAN UTARA",
+   "alamat": "Jl. Jend. Sudirman No. 33, Samarinda",
+   "telepon": "(0541) 735500, 739562-67",
+   "situs": "www.bankaltimtara.co.id",
+   "sandi": "124",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD KALIMANTAN TENGAH",
+   "alamat": "Jl. RTA Milono No. 12, Palangka Raya 73111",
+   "telepon": "(0536) 3225602",
+   "situs": "www.bankkalteng.co.id",
+   "sandi": "125",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD SULAWESI SELATAN DAN SULAWESI BARAT",
+   "alamat": "Jl. Dr. Sam Ratulangi No. 16, Makassar 90125",
+   "telepon": "(0411) 859171",
+   "situs": "www.banksulselbar.co.id",
+   "sandi": "126",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD SULAWESI UTARA DAN GORONTALO",
+   "alamat": "Jl. Pierre Tendean No.100, Manado",
+   "telepon": "(0431) 888659",
+   "situs": "www.banksulutgo.co.id",
+   "sandi": "127",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BANK NTB SYARIAH",
+   "alamat": "Jl. Udayana, Dasan Agung - Mataram 83125 Indonesia",
+   "telepon": "(0370) 632177, 636331, 635332",
+   "situs": "www.bankntbsyariah.co.id",
+   "sandi": "128",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BANK PEMBANGUNAN DAERAH BALI",
+   "alamat": "Jl. Raya Puputan Niti Mandala, Renon, Denpasar",
+   "telepon": "(0361) 223301 - 05",
+   "situs": "www.bpdbali.co.id",
+   "sandi": "129",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD NUSA TENGGARA TIMUR",
+   "alamat": "Jl. W.J. Lalamentik No. 102, Kupang, Nusa Tenggara Timur, 85142",
+   "telepon": "(0380) 840555",
+   "situs": "www.bpdntt.co.id",
+   "sandi": "130",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD MALUKU DAN MALUKU UTARA",
+   "alamat": "Jl. Raya Pattimura 9, Ambon 97124",
+   "telepon": "(0911) 354214-354217",
+   "situs": "www.bankmalukumalut.co.id",
+   "sandi": "131",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD PAPUA",
+   "alamat": "Jl. Ahmad Yani 5-7, Jayapura 99111",
+   "telepon": "(0967) 532011 (hunting) 531546",
+   "situs": "https://www.bankpapua.co.id",
+   "sandi": "132",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD BENGKULU",
+   "alamat": "Jl. S. Parman Padang Jati Nomor 57, Kota Bengkulu",
+   "telepon": "(0736) 341170",
+   "situs": "www.bankbengkulu.co.id",
+   "sandi": "133",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD SULAWESI TENGAH",
+   "alamat": "Jl. St. Hasanuddin No. 20, Palu",
+   "telepon": "(0451) 424537, 429509",
+   "situs": "https://banksulteng.co.id/",
+   "sandi": "134",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD SULAWESI TENGGARA",
+   "alamat": "Gedung Tower Bank Sultra Jl. H. Abdullah Silondae Kel. Korumba, Kec. Mandonga Kota Kendari",
+   "telepon": "(0401) 3126549",
+   "situs": "www.banksultra.co.id",
+   "sandi": "135",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "PT BPD BANTEN Tbk",
+   "alamat": "Grha Bank Banten, Jl. Veteran No. 4, Cipare, Kota Serang, Provinsi Banten – 42117",
+   "telepon": "(0254) 7914966",
+   "situs": "www.bankbanten.co.id",
+   "sandi": "137",
+   "kelompok": "Bank Pembangunan Daerah"
+  },
+  {
+   "nama": "CITIBANK, N.A.",
+   "alamat": "Citibank Tower Lt. 8-11 Pacific Century Place SCBD Lot. 10 Jl. Jend. Sudirman No.52-53 Jakarta 12190",
+   "telepon": "(021) 5290 8478 / 8492 / 8538 / 8449 / 8093",
+   "situs": "www.citibank.co.id",
+   "sandi": "031",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "JP MORGAN CHASE BANK, NA",
+   "alamat": "Gedung The Energy Lt. 5, SCBD Lot 11A, JL. Jend. Sudirman Kav 52-53, Jakarta 12190",
+   "telepon": "(021) 52918000",
+   "situs": "www.jpmorgan.co.id",
+   "sandi": "032",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "BANK OF AMERICA, N.A",
+   "alamat": "SEQUIS TOWER LT 25,JL.JEND.SUDIRMAN NO. 71",
+   "telepon": "(021) 29553723",
+   "situs": "www.bankofamerica.co.id",
+   "sandi": "033",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "MUFG BANK, LTD",
+   "alamat": "Trinity Tower, 6-9 Fl., Jl. H.R. Rasuna Said Kav. C22 Blok IIB Jakarta 12940 Indonesia",
+   "telepon": "(021) 225538300, 30048200",
+   "situs": "www.mufg.co.id",
+   "sandi": "042",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "STANDARD CHARTERED BANK",
+   "alamat": "World Trade Centre 2 Lantai 3. JI. Jend. Sudirman Kav. 29-31, Jakarta 12920",
+   "telepon": "(021) 2555 0405",
+   "situs": "www.sc.com/id",
+   "sandi": "050",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "DEUTSCHE BANK AG",
+   "alamat": "Deutsche Bank Building, Jl. Imam Bonjol No. 80, Jakarta",
+   "telepon": "(021) 29644401",
+   "situs": "www.deutsche-bank.co.id/indonesia",
+   "sandi": "067",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "BANK OF CHINA (HONG KONG) LIMITED",
+   "alamat": "Tamara Center S.101, 102, 201 & 1101, JL. Jend. Sudirman Kav 24, Karet Setiabudi, Jakarta Selatan",
+   "telepon": "(021) 5205502",
+   "situs": "www.bankofchina.co.id",
+   "sandi": "069",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "1) Berdasarkan KDK No.4/KDK.03/2021 tanggal 27 Januari 2021, PT Bank Syariah Mandiri, PT Bank BRISyariah Tbk dan PT Bank BNI Syariah melakukan merger menjadi PT Bank Syariah Indonesia Tbk",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "2) PT Bank Net Indonesia Syariah Tbk berubah nama menjadi PT Bank Aladin Syariah Tbk berdasarkan Surat Keputusan OJK nomor KEP-42/PB.1/2021 tanggal 3 Juni 2021",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "3) PT Bank Harda Internasional Tbk berubah nama menjadi PT Allo Bank Indonesia Tbk berdasarkan Surat Keputusan OJK nomor KEP-48/PB.1/2021 tanggal 30 Juni 2021",
+   "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
+  },
+  {
+   "nama": "6) PT Bank Bisnis Internasional Tbk terdapat perubahan izin usaha menjadi PT Krom Bank Indonesia Tbk berdasarkan Keputusan OJK No. .KEP-54/PB.1/2022 tanggal 6 Oktober 2022",
+   "kelompok": "5) PT BPD Riau Kepri terdapat perubahan izin usaha menjadi PT BPD Riau Kepri Syariah berdasarkan Keputusan OJK No. KEP-93/D.03/2022 tanggal 4 Juli 2022S-8/PB.121/2023"
+  },
+  {
+   "nama": "9) UUS PT Bank Sinarmas, Tbk terdapat perubahan izin usaha menjadi PT Bank Nano Syariah berdasarkan KEP-61/D.03/2023 tanggal 23 Agustus 2023 tentang Pemberian Izin Usaha PT Bank Nano Syariah Hasil Pemisahan Unit Usaha Syariah dan Surat Otoritas Jasa Keuangan (OJK) No. SR-7/D.03/2023 tanggal 24 Agustus 2023 perihal Keputusan Pemberian Izin Usaha PT Bank Nano Syariah sebagai Bank Umum Syariah Hasil Pemisahan Unit Usaha Syariah",
+   "kelompok": "8) PT Bank Bank Mayora terdapat perubahan izin usaha menjadi PT Bank Hibank Indonesia berdasarkan Keputusan OJK No. KEPR-34/D.03/2023 tanggal 17 Mei 2023"
+  },
+  {
+   "nama": "11) PT Bank KB Bukopin Tbk menjadi PT Bank KB Indonesia Tbk berdasarkan KEP-54/D.03/2025 tanggal 11 Agustus 2025 tentang Penetapan Penggunaan Izin Usaha atas Nama PT Bank KB Bukopin Tbk Menjadi Izin Usaha Atas Nama PT Bank KB Indonesia Tbk",
+   "kelompok": "10) PT Bank Jasa Jakarta berubah nama menjadi PT Bank Saqu Indonesia berdasarkan KEP-27/D.03/2025 Tentang Penetapan Penggunaan Izin Usaha Atas Nama PT Bank Jasa Jakarta Menjadi Atas Nama PT Bank Saqu Indonesia"
+  }
+ ]
+}
