@@ -7,7 +7,7 @@ import { lucide } from './icons.js';
 import { develop } from './ui.js';
 import {
   METRICS, groupLabel, valueAt, yoyAt, fmtMetric, growthTag, metricLabel, tick, star,
-  qLabel, qShort, qSpan, prevYearQ, quarterProfit, sizeAt, profileUrl
+  qLabel, qShort, qSpan, prevYearQ, quarterProfit, sizeAt, profileUrl, mIcon, groupIcon, gBadge
 } from './bank.js';
 
 export const MAX = 3;
@@ -137,7 +137,7 @@ export function renderBanding(data) {
   st.q = pickQuarter(selected(), QS, p.get('q'));
   if (TREND.includes(p.get('ukuran'))) st.metric = p.get('ukuran');
 
-  $('#cmp-metric').innerHTML = TREND.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${k === 'laba' ? 'Laba per kuartal' : M[k].label}</button>`).join('');
+  $('#cmp-metric').innerHTML = TREND.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${mIcon(k)}${k === 'laba' ? 'Laba per kuartal' : M[k].label}</button>`).join('');
   $('#cmp-metric').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { st.metric = b.dataset.v; drawTrend(); sync(); } });
   $('#cmp-quarter').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { st.q = b.dataset.v; draw(false); } });
   $('#cmp-picks').addEventListener('click', (e) => {
@@ -212,7 +212,7 @@ function drawSlots(sel) {
     const span = qs.length > 1 ? `${qLabel(qs[0])}–${qLabel(qs[qs.length - 1])}` : qs.length ? `Baru ${qLabel(qs[0])}` : 'Belum ada angka';
     html.push(`<article class="cmp-slot filled" style="--c:${COLORS[i]}">
       <div class="cs-top">${logoImg(b, 'logo-sm')}<button type="button" class="cs-x" data-remove="${esc(b.kode)}" aria-label="Hapus ${esc(b.nama)} dari perbandingan">${lucide('x')}</button></div>
-      <div class="cs-name"><a href="${profileUrl(b.kode, st.q)}">${esc(b.nama)}</a><small>${esc(groupLabel(b))}</small></div>
+      <div class="cs-name"><a href="${profileUrl(b.kode, st.q)}">${esc(b.nama)}</a><small>${groupIcon(b.grup)}${esc(groupLabel(b))}</small></div>
       <div class="cs-meta"><span>${esc(span)}</span>${size(b)}</div>
     </article>`);
   });
@@ -320,9 +320,9 @@ function drawVerdict(sel) {
   host.innerHTML = `<div class="vd-lead"><small>${qLabel(st.q)}, ${qSpan(st.q)}</small><div class="vd-scores">${lead}</div></div>
     ${Object.keys(TITLE).map((key) => {
       const w = wins[key];
-      if (!w) return `<div class="vd off"><small>${TITLE[key]}</small><b>–</b><span>angka belum lengkap</span></div>`;
+      if (!w) return `<div class="vd off"><small>${mIcon(key)}${TITLE[key]}</small><b>–</b><span>angka belum lengkap</span></div>`;
       const names = w.kode.map((k) => byKode(k).nama);
-      return `<div class="vd"><small>${TITLE[key]}</small><b>${w.kode.map(dot).join('')}${esc(names.join(' & '))}</b><span>${fmtMetric(key, w.v)}</span></div>`;
+      return `<div class="vd"><small>${mIcon(key)}${TITLE[key]}</small><b>${w.kode.map(dot).join('')}${esc(names.join(' & '))}</b><span>${fmtMetric(key, w.v)}</span></div>`;
     }).join('')}`;
 }
 
@@ -337,7 +337,7 @@ function drawTable(sel) {
     return;
   }
   const wins = sel.length > 1 ? winners(sel, q) : {};
-  const head = `<div class="ct-row ct-head" role="row"><div class="ct-label" role="columnheader"><span class="sr-only">Ukuran</span></div>${sel.map((b) => `<div class="ct-bank" role="columnheader" style="--c:${colorOf(b.kode)}">${logoImg(b, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${esc(groupLabel(b))}</small></span></div>`).join('')}</div>`;
+  const head = `<div class="ct-row ct-head" role="row"><div class="ct-label" role="columnheader"><span class="sr-only">Ukuran</span></div>${sel.map((b) => `<div class="ct-bank" role="columnheader" style="--c:${colorOf(b.kode)}">${logoImg(b, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${groupIcon(b.grup)}${esc(groupLabel(b))}</small></span></div>`).join('')}</div>`;
   const rows = METRICS.map((m) => {
     const vals = sel.map((b) => valueAt(b, q, m.key));
     const max = Math.max(...vals.filter((v) => v != null).map(Math.abs), 1e-6);
@@ -352,7 +352,7 @@ function drawTable(sel) {
         <span class="ct-g">${growthTag(m.key, yoyAt(b, q, m.key))}</span>
       </div>`;
     }).join('');
-    return `<div class="ct-row" role="row"><div class="ct-label" role="rowheader"><b>${esc(m.label)}</b><small>${esc(SHORT[m.key])}</small></div>${cells}</div>`;
+    return `<div class="ct-row" role="row"><div class="ct-label" role="rowheader"><b>${mIcon(m.key)}${esc(m.label)}</b><small>${esc(SHORT[m.key])}</small></div>${cells}</div>`;
   }).join('');
   host.innerHTML = head + rows;
   const missing = sel.filter((b) => !has(b, q));

@@ -19,6 +19,15 @@ export const GROUP_NAME = { bumn: 'BUMN dan anak usahanya', swasta: 'Swasta nasi
 const GROUP_SHORT = { bumn: 'BUMN', swasta: 'swasta', asing: 'asing', bpd: 'BPD' };
 const GROUP_TITLE = { bumn: 'BUMN', swasta: 'Swasta', asing: 'Asing', bpd: 'BPD' };
 export const GROUPS = ['bumn', 'swasta', 'asing', 'bpd'];
+/** Ikon tiap kelompok: BUMN gedung pemerintahan, swasta gedung kantor, asing bola dunia, BPD penanda daerah. */
+export const GROUP_ICON = { bumn: 'landmark', swasta: 'building-2', asing: 'globe', bpd: 'map-pin' };
+/** Ikon kelompok sebaris (warna kelompok), untuk label dan tombol. */
+export const groupIcon = (g) => lucide(GROUP_ICON[g] || 'layers', `lc gi g-${g}`);
+/** Lencana bulat berwarna kelompok di pojok kartu bank. */
+export const gBadge = (g, cls = '') => `<span class="gbadge g-${g}${cls ? ` ${cls}` : ''}" title="${GROUP_NAME[g] || ''}">${lucide(GROUP_ICON[g] || 'layers')}</span>`;
+/** Ikon tiap ukuran keuangan. */
+export const METRIC_ICON = { aset: 'vault', kredit: 'hand-coins', dpk: 'piggy-bank', laba: 'banknote', npl: 'triangle-alert', car: 'shield-check', casa: 'wallet', ldr: 'scale', nim: 'percent' };
+export const mIcon = (key) => lucide(METRIC_ICON[key] || 'gauge', 'lc mi');
 /** Keterangan kelompok satu bank; bank asing menyebut negara asal pemiliknya. */
 export const groupLabel = (b) => (b.grup === 'asing' && b.milik ? (b.cabang ? `Cabang bank ${b.milik}` : `Milik ${b.milik}`) : GROUP_NAME[b.grup]);
 
@@ -184,7 +193,7 @@ function rankBars(list, key, q, mark = null, limit = Infinity) {
     const v = valueAt(b, q, key);
     return `<li><a class="bb${b.kode === mark ? ' on' : ''}" href="${profileUrl(b.kode, q)}"${b.kode === mark ? ' aria-current="page"' : ''}>
       <span class="bb-rank">${m.good ? i + 1 : ''}</span>${logoImg(b, 'logo-xs')}
-      <span class="bb-name"><b>${esc(b.nama)}</b><small>${esc(groupLabel(b))}</small></span>
+      <span class="bb-name"><b>${esc(b.nama)}</b><small>${groupIcon(b.grup)}${esc(groupLabel(b))}</small></span>
       <span class="bar${v < 0 ? ' neg' : ''}"><i style="width:${Math.max(2, (Math.abs(v) / max) * 100).toFixed(1)}%"></i></span>
       <span class="bb-val"><b>${fmtMetric(key, v)}${star(b, q, key)}</b>${growthTag(key, yoyAt(b, q, key))}</span>
     </a></li>`;
@@ -206,8 +215,8 @@ export function renderBanks(data) {
   if (BANK_GROUPS.some((g) => g.key === p.get('grup'))) state.group = p.get('grup');
   if (PICKABLE.includes(p.get('ukuran'))) state.metric = p.get('ukuran');
   state.quarter = QS.includes(p.get('q')) ? p.get('q') : defaultQuarter(BANKS, QS);
-  $('#bank-group').innerHTML = BANK_GROUPS.map((g) => `<button type="button" data-v="${g.key}" aria-pressed="false">${g.name}<small>${g.key === 'semua' ? BANKS.length : BANKS.filter((b) => b.grup === g.key).length}</small></button>`).join('');
-  $('#bank-metric').innerHTML = PICKABLE.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${M[k].label}</button>`).join('');
+  $('#bank-group').innerHTML = BANK_GROUPS.map((g) => `<button type="button" data-v="${g.key}" aria-pressed="false">${g.key === 'semua' ? lucide('layers', 'lc gi') : groupIcon(g.key)}${g.name}<small>${g.key === 'semua' ? BANKS.length : BANKS.filter((b) => b.grup === g.key).length}</small></button>`).join('');
+  $('#bank-metric').innerHTML = PICKABLE.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${mIcon(k)}${M[k].label}</button>`).join('');
   $('#bank-quarter').innerHTML = QS.map((q) => {
     const n = BANKS.filter((b) => b.kuartal?.[q]).length;
     return `<button type="button" data-v="${q}" aria-pressed="false" title="${n} bank punya angka ${qLabel(q)}">${qShort(q)}</button>`;
@@ -253,9 +262,9 @@ function draw(animateCards = true) {
   // Kartu bank yang punya angka di kuartal ini, terbesar dulu.
   const cards = state.allCards ? reported : reported.slice(0, CARD_LIMIT);
   $('#bank-cards').innerHTML = cards.map((b) => {
-    const stat = (k) => `<span><small>${metricLabel(b, k)}</small><b>${fmtMetric(k, valueAt(b, q, k))}${star(b, q, k)}</b>${growthTag(k, yoyAt(b, q, k))}</span>`;
+    const stat = (k) => `<span><small>${mIcon(k)}${metricLabel(b, k)}</small><b>${fmtMetric(k, valueAt(b, q, k))}${star(b, q, k)}</b>${growthTag(k, yoyAt(b, q, k))}</span>`;
     return `<a class="bcard" href="${profileUrl(b.kode, q)}">
-      <span class="bc-head">${logoImg(b, 'logo-sm')}<span class="bc-title"><b>${esc(b.nama)}</b><small>${esc(b.grup === 'asing' ? groupLabel(b) : tickerOf(b) || GROUP_NAME[b.grup])} · ${qLabel(q)}</small></span><span class="bc-go">${lucide('arrow-up-right')}</span></span>
+      <span class="bc-head">${logoImg(b, 'logo-sm')}<span class="bc-title"><b>${esc(b.nama)}</b><small>${esc(b.grup === 'asing' ? groupLabel(b) : tickerOf(b) || GROUP_NAME[b.grup])} · ${qLabel(q)}</small></span>${gBadge(b.grup)}</span>
       <span class="bc-stats">${stat('laba')}${stat('kredit')}${stat('npl')}${stat('car')}</span>
     </a>`;
   }).join('');
@@ -356,14 +365,20 @@ export function renderProfile(data) {
   const first = qsWith[0];
   const src = (u) => esc(DATA.sumber?.[u] || u);
   const ticker = tickerOf(b);
-  $('#pf-id').innerHTML = `<div class="pf-title">${logoImg(b, 'logo-lg')}<div><span class="kicker">${esc(b.grup === 'asing' && b.milik ? `${GROUP_NAME.asing} · ${b.milik}${b.cabang ? ', kantor cabang' : ''}` : GROUP_NAME[b.grup])}</span><h1 class="pf-name">${esc(b.nama)}</h1><p class="sub">${esc(b.lengkap)}${ticker ? ` · kode saham ${esc(ticker)}` : ''}</p></div></div>
+  // Tiga bank sekelompok yang ukurannya paling dekat, untuk diadu langsung.
+  const qq = b.kuartal?.[q0] ? q0 : latestOf(b, QS);
+  const lg = (x) => Math.log(Math.max(sizeAt(x, qq), 1e-3));
+  const quick = BANKS.filter((x) => x.grup === b.grup && x !== b && x.kuartal?.[qq])
+    .sort((x, y) => Math.abs(lg(x) - lg(b)) - Math.abs(lg(y) - lg(b))).slice(0, 3);
+  $('#pf-id').innerHTML = `${gBadge(b.grup, 'corner')}<div class="pf-title">${logoImg(b, 'logo-lg')}<div><span class="kicker">${groupIcon(b.grup)}${esc(b.grup === 'asing' && b.milik ? `${GROUP_NAME.asing} · ${b.milik}${b.cabang ? ', kantor cabang' : ''}` : GROUP_NAME[b.grup])}</span><h1 class="pf-name">${esc(b.nama)}</h1><p class="sub">${esc(b.lengkap)}${ticker ? ` · kode saham ${esc(ticker)}` : ''}</p></div></div>
     <p class="pf-profile">${esc(b.profil)}</p>
     ${b.terbaru ? `<p class="bd-news"><b>${lucide('trending-up')}Kabar terbaru</b>${esc(b.terbaru)}</p>` : ''}
     ${b.keterangan ? `<p class="bd-key">${lucide('info')}<span>${esc(b.keterangan)}</span></p>` : ''}
-    <div class="pf-actions">${ticker ? `<a class="btn dark sm" href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/${esc(ticker)}" target="_blank" rel="noopener">Laporan di IDX ${lucide('arrow-up-right')}</a>` : ''}${b.domain ? `<a class="btn ${ticker ? 'light' : 'dark'} sm" href="https://${esc(b.domain)}" target="_blank" rel="noopener">Situs bank ${lucide('arrow-up-right')}</a>` : ''}<a class="btn light sm" href="${pairUrl([b.kode])}">${lucide('scale')}Adu dengan bank lain</a><a class="btn light sm" href="${compareUrl(b.grup, prof.q)}">Semua bank ${esc(GROUP_SHORT[b.grup])} ${lucide('arrow-right')}</a></div>`;
+    <div class="pf-actions">${ticker ? `<a class="btn dark sm" href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/${esc(ticker)}" target="_blank" rel="noopener">Laporan di IDX ${lucide('arrow-up-right')}</a>` : ''}${b.domain ? `<a class="btn ${ticker ? 'light' : 'dark'} sm" href="https://${esc(b.domain)}" target="_blank" rel="noopener">Situs bank ${lucide('arrow-up-right')}</a>` : ''}<a class="btn light sm" href="${pairUrl([b.kode])}">${lucide('scale')}Adu dengan bank lain</a><a class="btn light sm" href="${compareUrl(b.grup, prof.q)}">Semua bank ${esc(GROUP_SHORT[b.grup])} ${lucide('arrow-right')}</a></div>
+    ${quick.length ? `<div class="pf-quick"><small>${lucide('scale', 'lc mi')}Adu cepat dengan bank sepadan</small><div>${quick.map((x) => `<a class="chip" href="${pairUrl([b.kode, x.kode])}">${logoImg(x, 'logo-xs')}${esc(x.nama)}</a>`).join('')}</div></div>` : ''}`;
   $('#pf-quarter').innerHTML = qsWith.map((x) => `<button type="button" data-v="${x}" aria-pressed="false">${qShort(x)}</button>`).join('');
   $('#pf-quarter').hidden = qsWith.length < 2;
-  $('#pf-metric').innerHTML = PROFILE_TREND.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${k === 'laba' ? (qsWith.length > 1 ? 'Laba per kuartal' : 'Laba') : metricLabel(b, k)}</button>`).join('');
+  $('#pf-metric').innerHTML = PROFILE_TREND.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${mIcon(k)}${k === 'laba' ? (qsWith.length > 1 ? 'Laba per kuartal' : 'Laba') : metricLabel(b, k)}</button>`).join('');
   onSeg($('#pf-quarter'), (v) => { prof.q = v; drawProfile(); });
   onSeg($('#pf-metric'), (v) => { prof.metric = v; drawProfile(false); });
   $('#pf-stats-sub').addEventListener('click', (e) => { const x = e.target.closest('[data-q]'); if (x) { prof.q = x.dataset.q; drawProfile(); } });
@@ -392,7 +407,7 @@ function drawProfile(all = true) {
     const stat = (k) => {
       const r = rankIn(peers, k, b.kode, q);
       const g = yoyAt(b, q, k);
-      return `<div class="ds"><span class="stat-label">${metricLabel(b, k)}</span>
+      return `<div class="ds"><span class="stat-label">${mIcon(k)}${metricLabel(b, k)}</span>
         <b>${fmtMetric(k, valueAt(b, q, k))}${star(b, q, k)}</b>
         <span class="ds-foot">${g != null ? growthTag(k, g) : ''}${r && r.of > 1 ? `<small>ke-${r.rank} dari ${r.of} bank ${GROUP_SHORT[b.grup]}</small>` : ''}</span></div>`;
     };
@@ -425,7 +440,7 @@ export function renderHome(data) {
     { key: 'laba', label: `Laba tertinggi, ${qSpan(q)}` },
     { key: 'npl', label: 'NPL terendah' }
   ].map((f) => ({ ...f, b: top(f.key) })).filter((f) => f.b);
-  $('#hero-facts').innerHTML = facts.map((f) => `<a class="fact" href="${profileUrl(f.b.kode, q)}"><small>${esc(f.label)}</small><b>${fmtMetric(f.key, valueAt(f.b, q, f.key))}</b><span>${logoImg(f.b, 'logo-xs')}${esc(f.b.nama)}</span></a>`).join('');
+  $('#hero-facts').innerHTML = facts.map((f) => `<a class="fact" href="${profileUrl(f.b.kode, q)}">${gBadge(f.b.grup, 'corner')}<small>${mIcon(f.key)}${esc(f.label)}</small><b>${fmtMetric(f.key, valueAt(f.b, q, f.key))}</b><span>${logoImg(f.b, 'logo-xs')}${esc(f.b.nama)}</span></a>`).join('');
   $('#hero-facts-q').textContent = `${qLabel(q)}, ${BANKS.filter((b) => b.kuartal?.[q]).length} bank`;
 
   const COLS = ['kredit', 'laba', 'npl', 'car'];
@@ -437,8 +452,8 @@ export function renderHome(data) {
     const best = bestOf(all, q);
     const more = ordered.length - SHOW;
     return `<div class="card so">
-      <div class="so-head"><div><span class="kicker">${esc(GROUP_NAME[g])}</span><h3>${all.length} bank, ${qLabel(q)}</h3></div><a class="so-go" href="${compareUrl(g, q)}" aria-label="Bandingkan bank ${esc(GROUP_SHORT[g])}">${lucide('arrow-right')}</a></div>
-      <div class="table-wrap"><table class="tbl so-tbl"><thead><tr><th>Bank</th>${COLS.map((k) => `<th class="num">${M[k].label.replace('Laba bersih', 'Laba').replace('Total aset', 'Aset')}</th>`).join('')}</tr></thead>
+      <div class="so-head"><div><span class="kicker">${groupIcon(g)}${esc(GROUP_NAME[g])}</span><h3>${all.length} bank, ${qLabel(q)}</h3></div><a class="so-go" href="${compareUrl(g, q)}" aria-label="Bandingkan bank ${esc(GROUP_SHORT[g])}">${lucide('arrow-right')}</a></div>
+      <div class="table-wrap"><table class="tbl so-tbl"><thead><tr><th>Bank</th>${COLS.map((k) => `<th class="num">${mIcon(k)}${M[k].label.replace('Laba bersih', 'Laba').replace('Total aset', 'Aset')}</th>`).join('')}</tr></thead>
       <tbody>${ordered.slice(0, SHOW).map((b) => `<tr><td><a class="tb-name" href="${profileUrl(b.kode, q)}">${logoImg(b, 'logo-xs')}<b>${esc(b.nama)}</b></a></td>${COLS.map((k) => { const v = valueAt(b, q, k); return `<td class="num${best[k] != null && v === best[k] ? ' best' : ''}">${fmtMetric(k, v)}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>
       ${more > 0 ? `<a class="so-more" href="${compareUrl(g, q)}">dan ${more} bank lainnya ${lucide('arrow-right')}</a>` : ''}
     </div>`;

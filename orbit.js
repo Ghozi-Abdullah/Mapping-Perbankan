@@ -39,11 +39,11 @@ const rand = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed 
  * host: wadah ruang 3D. keep: elemen di tengah panggung yang tidak boleh tertutup (opsional).
  * Mengembalikan { focus(grup|null) } untuk meredupkan bank di luar kelompok terpilih.
  */
-export function orbit(host, banks, { onPick, back, keep = null }) {
+export function orbit(host, banks, { onPick, back, keep = null, corner = () => '' }) {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   host.innerHTML = `<div class="orbit-stage">${banks.map((b) => `
     <button class="tile" type="button" data-kode="${esc(b.kode)}" data-grup="${esc(b.grup)}" aria-label="${esc(b.nama)}: lihat laporan">
-      <span class="face front">${logoImg(b)}<small>${esc(LOGOS[b.kode]?.mark || !LOGOS[b.kode] ? b.nama : b.kode)}</small></span>
+      <span class="face front">${corner(b)}${logoImg(b)}<small>${esc(LOGOS[b.kode]?.mark || !LOGOS[b.kode] ? b.nama : b.kode)}</small></span>
       <span class="face back">${back(b)}</span>
     </button>`).join('')}</div>`;
   const tiles = [...host.querySelectorAll('.tile')];

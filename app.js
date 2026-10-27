@@ -5,7 +5,8 @@ import {
   totalSeries, groupRows, provinceValues, commonLatest
 } from './logic.js';
 import { orbit, useExtraLogos } from './orbit.js';
-import { renderBanks, renderProfile, renderHome, orbitBanks, tileBack, qLabel, profileUrl } from './bank.js';
+import { renderBanks, renderProfile, renderHome, orbitBanks, tileBack, qLabel, profileUrl, gBadge } from './bank.js';
+import { lucide } from './icons.js';
 import { liquidSeg, edgeLight } from './ui.js';
 
 // Situs ini terdiri dari beberapa halaman; tiap halaman menandai dirinya di <body data-page="...">.
@@ -73,13 +74,13 @@ function renderStats() {
   const ldr = ratioSeries(kredit, simp);
   const casa = casaTotal();
   const cards = [
-    { label: 'Kredit seluruh bank', value: triliun(at(kredit, YM)), delta: deltaTag(yoy(kredit, YM)), note: 'dibanding setahun lalu', spark: lastN(kredit) },
-    { label: 'Simpanan masyarakat', value: triliun(at(simp, YM)), delta: deltaTag(yoy(simp, YM)), note: 'dibanding setahun lalu', spark: lastN(simp) },
-    { label: 'Kredit/simpanan', value: pct(at(ldr, YM)), delta: deltaTag(yoyPoints(ldr, YM), ' poin', true), note: 'perkiraan LDR', spark: lastN(ldr) },
-    { label: 'Dana murah (giro + tabungan)', value: pct(at(casa, YM)), delta: deltaTag(yoyPoints(casa, YM), ' poin', true), note: 'dari total simpanan', spark: lastN(casa) }
+    { icon: 'hand-coins', label: 'Kredit seluruh bank', value: triliun(at(kredit, YM)), delta: deltaTag(yoy(kredit, YM)), note: 'dibanding setahun lalu', spark: lastN(kredit) },
+    { icon: 'piggy-bank', label: 'Simpanan masyarakat', value: triliun(at(simp, YM)), delta: deltaTag(yoy(simp, YM)), note: 'dibanding setahun lalu', spark: lastN(simp) },
+    { icon: 'scale', label: 'Kredit/simpanan', value: pct(at(ldr, YM)), delta: deltaTag(yoyPoints(ldr, YM), ' poin', true), note: 'perkiraan LDR', spark: lastN(ldr) },
+    { icon: 'wallet', label: 'Dana murah (giro + tabungan)', value: pct(at(casa, YM)), delta: deltaTag(yoyPoints(casa, YM), ' poin', true), note: 'dari total simpanan', spark: lastN(casa) }
   ];
   $('#stats').innerHTML = cards.map((c) => `<div class="card stat">
-      <span class="stat-label">${esc(c.label)}</span>
+      <span class="stat-label"><span class="st-ic">${lucide(c.icon)}</span>${esc(c.label)}</span>
       <span class="stat-value">${esc(c.value)}</span>
       <span class="stat-foot">${c.delta}<span class="note">${esc(c.note)}</span></span>
       ${sparkline(c.spark, 220, 36)}
@@ -301,7 +302,7 @@ async function main() {
       setText('#hero-nbank', String(banks.bank.length));
       const stage = orbitBanks(banks, 16);
       setText('#orbit-count', `${stage.length} bank terbesar`);
-      orbit($('#orbit-field'), stage, { onPick: (kode) => { location.href = profileUrl(kode); }, back: (b) => tileBack(b, qs), keep: $('#orbit-core') });
+      orbit($('#orbit-field'), stage, { onPick: (kode) => { location.href = profileUrl(kode); }, back: (b) => tileBack(b, qs), keep: $('#orbit-core'), corner: (b) => gBadge(b.grup, 'corner') });
       renderHome(banks);
     } else {
       bankMissing();

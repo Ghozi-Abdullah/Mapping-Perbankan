@@ -4,6 +4,7 @@
 import { $, $$, esc } from './kit.js';
 import { lucide } from './icons.js';
 import { develop } from './ui.js';
+import { gBadge } from './bank.js';
 import { LOGO, logoSrc } from './logos-semua.js';
 
 export const GRUP = [
@@ -111,7 +112,9 @@ function card(b) {
   if (b.laporan) links.push(`<a class="btn dark sm" href="profil.html?kode=${esc(b.laporan)}">Laporan per kuartal ${lucide('arrow-right')}</a>`);
   if (situs) links.push(`<a class="btn light sm" href="${esc(url(situs))}" target="_blank" rel="noopener">Situs ${lucide('arrow-up-right')}</a>`);
   if (b.saham) links.push(`<a class="btn light sm" href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/${esc(b.saham)}" target="_blank" rel="noopener">IDX ${lucide('arrow-up-right')}</a>`);
-  return `<article class="dcard${b.laporan ? ' has-report' : ''}" id="b-${esc(b.id)}">
+  // Ikon kelompok sama dengan halaman perbandingan: bank swasta milik asing memakai ikon kelompok asing.
+  const groupKey = b.grup === 'swasta' && b.milik ? 'asing' : b.grup;
+  return `<article class="dcard${b.laporan ? ' has-report' : ''}" id="b-${esc(b.id)}">${gBadge(groupKey, 'corner')}
     <div class="dc-head">${logoBox(b)}<div class="dc-title"><h3>${esc(b.nama)}</h3><p>${esc(b.resmi)}</p></div></div>
     <div class="dc-tags">${tags.join('')}</div>
     ${meta.length ? `<dl class="dc-meta">${meta.join('')}</dl>` : ''}
