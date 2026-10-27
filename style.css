@@ -26,6 +26,8 @@
 }
 
 /* ---------- Dasar ---------- */
+/* Efek 3D (sampul dan halaman yang dibalik) boleh keluar sedikit dari kotaknya tanpa memunculkan gulir ke samping. */
+html, body { overflow-x: clip; }
 body {
   letter-spacing: -.01em; background-color: var(--bg);
   background-image:
@@ -310,7 +312,6 @@ a { text-decoration-color: var(--line-2); }
   font: inherit; font-size: 13.5px; font-weight: 600; color: var(--ink); cursor: pointer; appearance: none; -webkit-appearance: none;
 }
 .sw-pick select:focus-visible { outline: none; box-shadow: inset 0 0 0 1.5px var(--accent); }
-#pf-grid.one { grid-template-columns: minmax(0, 1fr); }
 .sw-label { margin-right: 2px; font-size: 12.5px; font-weight: 600; letter-spacing: 0; color: var(--ink-3); }
 .sw { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 6px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
 .sw:hover { box-shadow: var(--lift); transform: translateY(-1px); }
@@ -319,7 +320,6 @@ a { text-decoration-color: var(--line-2); }
 .sw.on { background: var(--accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent); }
 .sw.on > span:last-child { display: inline; color: var(--accent-ink); }
 
-.pf-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; align-items: stretch; }
 .pf-id { display: flex; flex-direction: column; gap: 14px; }
 .pf-title { display: flex; align-items: center; gap: 16px; min-width: 0; }
 .pf-title > div { min-width: 0; }
@@ -396,7 +396,6 @@ a { text-decoration-color: var(--line-2); }
   .display { max-width: 18ch; }
   .orbit-field { height: 440px; }
   .orbit-wrap { margin: 0 -24px; }
-  .pf-top { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 980px) {
   .prov-layout, .explain { grid-template-columns: minmax(0, 1fr); }
@@ -775,4 +774,223 @@ a { text-decoration-color: var(--line-2); }
   .fact > small { padding-right: 0; }
   .pf-id { padding-right: 20px; }
   .pf-id .gbadge.corner { top: 14px; right: 14px; width: 32px; height: 32px; }
+}
+
+/* ---------- Laporan bank sebagai buku (profil.html, book.js) ---------- */
+.book { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
+.book-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; }
+.book-tabs { display: flex; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 5px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
+.book-tabs::-webkit-scrollbar { display: none; }
+.book-tabs button { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: none; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ink-2); white-space: nowrap; transition: background .2s, color .2s; }
+.book-tabs button .lc { width: 16px; height: 16px; }
+.book-tabs button:hover { color: var(--accent); }
+.book-tabs [aria-selected="true"], .book-tabs [aria-selected="true"]:hover { background: var(--accent); color: #fff; }
+.book-nav { display: flex; align-items: center; gap: 8px; }
+.book-folio { margin-right: 4px; font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.book-btn { display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; background: var(--card); box-shadow: var(--shadow); color: var(--ink); cursor: pointer; transition: background .2s, color .2s; }
+.book-btn:hover:not(:disabled) { background: var(--accent); color: #fff; }
+.book-btn:disabled { opacity: .4; cursor: default; }
+
+/* Sampul biru bermotif belah ketupat membingkai halaman; tumpukan halaman terlihat di tepi bawah. */
+.book-body {
+  position: relative; padding: 10px; border-radius: 28px; perspective: 2600px;
+  background-color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='26'%3E%3Cpath d='M9 0l9 13-9 13-9-13z' fill='%23fff' fill-opacity='.1'/%3E%3C/svg%3E");
+  background-size: 18px 26px;
+  box-shadow: 0 34px 70px -40px rgba(19, 33, 46, .55);
+}
+.spread {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 560px;
+  border-radius: 19px; background: #FDFDFB;
+  box-shadow: 0 3px 0 -1px #EEF1F4, 0 6px 0 -2px #DFE5EB, 0 9px 0 -3px #EEF1F4;
+}
+/* Punggung buku di tengah bentangan. */
+.spread::before {
+  content: ''; position: absolute; z-index: 1; top: 0; bottom: 0; left: 50%; width: 70px; transform: translateX(-50%); pointer-events: none;
+  background: linear-gradient(90deg, rgba(19, 33, 46, 0), rgba(19, 33, 46, .06) 42%, rgba(19, 33, 46, .16) 50%, rgba(19, 33, 46, .06) 58%, rgba(19, 33, 46, 0));
+}
+.spread.one { grid-template-columns: minmax(0, 1fr); }
+.spread.one::before { display: none; }
+.book .page { position: relative; display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 30px 36px 52px; }
+.book .page.left { border-radius: 19px 0 0 19px; }
+.book .page.right { border-radius: 0 19px 19px 0; }
+.spread.one .page.right { border-radius: 19px; }
+.book .page::after { content: attr(data-folio); position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.book .card-head { margin-bottom: 0; }
+.book .pf-id { padding-right: 76px; }
+.book .pf-id .gbadge.corner { top: 26px; right: 30px; }
+.book .pf-nums .qseg { margin-bottom: 0; }
+.page-tools { display: grid; gap: 6px; }
+.page-tools > span { font-size: 12.5px; font-weight: 600; color: var(--ink-3); }
+.page-tools .seg { justify-self: start; }
+
+/* Sudut halaman yang terlipat: klik untuk membalik. */
+.dog { position: absolute; z-index: 4; bottom: 10px; width: 40px; height: 40px; padding: 0; border: 0; cursor: pointer; background: none; transition: width .25s cubic-bezier(.34, 1.56, .64, 1), height .25s cubic-bezier(.34, 1.56, .64, 1); }
+.dog.next { right: 10px; border-radius: 0 0 19px 0; background: linear-gradient(to top left, transparent 0 49%, rgba(19, 33, 46, .22) 50%, #E7ECF1 53%, #FDFDFB 78%); }
+.dog.prev { left: 10px; border-radius: 0 0 0 19px; background: linear-gradient(to top right, transparent 0 49%, rgba(19, 33, 46, .22) 50%, #E7ECF1 53%, #FDFDFB 78%); }
+.dog:hover { width: 58px; height: 58px; }
+.dog:disabled { display: none; }
+.dog:focus-visible { outline-offset: -4px; }
+
+/* Lembar yang sedang dibalik. */
+.leaf { position: absolute; z-index: 6; top: 10px; bottom: 10px; transform-style: preserve-3d; pointer-events: none; }
+.leaf.cover { z-index: 5; }
+.leaf.left, .leaf.half.back { left: 10px; width: calc(50% - 10px); }
+.leaf.right, .leaf.half.fwd { left: 50%; width: calc(50% - 10px); }
+.leaf.whole { left: 10px; right: 10px; }
+.leaf-face { position: absolute; inset: 0; overflow: hidden; background: #FDFDFB; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.leaf-face > .page { height: 100%; }
+.leaf-face > .spread { min-height: 100%; box-shadow: none; }
+.leaf.left .leaf-face, .leaf.half.back .leaf-face.front, .leaf.half.fwd .leaf-face.back { border-radius: 19px 0 0 19px; }
+.leaf.right .leaf-face, .leaf.half.fwd .leaf-face.front, .leaf.half.back .leaf-face.back { border-radius: 0 19px 19px 0; }
+.leaf.whole .leaf-face { border-radius: 19px; }
+.leaf-face.back { transform: rotateY(180deg); }
+.leaf-face::after { content: ''; position: absolute; inset: 0; opacity: 0; pointer-events: none; background: linear-gradient(90deg, rgba(19, 33, 46, .22), rgba(19, 33, 46, 0) 70%); }
+.leaf.half.fwd .leaf-face.front::after, .leaf.half.back .leaf-face.back::after { background: linear-gradient(90deg, rgba(19, 33, 46, .22), rgba(19, 33, 46, 0) 70%); }
+.leaf.half.back .leaf-face.front::after, .leaf.half.fwd .leaf-face.back::after { background: linear-gradient(270deg, rgba(19, 33, 46, .22), rgba(19, 33, 46, 0) 70%); }
+.leaf.go .leaf-face::after { animation: leaf-shade .82s ease-in-out; }
+@keyframes leaf-shade { 50% { opacity: 1; } }
+.leaf.half { transition: transform .82s cubic-bezier(.45, .05, .2, 1); box-shadow: none; }
+.leaf.half.fwd { transform-origin: left center; }
+.leaf.half.fwd.go { transform: rotateY(-180deg); }
+.leaf.half.back { transform-origin: right center; }
+.leaf.half.back.go { transform: rotateY(180deg); }
+.leaf.whole { transition: transform .82s cubic-bezier(.45, .05, .2, 1), opacity .82s ease-in; }
+.leaf.whole.fwd { transform-origin: left center; }
+.leaf.whole.fwd.go { transform: rotateY(-95deg); opacity: 0; }
+.leaf.whole.back { transform-origin: right center; }
+.leaf.whole.back.go { transform: rotateY(95deg); opacity: 0; }
+
+@media (max-width: 980px) {
+  .book .page { padding: 26px 26px 50px; }
+}
+@media (max-width: 720px) {
+  .book-bar { flex-direction: column; align-items: stretch; }
+  .book-tabs { width: 100%; }
+  .book-nav { justify-content: space-between; }
+  .book-body { padding: 7px; border-radius: 24px; margin: 0 -4px; }
+  .spread { grid-template-columns: minmax(0, 1fr); min-height: 0; border-radius: 18px; }
+  .spread::before { display: none; }
+  .book .page { padding: 22px 18px 44px; border-radius: 0; }
+  .book .page.left { border-radius: 18px 18px 0 0; }
+  .book .page.right { border-radius: 0 0 18px 18px; border-top: 1px dashed var(--line-2); }
+  .spread.one .page.right { border-top: 0; }
+  .book .pf-id { padding-right: 18px; }
+  .book .pf-id .gbadge.corner { top: 18px; right: 18px; }
+  .leaf { top: 7px; bottom: 7px; }
+  .leaf.whole { left: 7px; right: 7px; }
+  .dog { bottom: 7px; }
+  .dog.next { right: 7px; } .dog.prev { left: 7px; }
+}
+
+/* ---------- Adu bank: buku terbuka (2 bank) dan brosur lipat tiga (3 bank) ---------- */
+.card.bookish { padding: 0; background: none; box-shadow: none; }
+.card.bookish::after { display: none; }
+.card.bookish > .card-head { padding: 0 4px; }
+.cover-pattern, .cb {
+  background-color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='26'%3E%3Cpath d='M9 0l9 13-9 13-9-13z' fill='%23fff' fill-opacity='.1'/%3E%3C/svg%3E");
+  background-size: 18px 26px;
+}
+.cb { position: relative; padding: 10px; border-radius: 28px; perspective: 2000px; box-shadow: 0 34px 70px -40px rgba(19, 33, 46, .55); }
+.cb-row { display: grid; grid-template-columns: minmax(0, 1fr) 200px minmax(0, 1fr); background: #FDFDFB; }
+.cb-row.cb-head { border-radius: 19px 19px 0 0; }
+/* Punggung buku: bayangan di kolom tengah, menyambung dari baris ke baris. */
+.cb-mid, .cb-folio {
+  background-image: linear-gradient(90deg, rgba(19, 33, 46, 0), rgba(19, 33, 46, .045) 34%, rgba(19, 33, 46, .14) 50%, rgba(19, 33, 46, .045) 66%, rgba(19, 33, 46, 0));
+}
+.cb-mid { display: grid; align-content: center; justify-items: center; gap: 1px; padding: 10px 12px; text-align: center; }
+.cb-mid b { font-size: 13.5px; font-weight: 700; }
+.cb-mid b .lc.mi { width: 15px; height: 15px; vertical-align: -3px; }
+.cb-mid small { font-size: 11px; line-height: 1.3; color: var(--ink-3); }
+.cb-vs { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--card); box-shadow: var(--shadow); font-size: 14px; font-weight: 700; color: var(--accent); }
+.cb-side { display: grid; align-items: center; gap: 6px 10px; min-width: 0; padding: 14px 26px; border-bottom: 1px solid var(--line); }
+.cb-row:nth-last-child(2) .cb-side { border-bottom: 0; }
+.cb-side.a { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'g v' 'bar bar'; }
+.cb-side.b { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: 'v g' 'bar bar'; }
+.cb-side.a .cb-g { grid-area: g; justify-self: end; }
+.cb-side.b .cb-g { grid-area: g; justify-self: start; }
+.cb-val { grid-area: v; display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; min-width: 0; }
+.cb-side.a .cb-val { justify-content: flex-end; text-align: right; flex-direction: row-reverse; }
+.cb-val b { font-size: 18px; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cb-alt { font-size: 11px; font-weight: 600; color: var(--ink-3); }
+.cb-best { display: inline-flex; align-items: center; gap: 3px; font-style: normal; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+.cb-best .lc { width: 13px; height: 13px; stroke-width: 3; }
+.best .cb-val b { color: var(--accent); }
+.none .cb-val b { color: var(--ink-3); font-weight: 500; }
+.cb-bar { grid-area: bar; display: flex; height: 7px; border-radius: 999px; background: var(--bg-2); overflow: hidden; }
+.cb-side.a .cb-bar { justify-content: flex-end; }
+.cb-bar i { display: block; height: 100%; border-radius: 999px; background: var(--c); transition: width .5s cubic-bezier(.2, .8, .2, 1); }
+.cb-bar.neg i { background: var(--bad); }
+.cb-bar.blank { background: repeating-linear-gradient(90deg, var(--bg-2) 0 6px, transparent 6px 10px); }
+.cb-head .cb-side { padding-top: 22px; padding-bottom: 16px; border-bottom: 3px solid var(--c); }
+.cb-who { display: flex !important; align-items: center; gap: 12px; }
+.cb-who.a { flex-direction: row-reverse; text-align: right; }
+.cb-who > span { display: grid; min-width: 0; }
+.cb-who b { font-size: 18px; font-weight: 700; letter-spacing: -.02em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cb-who small { font-size: 12px; color: var(--ink-3); }
+.cb-who small .lc.gi { width: 13px; height: 13px; vertical-align: -2px; margin-right: 4px; }
+.cb-folio { display: grid; grid-template-columns: 1fr 1fr; padding: 12px 0 16px; border-radius: 0 0 19px 19px; background-color: #FDFDFB; font-size: 12px; color: var(--ink-3); text-align: center; box-shadow: 0 3px 0 -1px #EEF1F4, 0 6px 0 -2px #DFE5EB; }
+/* Saat bank berganti, dua sampul membuka ke kiri dan kanan. */
+.cb-flap { position: absolute; z-index: 3; top: 10px; bottom: 10px; width: calc(50% - 10px); -webkit-backface-visibility: hidden; backface-visibility: hidden; pointer-events: none; background: inherit; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25); }
+.cb-flap.l { left: 10px; border-radius: 19px 0 0 19px; transform-origin: left center; animation: flap-l .9s cubic-bezier(.5, 0, .2, 1) .05s forwards; }
+.cb-flap.r { right: 10px; border-radius: 0 19px 19px 0; transform-origin: right center; animation: flap-r .9s cubic-bezier(.5, 0, .2, 1) .05s forwards; }
+@keyframes flap-l { to { transform: rotateY(-115deg); opacity: 0; visibility: hidden; } }
+@keyframes flap-r { to { transform: rotateY(115deg); opacity: 0; visibility: hidden; } }
+
+.tf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); perspective: 2200px; filter: drop-shadow(0 26px 30px rgba(19, 33, 46, .16)); }
+.tf-panel { position: relative; min-width: 0; padding: 22px 24px 44px; background: #FDFDFB; border-top: 4px solid var(--c); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.tf-panel.p1 { border-radius: 22px 0 0 22px; }
+.tf-panel.p3 { border-radius: 0 22px 22px 0; }
+/* Lipatan: lembah di antara lipatan 1 dan 2, punggung di antara lipatan 2 dan 3. */
+.tf-panel.p2 { background-image: linear-gradient(90deg, rgba(19, 33, 46, .1), rgba(19, 33, 46, 0) 46px, rgba(19, 33, 46, 0) calc(100% - 30px), rgba(19, 33, 46, .05)); }
+.tf-panel.p3 { background-image: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(19, 33, 46, .035) 2px, rgba(19, 33, 46, 0) 40px); }
+.tf-head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+.tf-head > span { display: grid; min-width: 0; }
+.tf-head b { font-size: 17px; font-weight: 700; letter-spacing: -.02em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tf-head small { font-size: 12px; color: var(--ink-3); }
+.tf-head small .lc.gi { width: 13px; height: 13px; vertical-align: -2px; margin-right: 4px; }
+.tf-list { margin: 0; }
+.tf-item { display: grid; gap: 5px; min-height: 78px; align-content: center; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.tf-item:last-child { border-bottom: 0; }
+.tf-item dt { font-size: 12.5px; font-weight: 600; color: var(--ink-3); }
+.tf-item dt .lc.mi { width: 14px; height: 14px; vertical-align: -3px; }
+.tf-item dd { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: 'v g' 'bar bar'; align-items: center; gap: 6px 10px; margin: 0; }
+.tf-item .cb-g { grid-area: g; justify-self: start; }
+.tf-folio { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: 12px; color: var(--ink-3); }
+.tf.opening .tf-panel.p2 { transform-origin: left center; animation: unfold .75s cubic-bezier(.3, .1, .2, 1) both; }
+.tf.opening .tf-panel.p3 { transform-origin: left center; animation: unfold .75s cubic-bezier(.3, .1, .2, 1) .3s both; }
+@keyframes unfold { from { transform: rotateY(-160deg); } to { transform: none; } }
+
+@media (max-width: 1080px) {
+  .cb-row { grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr); }
+  .cb-side { padding: 12px 18px; }
+  .tf-panel { padding: 20px 16px 44px; }
+}
+@media (max-width: 720px) {
+  .cb { padding: 7px; border-radius: 24px; margin: 0 -4px; }
+  .cb-row { grid-template-columns: minmax(0, 1fr) 84px minmax(0, 1fr); }
+  .cb-row.cb-head { border-radius: 18px 18px 0 0; }
+  .cb-side { padding: 10px 10px; gap: 4px; }
+  .cb-side.a { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'v' 'g' 'bar'; justify-items: end; }
+  .cb-side.b { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'v' 'g' 'bar'; justify-items: start; }
+  .cb-bar { width: 100%; }
+  .cb-val b { font-size: 15px; }
+  .cb-best { display: none; }
+  .cb-mid { padding: 8px 4px; }
+  .cb-mid b { font-size: 12px; }
+  .cb-mid b .lc.mi { display: block; margin: 0 auto 2px; }
+  .cb-mid small { display: none; }
+  .cb-head .cb-side { padding-top: 16px; }
+  .cb-who { flex-direction: column !important; align-items: flex-start; gap: 8px; }
+  .cb-who.a { align-items: flex-end; }
+  .cb-who .logo-sm { width: 64px; height: 38px; padding: 6px 7px; }
+  .cb-who b { font-size: 15px; white-space: normal; }
+  .cb-vs { width: 36px; height: 36px; font-size: 12.5px; }
+  .cb-folio { border-radius: 0 0 18px 18px; }
+  .cb-flap { top: 7px; bottom: 7px; width: calc(50% - 7px); }
+  .cb-flap.l { left: 7px; } .cb-flap.r { right: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tf.opening .tf-panel { animation: none; }
 }

@@ -5,6 +5,7 @@ import { $, $$, esc, lineChart } from './kit.js';
 import { logoImg } from './orbit.js';
 import { lucide } from './icons.js';
 import { develop } from './ui.js';
+import { book } from './book.js';
 
 // Kelompok perbandingan. "Asing" = bank milik asing: anak usaha bank luar negeri yang berbadan hukum Indonesia
 // ditambah kantor cabang bank asing. Swasta nasional = bank swasta milik lokal.
@@ -110,7 +111,9 @@ export const growthTag = (key, g) => {
   if (g == null) return '';
   const pct = M[key].unit === '%';
   const goodUp = M[key].good !== 'rendah';
-  const dir = Math.abs(g) < (pct ? 0.005 : 0.05) ? 'flat' : g > 0 ? 'up' : 'down';
+  // Perubahan yang hampir nol ditulis 0, bukan "-0%".
+  if (Math.abs(g) < (pct ? 0.005 : 0.05)) g = 0;
+  const dir = g === 0 ? 'flat' : g > 0 ? 'up' : 'down';
   const txt = pct ? `${g > 0 ? '+' : ''}${nf(2).format(g)} poin` : `${g > 0 ? '+' : ''}${nf(1).format(g)}%`;
   return `<span class="delta sm ${goodUp ? 'good-up ' : ''}${M[key].good ? dir : 'flat'}" title="Dibanding kuartal yang sama tahun lalu">${txt}</span>`;
 };
@@ -394,6 +397,16 @@ export function renderProfile(data) {
   drawProfile();
   const qs = $('#pf-quarter');
   qs.scrollLeft = qs.scrollWidth;
+  // Laporan dibaca seperti buku; nomor bab disimpan di alamat (?hal=2) supaya bisa dibagikan.
+  const hal = Math.max(1, parseInt(p.get('hal'), 10) || 1) - 1;
+  book($('#pf-book'), {
+    start: hal,
+    onTurn: (i) => {
+      const u = new URLSearchParams(location.search);
+      if (i) u.set('hal', String(i + 1)); else u.delete('hal');
+      history.replaceState(null, '', `?${u}`);
+    }
+  });
 }
 
 function drawProfile(all = true) {

@@ -154,6 +154,8 @@ export function renderBanding(data) {
     if (add) addBank(add.dataset.add);
   });
   $('#cmp-share').addEventListener('click', share);
+  // Buku dan lipatan butuh layar lebar untuk tiga bank; di ponsel tiga bank memakai tabel bertumpuk.
+  WIDE.addEventListener('change', () => drawTable(selected(), false));
   document.addEventListener('click', (e) => { if (!e.target.closest('.cmp-pick')) closeLists(); });
   draw();
 }
@@ -188,7 +190,7 @@ function draw(animate = true) {
   drawPicks();
   drawQuarters(sel);
   drawVerdict(sel);
-  drawTable(sel);
+  drawTable(sel, animate);
   drawTrend();
   drawSources(sel);
   $('#cmp-eyebrow').textContent = sel.length > 1 ? `Adu bank · ${sel.length} bank, ${qLabel(st.q)}` : 'Adu bank';
@@ -326,37 +328,100 @@ function drawVerdict(sel) {
     }).join('')}`;
 }
 
-/* Tabel berdampingan: satu baris per ukuran, satu kolom per bank. */
-function drawTable(sel) {
+/* Angka berdampingan. Dua bank: buku terbuka, satu bank per halaman, nama ukuran di punggung buku dan batang
+   tumbuh dari punggung ke luar. Tiga bank di layar lebar: brosur lipat tiga, satu bank per lipatan. Selain itu: tabel. */
+// Di Node (uji) tidak ada matchMedia; anggap layar lebar.
+const WIDE = typeof matchMedia === 'function' ? matchMedia('(min-width: 721px)') : { matches: true, addEventListener() {} };
+
+function cellOf(b, m, q, max, wins) {
+  const v = valueAt(b, q, m.key);
+  return {
+    v,
+    best: Boolean(wins[m.key]?.kode.includes(b.kode)),
+    val: `<b>${fmtMetric(m.key, v)}${star(b, q, m.key)}</b>`,
+    g: growthTag(m.key, yoyAt(b, q, m.key)),
+    bar: v != null ? `<span class="cb-bar${v < 0 ? ' neg' : ''}"><i style="width:${Math.max(3, (Math.abs(v) / max) * 100).toFixed(1)}%"></i></span>` : '<span class="cb-bar blank"></span>'
+  };
+}
+const rowMax = (sel, q, key) => Math.max(...sel.map((b) => valueAt(b, q, key)).filter((v) => v != null).map(Math.abs), 1e-6);
+const bestMark = `<em class="cb-best">${lucide('check')}terbaik</em>`;
+const flaps = (on) => (on && !matchMedia('(prefers-reduced-motion: reduce)').matches ? '<span class="cb-flap l" aria-hidden="true"></span><span class="cb-flap r" aria-hidden="true"></span>' : '');
+
+function bookHtml(sel, q, wins, animate) {
+  const [a, b] = sel;
+  const head = (x, side) => `<div class="cb-side ${side} cb-who" role="columnheader" style="--c:${colorOf(x.kode)}">${logoImg(x, 'logo-sm')}<span><b>${esc(x.nama)}</b><small>${groupIcon(x.grup)}${esc(groupLabel(x))}</small></span></div>`;
+  const side = (x, m, side, max) => {
+    const c = cellOf(x, m, q, max, wins);
+    const alt = metricLabel(x, m.key) !== m.label ? `<small class="cb-alt">${esc(metricLabel(x, m.key))}</small>` : '';
+    return `<div class="cb-side ${side}${c.best ? ' best' : ''}${c.v == null ? ' none' : ''}" role="cell" style="--c:${colorOf(x.kode)}">
+      <span class="cb-val">${alt}${c.val}${c.best ? bestMark : ''}</span><span class="cb-g">${c.g}</span>${c.bar}</div>`;
+  };
+  const rows = METRICS.map((m) => {
+    const max = rowMax(sel, q, m.key);
+    return `<div class="cb-row" role="row">${side(a, m, 'a', max)}<div class="cb-mid" role="rowheader"><b>${mIcon(m.key)}${esc(m.label)}</b><small>${esc(SHORT[m.key])}</small></div>${side(b, m, 'b', max)}</div>`;
+  }).join('');
+  return `<div class="cb${animate ? ' opening' : ''}" role="table" aria-label="${esc(a.nama)} dan ${esc(b.nama)}, ${qLabel(q)}">${flaps(animate)}
+    <div class="cb-row cb-head" role="row">${head(a, 'a')}<div class="cb-mid" role="columnheader"><span class="cb-vs">vs</span></div>${head(b, 'b')}</div>
+    ${rows}
+    <div class="cb-folio" aria-hidden="true"><span>1</span><span>2</span></div>
+  </div>`;
+}
+
+function foldHtml(sel, q, wins, animate) {
+  const panel = (x, i) => `<section class="tf-panel p${i + 1}" style="--c:${colorOf(x.kode)}" aria-label="${esc(x.nama)}">
+      <header class="tf-head">${logoImg(x, 'logo-sm')}<span><b>${esc(x.nama)}</b><small>${groupIcon(x.grup)}${esc(groupLabel(x))}</small></span></header>
+      <dl class="tf-list">${METRICS.map((m) => {
+        const c = cellOf(x, m, q, rowMax(sel, q, m.key), wins);
+        return `<div class="tf-item${c.best ? ' best' : ''}${c.v == null ? ' none' : ''}"><dt>${mIcon(m.key)}${esc(metricLabel(x, m.key))}</dt><dd><span class="cb-val">${c.val}${c.best ? bestMark : ''}</span><span class="cb-g">${c.g}</span>${c.bar}</dd></div>`;
+      }).join('')}</dl>
+      <span class="tf-folio" aria-hidden="true">${i + 1}</span>
+    </section>`;
+  return `<div class="tf${animate ? ' opening' : ''}">${sel.map(panel).join('')}</div>`;
+}
+
+function drawTable(sel, animate = false) {
   const host = $('#cmp-table');
   const q = st.q;
   host.style.setProperty('--n', Math.max(1, sel.length));
+  const mode = sel.length === 2 ? 'book' : sel.length === 3 && WIDE.matches ? 'fold' : 'table';
+  host.dataset.mode = mode;
+  host.closest('.card').classList.toggle('bookish', mode !== 'table');
+  host.setAttribute('role', mode === 'table' ? 'table' : 'group');
   if (!sel.length) {
     host.innerHTML = '<p class="note">Belum ada bank yang dipilih.</p>';
     $('#cmp-table-sub').textContent = '';
     return;
   }
   const wins = sel.length > 1 ? winners(sel, q) : {};
-  const head = `<div class="ct-row ct-head" role="row"><div class="ct-label" role="columnheader"><span class="sr-only">Ukuran</span></div>${sel.map((b) => `<div class="ct-bank" role="columnheader" style="--c:${colorOf(b.kode)}">${logoImg(b, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${groupIcon(b.grup)}${esc(groupLabel(b))}</small></span></div>`).join('')}</div>`;
-  const rows = METRICS.map((m) => {
-    const vals = sel.map((b) => valueAt(b, q, m.key));
-    const max = Math.max(...vals.filter((v) => v != null).map(Math.abs), 1e-6);
-    const cells = sel.map((b, i) => {
-      const v = vals[i];
-      const best = wins[m.key]?.kode.includes(b.kode);
-      const alt = metricLabel(b, m.key) !== m.label ? `<small class="ct-alt">${esc(metricLabel(b, m.key))}</small>` : '';
-      return `<div class="ct-cell${best ? ' best' : ''}${v == null ? ' none' : ''}" role="cell" style="--c:${colorOf(b.kode)}">
-        <span class="ct-who">${esc(b.nama)}</span>
-        <span class="ct-val">${alt}<b>${fmtMetric(m.key, v)}${star(b, q, m.key)}</b>${best ? `<em>${lucide('check')}terbaik</em>` : ''}</span>
-        ${v != null ? `<span class="ct-bar${v < 0 ? ' neg' : ''}"><i style="width:${Math.max(3, (Math.abs(v) / max) * 100).toFixed(1)}%"></i></span>` : ''}
-        <span class="ct-g">${growthTag(m.key, yoyAt(b, q, m.key))}</span>
-      </div>`;
+  if (mode === 'book') {
+    host.innerHTML = bookHtml(sel, q, wins, animate);
+    // Sampul yang sudah terbuka dilepas supaya tidak ikut menghitung lebar halaman.
+    $$('.cb-flap', host).forEach((f) => f.addEventListener('animationend', () => f.remove()));
+  }
+  else if (mode === 'fold') host.innerHTML = foldHtml(sel, q, wins, animate);
+  else {
+    const head = `<div class="ct-row ct-head" role="row"><div class="ct-label" role="columnheader"><span class="sr-only">Ukuran</span></div>${sel.map((b) => `<div class="ct-bank" role="columnheader" style="--c:${colorOf(b.kode)}">${logoImg(b, 'logo-xs')}<span><b>${esc(b.nama)}</b><small>${groupIcon(b.grup)}${esc(groupLabel(b))}</small></span></div>`).join('')}</div>`;
+    const rows = METRICS.map((m) => {
+      const vals = sel.map((b) => valueAt(b, q, m.key));
+      const max = Math.max(...vals.filter((v) => v != null).map(Math.abs), 1e-6);
+      const cells = sel.map((b, i) => {
+        const v = vals[i];
+        const best = wins[m.key]?.kode.includes(b.kode);
+        const alt = metricLabel(b, m.key) !== m.label ? `<small class="ct-alt">${esc(metricLabel(b, m.key))}</small>` : '';
+        return `<div class="ct-cell${best ? ' best' : ''}${v == null ? ' none' : ''}" role="cell" style="--c:${colorOf(b.kode)}">
+          <span class="ct-who">${esc(b.nama)}</span>
+          <span class="ct-val">${alt}<b>${fmtMetric(m.key, v)}${star(b, q, m.key)}</b>${best ? `<em>${lucide('check')}terbaik</em>` : ''}</span>
+          ${v != null ? `<span class="ct-bar${v < 0 ? ' neg' : ''}"><i style="width:${Math.max(3, (Math.abs(v) / max) * 100).toFixed(1)}%"></i></span>` : ''}
+          <span class="ct-g">${growthTag(m.key, yoyAt(b, q, m.key))}</span>
+        </div>`;
+      }).join('');
+      return `<div class="ct-row" role="row"><div class="ct-label" role="rowheader"><b>${mIcon(m.key)}${esc(m.label)}</b><small>${esc(SHORT[m.key])}</small></div>${cells}</div>`;
     }).join('');
-    return `<div class="ct-row" role="row"><div class="ct-label" role="rowheader"><b>${mIcon(m.key)}${esc(m.label)}</b><small>${esc(SHORT[m.key])}</small></div>${cells}</div>`;
-  }).join('');
-  host.innerHTML = head + rows;
+    host.innerHTML = head + rows;
+  }
   const missing = sel.filter((b) => !has(b, q));
-  $('#cmp-table-sub').textContent = `${qLabel(q)} (${qSpan(q)}). Pertumbuhan dibanding ${qLabel(prevYearQ(q))}. Panjang batang dibandingkan di dalam baris yang sama.`
+  const how = mode === 'book' ? 'Dua bank dibaca seperti buku terbuka: batang tumbuh dari punggung buku ke luar.' : mode === 'fold' ? 'Tiga bank seperti brosur lipat tiga, satu bank per lipatan.' : 'Panjang batang dibandingkan di dalam baris yang sama.';
+  $('#cmp-table-sub').textContent = `${qLabel(q)} (${qSpan(q)}). Pertumbuhan dibanding ${qLabel(prevYearQ(q))}. ${how}`
     + (missing.length ? ` Belum ada angka ${qLabel(q)} untuk ${missing.map((b) => b.nama).join(', ')}; pilih kuartal lain.` : '');
 }
 
