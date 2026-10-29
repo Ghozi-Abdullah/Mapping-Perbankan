@@ -1,51 +1,51 @@
 {
- "updated": "2026-10-26T06:10:39Z",
+ "updated": "2026-10-29T05:42:41Z",
  "sources": {
   "kredit": {
-   "ok": false,
-   "at": "2026-10-26T06:10:24Z",
-   "error": "TABEL1_4: ValueError: bulan terbaru terbaca 2025-03, terlalu lama; berkas mentah disimpan untuk diperiksa",
-   "last_ok": "2026-10-25T01:50:08Z"
+   "ok": true,
+   "at": "2026-10-29T05:42:24Z",
+   "note": "TABEL1_4: 2019-01 s.d. 2026-08 dari 3 lembar",
+   "count": 51
   },
   "simpanan": {
    "ok": true,
-   "at": "2026-10-26T06:10:27Z",
+   "at": "2026-10-29T05:42:27Z",
    "note": "TABEL1_17: 2019-01 s.d. 2026-08 dari 6 lembar",
    "count": 35
   },
   "kredit_prov": {
    "ok": true,
-   "at": "2026-10-26T06:10:29Z",
+   "at": "2026-10-29T05:42:30Z",
    "note": "TABEL1_12: 2019-01 s.d. 2026-08 dari 3 lembar",
    "count": 36
   },
   "simpanan_prov": {
    "ok": true,
-   "at": "2026-10-26T06:10:31Z",
+   "at": "2026-10-29T05:42:31Z",
    "note": "TABEL1_19: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 39
   },
   "kpr": {
    "ok": true,
-   "at": "2026-10-26T06:10:36Z",
+   "at": "2026-10-29T05:42:36Z",
    "note": "TABEL1_15: 2019-01 s.d. 2026-08 dari 5 lembar",
    "count": 26
   },
   "bunga_kredit": {
    "ok": true,
-   "at": "2026-10-26T06:10:37Z",
+   "at": "2026-10-29T05:42:37Z",
    "note": "TABEL1_26: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 21
   },
   "bunga_deposito": {
    "ok": true,
-   "at": "2026-10-26T06:10:38Z",
+   "at": "2026-10-29T05:42:39Z",
    "note": "TABEL1_28: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 31
   },
   "bunga_tabungan": {
    "ok": true,
-   "at": "2026-10-26T06:10:39Z",
+   "at": "2026-10-29T05:42:41Z",
    "note": "TABEL1_30: 2019-01 s.d. 2026-08 dari 4 lembar",
    "count": 6
   }
