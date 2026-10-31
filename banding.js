@@ -134,7 +134,8 @@ export function renderBanding(data) {
   QS = data.kuartal;
   const p = new URLSearchParams(location.search);
   st.sel = p.has('b') ? parseCodes(p.get('b'), BANKS) : parseCodes(PRESETS[0].b.join(','), BANKS);
-  st.q = pickQuarter(selected(), QS, p.get('q'));
+  st.q = p.get('q');
+  st.q = freshQuarter();
   if (TREND.includes(p.get('ukuran'))) st.metric = p.get('ukuran');
 
   $('#cmp-metric').innerHTML = TREND.map((k) => `<button type="button" data-v="${k}" aria-pressed="false">${mIcon(k)}${k === 'laba' ? 'Laba per kuartal' : M[k].label}</button>`).join('');
@@ -144,7 +145,7 @@ export function renderBanding(data) {
     const b = e.target.closest('[data-preset]');
     if (!b) return;
     st.sel = parseCodes(b.dataset.preset, BANKS);
-    st.q = pickQuarter(selected(), QS, null);
+    st.q = freshQuarter();
     draw();
   });
   $('#cmp-slots').addEventListener('click', (e) => {
@@ -160,16 +161,26 @@ export function renderBanding(data) {
   draw();
 }
 
+/**
+ * Kuartal setelah daftar bank berubah: kuartal yang sedang dipilih tetap dipakai hanya bila SEMUA bank terpilih punya
+ * angkanya; selain itu kembali ke kuartal terakhir yang dimiliki semua bank (bukan kuartal yang hanya dimiliki satu bank).
+ */
+function freshQuarter() {
+  const sel = selected();
+  const all = sel.length && sel.every((b) => has(b, st.q));
+  return pickQuarter(sel, QS, all ? st.q : null);
+}
+
 function addBank(kode) {
   if (st.sel.includes(kode) || st.sel.length >= MAX || !byKode(kode)) return;
   st.sel.push(kode);
-  st.q = pickQuarter(selected(), QS, st.q);
+  st.q = freshQuarter();
   draw();
 }
 
 function remove(kode) {
   st.sel = st.sel.filter((k) => k !== kode);
-  st.q = pickQuarter(selected(), QS, st.q);
+  st.q = freshQuarter();
   draw();
 }
 
@@ -293,7 +304,8 @@ function drawPicks() {
 
 function drawQuarters(sel) {
   const avail = QS.filter((q) => sel.some((b) => has(b, q)));
-  $('#cmp-qbar').hidden = avail.length < 2;
+  // Baris kuartal selalu tampil (walau hanya satu kuartal) supaya tata letak di bawahnya tidak melompat.
+  $('#cmp-qbar').hidden = !avail.length;
   $('#cmp-quarter').innerHTML = avail.map((q) => {
     const n = sel.filter((b) => has(b, q)).length;
     const part = n < sel.length;

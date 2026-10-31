@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="book-body" id="book-body">
-        <article class="spread" data-title="Ringkasan" data-icon="book-open-text" aria-label="Ringkasan">
+        <article class="spread on" id="pf-sum" data-title="Ringkasan" data-icon="book-open-text" aria-label="Ringkasan">
           <div class="page left pf-id" id="pf-id"></div>
           <div class="page right pf-nums">
             <div class="card-head">
@@ -55,10 +55,11 @@
           </div>
         </article>
 
-        <article class="spread" id="pf-grid" data-title="Tren dan posisi" data-icon="chart-line" aria-label="Tren dan posisi" hidden>
+        <article class="spread" id="pf-grid" data-title="Tren dan posisi" data-icon="chart-line" aria-label="Tren dan posisi">
           <div class="page left" id="pf-trend-card">
             <div class="card-head"><span class="ch-ic"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></span><div><h2 id="pf-trend-title">Tren per kuartal</h2><p>Celah berarti angka kuartal itu tidak ditemukan di rilis yang dikutip.</p></div></div>
             <div id="pf-chart" class="bd-chart"></div>
+            <div class="pf-tstats" id="pf-tstats"></div>
           </div>
           <div class="page right">
             <div class="page-tools"><span>Pilih ukuran untuk kedua halaman</span><div class="seg" id="pf-metric" role="group" aria-label="Ukuran"></div></div>
@@ -67,7 +68,7 @@
           </div>
         </article>
 
-        <article class="spread" data-title="Semua kuartal" data-icon="table" aria-label="Semua kuartal dan sumber" hidden>
+        <article class="spread" id="pf-all" data-title="Semua kuartal" data-icon="table" aria-label="Semua kuartal dan sumber">
           <div class="page left">
             <div class="card-head"><span class="ch-ic"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg></span><div><h2 id="pf-table-h">Semua kuartal</h2><p id="pf-table-sub"></p></div></div>
             <div class="table-wrap"><table class="tbl bd-tbl" id="pf-table"></table></div>

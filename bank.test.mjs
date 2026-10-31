@@ -10,6 +10,7 @@ import { LOGOS } from './logos.js';
 import { LOGO } from './logos-semua.js';
 
 const DATA = JSON.parse(readFileSync(new URL('./bank.json', import.meta.url)));
+const CORE = new Set(['BBRI', 'BMRI', 'BBNI', 'BBTN', 'BRIS', 'BBCA', 'BNGA', 'NISP', 'BDMN', 'BNLI', 'BNII', 'PNBN', 'BJBR', 'BJTM']);
 const KEYS = METRICS.map((m) => m.key);
 
 test('format angka bank', () => {
@@ -102,8 +103,8 @@ test('bank.json: struktur kuartal lengkap dan masuk akal', () => {
     for (const k of ['nama', 'lengkap', 'profil']) assert.ok(b[k]?.length > 2, `${at}.${k}`);
     if (b.domain) assert.doesNotMatch(b.domain, /^https?:|\s|\/$/, `${at} domain`);
     const qs = Object.keys(b.kuartal);
-    // Bank inti punya riwayat minimal dua tahun; bank tambahan (ringkas) baru kuartal terakhir dan wajib diberi keterangan.
-    if (b.ringkas) assert.ok(qs.length >= 1 && b.keterangan, `${at} ringkas tanpa keterangan`);
+    // 14 bank inti punya riwayat minimal dua tahun; bank lain wajib menjelaskan asal angkanya (keterangan).
+    if (!CORE.has(b.kode)) assert.ok(qs.length >= 1 && b.keterangan, `${at} tanpa keterangan`);
     else {
       assert.ok(qs.length >= 8, `${at} minimal 8 kuartal berisi`);
       assert.ok(b.domain?.length > 2, `${at}.domain`);
@@ -119,17 +120,17 @@ test('bank.json: struktur kuartal lengkap dan masuk akal', () => {
       }
       for (const k of Object.keys(r)) assert.ok(KEYS.includes(k) || ['sumber', 'dihitung', 'tumbuh_rilis', 'roa', 'roe'].includes(k), `${at} ${q} kunci asing ${k}`);
       if (r.aset != null && r.kredit != null) assert.ok(r.aset > r.kredit, `${at} ${q} aset < kredit`);
-      if (r.npl != null) assert.ok(r.npl > 0 && r.npl < 10, `${at} ${q} npl`);
-      // CAR bank kecil yang baru disuntik modal bisa sangat tinggi (Amar Bank sekitar 90%).
-      if (r.car != null) assert.ok(r.car > 8 && r.car < 100, `${at} ${q} car`);
-      if (r.casa != null) assert.ok(r.casa > 20 && r.casa < 100, `${at} ${q} casa`);
-      if (r.ldr != null) assert.ok(r.ldr > 50 && r.ldr < 120, `${at} ${q} ldr`);
+      // Rentang lebar: cabang bank asing dan bank kecil bisa punya CAR ratusan persen dan LDR jauh di atas 100%.
+      if (r.npl != null) assert.ok(r.npl >= 0 && r.npl < 30, `${at} ${q} npl`);
+      if (r.car != null) assert.ok(r.car > 5 && r.car < 500, `${at} ${q} car`);
+      if (r.casa != null) assert.ok(r.casa >= 0 && r.casa <= 100, `${at} ${q} casa`);
+      if (r.ldr != null) assert.ok(r.ldr > 0 && r.ldr < 400, `${at} ${q} ldr`);
       // Bank digital muda bisa masih rugi; batas bawah menjaga salah satuan (miliar terbaca triliun).
-      if (r.laba != null) assert.ok(r.laba > -5 && r.laba < 100, `${at} ${q} laba`);
+      if (r.laba != null) assert.ok(r.laba > -20 && r.laba < 100, `${at} ${q} laba`);
       if (r.tumbuh_rilis) for (const [k, v] of Object.entries(r.tumbuh_rilis)) assert.ok(['aset', 'kredit', 'dpk', 'laba'].includes(k) && Number.isFinite(v), `${at} ${q} tumbuh_rilis.${k}`);
     }
-    // Laba kumulatif tidak boleh turun di dalam satu tahun (Q1 ≤ Q2 ≤ Q3 ≤ Q4).
-    for (const q of qs) {
+    // Laba kumulatif bank inti tidak turun di dalam satu tahun (Q1 ≤ Q2 ≤ Q3 ≤ Q4); bank lain bisa rugi di satu kuartal.
+    for (const q of CORE.has(b.kode) ? qs : []) {
       if (q.endsWith('Q1')) continue;
       const cur = valueAt(b, q, 'laba');
       const prev = valueAt(b, prevQ(q), 'laba');

@@ -541,7 +541,9 @@ a { text-decoration-color: var(--line-2); }
 .hero-actions .btn .lc, .ph-tools .btn .lc, .pf-actions .btn .lc:first-child { width: 17px; height: 17px; }
 
 /* ---------- Adu bank ---------- */
-.cmp-slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.cmp-slots { position: relative; z-index: 5; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(186px, auto); gap: 12px; }
+/* Kolom yang daftar pilihannya terbuka berada di atas kolom lain dan baris pilihan di bawahnya. */
+.cmp-slot:focus-within { z-index: 2; }
 .cmp-slot { position: relative; display: grid; gap: 12px; align-content: start; min-width: 0; padding: 16px; border-radius: 20px; }
 .cmp-slot.filled { background: var(--card); box-shadow: var(--shadow); overflow: hidden; }
 .cmp-slot.filled::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: var(--c); }
@@ -777,110 +779,145 @@ a { text-decoration-color: var(--line-2); }
 }
 
 /* ---------- Laporan bank sebagai buku (profil.html, book.js) ---------- */
-.book { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
+.book { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; min-width: 0; }
 .book-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; }
 .book-tabs { display: flex; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 5px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
 .book-tabs::-webkit-scrollbar { display: none; }
-.book-tabs button { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: none; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ink-2); white-space: nowrap; transition: background .2s, color .2s; }
+.book-tabs button { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: none; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ink-2); white-space: nowrap; transition: background .25s, color .25s; }
 .book-tabs button .lc { width: 16px; height: 16px; }
 .book-tabs button:hover { color: var(--accent); }
 .book-tabs [aria-selected="true"], .book-tabs [aria-selected="true"]:hover { background: var(--accent); color: #fff; }
 .book-nav { display: flex; align-items: center; gap: 8px; }
-.book-folio { margin-right: 4px; font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.book-folio { min-width: 136px; margin-right: 4px; text-align: right; font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .book-btn { display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; background: var(--card); box-shadow: var(--shadow); color: var(--ink); cursor: pointer; transition: background .2s, color .2s; }
 .book-btn:hover:not(:disabled) { background: var(--accent); color: #fff; }
 .book-btn:disabled { opacity: .4; cursor: default; }
 
-/* Sampul biru bermotif belah ketupat membingkai halaman; tumpukan halaman terlihat di tepi bawah. */
+/* Buku: sampul biru bermotif belah ketupat dengan tebal sampul di tepi bawah, tumpukan halaman di tepi luar. */
 .book-body {
-  position: relative; padding: 10px; border-radius: 28px; perspective: 2600px;
+  --paper: #FDFDFB; --edge: #D9E0E7;
+  position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1fr); padding: 14px 16px 20px; border-radius: 28px;
   background-color: var(--accent);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='26'%3E%3Cpath d='M9 0l9 13-9 13-9-13z' fill='%23fff' fill-opacity='.1'/%3E%3C/svg%3E");
   background-size: 18px 26px;
-  box-shadow: 0 34px 70px -40px rgba(19, 33, 46, .55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 7px 0 #17476C, 0 8px 0 rgba(19, 33, 46, .2), 0 40px 70px -36px rgba(19, 33, 46, .6);
 }
-.spread {
-  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 560px;
-  border-radius: 19px; background: #FDFDFB;
-  box-shadow: 0 3px 0 -1px #EEF1F4, 0 6px 0 -2px #DFE5EB, 0 9px 0 -3px #EEF1F4;
-}
-/* Punggung buku di tengah bentangan. */
+/* Tumpukan halaman di bawah halaman yang terbuka: terlihat sebagai garis-garis tipis di tepi luar dan bawah. */
+.book-body::before, .book-body::after { content: ''; position: absolute; z-index: -1; top: 14px; bottom: 20px; background: var(--paper); pointer-events: none; }
+.book-body::before { left: 16px; right: 50%; border-radius: 18px 0 0 18px;
+  box-shadow: -1px 1px 0 var(--edge), -2px 2px 0 var(--paper), -3px 3px 0 var(--edge), -4px 4px 0 var(--paper), -5px 5px 0 var(--edge), -6px 6px 0 #C9D2DB; }
+.book-body::after { left: 50%; right: 16px; border-radius: 0 18px 18px 0;
+  box-shadow: 1px 1px 0 var(--edge), 2px 2px 0 var(--paper), 3px 3px 0 var(--edge), 4px 4px 0 var(--paper), 5px 5px 0 var(--edge), 6px 6px 0 #C9D2DB; }
+/* Semua bentangan menumpuk di petak yang sama; tinggi buku = bentangan tertinggi, jadi tidak bergeser saat dibalik. */
+.spread { position: relative; grid-area: 1 / 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 640px; }
+.spread:not(.on):not(.peek) { visibility: hidden; }
+/* Punggung buku: lekukan halaman ke arah jilid. */
 .spread::before {
-  content: ''; position: absolute; z-index: 1; top: 0; bottom: 0; left: 50%; width: 70px; transform: translateX(-50%); pointer-events: none;
-  background: linear-gradient(90deg, rgba(19, 33, 46, 0), rgba(19, 33, 46, .06) 42%, rgba(19, 33, 46, .16) 50%, rgba(19, 33, 46, .06) 58%, rgba(19, 33, 46, 0));
+  content: ''; position: absolute; z-index: 6; top: 0; bottom: 0; left: 50%; width: 64px; transform: translateX(-50%); pointer-events: none;
+  background: linear-gradient(90deg, rgba(19, 33, 46, 0), rgba(19, 33, 46, .05) 40%, rgba(19, 33, 46, .17) 50%, rgba(19, 33, 46, .05) 60%, rgba(19, 33, 46, 0));
 }
 .spread.one { grid-template-columns: minmax(0, 1fr); }
 .spread.one::before { display: none; }
-.book .page { position: relative; display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 30px 36px 52px; }
-.book .page.left { border-radius: 19px 0 0 19px; }
-.book .page.right { border-radius: 0 19px 19px 0; }
-.spread.one .page.right { border-radius: 19px; }
-.book .page::after { content: attr(data-folio); position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.book .page { position: relative; display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 30px 38px 54px; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.book .page.left { border-radius: 18px 0 0 18px; background: linear-gradient(90deg, #F8F8F4 0, var(--paper) 9%, var(--paper) 86%, #F2F2ED 96%, #E9E9E3); }
+.book .page.right { border-radius: 0 18px 18px 0; background: linear-gradient(270deg, #F8F8F4 0, var(--paper) 9%, var(--paper) 86%, #F2F2ED 96%, #E9E9E3); }
+.spread.one .page.right { border-radius: 18px; background: var(--paper); }
+.book .page::after { content: attr(data-folio); position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+/* Bayangan pada halaman yang sedang berputar. */
+.book .page::before { content: ''; position: absolute; inset: 0; z-index: 3; border-radius: inherit; pointer-events: none; opacity: 0; }
+.book .page.left::before { background: linear-gradient(270deg, rgba(19, 33, 46, .32), rgba(19, 33, 46, .08) 55%, rgba(19, 33, 46, 0)); }
+.book .page.right::before { background: linear-gradient(90deg, rgba(19, 33, 46, .32), rgba(19, 33, 46, .08) 55%, rgba(19, 33, 46, 0)); }
 .book .card-head { margin-bottom: 0; }
-.book .pf-id { padding-right: 76px; }
-.book .pf-id .gbadge.corner { top: 26px; right: 30px; }
+.book .pf-id { padding-right: 82px; }
+.book .pf-id .gbadge.corner { top: 26px; right: 32px; }
 .book .pf-nums .qseg { margin-bottom: 0; }
 .page-tools { display: grid; gap: 6px; }
 .page-tools > span { font-size: 12.5px; font-weight: 600; color: var(--ink-3); }
 .page-tools .seg { justify-self: start; }
+.book .bbars .bb { padding-top: 6px; padding-bottom: 6px; }
+.book .bb-missing { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+a.bb-more { display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+a.bb-more .lc { width: 15px; height: 15px; }
+.book .bd-sources { max-height: 470px; overflow-y: auto; padding-right: 6px; overscroll-behavior: contain; }
+.book .bd-tbl td { padding-top: 9px; padding-bottom: 9px; }
+/* Di dalam buku keterangan periode (semester I, setahun) cukup di judul tabel supaya 12 kuartal muat satu halaman. */
+.book .bd-tbl td small { display: none; }
+.pf-tstats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: auto; }
+.ts { display: grid; gap: 2px; align-content: start; min-width: 0; padding: 10px 12px; border-radius: 14px; background: var(--bg); }
+.ts small { font-size: 11.5px; color: var(--ink-3); }
+.ts b { font-size: 16px; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; }
+.ts span { font-size: 11.5px; color: var(--ink-3); }
+.ts .delta { margin: 2px 0; }
 
 /* Sudut halaman yang terlipat: klik untuk membalik. */
-.dog { position: absolute; z-index: 4; bottom: 10px; width: 40px; height: 40px; padding: 0; border: 0; cursor: pointer; background: none; transition: width .25s cubic-bezier(.34, 1.56, .64, 1), height .25s cubic-bezier(.34, 1.56, .64, 1); }
-.dog.next { right: 10px; border-radius: 0 0 19px 0; background: linear-gradient(to top left, transparent 0 49%, rgba(19, 33, 46, .22) 50%, #E7ECF1 53%, #FDFDFB 78%); }
-.dog.prev { left: 10px; border-radius: 0 0 0 19px; background: linear-gradient(to top right, transparent 0 49%, rgba(19, 33, 46, .22) 50%, #E7ECF1 53%, #FDFDFB 78%); }
+.dog { position: absolute; z-index: 8; bottom: 20px; width: 40px; height: 40px; padding: 0; border: 0; cursor: pointer; background: none; transition: width .3s cubic-bezier(.34, 1.56, .64, 1), height .3s cubic-bezier(.34, 1.56, .64, 1); }
+.dog.next { right: 16px; border-radius: 0 0 18px 0; background: linear-gradient(to top left, transparent 0 49%, rgba(19, 33, 46, .22) 50%, #E7ECF1 53%, var(--paper) 78%); }
+.dog.prev { left: 16px; border-radius: 0 0 0 18px; background: linear-gradient(to top right, transparent 0 49%, rgba(19, 33, 46, .22) 50%, #E7ECF1 53%, var(--paper) 78%); }
 .dog:hover { width: 58px; height: 58px; }
 .dog:disabled { display: none; }
 .dog:focus-visible { outline-offset: -4px; }
+.book-body.turning .dog { visibility: hidden; }
 
-/* Lembar yang sedang dibalik. */
-.leaf { position: absolute; z-index: 6; top: 10px; bottom: 10px; transform-style: preserve-3d; pointer-events: none; }
-.leaf.cover { z-index: 5; }
-.leaf.left, .leaf.half.back { left: 10px; width: calc(50% - 10px); }
-.leaf.right, .leaf.half.fwd { left: 50%; width: calc(50% - 10px); }
-.leaf.whole { left: 10px; right: 10px; }
-.leaf-face { position: absolute; inset: 0; overflow: hidden; background: #FDFDFB; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
-.leaf-face > .page { height: 100%; }
-.leaf-face > .spread { min-height: 100%; box-shadow: none; }
-.leaf.left .leaf-face, .leaf.half.back .leaf-face.front, .leaf.half.fwd .leaf-face.back { border-radius: 19px 0 0 19px; }
-.leaf.right .leaf-face, .leaf.half.fwd .leaf-face.front, .leaf.half.back .leaf-face.back { border-radius: 0 19px 19px 0; }
-.leaf.whole .leaf-face { border-radius: 19px; }
-.leaf-face.back { transform: rotateY(180deg); }
-.leaf-face::after { content: ''; position: absolute; inset: 0; opacity: 0; pointer-events: none; background: linear-gradient(90deg, rgba(19, 33, 46, .22), rgba(19, 33, 46, 0) 70%); }
-.leaf.half.fwd .leaf-face.front::after, .leaf.half.back .leaf-face.back::after { background: linear-gradient(90deg, rgba(19, 33, 46, .22), rgba(19, 33, 46, 0) 70%); }
-.leaf.half.back .leaf-face.front::after, .leaf.half.fwd .leaf-face.back::after { background: linear-gradient(270deg, rgba(19, 33, 46, .22), rgba(19, 33, 46, 0) 70%); }
-.leaf.go .leaf-face::after { animation: leaf-shade .82s ease-in-out; }
-@keyframes leaf-shade { 50% { opacity: 1; } }
-.leaf.half { transition: transform .82s cubic-bezier(.45, .05, .2, 1); box-shadow: none; }
-.leaf.half.fwd { transform-origin: left center; }
-.leaf.half.fwd.go { transform: rotateY(-180deg); }
-.leaf.half.back { transform-origin: right center; }
-.leaf.half.back.go { transform: rotateY(180deg); }
-.leaf.whole { transition: transform .82s cubic-bezier(.45, .05, .2, 1), opacity .82s ease-in; }
-.leaf.whole.fwd { transform-origin: left center; }
-.leaf.whole.fwd.go { transform: rotateY(-95deg); opacity: 0; }
-.leaf.whole.back { transform-origin: right center; }
-.leaf.whole.back.go { transform: rotateY(95deg); opacity: 0; }
+/* Membalik halaman di layar lebar: halaman lama terangkat sampai tegak lurus, halaman baru turun dari tegak lurus.
+   perspective() ditulis di transform supaya bentangan tidak menjadi konteks tumpukan sendiri. */
+.book .page.flip-under { z-index: 1; }
+.book .page.flip-stay { z-index: 2; }
+.book .page.flip-up { z-index: 4; }
+.book .page.flip-down { z-index: 5; }
+.book .page.flip-up.fwd, .book .page.flip-down.back { transform-origin: left center; }
+.book .page.flip-up.back, .book .page.flip-down.fwd { transform-origin: right center; }
+.book .page.flip-down.fwd { transform: perspective(2200px) rotateY(90deg); }
+.book .page.flip-down.back { transform: perspective(2200px) rotateY(-90deg); }
+.book .page.flip-down::before { opacity: 1; }
+.book .page.flip-up.go { transition: transform .38s cubic-bezier(.55, .05, .7, .25); }
+.book .page.flip-up.go::before { opacity: 1; transition: opacity .38s ease-in; }
+.book .page.flip-up.fwd.go { transform: perspective(2200px) rotateY(-90deg); }
+.book .page.flip-up.back.go { transform: perspective(2200px) rotateY(90deg); }
+.book .page.flip-down.go { transform: perspective(2200px) rotateY(0deg); transition: transform .44s cubic-bezier(.2, .7, .3, 1); }
+.book .page.flip-down.go::before { opacity: 0; transition: opacity .44s ease-out; }
+/* Bayangan lembar yang lewat jatuh ke halaman di bawahnya. */
+.book .page.flip-under::before { opacity: .55; }
 
 @media (max-width: 980px) {
-  .book .page { padding: 26px 26px 50px; }
+  .book .page { padding: 26px 28px 52px; }
+  .pf-tstats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 720px) {
   .book-bar { flex-direction: column; align-items: stretch; }
   .book-tabs { width: 100%; }
   .book-nav { justify-content: space-between; }
-  .book-body { padding: 7px; border-radius: 24px; margin: 0 -4px; }
-  .spread { grid-template-columns: minmax(0, 1fr); min-height: 0; border-radius: 18px; }
+  .book-folio { text-align: left; }
+  .book-body { padding: 8px 8px 12px; border-radius: 24px; margin: 0 -4px; }
+  .book-body::before, .book-body::after { display: none; }
+  .spread { grid-template-columns: minmax(0, 1fr); min-height: 0; border-radius: 18px; background: var(--paper); box-shadow: 0 3px 0 -1px #EEF1F4, 0 6px 0 -2px var(--edge); }
+  .spread:not(.on) { display: none; }
   .spread::before { display: none; }
-  .book .page { padding: 22px 18px 44px; border-radius: 0; }
+  .book .page, .book .page.left, .book .page.right { padding: 22px 18px 46px; border-radius: 0; background: none; }
   .book .page.left { border-radius: 18px 18px 0 0; }
   .book .page.right { border-radius: 0 0 18px 18px; border-top: 1px dashed var(--line-2); }
   .spread.one .page.right { border-top: 0; }
   .book .pf-id { padding-right: 18px; }
   .book .pf-id .gbadge.corner { top: 18px; right: 18px; }
-  .leaf { top: 7px; bottom: 7px; }
-  .leaf.whole { left: 7px; right: 7px; }
-  .dog { bottom: 7px; }
-  .dog.next { right: 7px; } .dog.prev { left: 7px; }
+  .book .bd-sources { max-height: none; overflow: visible; }
+  .dog { bottom: 12px; }
+  .dog.next { right: 8px; } .dog.prev { left: 8px; }
+  /* Di ponsel seluruh bentangan dibalik seperti satu lembar di atas bentangan baru. */
+  .spread.leaving { position: absolute; z-index: 7; top: 8px; left: 8px; right: 8px; }
+  .spread.flip-up.fwd { transform-origin: left center; }
+  .spread.flip-up.back { transform-origin: right center; }
+  .spread.flip-up.go { transition: transform .54s cubic-bezier(.5, .05, .4, 1), opacity .54s ease-in; opacity: 0; }
+  .spread.flip-up.fwd.go { transform: perspective(1600px) rotateY(-100deg); }
+  .spread.flip-up.back.go { transform: perspective(1600px) rotateY(100deg); }
+}
+@media (min-width: 721px) {
+  /* Bentangan satu halaman (bank tanpa riwayat): dibalik utuh seperti di ponsel. */
+  .spread.leaving { z-index: 7; }
+  .spread.flip-up.fwd { transform-origin: left center; }
+  .spread.flip-up.back { transform-origin: right center; }
+  .spread.flip-up.go { transition: transform .54s cubic-bezier(.5, .05, .4, 1), opacity .54s ease-in; opacity: 0; }
+  .spread.flip-up.fwd.go { transform: perspective(2200px) rotateY(-100deg); }
+  .spread.flip-up.back.go { transform: perspective(2200px) rotateY(100deg); }
+  .spread.leaving .page { background-color: var(--paper); }
 }
 
 /* ---------- Adu bank: buku terbuka (2 bank) dan brosur lipat tiga (3 bank) ---------- */
@@ -892,7 +929,7 @@ a { text-decoration-color: var(--line-2); }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='26'%3E%3Cpath d='M9 0l9 13-9 13-9-13z' fill='%23fff' fill-opacity='.1'/%3E%3C/svg%3E");
   background-size: 18px 26px;
 }
-.cb { position: relative; padding: 10px; border-radius: 28px; perspective: 2000px; box-shadow: 0 34px 70px -40px rgba(19, 33, 46, .55); }
+.cb { position: relative; padding: 10px; border-radius: 28px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 7px 0 #17476C, 0 8px 0 rgba(19, 33, 46, .2), 0 40px 70px -36px rgba(19, 33, 46, .6); }
 .cb-row { display: grid; grid-template-columns: minmax(0, 1fr) 200px minmax(0, 1fr); background: #FDFDFB; }
 .cb-row.cb-head { border-radius: 19px 19px 0 0; }
 /* Punggung buku: bayangan di kolom tengah, menyambung dari baris ke baris. */
@@ -933,10 +970,10 @@ a { text-decoration-color: var(--line-2); }
 .cb-folio { display: grid; grid-template-columns: 1fr 1fr; padding: 12px 0 16px; border-radius: 0 0 19px 19px; background-color: #FDFDFB; font-size: 12px; color: var(--ink-3); text-align: center; box-shadow: 0 3px 0 -1px #EEF1F4, 0 6px 0 -2px #DFE5EB; }
 /* Saat bank berganti, dua sampul membuka ke kiri dan kanan. */
 .cb-flap { position: absolute; z-index: 3; top: 10px; bottom: 10px; width: calc(50% - 10px); -webkit-backface-visibility: hidden; backface-visibility: hidden; pointer-events: none; background: inherit; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25); }
-.cb-flap.l { left: 10px; border-radius: 19px 0 0 19px; transform-origin: left center; animation: flap-l .9s cubic-bezier(.5, 0, .2, 1) .05s forwards; }
-.cb-flap.r { right: 10px; border-radius: 0 19px 19px 0; transform-origin: right center; animation: flap-r .9s cubic-bezier(.5, 0, .2, 1) .05s forwards; }
-@keyframes flap-l { to { transform: rotateY(-115deg); opacity: 0; visibility: hidden; } }
-@keyframes flap-r { to { transform: rotateY(115deg); opacity: 0; visibility: hidden; } }
+.cb-flap.l { left: 10px; border-radius: 19px 0 0 19px; transform-origin: left center; animation: flap-l 1.1s cubic-bezier(.45, .05, .25, 1) .08s forwards; }
+.cb-flap.r { right: 10px; border-radius: 0 19px 19px 0; transform-origin: right center; animation: flap-r 1.1s cubic-bezier(.45, .05, .25, 1) .08s forwards; }
+@keyframes flap-l { 0% { transform: perspective(1800px) rotateY(0); } 70% { opacity: 1; } 100% { transform: perspective(1800px) rotateY(-105deg); opacity: 0; visibility: hidden; } }
+@keyframes flap-r { 0% { transform: perspective(1800px) rotateY(0); } 70% { opacity: 1; } 100% { transform: perspective(1800px) rotateY(105deg); opacity: 0; visibility: hidden; } }
 
 .tf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); perspective: 2200px; filter: drop-shadow(0 26px 30px rgba(19, 33, 46, .16)); }
 .tf-panel { position: relative; min-width: 0; padding: 22px 24px 44px; background: #FDFDFB; border-top: 4px solid var(--c); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
@@ -958,9 +995,9 @@ a { text-decoration-color: var(--line-2); }
 .tf-item dd { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: 'v g' 'bar bar'; align-items: center; gap: 6px 10px; margin: 0; }
 .tf-item .cb-g { grid-area: g; justify-self: start; }
 .tf-folio { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: 12px; color: var(--ink-3); }
-.tf.opening .tf-panel.p2 { transform-origin: left center; animation: unfold .75s cubic-bezier(.3, .1, .2, 1) both; }
-.tf.opening .tf-panel.p3 { transform-origin: left center; animation: unfold .75s cubic-bezier(.3, .1, .2, 1) .3s both; }
-@keyframes unfold { from { transform: rotateY(-160deg); } to { transform: none; } }
+.tf.opening .tf-panel.p2 { transform-origin: left center; animation: unfold .8s cubic-bezier(.2, .7, .25, 1) both; }
+.tf.opening .tf-panel.p3 { transform-origin: left center; animation: unfold .8s cubic-bezier(.2, .7, .25, 1) .32s both; }
+@keyframes unfold { from { transform: perspective(2200px) rotateY(-88deg); opacity: 0; } 35% { opacity: 1; } to { transform: perspective(2200px) rotateY(0deg); opacity: 1; } }
 
 @media (max-width: 1080px) {
   .cb-row { grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr); }

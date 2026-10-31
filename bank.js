@@ -84,10 +84,12 @@ export function quarterProfit(b, q) {
   return prev == null ? null : cur - prev;
 }
 
-/** Kuartal terakhir yang sudah dilaporkan cukup banyak bank, sebagai pilihan awal perbandingan. */
+/** Kuartal terakhir yang sudah dilaporkan sebagian besar bank (minimal 10 bank dan 60% dari semua bank),
+ *  sebagai pilihan awal perbandingan: kuartal yang baru dirilis segelintir bank belum dipakai. */
 export function defaultQuarter(banks, quarters, min = 10) {
+  const need = Math.max(min, Math.ceil(banks.length * 0.6));
   for (let i = quarters.length - 1; i >= 0; i--) {
-    if (banks.filter((b) => valueAt(b, quarters[i], 'laba') != null).length >= min) return quarters[i];
+    if (banks.filter((b) => valueAt(b, quarters[i], 'laba') != null).length >= need) return quarters[i];
   }
   return quarters[quarters.length - 1];
 }
@@ -179,13 +181,14 @@ const onSeg = (host, fn) => host.addEventListener('click', (e) => { const b = e.
 /** Ukuran bank untuk mengurutkan: aset, atau kredit bila aset tidak disebut. */
 export const sizeAt = (b, q) => valueAt(b, q, 'aset') ?? (valueAt(b, q, 'kredit') != null ? valueAt(b, q, 'kredit') * 1.4 : null) ?? valueAt(b, q, 'dpk') ?? 0;
 const bySize = (list, q) => [...list].sort((a, b) => sizeAt(b, q) - sizeAt(a, q));
-/** Kode saham bila bank tercatat di bursa (14 bank utama memakai kode saham sebagai kode). */
-export const tickerOf = (b) => b.saham || (b.ringkas ? null : b.kode);
+/** Kode saham bila bank tercatat di bursa. */
+// 14 bank inti memakai kode saham sebagai kode; bank lain (punya field logo) hanya bila field saham diisi.
+export const tickerOf = (b) => b.saham || (b.ringkas || b.logo ? null : b.kode);
 /** Banyaknya kuartal yang berisi angka. */
 const depth = (b) => QS.filter((x) => b.kuartal?.[x]).length;
 
 /** Batang peringkat untuk satu metrik pada kuartal q. Baris bank `mark` disorot dan selalu tampil. */
-function rankBars(list, key, q, mark = null, limit = Infinity) {
+function rankBars(list, key, q, mark = null, limit = Infinity, moreHref = null) {
   const m = M[key];
   const sorted = sortBy(list, key, q);
   const max = Math.max(...sorted.map((b) => Math.abs(valueAt(b, q, key))), 1e-4);
@@ -203,7 +206,9 @@ function rankBars(list, key, q, mark = null, limit = Infinity) {
   };
   const more = sorted.length - shown.length;
   return shown.map(row).join('')
-    + (more > 0 ? `<li><button type="button" class="bb-more" data-more="1">Tampilkan ${more} bank lainnya</button></li>` : '')
+    + (more > 0 ? (moreHref
+      ? `<li><a class="bb-more" href="${moreHref}">Lihat semua ${sorted.length} bank ${lucide('arrow-right')}</a></li>`
+      : `<li><button type="button" class="bb-more" data-more="1">Tampilkan ${more} bank lainnya</button></li>`) : '')
     + (missing.length ? `<li class="bb-missing">Belum ada angka ${M[key].label.toLowerCase()} ${qLabel(q)}: ${missing.length > 12 ? `${missing.length} bank` : missing.map((b) => esc(b.nama)).join(', ')}</li>` : '');
 }
 
@@ -385,7 +390,6 @@ export function renderProfile(data) {
   onSeg($('#pf-quarter'), (v) => { prof.q = v; drawProfile(); });
   onSeg($('#pf-metric'), (v) => { prof.metric = v; drawProfile(false); });
   $('#pf-stats-sub').addEventListener('click', (e) => { const x = e.target.closest('[data-q]'); if (x) { prof.q = x.dataset.q; drawProfile(); } });
-  $('#pf-peers').addEventListener('click', (e) => { if (e.target.closest('[data-more]')) { prof.allPeers = true; drawProfile(false); } });
   // Satu kuartal saja: grafik tren belum berarti, jadi posisi di antara bank sekelompok tampil selebar halaman.
   $('#pf-trend-card').hidden = qsWith.length < 2;
   $('#pf-grid').classList.toggle('one', qsWith.length < 2);
@@ -434,12 +438,22 @@ function drawProfile(all = true) {
     const values = QS.map((x) => (key === 'laba' ? quarterProfit(b, x) : valueAt(b, x, key)));
     const breaks = b.putus && b.putus.metrik.includes(key) ? [QS.indexOf(b.putus.kuartal)] : [];
     $('#pf-trend-title').textContent = key === 'laba' ? 'Laba per kuartal' : `${metricLabel(b, key)} per kuartal`;
-    lineChart($('#pf-chart'), { labels: QS.map(qShort), series: [{ name: b.nama, values, breaks, color: 'var(--accent)' }], area: false, dots: 'isolated', height: 230, fmt: (v) => fmtMetric(key, v), tick: tick(key), label: `${M[key].label} ${b.nama}` });
+    lineChart($('#pf-chart'), { labels: QS.map(qShort), series: [{ name: b.nama, values, breaks, color: 'var(--accent)' }], area: false, dots: 'isolated', height: 330, fmt: (v) => fmtMetric(key, v), tick: tick(key), label: `${M[key].label} ${b.nama}` });
+    // Ringkasan deret: angka terbaru, tertinggi, terendah, dan perubahan setahun.
+    const pts = QS.map((x, i) => ({ x, v: values[i] })).filter((d) => d.v != null);
+    const hi = pts.reduce((a, d) => (d.v > a.v ? d : a), pts[0]);
+    const lo = pts.reduce((a, d) => (d.v < a.v ? d : a), pts[0]);
+    const last = pts[pts.length - 1];
+    const g = last ? yoyAt(b, last.x, key) : null;
+    const tile = (label, d, extra = '') => `<div class="ts"><small>${label}</small><b>${d ? fmtMetric(key, d.v) : '–'}</b><span>${d ? qLabel(d.x) : ''}${extra}</span></div>`;
+    $('#pf-tstats').innerHTML = pts.length ? tile('Terbaru', last) + tile('Tertinggi', hi) + tile('Terendah', lo)
+      + `<div class="ts"><small>${key === 'laba' ? 'Laba sejak Januari, setahun' : 'Dibanding setahun lalu'}</small>${g != null ? growthTag(key, g) : '<b>–</b>'}<span>${last ? `vs ${qLabel(prevYearQ(last.x))}` : ''}</span></div>` : '';
   }
   // Posisi di antara bank sekelompok untuk ukuran yang sama.
   $('#pf-peers-title').textContent = `${metricLabel(b, key)} antarbank ${GROUP_SHORT[b.grup]}, ${qLabel(q)}`;
   $('#pf-peers-note').textContent = key === 'laba' ? 'Laba kumulatif sejak Januari, dibandingkan pada kuartal yang sama.' : M[key].note;
-  $('#pf-peers').innerHTML = rankBars(peers, key, q, b.kode, prof.allPeers ? Infinity : BAR_LIMIT);
+  // Di dalam buku cukup delapan bank teratas supaya halaman tidak memanjang; daftar lengkap di halaman Per bank.
+  $('#pf-peers').innerHTML = rankBars(peers, key, q, b.kode, 8, `bank.html?grup=${b.grup}&q=${q}&ukuran=${PICKABLE.includes(key) ? key : 'kredit'}`);
 }
 
 /* ---------- Beranda ---------- */
