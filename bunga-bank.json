@@ -1,0 +1,2186 @@
+{
+ "diperbarui": "2026-11-01",
+ "acuan": {
+  "lps": [
+   {
+    "berlaku": "2024-02-01",
+    "sampai": "2024-05-31",
+    "rupiah": 4.25,
+    "valas": 2.25,
+    "bpr": 6.75,
+    "sumber": [
+     "https://investortrust.id/financial/21095/masuki-2024-lps-pertahankan-tingkat-bunga-penjaminan"
+    ]
+   },
+   {
+    "berlaku": "2024-06-01",
+    "sampai": "2024-09-30",
+    "rupiah": 4.25,
+    "valas": 2.25,
+    "bpr": 6.75,
+    "sumber": [
+     "https://investortrust.id/financial/28155/lps-pertahankan-bunga-penjaminan-periode-juni-september-2024"
+    ]
+   },
+   {
+    "berlaku": "2024-10-01",
+    "sampai": "2025-01-31",
+    "rupiah": 4.25,
+    "valas": 2.25,
+    "bpr": 6.75,
+    "sumber": [
+     "https://investortrust.id/financial/42489/lps-pertahankan-bunga-penjaminan-simpanan-bank-umum-di-4-25-berlaku-1-oktober-2024"
+    ]
+   },
+   {
+    "berlaku": "2025-02-01",
+    "sampai": "2025-05-31",
+    "rupiah": 4.25,
+    "valas": 2.25,
+    "bpr": 6.75,
+    "sumber": [
+     "https://investortrust.id/macro/54183/tok-lps-pertahankan-tingkat-bunga-penjaminan-4-25"
+    ]
+   },
+   {
+    "berlaku": "2025-06-01",
+    "sampai": "2025-08-27",
+    "rupiah": 4.0,
+    "valas": 2.25,
+    "bpr": 6.5,
+    "sumber": [
+     "https://investortrust.id/financial/67495/lps-tetapkan-tingkat-bunga-penjaminan"
+    ]
+   },
+   {
+    "berlaku": "2025-08-28",
+    "sampai": "2025-09-30",
+    "rupiah": 3.75,
+    "valas": 2.25,
+    "bpr": 6.25,
+    "sumber": [
+     "https://finance.detik.com/moneter/d-8080148/tok-lps-turunkan-bunga-penjaminan-jadi-3-75",
+     "https://www.metrotvnews.com/read/kewCM8Rx-lps-pangkas-tingkat-bunga-penjaminan-jadi-3-75"
+    ]
+   },
+   {
+    "berlaku": "2025-10-01",
+    "sampai": "2026-01-31",
+    "rupiah": 3.5,
+    "valas": 2.0,
+    "bpr": 6.0,
+    "sumber": [
+     "https://investortrust.id/financial/79769/lps-kembali-pangkas-bunga-penjaminan-25-bps-bank-umum-jadi-3-5-dan-bpr-6"
+    ]
+   },
+   {
+    "berlaku": "2026-02-01",
+    "sampai": "2026-05-31",
+    "rupiah": 3.5,
+    "valas": 2.0,
+    "bpr": 6.0,
+    "sumber": [
+     "https://investortrust.id/financial/92181/lps-tetapkan-tingkat-bunga-jaminan",
+     "https://ekonomi.republika.co.id/berita/t9aguc370/lps-tahan-bunga-penjaminan-35-persen-hingga-mei-2026"
+    ]
+   },
+   {
+    "berlaku": "2026-06-01",
+    "sampai": "2026-06-30",
+    "rupiah": 3.5,
+    "valas": 2.0,
+    "bpr": 6.0,
+    "sumber": [
+     "https://keuangan.kontan.co.id/news/tok-lps-tahan-tingkat-bunga-penjaminan-sebesar-350-hingga-september-2026",
+     "https://infobanknews.com/lps-pertahankan-tingkat-bunga-penjaminan-hingga-september-2026-ini-pertimbangannya"
+    ]
+   },
+   {
+    "berlaku": "2026-07-01",
+    "sampai": "2026-09-30",
+    "rupiah": 3.75,
+    "valas": 2.0,
+    "bpr": 6.25,
+    "sumber": [
+     "https://investortrust.id/macro/107527/lps-naikkan-tingkat-bunga-penjaminan-bank-umum-jadi-3-75-mulai-1-juli-2026",
+     "https://finance.detik.com/moneter/d-8547349/lps-naikkan-tingkat-bunga-penjaminan-jadi-3-75"
+    ]
+   },
+   {
+    "berlaku": "2026-10-01",
+    "sampai": "2027-01-31",
+    "rupiah": 3.75,
+    "valas": 2.0,
+    "bpr": 6.25,
+    "sumber": [
+     "https://finance.detik.com/moneter/d-8685926/lps-tahan-bunga-penjaminan-bank-3-75",
+     "https://keuangan.kontan.co.id/news/lps-pertahankan-tingkat-bunga-penjaminan-375-hingga-januari-2027"
+    ]
+   }
+  ],
+  "bi_rate": [
+   {
+    "tanggal": "2024-04-24",
+    "nilai": 6.25,
+    "sumber": [
+     "https://jogja.antaranews.com/berita/682014/bi-rate-naik-25-basis-poin-menjadi-625-persen"
+    ]
+   },
+   {
+    "tanggal": "2024-09-18",
+    "nilai": 6.0,
+    "sumber": [
+     "https://kbvalbury.com/cfind/source/files/bi-rate-update---240918.pdf"
+    ]
+   },
+   {
+    "tanggal": "2025-01-15",
+    "nilai": 5.75,
+    "sumber": [
+     "https://perbanas.org/uploads/fileupload/pdf/Update BI Rate_Januari 2025.pdf"
+    ]
+   },
+   {
+    "tanggal": "2025-05-21",
+    "nilai": 5.5,
+    "sumber": [
+     "https://www.kbvalbury.com/indonesian-macro-update-bi-policy-mix-may2025"
+    ]
+   },
+   {
+    "tanggal": "2025-07-16",
+    "nilai": 5.25,
+    "sumber": [
+     "https://investortrust.id/market/72728/bi-pangkas-bi-rate-25-bps-menjadi-5-25"
+    ]
+   },
+   {
+    "tanggal": "2025-08-20",
+    "nilai": 5.0,
+    "sumber": [
+     "https://ekonomi.republika.co.id/berita/t1a9qg423/bi-putuskan-turunkan-suku-bunga-jadi-5-persen-pada-agustus-2025"
+    ]
+   },
+   {
+    "tanggal": "2025-09-17",
+    "nilai": 4.75,
+    "sumber": [
+     "https://insight.kontan.co.id/news/bi-rate-turun-5-kali-hingga-september-2025-demi-menopang-pertumbuhan-ekonomi"
+    ]
+   },
+   {
+    "tanggal": "2026-05-20",
+    "nilai": 5.25,
+    "sumber": [
+     "https://www.cnnindonesia.com/ekonomi/20260618143411-78-1370442/bi-rate-naik-25-bps-lagi-jadi-575-persen-per-18-juni",
+     "https://data.goodstats.id/label/bi-rate"
+    ]
+   },
+   {
+    "tanggal": "2026-06-09",
+    "nilai": 5.5,
+    "sumber": [
+     "https://www.cnnindonesia.com/ekonomi/20260618143411-78-1370442/bi-rate-naik-25-bps-lagi-jadi-575-persen-per-18-juni",
+     "https://data.goodstats.id/label/bi-rate"
+    ]
+   },
+   {
+    "tanggal": "2026-06-18",
+    "nilai": 5.75,
+    "sumber": [
+     "https://www.cnnindonesia.com/ekonomi/20260618143411-78-1370442/bi-rate-naik-25-bps-lagi-jadi-575-persen-per-18-juni",
+     "https://data.goodstats.id/label/bi-rate"
+    ]
+   },
+   {
+    "tanggal": "2026-09-23",
+    "nilai": 5.75,
+    "sumber": [
+     "https://www.jawapos.com/ekonomi/2609230306/bi-tahan-suku-bunga-acuan-575-persen-ini-alasannya"
+    ]
+   },
+   {
+    "tanggal": "2026-10-21",
+    "nilai": 5.75,
+    "sumber": [
+     "https://finansial.bisnis.com/read/20261021/11/2014413/breaking-bank-indonesia-tahan-bi-rate-575-pada-rdg-oktober-2026"
+    ]
+   }
+  ]
+ },
+ "event": [
+  {
+   "id": "bri-consumer-expo-2026-bintaro",
+   "nama": "BRI Consumer Expo 2026 Bintaro Jaya",
+   "jenis": "campuran",
+   "mulai": "2026-09-26",
+   "selesai": "2026-09-27",
+   "lokasi": "Marketing Gallery Bintaro Jaya",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://katadata.co.id/finansial/korporasi/6ab63aabb4823/bri-consumer-expo-2026-goes-to-bintaro-jaya-promo-bunga-kpr-1-75-dan-kkb-1-81"
+   ]
+  },
+  {
+   "id": "bca-expo-bandung-2026",
+   "nama": "BCA Expo Bandung 2026",
+   "jenis": "campuran",
+   "mulai": "2026-09-12",
+   "selesai": "2026-09-13",
+   "lokasi": "Bandung",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "id": "bca-expo-bali-2026",
+   "nama": "BCA Expo Bali 2026",
+   "jenis": "campuran",
+   "mulai": "2026-09-12",
+   "selesai": "2026-09-13",
+   "lokasi": "Bali",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "id": "bca-expo-jabodetabek-2026",
+   "nama": "BCA Expo Jabodetabek 2026",
+   "jenis": "campuran",
+   "mulai": "2026-09-11",
+   "selesai": "2026-09-13",
+   "lokasi": "Hall 5-10 ICE BSD City, Tangerang",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-jabodetabek-2026-digelar-tawarkan-bunga-kpr-mulai-123-dan-kkb-18"
+   ]
+  },
+  {
+   "id": "bca-expo-medan-2026",
+   "nama": "BCA Expo Medan 2026",
+   "jenis": "campuran",
+   "mulai": "2026-09-11",
+   "selesai": "2026-09-13",
+   "lokasi": "Medan",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "id": "bca-expo-semarang-2026",
+   "nama": "BCA Expo Semarang 2026",
+   "jenis": "campuran",
+   "mulai": "2026-09-08",
+   "selesai": "2026-09-13",
+   "lokasi": "Semarang",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "id": "danantara-housing-expo-2026",
+   "nama": "Danantara Housing Expo 2026",
+   "jenis": "properti",
+   "mulai": "2026-08-27",
+   "selesai": "2026-08-30",
+   "lokasi": "NICE (Nusantara International Convention Exhibition), PIK 2, Tangerang",
+   "penyelenggara": "BPI Danantara bersama Himbara",
+   "sumber": [
+    "https://investortrust.id/business/113681/dukung-program-3-juta-rumah-danantara-gelar-housing-expo-2026-kpr-bunga-2-75-dan-dp-mulai-1"
+   ]
+  },
+  {
+   "id": "bca-expo-malang-2026",
+   "nama": "BCA Expo Malang 2026",
+   "jenis": "campuran",
+   "mulai": "2026-08-22",
+   "selesai": "2026-08-23",
+   "lokasi": "KDS Ballroom, The Araya, Malang",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://bcasekuritas.co.id/latest-news/news/apresiasi-nasabah-di-malang-bca-expo-2026-hadirkan-bunga-spesial-kpr",
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "id": "bca-expo-surabaya-2026",
+   "nama": "BCA Expo Surabaya 2026",
+   "jenis": "campuran",
+   "mulai": "2026-08-21",
+   "selesai": "2026-08-23",
+   "lokasi": "Surabaya",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "id": "bni-wondrx-2026",
+   "nama": "BNI wondrX 2026",
+   "jenis": "campuran",
+   "mulai": "2026-08-21",
+   "selesai": "2026-08-23",
+   "lokasi": "Hall 5-10 ICE BSD, Tangerang",
+   "penyelenggara": "BNI",
+   "sumber": [
+    "https://bcasekuritas.co.id/latest-news/news/bni-gelar-promo-di-gelaran-wondrx-2026"
+   ]
+  },
+  {
+   "id": "bri-kkb-expo-2026",
+   "nama": "BRI KKB Expo 2026",
+   "jenis": "otomotif",
+   "mulai": "2026-08-10",
+   "selesai": "2026-08-14",
+   "lokasi": "Serentak di 131 kantor BRI se-Indonesia",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bri-kembali-gelar-kkb-expo-di-131-titik-tawarkan-bunga-kredit-mobil-mulai-18",
+    "https://www.metrotvnews.com/read/NA0Cro2z-bri-kkb-expo-kembali-hadir-tawarkan-bunga-mulai-1-8-persen"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2026-pik2",
+   "nama": "BRI Consumer Expo 2026 PIK2",
+   "jenis": "campuran",
+   "mulai": "2026-08-08",
+   "selesai": "2026-08-09",
+   "lokasi": "Marketing Gallery Sedayu Indo City PIK",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://www.metrotvnews.com/read/N4ECoPyj-bri-consumer-expo-2026-goes-to-pik2-masyarakat-bisa-nikmati-promo-kpr-dan-kkb"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2026-makassar",
+   "nama": "BRI Consumer Expo 2026 Makassar",
+   "jenis": "campuran",
+   "mulai": "2026-06-19",
+   "selesai": "2026-06-21",
+   "lokasi": "Main Atrium Trans Studio Mall Makassar",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "id": "iims-surabaya-2026",
+   "nama": "IIMS Surabaya 2026",
+   "jenis": "otomotif",
+   "mulai": "2026-05-26",
+   "selesai": "2026-05-31",
+   "lokasi": "Grand City Convex, Surabaya",
+   "penyelenggara": "Dyandra Promosindo",
+   "sumber": [
+    "https://www.segmenty.com/GenerateNewsStaticJsps/IIMS_Surabaya_2026_to_be_held_on_26th-31st_May.html",
+    "https://momsmoney.kontan.co.id/news/cek-promo-beli-kendaraan-di-pameran-iims-surabaya-2026-dari-danamon"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2026-jakarta",
+   "nama": "BRI Consumer Expo 2026 Jakarta",
+   "jenis": "campuran",
+   "mulai": "2026-05-22",
+   "selesai": "2026-05-24",
+   "lokasi": "Jakarta International Convention Center (JICC)",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/tfft5o368/bri-consumer-expo-2026-hadir-di-jakarta-banjir-promo-untuk-rumah-hingga-liburan-impian"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2026-medan",
+   "nama": "BRI Expo 2026 Medan",
+   "jenis": "campuran",
+   "mulai": "2026-05-08",
+   "selesai": "2026-05-09",
+   "lokasi": "Club House Royal Sumatra, Medan",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://www.suara.com/bri/2026/05/06/161015/wujudkan-hunian-dan-kendaraan-di-bri-expo-2026-medan-goes-to-royal-sumatra"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2026-surabaya",
+   "nama": "BRI Consumer Expo 2026 Surabaya",
+   "jenis": "campuran",
+   "mulai": "2026-04-24",
+   "selesai": "2026-04-26",
+   "lokasi": "Ciputra World Surabaya",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://www.jawapos.com/ekonomi/2604250218/serbu-surabaya-bri-consumer-expo-2026-tawarkan-kpr-super-murah-dan-hiburan-spektakuler"
+   ]
+  },
+  {
+   "id": "bca-expoversary-2026",
+   "nama": "BCA Expoversary 2026",
+   "jenis": "campuran",
+   "mulai": "2026-02-05",
+   "selesai": "2026-03-31",
+   "lokasi": "ICE BSD (Tangerang) dan 8 kota lain; online expo.bca.co.id",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://infobanknews.com/bca-genjot-kredit-konsumer-lewat-expoversary-2026-ada-bunga-kpr-169-persen/"
+   ]
+  },
+  {
+   "id": "btn-bale-festival-2025",
+   "nama": "Bale Festival BTN (HUT ke-49 KPR BTN) 2025",
+   "jenis": "properti",
+   "mulai": "2025-12-09",
+   "selesai": "2025-12-14",
+   "lokasi": "Medan, Bandung, Jakarta, Yogyakarta, Pontianak, Makassar",
+   "penyelenggara": "BTN",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/btn-tawarkan-bunga-kpr-265-di-enam-kota-besar-rayakan-hut-kpr-ke-49"
+   ]
+  },
+  {
+   "id": "livin-fest-2025-bandung",
+   "nama": "Livin' Fest Bandung 2025",
+   "jenis": "campuran",
+   "mulai": "2025-10-23",
+   "selesai": "2025-10-26",
+   "lokasi": "Trans Studio Mall Bandung",
+   "penyelenggara": "Bank Mandiri",
+   "sumber": [
+    "https://wartaekonomi.co.id/read587620/bank-mandiri-suguhkan-hiburan-hingga-penawaran-pembiayaan-di-livin-fest-bandung-2025"
+   ]
+  },
+  {
+   "id": "livin-fest-2025-jakarta",
+   "nama": "Livin' Fest 2025 Jakarta",
+   "jenis": "campuran",
+   "mulai": "2025-10-16",
+   "selesai": "2025-10-19",
+   "lokasi": "NICE PIK 2, Tangerang",
+   "penyelenggara": "Bank Mandiri",
+   "sumber": [
+    "https://momsmoney.kontan.co.id/news/ulang-tahun-ke-27-ini-promo-bunga-kpr-dan-kkb-bank-mandiri",
+    "https://www.investortrust.id/financial/80892/hut-ke-27-bank-mandiri-genjot-kpr-dengan-promo-menarik"
+   ]
+  },
+  {
+   "id": "bca-expo-2025",
+   "nama": "BCA Expo 2025",
+   "jenis": "campuran",
+   "mulai": "2025-08-22",
+   "selesai": "2025-08-24",
+   "lokasi": "Hall 5-10 ICE BSD, Tangerang",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/intip-sejumlah-tawaran-menarik-di-bca-expo-2025-di-ice-bsd",
+    "https://www.investortrust.id/financial/76671/bca-expo-2025-masih-berlangsung-hingga-30-september-ada-bunga-kpr-dan-kkbmulai-1-65-per-tahun"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2025-bandung",
+   "nama": "BRI Consumer Expo 2025 Bandung",
+   "jenis": "campuran",
+   "mulai": "2025-08-15",
+   "selesai": "2025-08-17",
+   "lokasi": "Mall Paskal 23, Bandung",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://www.detik.com/properti/berita/d-8064844/bri-hadirkan-suku-bunga-kpr-mulai-2-40-di-consumer-expo-2025-bandung"
+   ]
+  },
+  {
+   "id": "bni-wondrx-2025",
+   "nama": "BNI wondrX 2025",
+   "jenis": "campuran",
+   "mulai": "2025-08-15",
+   "selesai": "2025-08-17",
+   "lokasi": "ICE BSD, Tangerang",
+   "penyelenggara": "BNI",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/siap-siap-ada-tawaran-bunga-kpr-dan-kkb-mulai-175-di-bni-wondrx-2025",
+    "https://investortrust.id/business/76013/bni-wondrx-2025-masih-berlangsung-yuk-nikmati-beragam-promo-hingga-penampilan-spesial-lyodra"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2025-bsd",
+   "nama": "BRI Consumer Expo 2025 BSD",
+   "jenis": "campuran",
+   "mulai": "2025-07-26",
+   "selesai": "2025-07-27",
+   "lokasi": "Marketing Gallery BSD City, Tangerang",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/szxtua368/diskon-rumah-hingga-19-bunga-kpr-super-ringan-di-expo-bri-bsd-2025"
+   ]
+  },
+  {
+   "id": "bri-consumer-expo-2025-pik2",
+   "nama": "BRI Consumer Expo 2025 PIK 2",
+   "jenis": "campuran",
+   "mulai": "2025-07-26",
+   "selesai": "2025-07-27",
+   "lokasi": "Marketing Gallery PIK 2, Tangerang",
+   "penyelenggara": "BRI",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/szxu7t368/kpr-rumah-makin-mudah-di-bri-consumer-expo-2025-goes-to-pik-2"
+   ]
+  },
+  {
+   "id": "bca-expoversary-2025",
+   "nama": "BCA Expoversary 2025",
+   "jenis": "campuran",
+   "mulai": "2025-02-20",
+   "selesai": "2025-02-23",
+   "lokasi": "ICE BSD City, Tangerang",
+   "penyelenggara": "BCA",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20250222155955-625-1201321/rayakan-hut-ke-68-bca-expoversary-2025-tawarkan-beragam-promo-menarik",
+    "https://keuangan.kontan.co.id/news/berbagai-diskon-menarik-dan-penawaran-spesial-meriahkan-bca-expoversary-2025"
+   ]
+  }
+ ],
+ "promo": [
+  {
+   "event": "bca-expoversary-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.69,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Diskon provisi 50%, diskon asuransi jiwa 5%",
+   "sumber": [
+    "https://infobanknews.com/bca-genjot-kredit-konsumer-lewat-expoversary-2026-ada-bunga-kpr-169-persen/"
+   ]
+  },
+  {
+   "event": "bca-expoversary-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 2.15,
+   "skema": "flat tenor 3 tahun",
+   "fixed_tahun": 3,
+   "jenis_bunga": "flat",
+   "catatan": "Potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://infobanknews.com/bca-genjot-kredit-konsumer-lewat-expoversary-2026-ada-bunga-kpr-169-persen/"
+   ]
+  },
+  {
+   "event": "bca-expo-jabodetabek-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.23,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Rumah baru dari developer mitra BCA; diskon provisi 0,81%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-jabodetabek-2026-digelar-tawarkan-bunga-kpr-mulai-123-dan-kkb-18"
+   ]
+  },
+  {
+   "event": "bca-expo-jabodetabek-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car; potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-jabodetabek-2026-digelar-tawarkan-bunga-kpr-mulai-123-dan-kkb-18"
+   ]
+  },
+  {
+   "event": "bca-expo-malang-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.23,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Rumah baru dari developer mitra BCA; diskon provisi 0,81%",
+   "sumber": [
+    "https://bcasekuritas.co.id/latest-news/news/apresiasi-nasabah-di-malang-bca-expo-2026-hadirkan-bunga-spesial-kpr",
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-malang-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car; potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://bcasekuritas.co.id/latest-news/news/apresiasi-nasabah-di-malang-bca-expo-2026-hadirkan-bunga-spesial-kpr",
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-surabaya-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.23,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Rumah baru dari developer mitra BCA; diskon provisi 0,81%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-surabaya-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car; potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-semarang-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.23,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Rumah baru dari developer mitra BCA; diskon provisi 0,81%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-semarang-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car; potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-medan-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.23,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Rumah baru dari developer mitra BCA; diskon provisi 0,81%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-medan-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car; potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-bandung-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.23,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Rumah baru dari developer mitra BCA; diskon provisi 0,81%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-bandung-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car; potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-bali-2026",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.23,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Rumah baru dari developer mitra BCA; diskon provisi 0,81%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-bali-2026",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car; potongan biaya admin hingga Rp900 ribu",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bca-expo-2025",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 1.65,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Diskon provisi 50%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/intip-sejumlah-tawaran-menarik-di-bca-expo-2025-di-ice-bsd",
+    "https://www.investortrust.id/financial/76671/bca-expo-2025-masih-berlangsung-hingga-30-september-ada-bunga-kpr-dan-kkbmulai-1-65-per-tahun"
+   ]
+  },
+  {
+   "event": "bca-expo-2025",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 1.65,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru passenger car",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/intip-sejumlah-tawaran-menarik-di-bca-expo-2025-di-ice-bsd",
+    "https://www.investortrust.id/financial/76671/bca-expo-2025-masih-berlangsung-hingga-30-september-ada-bunga-kpr-dan-kkbmulai-1-65-per-tahun"
+   ]
+  },
+  {
+   "event": "danantara-housing-expo-2026",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 2.75,
+   "skema": "promo selama pameran",
+   "catatan": "DP mulai 1%, tenor hingga 30 tahun, simulasi cicilan mulai sekitar Rp1 juta",
+   "sumber": [
+    "https://www.metrotvnews.com/read/NrWC8nO4-danantara-housing-expo-2026-promo-kpr-bri-dp-1-persen-dan-tenor-30-tahun"
+   ]
+  },
+  {
+   "event": "danantara-housing-expo-2026",
+   "bank": "bni",
+   "produk": "kpr",
+   "bunga": 2.75,
+   "skema": "promo selama pameran",
+   "catatan": "KPR BNI Griya; DP mulai 1%, tenor hingga 30 tahun, bebas provisi dan administrasi; properti baru dari developer mitra; realisasi paling lambat 2026-09-30",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bni-tawarkan-kpr-bunga-275-dp-mulai-1-di-danantara-housing-expo-2026"
+   ]
+  },
+  {
+   "event": "danantara-housing-expo-2026",
+   "bank": "btn",
+   "produk": "kpr",
+   "bunga": 2.75,
+   "skema": "promo selama pameran",
+   "catatan": "Tenor hingga 30 tahun",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/btn-tawarkan-bunga-mulai-275-di-danantara-housing-expo-2026"
+   ]
+  },
+  {
+   "event": "bri-kkb-expo-2026",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Mobil baru; DP mulai 10%; plafon tenor hingga 5 tahun; bonus saldo BRIZZI Rp500.000 per SPK terealisasi",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bri-kembali-gelar-kkb-expo-di-131-titik-tawarkan-bunga-kredit-mobil-mulai-18",
+    "https://www.metrotvnews.com/read/NA0Cro2z-bri-kkb-expo-kembali-hadir-tawarkan-bunga-mulai-1-8-persen"
+   ]
+  },
+  {
+   "event": "iims-surabaya-2026",
+   "bank": "danamon",
+   "produk": "kkb",
+   "bunga": 1.7,
+   "skema": "promo selama pameran",
+   "catatan": "KPM Prima (konvensional dan syariah); beli kendaraan di booth Danamon/Adira/MUFG dan ajukan selama pameran",
+   "sumber": [
+    "https://momsmoney.kontan.co.id/news/cek-promo-beli-kendaraan-di-pameran-iims-surabaya-2026-dari-danamon"
+   ]
+  },
+  {
+   "event": "bca-expoversary-2025",
+   "bank": "bca",
+   "produk": "kpr",
+   "bunga": 2.68,
+   "skema": "fixed 3 tahun",
+   "fixed_tahun": 3,
+   "jenis_bunga": "efektif",
+   "catatan": "Syarat penempatan dana (nominal tidak disebut); provisi 0,68%, diskon biaya admin 50%",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20250222155955-625-1201321/rayakan-hut-ke-68-bca-expoversary-2025-tawarkan-beragam-promo-menarik",
+    "https://keuangan.kontan.co.id/news/berbagai-diskon-menarik-dan-penawaran-spesial-meriahkan-bca-expoversary-2025"
+   ]
+  },
+  {
+   "event": "bca-expoversary-2025",
+   "bank": "bca",
+   "produk": "kkb",
+   "bunga": 2.88,
+   "skema": "flat tenor 2 dan 3 tahun",
+   "jenis_bunga": "flat",
+   "catatan": "DP 0%",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/berbagai-diskon-menarik-dan-penawaran-spesial-meriahkan-bca-expoversary-2025"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2025-bsd",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.5,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "DP mulai 0% sesuai LTV; ada pilihan bunga berjenjang hingga tenor 20 tahun; tenor maks 25 tahun untuk karyawan tetap; bebas provisi dan admin; promo sampai 2025-08-31",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/szxtua368/diskon-rumah-hingga-19-bunga-kpr-super-ringan-di-expo-bri-bsd-2025"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2025-pik2",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.5,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "DP mulai 0%; tenor hingga 25 tahun; bebas provisi dan admin; promo sampai 2025-08-31",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/szxu7t368/kpr-rumah-makin-mudah-di-bri-consumer-expo-2025-goes-to-pik-2"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2025-pik2",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 2.4,
+   "skema": "fixed 3 tahun",
+   "fixed_tahun": 3,
+   "catatan": "DP mulai 0%; tenor hingga 25 tahun; bebas provisi dan admin; promo sampai 2025-08-31",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/szxu7t368/kpr-rumah-makin-mudah-di-bri-consumer-expo-2025-goes-to-pik-2"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2025-pik2",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 3.5,
+   "skema": "fixed 5 tahun",
+   "fixed_tahun": 5,
+   "catatan": "DP mulai 0%; tenor hingga 25 tahun; bebas provisi dan admin; promo sampai 2025-08-31",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/szxu7t368/kpr-rumah-makin-mudah-di-bri-consumer-expo-2025-goes-to-pik-2"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2025-bandung",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 2.4,
+   "skema": "fixed 3 tahun",
+   "fixed_tahun": 3,
+   "catatan": "DP, tenor, dan syarat tidak disebut",
+   "sumber": [
+    "https://www.detik.com/properti/berita/d-8064844/bri-hadirkan-suku-bunga-kpr-mulai-2-40-di-consumer-expo-2025-bandung"
+   ]
+  },
+  {
+   "event": "bni-wondrx-2025",
+   "bank": "bni",
+   "produk": "kpr",
+   "bunga": 1.79,
+   "skema": "promo selama pameran",
+   "catatan": "Judul kontan menulis 1,75% tetapi isi artikel 1,79%; bebas provisi dan admin; masa fixed tidak disebut",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/siap-siap-ada-tawaran-bunga-kpr-dan-kkb-mulai-175-di-bni-wondrx-2025"
+   ]
+  },
+  {
+   "event": "bni-wondrx-2025",
+   "bank": "bni",
+   "produk": "kkb",
+   "bunga": 1.79,
+   "skema": "promo selama pameran",
+   "jenis_bunga": "flat",
+   "catatan": "Bebas provisi dan asuransi banjir/huru-hara tahun pertama; jenis flat dari investortrust, kontan tidak menyebut jenis",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/siap-siap-ada-tawaran-bunga-kpr-dan-kkb-mulai-175-di-bni-wondrx-2025",
+    "https://investortrust.id/business/76013/bni-wondrx-2025-masih-berlangsung-yuk-nikmati-beragam-promo-hingga-penampilan-spesial-lyodra"
+   ]
+  },
+  {
+   "event": "bni-wondrx-2026",
+   "bank": "bni",
+   "produk": "kpr",
+   "bunga": 1.0,
+   "skema": "promo selama pameran",
+   "jenis_bunga": "efektif",
+   "catatan": "KPR BNI Griya; masa fixed, tenor, DP, dan syarat tidak disebut; bebas provisi dan admin",
+   "sumber": [
+    "https://bcasekuritas.co.id/latest-news/news/bni-gelar-promo-di-gelaran-wondrx-2026",
+    "https://bcasekuritas.co.id/latest-news/news/bni-perluas-akses-pembiayaan-hunian"
+   ]
+  },
+  {
+   "event": "bni-wondrx-2026",
+   "bank": "bni",
+   "produk": "kkb",
+   "bunga": 0.0,
+   "skema": "promo selama pameran",
+   "jenis_bunga": "flat",
+   "catatan": "KKB BNI OTO 'mulai 0%' flat; tenor dan syarat tidak disebut; bunga dari bank (bukan leasing) tetapi angka nol perlu dicek ke BNI",
+   "sumber": [
+    "https://bcasekuritas.co.id/latest-news/news/bni-gelar-promo-di-gelaran-wondrx-2026"
+   ]
+  },
+  {
+   "event": "btn-bale-festival-2025",
+   "bank": "btn",
+   "produk": "kpr",
+   "bunga": 2.65,
+   "skema": "fixed 3 tahun",
+   "fixed_tahun": 3,
+   "catatan": "Disebut bunga spesial; DP, tenor, syarat tidak disebut",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/btn-tawarkan-bunga-kpr-265-di-enam-kota-besar-rayakan-hut-kpr-ke-49"
+   ]
+  },
+  {
+   "event": "livin-fest-2025-jakarta",
+   "bank": "mandiri",
+   "produk": "kpr",
+   "bunga": 1.27,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "Program HUT Mandiri; provisi 0,27%, admin Rp27 ribu; keterkaitan langsung dengan festival tidak dinyatakan sumber",
+   "sumber": [
+    "https://momsmoney.kontan.co.id/news/ulang-tahun-ke-27-ini-promo-bunga-kpr-dan-kkb-bank-mandiri",
+    "https://www.investortrust.id/financial/80892/hut-ke-27-bank-mandiri-genjot-kpr-dengan-promo-menarik"
+   ]
+  },
+  {
+   "event": "livin-fest-2025-jakarta",
+   "bank": "mandiri",
+   "produk": "kkb",
+   "bunga": 1.27,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "Mandiri Auto, program HUT Mandiri; keterkaitan langsung dengan festival tidak dinyatakan sumber",
+   "sumber": [
+    "https://momsmoney.kontan.co.id/news/ulang-tahun-ke-27-ini-promo-bunga-kpr-dan-kkb-bank-mandiri"
+   ]
+  },
+  {
+   "event": "livin-fest-2025-bandung",
+   "bank": "mandiri",
+   "produk": "kpr",
+   "bunga": 1.27,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "Syarat tidak disebut",
+   "sumber": [
+    "https://wartaekonomi.co.id/read587620/bank-mandiri-suguhkan-hiburan-hingga-penawaran-pembiayaan-di-livin-fest-bandung-2025"
+   ]
+  },
+  {
+   "event": "livin-fest-2025-bandung",
+   "bank": "mandiri",
+   "produk": "kkb",
+   "bunga": 1.27,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "Mandiri Auto",
+   "sumber": [
+    "https://wartaekonomi.co.id/read587620/bank-mandiri-suguhkan-hiburan-hingga-penawaran-pembiayaan-di-livin-fest-bandung-2025"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-surabaya",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.75,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "DP, tenor, syarat tidak disebut",
+   "sumber": [
+    "https://www.jawapos.com/ekonomi/2604250218/serbu-surabaya-bri-consumer-expo-2026-tawarkan-kpr-super-murah-dan-hiburan-spektakuler"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-surabaya",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 2.85,
+   "skema": "tenor 3 tahun",
+   "catatan": "Jenis bunga tidak disebut",
+   "sumber": [
+    "https://www.jawapos.com/ekonomi/2604250218/serbu-surabaya-bri-consumer-expo-2026-tawarkan-kpr-super-murah-dan-hiburan-spektakuler"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-medan",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.75,
+   "skema": "fixed 1 tahun lalu counter rate",
+   "fixed_tahun": 1,
+   "catatan": "Tenor minimal 5 tahun; program khusus sampai 2026-06-30; bebas provisi dan admin",
+   "sumber": [
+    "https://www.suara.com/bri/2026/05/06/161015/wujudkan-hunian-dan-kendaraan-di-bri-expo-2026-medan-goes-to-royal-sumatra"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-medan",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 3.4,
+   "skema": "fixed 5 tahun",
+   "fixed_tahun": 5,
+   "catatan": "Tenor minimal 15 tahun",
+   "sumber": [
+    "https://www.suara.com/bri/2026/05/06/161015/wujudkan-hunian-dan-kendaraan-di-bri-expo-2026-medan-goes-to-royal-sumatra"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-medan",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 4.5,
+   "skema": "fixed 10 tahun",
+   "fixed_tahun": 10,
+   "catatan": "Tenor minimal 10 tahun",
+   "sumber": [
+    "https://www.suara.com/bri/2026/05/06/161015/wujudkan-hunian-dan-kendaraan-di-bri-expo-2026-medan-goes-to-royal-sumatra"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-medan",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 2.95,
+   "skema": "berjenjang, 3 tahun pertama",
+   "catatan": "Tenor 10, 15, atau 20 tahun",
+   "sumber": [
+    "https://www.suara.com/bri/2026/05/06/161015/wujudkan-hunian-dan-kendaraan-di-bri-expo-2026-medan-goes-to-royal-sumatra"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-medan",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 1.59,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Penawaran khusus event; tarif reguler 3,00% (12 bln) sampai 3,40% (60 bln)",
+   "sumber": [
+    "https://www.suara.com/bri/2026/05/06/161015/wujudkan-hunian-dan-kendaraan-di-bri-expo-2026-medan-goes-to-royal-sumatra"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-jakarta",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.75,
+   "skema": "berbagai pilihan fixed rate",
+   "catatan": "Masa fixed tidak dirinci",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/tfft5o368/bri-consumer-expo-2026-hadir-di-jakarta-banjir-promo-untuk-rumah-hingga-liburan-impian"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-jakarta",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 1.59,
+   "skema": "promo mobil",
+   "catatan": "Flat/efektif dan tenor tidak disebut; motor premium mulai 0,46% per bulan (tidak dimasukkan)",
+   "sumber": [
+    "https://ekonomi.republika.co.id/berita/tfft5o368/bri-consumer-expo-2026-hadir-di-jakarta-banjir-promo-untuk-rumah-hingga-liburan-impian"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.75,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Promo sampai 2026-08-31; ada juga 2,50% fixed 1 tahun lalu counter rate",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 2.65,
+   "skema": "fixed 3 tahun",
+   "fixed_tahun": 3,
+   "catatan": "Setelah itu counter rate; ada juga 3,75% fixed 3 tahun",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 3.4,
+   "skema": "fixed 5 tahun",
+   "fixed_tahun": 5,
+   "catatan": "Setelah itu counter rate",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 4.5,
+   "skema": "fixed 10 tahun",
+   "fixed_tahun": 10,
+   "catatan": "Setelah itu counter rate; bunga berjenjang hingga tenor 20 tahun",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 1.8,
+   "skema": "tenor 1 tahun",
+   "fixed_tahun": 1,
+   "catatan": "Jenis bunga tidak disebut",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 3.1,
+   "skema": "tenor 2-3 tahun",
+   "catatan": "Jenis bunga tidak disebut",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 3.2,
+   "skema": "tenor 4 tahun",
+   "catatan": "Jenis bunga tidak disebut",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-makassar",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 3.4,
+   "skema": "tenor 5 tahun",
+   "catatan": "Jenis bunga tidak disebut",
+   "sumber": [
+    "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-pik2",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.75,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Skema lain tidak dirinci",
+   "sumber": [
+    "https://www.metrotvnews.com/read/N4ECoPyj-bri-consumer-expo-2026-goes-to-pik2-masyarakat-bisa-nikmati-promo-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-pik2",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 1.81,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "sumber": [
+    "https://www.metrotvnews.com/read/N4ECoPyj-bri-consumer-expo-2026-goes-to-pik2-masyarakat-bisa-nikmati-promo-kpr-dan-kkb"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-bintaro",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 1.75,
+   "skema": "fixed 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "efektif",
+   "catatan": "Bebas provisi dan admin; diskon asuransi jiwa hingga 33%",
+   "sumber": [
+    "https://katadata.co.id/finansial/korporasi/6ab63aabb4823/bri-consumer-expo-2026-goes-to-bintaro-jaya-promo-bunga-kpr-1-75-dan-kkb-1-81"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-bintaro",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 3.0,
+   "skema": "fixed 3 tahun",
+   "fixed_tahun": 3,
+   "catatan": "Ada juga 3,75% fixed 3 tahun",
+   "sumber": [
+    "https://katadata.co.id/finansial/korporasi/6ab63aabb4823/bri-consumer-expo-2026-goes-to-bintaro-jaya-promo-bunga-kpr-1-75-dan-kkb-1-81"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-bintaro",
+   "bank": "bri",
+   "produk": "kpr",
+   "bunga": 3.4,
+   "skema": "fixed 5 tahun",
+   "fixed_tahun": 5,
+   "catatan": "Ada juga 4,50% dan 7,00% fixed 5 tahun",
+   "sumber": [
+    "https://katadata.co.id/finansial/korporasi/6ab63aabb4823/bri-consumer-expo-2026-goes-to-bintaro-jaya-promo-bunga-kpr-1-75-dan-kkb-1-81"
+   ]
+  },
+  {
+   "event": "bri-consumer-expo-2026-bintaro",
+   "bank": "bri",
+   "produk": "kkb",
+   "bunga": 1.81,
+   "skema": "flat tenor 1 tahun",
+   "fixed_tahun": 1,
+   "jenis_bunga": "flat",
+   "catatan": "Diskon harga di dealer partner; BRIZZI Rp500 ribu untuk 10 nasabah pertama",
+   "sumber": [
+    "https://katadata.co.id/finansial/korporasi/6ab63aabb4823/bri-consumer-expo-2026-goes-to-bintaro-jaya-promo-bunga-kpr-1-75-dan-kkb-1-81"
+   ]
+  },
+  {
+   "event": "danantara-housing-expo-2026",
+   "bank": "bsi",
+   "produk": "kpr",
+   "bunga": 2.75,
+   "skema": "promo selama pameran",
+   "catatan": "Margin murabahah 'special margin' (setara bunga); DP mulai 1%, tenor hingga 30 tahun",
+   "sumber": [
+    "https://keuangan.kontan.co.id/news/bsi-tawarkan-kpr-special-margin-275-di-danantara-housing-expo-2026"
+   ]
+  }
+ ],
+ "bank": {
+  "bri": {
+   "simpanan": {
+    "per": "2026-10-06",
+    "deposito": {
+     "1": 3.0,
+     "3": 3.0,
+     "6": 3.0,
+     "12": 2.5,
+     "24": 2.5
+    },
+    "catatan": "Deposito dari berita Metro TV (data per 6 Oktober 2026); lapisan nominal tidak disebut.",
+    "validasi": "media",
+    "sumber": [
+     "https://www.metrotvnews.com/read/KdZCPRJE-cek-bunga-deposito-bri-bni-dan-mandiri-oktober-2026"
+    ]
+   }
+  },
+  "mandiri": {
+   "sbdk": {
+    "per": "2026-08-31",
+    "korporasi": 8.35,
+    "mikro": 11.6,
+    "kpr": 9.6,
+    "non_kpr": 10.0,
+    "validasi": "resmi",
+    "sumber": [
+     "https://bankmandiri.co.id/web/guest/suku-bunga-dasar-kredit"
+    ]
+   },
+   "simpanan": {
+    "per": "2025-07-15",
+    "tabungan": {
+     "min": 0.0,
+     "max": 0.4,
+     "produk": "Mandiri Tabungan Rupiah"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 0.75
+    },
+    "deposito": {
+     "1": 2.25,
+     "3": 2.25,
+     "6": 2.5,
+     "12": 2.5,
+     "24": 2.5
+    },
+    "catatan": "Deposito lapisan < Rp100 juta (bunga bulanan/jatuh tempo). Giro Reguler Rupiah. Tanggal berlaku 15 Juli 2025 tertulis untuk tabungan; halaman 'terakhir diperbarui 15 Jul 2025'.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankmandiri.co.id/suku-bunga-dana"
+    ]
+   }
+  },
+  "bni": {
+   "simpanan": {
+    "per": "2026-10-06",
+    "deposito": {
+     "1": 2.25,
+     "3": 2.5,
+     "6": 2.75,
+     "12": 2.5,
+     "24": 2.5
+    },
+    "catatan": "Deposito dari berita Metro TV (data per 6 Oktober 2026); lapisan nominal tidak disebut.",
+    "validasi": "media",
+    "sumber": [
+     "https://www.metrotvnews.com/read/KdZCPRJE-cek-bunga-deposito-bri-bni-dan-mandiri-oktober-2026"
+    ]
+   }
+  },
+  "btn": {
+   "sbdk": {
+    "per": "2026-06-01",
+    "korporasi": 8.5,
+    "ritel": 8.75,
+    "mikro": 13.65,
+    "kpr": 7.95,
+    "non_kpr": 10.65,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.btn.co.id/-/media/Files/SBDK/SBDK-BTN-Juni-2026.pdf"
+    ]
+   }
+  },
+  "bsi": {
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "deposito": {
+     "1": 2.2475
+    },
+    "catatan": "Dari RIPLAY Deposito Rupiah BSI (tanpa tanggal cetak; simulasi Sep 2025). Nisbah nasabah 25% menghasilkan ekuivalen 2.2475% untuk simulasi tenor 1 bulan. Dokumen juga menyebut nisbah 26%, 27%, 29% untuk lapisan/tenor lain tetapi pemetaannya",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankbsi.co.id/storage/file_manager/5HwfGF8uZdS0nO38XzRsja9fYZ66Zr1CzqtFRlYG.pdf"
+    ]
+   }
+  },
+  "mantap": {
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "tabungan": {
+     "min": 0.0,
+     "max": 1.25,
+     "produk": "siMantap & siMantap Pensiun"
+    },
+    "catatan": "Lapisan saldo 0 s/d 500 ribu = 0.00; di atas 500 juta = 1.25. TabunganKu: 0.00 (s/d Rp500 ribu) sampai 0.50 (di atas Rp1 juta). Tanggal berlaku tidak tertulis di halaman. Halaman daftar 'Penyesuaian Suku Bunga Baru Produk Dana' tidak menamp",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankmandiritaspen.co.id/info/en-penyesuaian-suku-bunga-baru-produk-dana301/en?page=40",
+     "https://www.bankmandiritaspen.co.id/article/en-tabunganku/en"
+    ]
+   }
+  },
+  "bca": {
+   "sbdk": {
+    "per": "2026-10-31",
+    "korporasi": 6.83,
+    "ritel": 7.74,
+    "mikro": 6.99,
+    "kpr": 9.07,
+    "non_kpr": 8.44,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bca.co.id/id/informasi/Suku-Bunga-Dasar-Kredit"
+    ]
+   }
+  },
+  "cimb": {
+   "simpanan": {
+    "per": "2026-08-19",
+    "deposito": {
+     "1": 2.25,
+     "3": 3.0,
+     "6": 2.75,
+     "12": 2.75
+    },
+    "catatan": "RIPLAY Deposito Berjangka Konvensional Personal, terbit 19 Agustus 2026. Angka 2.25/3.00/2.75/2.75 untuk Rupiah nominal >= Rp8 juta, kemungkinan kanal cabang (tata letak PDF kurang jelas). Kemungkinan kanal OCTO (online) Rupiah berlapis: 8-",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.cimbniaga.co.id/content/dam/cimb/tabungan/riplay/personal/14-RIPLAY-Personal-Deposito-Berjangka-Konvensional-20260819.pdf"
+    ]
+   }
+  },
+  "maybank": {
+   "simpanan": {
+    "per": "2025-11-10",
+    "deposito": {
+     "1": 3.0,
+     "3": 3.0,
+     "6": 3.25,
+     "12": 3.25
+    },
+    "catatan": "Deposito rupiah lapisan Rp10 juta - <Rp100 juta. Halaman: 'Interest rate valid 10 November 2025'; bagian rupiah 'Effective on 1 February 2025'. Tenor 24 bln tidak ada.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.maybank.co.id/savings/Rates/suku-bunga-deposito"
+    ]
+   }
+  },
+  "ocbc": {
+   "sbdk": {
+    "per": "2025-09-26",
+    "korporasi": 8.25,
+    "ritel": 9.0,
+    "mikro": 12.5,
+    "kpr": 8.5,
+    "non_kpr": 15.5,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.ocbc.id/en/suku-bunga-dasar?keyword=9"
+    ]
+   },
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "deposito": {
+     "1": 2.75,
+     "3": 2.75,
+     "6": 2.75,
+     "12": 2.75
+    },
+    "catatan": "Deposito IDR counter/cabang, minimum Rp8 juta, 2.75 semua tenor. Via Mobile/Internet Banking Rp1 juta - <Rp500 juta: 3.00 (1 dan 3 bln), 3.25 (6 dan 12 bln). Tabel tabungan di halaman tidak berlabel produk jelas sehingga tidak dicatat. Tang",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.ocbc.id/en/suku-bunga-dasar?keyword=9"
+    ]
+   }
+  },
+  "mega": {
+   "sbdk": {
+    "per": "2026-04",
+    "korporasi": 8.45,
+    "ritel": 9.71,
+    "mikro": 8.99,
+    "kpr": 9.21,
+    "non_kpr": 8.93,
+    "validasi": "resmi",
+    "sumber": [
+     "https://cdn.bankmega.com/prod.mega.cms.media/filer_public/ff/72/ff728c08-a826-4e52-827d-140f5b26e958/publikasi_web_dan_ig_sbdk_juni_2026.pdf"
+    ]
+   }
+  },
+  "smbci": {
+   "sbdk": {
+    "per": "2026-08",
+    "korporasi": 8.1,
+    "ritel": 9.65,
+    "mikro": 12.22,
+    "kpr": 12.39,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.smbci.com/SBDK/2026/sbdk--sept-ind.pdf"
+    ]
+   },
+   "simpanan": {
+    "per": "2026-08-18",
+    "tabungan": {
+     "min": 0.0,
+     "max": 2.0,
+     "produk": "Tabungan Sinaya (IDR)"
+    },
+    "catatan": "Tanggal ditafsirkan dari kode versi dokumen 18082026 (tanggal terbit RIPLAY). Batas saldo lapisan 2.00% tidak terbaca jelas. RIPLAY deposito berjangka IDR hanya menyebut 'hubungi kantor cabang', tanpa angka bunga.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.smbci.com/SMBCI/RIPLAY/Sinaya/2026/august/1--riplay--individu----tabungan--sinaya--idr----versi--umum--ags-2026.pdf"
+    ]
+   }
+  },
+  "jago": {
+   "sbdk": {
+    "per": "2026-06-01",
+    "korporasi": 7.43,
+    "ritel": 7.59,
+    "mikro": 11.02,
+    "kpr": 6.83,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.jago.com/en/transparency/hubungan-investor/financial-statement/detail/2026/06"
+    ]
+   },
+   "simpanan": {
+    "per": "2026-05-29",
+    "deposito": {
+     "1": 5.0,
+     "3": 5.25,
+     "6": 5.25,
+     "12": 5.25
+    },
+    "catatan": "Kantong Deposito IDR, lapisan nominal Rp1 juta sampai Rp99,99 juta. Tanggal = tanggal cetak dokumen (berlaku pada tanggal dokumen diterbitkan). Sumber menggabungkan kolom tenor 6 dan 12 bulan.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://assets.jago.com/web-assets/public/riplay-umum-deposito-new-logo.pdf"
+    ]
+   }
+  },
+  "amar": {
+   "sbdk": {
+    "per": "2026-09",
+    "korporasi": 13.84,
+    "mikro": 15.77,
+    "non_kpr": 11.46,
+    "validasi": "resmi",
+    "sumber": [
+     "https://amarbank.co.id/rupiah-credit-base-interest-rate"
+    ]
+   }
+  },
+  "mnc": {
+   "simpanan": {
+    "per": "2026-06",
+    "tabungan": {
+     "min": 0.0,
+     "max": 2.0,
+     "produk": "Tabungan MNC"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 2.5
+    },
+    "deposito": {
+     "1": 3.5,
+     "3": 3.5,
+     "6": 3.5,
+     "12": 3.5
+    },
+    "catatan": "RIPLAY umum. Tabungan MNC dan Giro MNC versi April 2026; Deposito MNC versi Juni 2026. Tabungan: tiering 0.00 (<Rp1 jt) sampai 2.00 (>=Rp1 M). Giro: dokumen memuat dua tabel tiering tanpa label produk; diambil tabel pertama (0.00 sampai 2.5",
+    "validasi": "resmi",
+    "sumber": [
+     "https://webapi.mncbank.co.id/public/uploads/file-manager/general/fm-1777971108157-6311-20260505155148.pdf",
+     "https://webapi.mncbank.co.id/public/uploads/file-manager/general/fm-1777971183110-69988-20260505155303.pdf",
+     "https://webapi.mncbank.co.id/public/uploads/file-manager/general/fm-1781756312355-290-20260618111832.pdf"
+    ]
+   }
+  },
+  "victoria": {
+   "sbdk": {
+    "per": "2026-06-30",
+    "korporasi": 9.31,
+    "mikro": 10.81,
+    "kpr": 9.81,
+    "validasi": "resmi",
+    "sumber": [
+     "https://victoriabank.co.id/uploads/2026-07-07_20260707%20SBDK%20Jun%2026.pdf"
+    ]
+   },
+   "simpanan": {
+    "per": "2026-08-21",
+    "tabungan": {
+     "min": 1.0,
+     "max": 3.0,
+     "produk": "Tabungan Victoria"
+    },
+    "giro": {
+     "min": 0.5,
+     "max": 2.5
+    },
+    "deposito": {
+     "1": 3.75,
+     "3": 3.75,
+     "6": 3.75,
+     "12": 3.75
+    },
+    "catatan": "RIPLAY versi personal. Tabungan Victoria ver. 08 Apr 2026 (Rp50 rb sampai <Rp100 jt 1%; Rp100 jt sampai <Rp1 M 2%; >=Rp1 M 3%). Giro Rupiah ver. 20 Aug 2026 (>=Rp500 rb sampai <Rp100 jt 0.50%; sampai <Rp500 jt 1.50%; >=Rp500 jt 2.50%). Depo",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.victoriabank.co.id/uploads/2026-04-07_FORMULIR%20RIPLAY%20PERSONAL%20OJK%20TABUNGAN%20VICTORIA_08APR2026_checked.pdf",
+     "https://victoriabank.co.id/uploads/2026-08-20_FORMULIR%20RIPLAY%20PERSONAL%20OJK%20GIRO%20IDR_20%20AUG%202026_checked.pdf",
+     "https://victoriabank.co.id/uploads/2026-08-21_FORMULIR%20RIPLAY%20PERSONAL%20OJK%20Deposito%20Konvensional_21%20AUG%202026.pdf"
+    ]
+   }
+  },
+  "ganesha": {
+   "sbdk": {
+    "per": "2026-08-01",
+    "korporasi": 8.1,
+    "ritel": 8.6,
+    "mikro": 11.7,
+    "kpr": 8.75,
+    "non_kpr": 13.65,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankganesha.co.id/public/wysiwyg_images/SUKU%20BUNGA%20DASAR%20KREDIT%20BANK%20GANESHA%20AGUSTUS%202026.pdf"
+    ]
+   }
+  },
+  "ina": {
+   "sbdk": {
+    "per": "2026-09-30",
+    "korporasi": 9.01,
+    "ritel": 9.51,
+    "mikro": 10.51,
+    "kpr": 10.01,
+    "non_kpr": 10.51,
+    "validasi": "resmi",
+    "sumber": [
+     "https://bankina.co.id/en/sbdk"
+    ]
+   },
+   "simpanan": {
+    "per": "2025-05-28",
+    "tabungan": {
+     "min": 0.0,
+     "max": 2.5,
+     "produk": "Tabina Perdana"
+    },
+    "catatan": "Tanggal adalah tanggal cetak RIPLAY (28/05/2025), bukan tanggal berlaku; kemungkinan sudah usang. Tiering: <Rp100 rb 0.00; >Rp100 rb sd <Rp1 jt 1.25; sd <Rp10 jt 1.50; sd <Rp100 jt 1.75; >Rp100 jt 2.50.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://bankina.co.id/storage/01JXHGX3ASZBHPKRRXBJA26RTY.pdf"
+    ]
+   }
+  },
+  "nobu": {
+   "sbdk": {
+    "per": "2026-07-01",
+    "ritel": 11.0,
+    "mikro": 13.99,
+    "kpr": 9.99,
+    "non_kpr": 13.99,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.nobubank.com/en/about-nobu-bank/about-company/information-for-investors/suku-bunga-dasar-kredit-sbdk/"
+    ]
+   },
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "deposito": {
+     "1": 3.25,
+     "3": 3.5,
+     "6": 3.25
+    },
+    "catatan": "Counter rate Nobu Deposito; tanggal berlaku tidak tertulis. Tenor 12 bulan tertulis '-' dan 24 bulan tidak ada. Penempatan minimum Rp8 jt.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.nobubank.com/en/personal/savings/deposito/nobu-deposito/"
+    ]
+   }
+  },
+  "sampoerna": {
+   "simpanan": {
+    "per": "2026-10-01",
+    "deposito": {
+     "1": 1.25,
+     "3": 1.75,
+     "6": 2.25,
+     "12": 2.25
+    },
+    "catatan": "Deposito rupiah nasabah individu, lapisan nominal terkecil (< Rp100 juta); efektif per tahun; tenor 24 bulan tidak tercantum. Lapisan Rp100 juta sampai < Rp500 juta: 2.75 semua tenor.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://statics.banksampoerna.com/uploads/img/upload/files/Deposito-Sampoerna.pdf"
+    ]
+   }
+  },
+  "shinhan": {
+   "simpanan": {
+    "per": "2026-06-02",
+    "deposito": {
+     "1": 4.0,
+     "3": 4.1,
+     "6": 4.2,
+     "12": 4.2
+    },
+    "catatan": "Deposito berjangka IDR individu; tanggal cetak dokumen 2 Juni 2026, tidak ada lapisan nominal (minimum penempatan Rp1 juta); tenor 24 bulan tidak ada.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://shinhan.co.id/wp-content/uploads/2026/06/RIPLAY-UMUM-DEPOSITO-BERJANGKA-IDR_INDIVIDU.pdf"
+    ]
+   }
+  },
+  "qnb": {
+   "sbdk": {
+    "per": "2026-05",
+    "korporasi": 6.7,
+    "validasi": "resmi",
+    "sumber": [
+     "https://qnb.co.id/site/default/master/qnb-indonesia/en/footermenu/interestrate"
+    ]
+   },
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "tabungan": {
+     "min": 0.0,
+     "max": 0.5,
+     "produk": "Savings Account"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "catatan": "Tanggal berlaku tidak tertulis. Premium Savings Account: 0 sampai 2.0 (lapisan >= Rp50 juta). Giro: Checking Account 0 sampai 1.0; Premium Checking Account 0 sampai 2.0. Tabel deposito tidak ada di halaman.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://qnb.co.id/site/default/master/qnb-indonesia/en/footermenu/interestrate"
+    ]
+   }
+  },
+  "bnp": {
+   "sbdk": {
+    "per": "2026-06",
+    "korporasi": 5.69,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bnpparibas.co.id/app/uploads/sites/29/2026/07/suku-bunga-dasar-kredit-juni-2026.pdf"
+    ]
+   }
+  },
+  "anz": {
+   "sbdk": {
+    "per": "2026-09-30",
+    "korporasi": 6.02,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.anz.com/content/dam/anzcom/pdf/institutional/markets/indonesia/financial-reports-gcg/prime-lending-rate/2026/plr-sept-2026-en.pdf"
+    ]
+   }
+  },
+  "bcas": {
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "tabungan": {
+     "min": 0.3499,
+     "max": 0.3499,
+     "produk": "Tahapan iB"
+    },
+    "giro": {
+     "min": 0.35,
+     "max": 0.35
+    },
+    "catatan": "Angka adalah ekuivalen rate dalam simulasi RIPLAY (saldo rata-rata Rp10 juta), memakai kinerja bank per Juni 2024; tanggal terbit dokumen tidak tertulis. Deposito iB: ekuivalen simulasi 2.5199 (nisbah tertulis 18.00 dan 82.00 tanpa label, t",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bcasyariah.co.id/cfind/source/files/riplay/riplay_tahapan_ib.pdf",
+     "https://www.bcasyariah.co.id/cfind/source/files/riplay/riplay-giro-ib--upload-jan-2025.pdf",
+     "https://www.bcasyariah.co.id/cfind/source/files/riplay/riplay_deposito_ib_mudharabah_muthlaqah-1.pdf"
+    ]
+   }
+  },
+  "sumselbabel": {
+   "sbdk": {
+    "per": "2026-10",
+    "korporasi": 7.51,
+    "ritel": 9.13,
+    "mikro": 8.54,
+    "kpr": 10.55,
+    "non_kpr": 9.68,
+    "validasi": "resmi",
+    "sumber": [
+     "https://banksumselbabel.com/en/sbdk",
+     "https://www.banksumselbabel.com/storage/Attachment/17840926001696856578.pdf"
+    ]
+   },
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "tabungan": {
+     "min": 0.0,
+     "max": 0.8,
+     "produk": "Tabungan Pesirah"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 1.9
+    },
+    "deposito": {
+     "1": 2.25,
+     "3": 2.5,
+     "6": 2.5,
+     "12": 2.5
+    },
+    "catatan": "Halaman bertuliskan 'Last updated: 23 Jun 2026'; tanggal berlaku tidak tertulis. Deposito tanpa lapisan nominal; tenor di halaman berupa rentang (1-2 bulan 2.25; 4-6 bulan 2.50; 7-12 bulan 2.50). Giro 0.00 (di bawah Rp50 juta) sampai 1.90 (",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.banksumselbabel.com/en/bunga-dan-biaya"
+    ]
+   }
+  },
+  "banten": {
+   "sbdk": {
+    "per": "2025-12",
+    "korporasi": 10.71,
+    "ritel": 10.96,
+    "mikro": 11.46,
+    "non_kpr": 10.96,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankbanten.co.id/assets/uploads/2026/02/SBDK-ALL-DESEMBER-2025.pdf"
+    ]
+   }
+  },
+  "jatim": {
+   "sbdk": {
+    "per": "2026-07-22",
+    "korporasi": 7.19,
+    "ritel": 7.75,
+    "mikro": 13.1,
+    "kpr": 9.33,
+    "non_kpr": 9.23,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankjatim.co.id/id/suku-bunga/suku-bunga-dasar-kredit"
+    ]
+   },
+   "simpanan": {
+    "per": "2024-10-01",
+    "tabungan": {
+     "min": 0.0,
+     "max": 2.9,
+     "produk": "SIKLUS"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 1.5
+    },
+    "deposito": {
+     "1": 2.7,
+     "3": 2.9,
+     "6": 3.0,
+     "12": 3.1,
+     "24": 3.15
+    },
+    "catatan": "Tanggal 1 Oktober 2024 adalah catatan 'last updated' untuk bunga deposito dan giro rupiah di halaman; bisa sudah usang. Deposito: lapisan terkecil Rp2,5 juta sampai Rp1 miliar; di atas Rp1 miliar 2.75/2.95/3.05/3.15/3.15. Tabungan SIKLUS ma",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankjatim.co.id/id/suku-bunga/suku-bunga"
+    ]
+   }
+  },
+  "kalbar": {
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "tabungan": {
+     "min": 0.0,
+     "max": 1.5,
+     "produk": "Simpeda"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 0.75
+    },
+    "deposito": {
+     "1": 3.0,
+     "3": 3.0,
+     "6": 3.0,
+     "12": 3.0,
+     "24": 3.0
+    },
+    "catatan": "Tanggal berlaku tidak tertulis. Deposito: nominal sampai Rp1 miliar; di atas Rp1 miliar 3.5. Giro: tanpa bunga sampai Rp10 juta, 0.75 di atas Rp1 miliar. Tabungan lain: Taserna 0.0-1.25, TabunganKu 0.0-1.0, BEKAL dan SISWA 0.0-1.5, PROFITA ",
+    "validasi": "resmi",
+    "sumber": [
+     "https://bankkalbar.co.id/suku_bunga.php",
+     "https://bankkalbar.co.id/deposito.php",
+     "https://bankkalbar.co.id/simpeda.php"
+    ]
+   }
+  },
+  "kalteng": {
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "deposito": {
+     "1": 3.0,
+     "3": 4.0,
+     "6": 4.0,
+     "12": 3.0,
+     "24": 3.0
+    },
+    "catatan": "Halaman menyebut rujukan SE DTS.02/SE-0032/X-23 tanggal 30 Oktober 2023, jadi bisa sudah usang. Lapisan nominal tidak dicantumkan.",
+    "validasi": "resmi",
+    "sumber": [
+     "https://bankkalteng.co.id/info/deposito"
+    ]
+   }
+  },
+  "kaltimtara": {
+   "sbdk": {
+    "per": "2026-09-30",
+    "korporasi": 7.71,
+    "mikro": 8.93,
+    "kpr": 6.72,
+    "non_kpr": 7.25,
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankaltimtara.co.id/id/sukubunga"
+    ]
+   },
+   "simpanan": {
+    "per": null,
+    "dibuka": "2026-11-01",
+    "tabungan": {
+     "min": 0.0,
+     "max": 1.25,
+     "produk": "Simpeda"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 2.5
+    },
+    "deposito": {
+     "1": 2.25,
+     "3": 2.5,
+     "6": 2.75,
+     "12": 2.5,
+     "24": 2.5
+    },
+    "catatan": "Tanggal berbeda per produk: Tabungan Simpeda berlaku 2026-08-01 (sebelumnya 0.25 sampai 1.5); halaman deposito tertulis 'update per 1 Januari 2024' (bunga sama di semua lapisan nominal Rp1 juta ke atas, bisa sudah usang); giro tanpa tanggal",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankaltimtara.co.id/id/page/tabungan-simpeda",
+     "https://www.bankaltimtara.co.id/id/page/giro-rupiah",
+     "https://www.bankaltimtara.co.id/id/page/deposito-rupiah"
+    ]
+   }
+  },
+  "papua": {
+   "simpanan": {
+    "per": "2026-11",
+    "tabungan": {
+     "min": 0.0,
+     "max": 2.5,
+     "produk": "Simanja dan Tabungan KPE"
+    },
+    "giro": {
+     "min": 0.0,
+     "max": 0.75
+    },
+    "deposito": {
+     "1": 3.0,
+     "3": 3.1,
+     "6": 3.2,
+     "12": 3.3,
+     "24": 3.4
+    },
+    "catatan": "Judul halaman 'November 2026' tanpa tanggal harian. Deposito: lapisan terkecil Rp1 sampai 100 juta; lapisan lebih besar naik sampai 3.4 (1 bulan), 3.5 (3 sampai 24 bulan) di atas Rp1 miliar. Tabungan lain: Simpeda dan tabungan bank lain 0.0",
+    "validasi": "resmi",
+    "sumber": [
+     "https://www.bankpapua.co.id/home/page/sukubunga/455",
+     "https://www.bankpapua.co.id/home/page/sukubunga/456",
+     "https://www.bankpapua.co.id/home/page/sukubunga/457"
+    ]
+   }
+  },
+  "bofa": {
+   "sbdk": {
+    "per": "2024-05-31",
+    "korporasi": 7.25,
+    "validasi": "resmi",
+    "sumber": [
+     "https://business.bofa.com/content/dam/flagship/countrypage/apac-indonesia/Prime-Lending-Rate-31-May-2024.pdf"
+    ]
+   }
+  },
+  "deutsche": {
+   "sbdk": {
+    "per": "2025-12-31",
+    "korporasi": 6.25,
+    "validasi": "resmi",
+    "sumber": [
+     "https://country.db.com/indonesia/documents/quarterly-reports/2025/Q4-2025/Prime-Lending-Rate-Q4-2025.pdf"
+    ]
+   }
+  },
+  "scb": {
+   "sbdk": {
+    "per": "2026-08",
+    "korporasi": 6.34,
+    "non_kpr": 10.49,
+    "validasi": "resmi",
+    "sumber": [
+     "https://sc.com/id/prime-lending-rate"
+    ]
+   }
+  }
+ },
+ "sumber": {
+  "https://www.metrotvnews.com/read/KdZCPRJE-cek-bunga-deposito-bri-bni-dan-mandiri-oktober-2026": "Cek Bunga Deposito BRI, BNI, dan Mandiri Oktober 2026",
+  "https://bankmandiri.co.id/web/guest/suku-bunga-dasar-kredit": "Suku Bunga Dasar Kredit",
+  "https://www.bankmandiri.co.id/suku-bunga-dana": "Suku Bunga Dana (Pilih suku bunga produk)",
+  "https://www.btn.co.id/-/media/Files/SBDK/SBDK-BTN-Juni-2026.pdf": "SBDK BTN Juni 2026",
+  "https://www.bankbsi.co.id/storage/file_manager/5HwfGF8uZdS0nO38XzRsja9fYZ66Zr1CzqtFRlYG.pdf": "RIPLAY Umum BSI Deposito Rupiah",
+  "https://www.bca.co.id/id/informasi/Suku-Bunga-Dasar-Kredit": "Suku Bunga Dasar Kredit Rupiah (Prime Lending Rate)",
+  "https://www.cimbniaga.co.id/content/dam/cimb/tabungan/riplay/personal/14-RIPLAY-Personal-Deposito-Berjangka-Konvensional-20260819.pdf": "RIPLAY Personal Deposito Berjangka Konvensional 20260819",
+  "https://www.maybank.co.id/savings/Rates/suku-bunga-deposito": "Suku Bunga Deposito",
+  "https://www.ocbc.id/en/suku-bunga-dasar?keyword=9": "Interest Rates (Suku Bunga Dasar)",
+  "https://cdn.bankmega.com/prod.mega.cms.media/filer_public/ff/72/ff728c08-a826-4e52-827d-140f5b26e958/publikasi_web_dan_ig_sbdk_juni_2026.pdf": "Publikasi SBDK Juni 2026",
+  "https://www.bankmandiritaspen.co.id/info/en-penyesuaian-suku-bunga-baru-produk-dana301/en?page=40": "Penyesuaian Suku Bunga Baru Produk Dana - Bank Mandiri Taspen",
+  "https://www.bankmandiritaspen.co.id/article/en-tabunganku/en": "TabunganKu - Bank Mandiri Taspen",
+  "https://finansial.bisnis.com/read/20260702/90/1985056/kb-bank-bbkp-sesuaikan-bunga-deposito-usai-bi-rate-naik": "KB Bank (BBKP) Sesuaikan Bunga Deposito Usai BI Rate Naik",
+  "https://www.smbci.com/SBDK/2026/sbdk--sept-ind.pdf": "SBDK SMBC Indonesia periode 31 Agustus 2026",
+  "https://www.smbci.com/SMBCI/RIPLAY/Sinaya/2026/august/1--riplay--individu----tabungan--sinaya--idr----versi--umum--ags-2026.pdf": "RIPLAY Individu Tabungan Sinaya IDR versi umum Agustus 2026",
+  "https://www.jago.com/en/transparency/hubungan-investor/financial-statement/detail/2026/06": "Prime Lending Rate - Bank Jago (Juni 2026)",
+  "https://assets.jago.com/web-assets/public/riplay-umum-deposito-new-logo.pdf": "RIPLAY Umum Deposito - Bank Jago",
+  "https://amarbank.co.id/rupiah-credit-base-interest-rate": "Rupiah Credit Base Interest Rate (SBDK) - Amar Bank",
+  "https://webapi.mncbank.co.id/public/uploads/file-manager/general/fm-1777971108157-6311-20260505155148.pdf": "RIPLAY Tabungan MNC (Versi April 2026)",
+  "https://webapi.mncbank.co.id/public/uploads/file-manager/general/fm-1777971183110-69988-20260505155303.pdf": "RIPLAY Giro MNC (Versi April 2026)",
+  "https://webapi.mncbank.co.id/public/uploads/file-manager/general/fm-1781756312355-290-20260618111832.pdf": "RIPLAY Deposito MNC (Versi Juni 2026)",
+  "https://victoriabank.co.id/uploads/2026-07-07_20260707%20SBDK%20Jun%2026.pdf": "SBDK Jun 26 - Bank Victoria",
+  "https://www.victoriabank.co.id/uploads/2026-04-07_FORMULIR%20RIPLAY%20PERSONAL%20OJK%20TABUNGAN%20VICTORIA_08APR2026_checked.pdf": "RIPLAY Personal Tabungan Victoria (Ver. 08 Apr 2026)",
+  "https://victoriabank.co.id/uploads/2026-08-20_FORMULIR%20RIPLAY%20PERSONAL%20OJK%20GIRO%20IDR_20%20AUG%202026_checked.pdf": "RIPLAY Personal Giro Rupiah (Ver. 20 Aug 2026)",
+  "https://victoriabank.co.id/uploads/2026-08-21_FORMULIR%20RIPLAY%20PERSONAL%20OJK%20Deposito%20Konvensional_21%20AUG%202026.pdf": "RIPLAY Personal Deposito Konvensional (Ver. 21 Aug 2026)",
+  "https://www.bankganesha.co.id/public/wysiwyg_images/SUKU%20BUNGA%20DASAR%20KREDIT%20BANK%20GANESHA%20AGUSTUS%202026.pdf": "Suku Bunga Dasar Kredit Bank Ganesha Agustus 2026",
+  "https://bankina.co.id/en/sbdk": "SBDK - Bank INA",
+  "https://bankina.co.id/storage/01JXHGX3ASZBHPKRRXBJA26RTY.pdf": "RIPLAY Umum Tabina Perdana (cetak 28/05/2025)",
+  "https://www.nobubank.com/en/about-nobu-bank/about-company/information-for-investors/suku-bunga-dasar-kredit-sbdk/": "Suku Bunga Dasar Kredit (SBDK) - Nobu Bank",
+  "https://www.nobubank.com/en/personal/savings/deposito/nobu-deposito/": "Nobu Deposito - Nobu Bank",
+  "https://statics.banksampoerna.com/uploads/img/upload/files/Deposito-Sampoerna.pdf": "Deposito Sampoerna",
+  "https://shinhan.co.id/wp-content/uploads/2026/06/RIPLAY-UMUM-DEPOSITO-BERJANGKA-IDR_INDIVIDU.pdf": "RIPLAY Umum Deposito Berjangka IDR Individu",
+  "https://qnb.co.id/site/default/master/qnb-indonesia/en/footermenu/interestrate": "Savings Account & Checking Account (Interest Rate) - QNB Indonesia",
+  "https://www.bnpparibas.co.id/app/uploads/sites/29/2026/07/suku-bunga-dasar-kredit-juni-2026.pdf": "Suku Bunga Dasar Kredit Juni 2026 - BNP Paribas Indonesia",
+  "https://www.anz.com/content/dam/anzcom/pdf/institutional/markets/indonesia/financial-reports-gcg/prime-lending-rate/2026/plr-sept-2026-en.pdf": "ANZ Indonesia Prime Lending Rate 30 Sep 2026",
+  "https://www.bcasyariah.co.id/cfind/source/files/riplay/riplay_tahapan_ib.pdf": "RIPLAY Tahapan iB - BCA Syariah",
+  "https://www.bcasyariah.co.id/cfind/source/files/riplay/riplay-giro-ib--upload-jan-2025.pdf": "RIPLAY Giro iB - BCA Syariah",
+  "https://www.bcasyariah.co.id/cfind/source/files/riplay/riplay_deposito_ib_mudharabah_muthlaqah-1.pdf": "RIPLAY Deposito iB Mudharabah Muthlaqah - BCA Syariah",
+  "https://business.bofa.com/content/dam/flagship/countrypage/apac-indonesia/Prime-Lending-Rate-31-May-2024.pdf": "Prime Lending Rate 31 May 2024 - Bank of America N.A. Cabang Jakarta",
+  "https://country.db.com/indonesia/documents/quarterly-reports/2025/Q4-2025/Prime-Lending-Rate-Q4-2025.pdf": "Prime Lending Rate Q4 2025",
+  "https://sc.com/id/prime-lending-rate": "Suku Bunga Dasar Kredit (Prime Lending Rate) Standard Chartered Bank Indonesia",
+  "https://banksumselbabel.com/en/sbdk": "Prime Lending Rate | Bank Sumsel Babel",
+  "https://www.banksumselbabel.com/storage/Attachment/17840926001696856578.pdf": "SBDK Juli 2026 Bank Sumsel Babel (PDF)",
+  "https://www.banksumselbabel.com/en/bunga-dan-biaya": "Interest And fees | Bank Sumsel Babel",
+  "https://www.bankbanten.co.id/assets/uploads/2026/02/SBDK-ALL-DESEMBER-2025.pdf": "SBDK ALL DESEMBER 2025",
+  "https://www.bankjatim.co.id/id/suku-bunga/suku-bunga-dasar-kredit": "Suku Bunga Dasar Kredit - Bank Jatim",
+  "https://www.bankjatim.co.id/id/suku-bunga/suku-bunga": "Suku Bunga - Bank Jatim",
+  "https://bankkalbar.co.id/suku_bunga.php": "Suku Bunga - Bank Kalbar",
+  "https://bankkalbar.co.id/deposito.php": "Deposito - Bank Kalbar",
+  "https://bankkalbar.co.id/simpeda.php": "Simpeda - Bank Kalbar",
+  "https://bankkalteng.co.id/info/deposito": "Deposito Berjangka - Bank Kalteng",
+  "https://www.bankaltimtara.co.id/id/sukubunga": "Suku Bunga Dasar Kredit (Prime Lending Rate) - Bankaltimtara",
+  "https://www.bankaltimtara.co.id/id/page/tabungan-simpeda": "Tabungan Simpeda - Bankaltimtara",
+  "https://www.bankaltimtara.co.id/id/page/giro-rupiah": "Giro Rupiah - Bankaltimtara",
+  "https://www.bankaltimtara.co.id/id/page/deposito-rupiah": "Deposito Rupiah - Bankaltimtara",
+  "https://www.bankpapua.co.id/home/page/sukubunga/455": "Bunga Deposito November 2026 - Bank Papua",
+  "https://www.bankpapua.co.id/home/page/sukubunga/456": "Bunga Tabungan November 2026 - Bank Papua",
+  "https://www.bankpapua.co.id/home/page/sukubunga/457": "Jasa Giro November 2026 - Bank Papua",
+  "https://infobanknews.com/bca-genjot-kredit-konsumer-lewat-expoversary-2026-ada-bunga-kpr-169-persen/": "BCA Genjot Kredit Konsumer lewat Expoversary 2026, Ada Bunga KPR 1,69 Persen",
+  "https://keuangan.kontan.co.id/news/bca-expo-jabodetabek-2026-digelar-tawarkan-bunga-kpr-mulai-123-dan-kkb-18": "BCA Expo Jabodetabek 2026 digelar, tawarkan bunga KPR mulai 1,23% dan KKB 1,8%",
+  "https://bcasekuritas.co.id/latest-news/news/apresiasi-nasabah-di-malang-bca-expo-2026-hadirkan-bunga-spesial-kpr": "Apresiasi nasabah di Malang, BCA Expo 2026 hadirkan bunga spesial KPR",
+  "https://keuangan.kontan.co.id/news/bca-expo-2026-hadirkan-bunga-spesial-mulai-123-pacu-kpr-dan-kkb": "BCA Expo 2026 hadirkan bunga spesial mulai 1,23% pacu KPR dan KKB",
+  "https://keuangan.kontan.co.id/news/intip-sejumlah-tawaran-menarik-di-bca-expo-2025-di-ice-bsd": "Intip sejumlah tawaran menarik di BCA Expo 2025 di ICE BSD",
+  "https://www.investortrust.id/financial/76671/bca-expo-2025-masih-berlangsung-hingga-30-september-ada-bunga-kpr-dan-kkbmulai-1-65-per-tahun": "BCA Expo 2025 masih berlangsung hingga 30 September, ada bunga KPR dan KKB mulai 1,65% per tahun",
+  "https://investortrust.id/business/113681/dukung-program-3-juta-rumah-danantara-gelar-housing-expo-2026-kpr-bunga-2-75-dan-dp-mulai-1": "Dukung Program 3 Juta Rumah, Danantara Gelar Housing Expo 2026: KPR Bunga 2,75% dan DP Mulai 1%",
+  "https://keuangan.kontan.co.id/news/bri-kembali-gelar-kkb-expo-di-131-titik-tawarkan-bunga-kredit-mobil-mulai-18": "BRI kembali gelar KKB Expo di 131 titik, tawarkan bunga kredit mobil mulai 1,8%",
+  "https://www.metrotvnews.com/read/NA0Cro2z-bri-kkb-expo-kembali-hadir-tawarkan-bunga-mulai-1-8-persen": "BRI KKB Expo kembali hadir, tawarkan bunga mulai 1,8 persen",
+  "https://www.segmenty.com/GenerateNewsStaticJsps/IIMS_Surabaya_2026_to_be_held_on_26th-31st_May.html": "IIMS Surabaya 2026 to be held on 26th-31st May",
+  "https://momsmoney.kontan.co.id/news/cek-promo-beli-kendaraan-di-pameran-iims-surabaya-2026-dari-danamon": "Cek promo beli kendaraan di pameran IIMS Surabaya 2026 dari Danamon",
+  "https://www.cnnindonesia.com/ekonomi/20250222155955-625-1201321/rayakan-hut-ke-68-bca-expoversary-2025-tawarkan-beragam-promo-menarik": "Rayakan HUT ke-68, BCA Expoversary 2025 tawarkan beragam promo menarik",
+  "https://keuangan.kontan.co.id/news/berbagai-diskon-menarik-dan-penawaran-spesial-meriahkan-bca-expoversary-2025": "Berbagai diskon menarik dan penawaran spesial meriahkan BCA Expoversary 2025",
+  "https://ekonomi.republika.co.id/berita/szxtua368/diskon-rumah-hingga-19-bunga-kpr-super-ringan-di-expo-bri-bsd-2025": "Diskon rumah hingga 19%, bunga KPR super ringan di Expo BRI BSD 2025",
+  "https://ekonomi.republika.co.id/berita/szxu7t368/kpr-rumah-makin-mudah-di-bri-consumer-expo-2025-goes-to-pik-2": "KPR rumah makin mudah di BRI Consumer Expo 2025 goes to PIK 2",
+  "https://www.detik.com/properti/berita/d-8064844/bri-hadirkan-suku-bunga-kpr-mulai-2-40-di-consumer-expo-2025-bandung": "BRI hadirkan suku bunga KPR mulai 2,40% di Consumer Expo 2025 Bandung",
+  "https://keuangan.kontan.co.id/news/siap-siap-ada-tawaran-bunga-kpr-dan-kkb-mulai-175-di-bni-wondrx-2025": "Siap-siap ada tawaran bunga KPR dan KKB mulai 1,75% di BNI wondrX 2025",
+  "https://investortrust.id/business/76013/bni-wondrx-2025-masih-berlangsung-yuk-nikmati-beragam-promo-hingga-penampilan-spesial-lyodra": "BNI wondrX 2025 masih berlangsung, yuk nikmati beragam promo hingga penampilan spesial Lyodra",
+  "https://bcasekuritas.co.id/latest-news/news/bni-gelar-promo-di-gelaran-wondrx-2026": "BNI gelar promo di gelaran wondrX 2026",
+  "https://keuangan.kontan.co.id/news/btn-tawarkan-bunga-kpr-265-di-enam-kota-besar-rayakan-hut-kpr-ke-49": "BTN tawarkan bunga KPR 2,65% di enam kota besar, rayakan HUT KPR ke-49",
+  "https://momsmoney.kontan.co.id/news/ulang-tahun-ke-27-ini-promo-bunga-kpr-dan-kkb-bank-mandiri": "Ulang tahun ke-27, ini promo bunga KPR dan KKB Bank Mandiri",
+  "https://www.investortrust.id/financial/80892/hut-ke-27-bank-mandiri-genjot-kpr-dengan-promo-menarik": "HUT ke-27, Bank Mandiri genjot KPR dengan promo menarik",
+  "https://wartaekonomi.co.id/read587620/bank-mandiri-suguhkan-hiburan-hingga-penawaran-pembiayaan-di-livin-fest-bandung-2025": "Bank Mandiri suguhkan hiburan hingga penawaran pembiayaan di Livin' Fest Bandung 2025",
+  "https://www.jawapos.com/ekonomi/2604250218/serbu-surabaya-bri-consumer-expo-2026-tawarkan-kpr-super-murah-dan-hiburan-spektakuler": "Serbu Surabaya, BRI Consumer Expo 2026 tawarkan KPR super murah dan hiburan spektakuler",
+  "https://www.suara.com/bri/2026/05/06/161015/wujudkan-hunian-dan-kendaraan-di-bri-expo-2026-medan-goes-to-royal-sumatra": "Wujudkan hunian dan kendaraan di BRI Expo 2026 Medan goes to Royal Sumatra",
+  "https://ekonomi.republika.co.id/berita/tfft5o368/bri-consumer-expo-2026-hadir-di-jakarta-banjir-promo-untuk-rumah-hingga-liburan-impian": "BRI Consumer Expo 2026 hadir di Jakarta, banjir promo untuk rumah hingga liburan impian",
+  "https://www.cnnindonesia.com/ekonomi/20260620151123-625-1371210/promo-kpr-kkb-hingga-travel-fair-di-bri-consumer-expo-2026-makassar": "Promo KPR, KKB, hingga Travel Fair di BRI Consumer Expo 2026 Makassar",
+  "https://www.metrotvnews.com/read/N4ECoPyj-bri-consumer-expo-2026-goes-to-pik2-masyarakat-bisa-nikmati-promo-kpr-dan-kkb": "BRI Consumer Expo 2026 goes to PIK2, masyarakat bisa nikmati promo KPR dan KKB",
+  "https://katadata.co.id/finansial/korporasi/6ab63aabb4823/bri-consumer-expo-2026-goes-to-bintaro-jaya-promo-bunga-kpr-1-75-dan-kkb-1-81": "BRI Consumer Expo 2026 goes to Bintaro Jaya: promo bunga KPR 1,75% dan KKB 1,81%",
+  "https://www.metrotvnews.com/read/NrWC8nO4-danantara-housing-expo-2026-promo-kpr-bri-dp-1-persen-dan-tenor-30-tahun": "Danantara Housing Expo 2026: Promo Spesial KPR DP 1 Persen dan Tenor 30 Tahun",
+  "https://keuangan.kontan.co.id/news/bni-tawarkan-kpr-bunga-275-dp-mulai-1-di-danantara-housing-expo-2026": "BNI tawarkan KPR bunga 2,75%, DP mulai 1% di Danantara Housing Expo 2026",
+  "https://keuangan.kontan.co.id/news/btn-tawarkan-bunga-mulai-275-di-danantara-housing-expo-2026": "BTN tawarkan bunga mulai 2,75% di Danantara Housing Expo 2026",
+  "https://bcasekuritas.co.id/latest-news/news/bni-perluas-akses-pembiayaan-hunian": "BNI perluas akses pembiayaan hunian",
+  "https://keuangan.kontan.co.id/news/bsi-tawarkan-kpr-special-margin-275-di-danantara-housing-expo-2026": "BSI tawarkan KPR special margin 2,75% di Danantara Housing Expo 2026",
+  "https://investortrust.id/financial/21095/masuki-2024-lps-pertahankan-tingkat-bunga-penjaminan": "Masuki 2024, LPS Pertahankan Tingkat Bunga Penjaminan",
+  "https://investortrust.id/financial/28155/lps-pertahankan-bunga-penjaminan-periode-juni-september-2024": "LPS Pertahankan Bunga Penjaminan Periode Juni-September 2024",
+  "https://investortrust.id/financial/42489/lps-pertahankan-bunga-penjaminan-simpanan-bank-umum-di-4-25-berlaku-1-oktober-2024": "LPS Pertahankan Bunga Penjaminan Simpanan Bank Umum di 4,25%, Berlaku 1 Oktober 2024",
+  "https://investortrust.id/macro/54183/tok-lps-pertahankan-tingkat-bunga-penjaminan-4-25": "Tok! LPS Pertahankan Tingkat Bunga Penjaminan 4,25%",
+  "https://investortrust.id/financial/67495/lps-tetapkan-tingkat-bunga-penjaminan": "LPS Tetapkan Tingkat Bunga Penjaminan",
+  "https://finance.detik.com/moneter/d-8080148/tok-lps-turunkan-bunga-penjaminan-jadi-3-75": "Tok! LPS Turunkan Bunga Penjaminan Jadi 3,75%",
+  "https://www.metrotvnews.com/read/kewCM8Rx-lps-pangkas-tingkat-bunga-penjaminan-jadi-3-75": "LPS Pangkas Tingkat Bunga Penjaminan Jadi 3,75%",
+  "https://investortrust.id/financial/79769/lps-kembali-pangkas-bunga-penjaminan-25-bps-bank-umum-jadi-3-5-dan-bpr-6": "LPS Kembali Pangkas Bunga Penjaminan 25 bps, Bank Umum Jadi 3,5% dan BPR 6%",
+  "https://investortrust.id/financial/92181/lps-tetapkan-tingkat-bunga-jaminan": "LPS Tetapkan Tingkat Bunga Jaminan",
+  "https://ekonomi.republika.co.id/berita/t9aguc370/lps-tahan-bunga-penjaminan-35-persen-hingga-mei-2026": "LPS Tahan Bunga Penjaminan 3,5 Persen hingga Mei 2026",
+  "https://keuangan.kontan.co.id/news/tok-lps-tahan-tingkat-bunga-penjaminan-sebesar-350-hingga-september-2026": "Tok! LPS Tahan Tingkat Bunga Penjaminan Sebesar 3,50% hingga September 2026",
+  "https://infobanknews.com/lps-pertahankan-tingkat-bunga-penjaminan-hingga-september-2026-ini-pertimbangannya": "LPS Pertahankan Tingkat Bunga Penjaminan hingga September 2026",
+  "https://investortrust.id/macro/107527/lps-naikkan-tingkat-bunga-penjaminan-bank-umum-jadi-3-75-mulai-1-juli-2026": "LPS Naikkan Tingkat Bunga Penjaminan Bank Umum Jadi 3,75% Mulai 1 Juli 2026",
+  "https://finance.detik.com/moneter/d-8547349/lps-naikkan-tingkat-bunga-penjaminan-jadi-3-75": "LPS Naikkan Tingkat Bunga Penjaminan Jadi 3,75%",
+  "https://finance.detik.com/moneter/d-8685926/lps-tahan-bunga-penjaminan-bank-3-75": "LPS Tahan Bunga Penjaminan Bank 3,75%",
+  "https://keuangan.kontan.co.id/news/lps-pertahankan-tingkat-bunga-penjaminan-375-hingga-januari-2027": "LPS Pertahankan Tingkat Bunga Penjaminan 3,75% hingga Januari 2027",
+  "https://jogja.antaranews.com/berita/682014/bi-rate-naik-25-basis-poin-menjadi-625-persen": "BI Rate naik 25 basis poin menjadi 6,25 persen",
+  "https://kbvalbury.com/cfind/source/files/bi-rate-update---240918.pdf": "BI Rate Update 18 September 2024",
+  "https://perbanas.org/uploads/fileupload/pdf/Update BI Rate_Januari 2025.pdf": "Update BI Rate Januari 2025",
+  "https://www.kbvalbury.com/indonesian-macro-update-bi-policy-mix-may2025": "Indonesian Macro Update: BI Policy Mix, May 2025",
+  "https://investortrust.id/market/72728/bi-pangkas-bi-rate-25-bps-menjadi-5-25": "BI Pangkas BI Rate 25 Bps Menjadi 5,25%",
+  "https://ekonomi.republika.co.id/berita/t1a9qg423/bi-putuskan-turunkan-suku-bunga-jadi-5-persen-pada-agustus-2025": "BI putuskan turunkan suku bunga jadi 5 persen pada Agustus 2025",
+  "https://insight.kontan.co.id/news/bi-rate-turun-5-kali-hingga-september-2025-demi-menopang-pertumbuhan-ekonomi": "BI Rate Turun 5 Kali Hingga September 2025 Demi Menopang Pertumbuhan Ekonomi",
+  "https://www.cnnindonesia.com/ekonomi/20260618143411-78-1370442/bi-rate-naik-25-bps-lagi-jadi-575-persen-per-18-juni": "BI Rate Naik 25 Bps Lagi Jadi 5,75 Persen per 18 Juni",
+  "https://data.goodstats.id/label/bi-rate": "BI-Rate (Goodstats)",
+  "https://www.jawapos.com/ekonomi/2609230306/bi-tahan-suku-bunga-acuan-575-persen-ini-alasannya": "BI tahan suku bunga acuan 5,75 persen, ini alasannya",
+  "https://finansial.bisnis.com/read/20261021/11/2014413/breaking-bank-indonesia-tahan-bi-rate-575-pada-rdg-oktober-2026": "Breaking: Bank Indonesia Tahan BI Rate 5,75% pada RDG Oktober 2026"
+ }
+}

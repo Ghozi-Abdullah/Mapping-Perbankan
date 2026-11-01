@@ -330,6 +330,27 @@ async function main() {
     const [banks, mod] = await Promise.all([loadBanks(), import('./banding.js')]);
     if (!banks) bankMissing();
     else mod.renderBanding(banks);
+  } else if (PAGE === 'bunga') {
+    let rb = null;
+    try {
+      const [mod, data, daftar] = await Promise.all([import('./bunga.js'), getJSON('bunga-bank.json'), getJSON('daftar-bank.json')]);
+      await mod.renderBunga(data, daftar);
+      rb = data;
+    } catch (e) {
+      console.error(e);
+      $$('.needs-rb').forEach((el) => { el.hidden = true; });
+    }
+    if (await loadSeki()) {
+      renderRates();
+      renderRateChart();
+      seg('#rate-seg', 'rate', renderRateChart);
+    } else {
+      $$('.seki').forEach((el) => { el.hidden = true; });
+    }
+    if (rb) {
+      setText('#updated', `Bunga per bank per ${tanggal(rb.diperbarui)}`);
+      setText('#rb-eyebrow', `${Object.keys(rb.bank || {}).length} bank · ${(rb.event || []).length} pameran`);
+    }
   } else if (!(await loadSeki())) {
     setText('#updated', 'Menunggu data pertama');
     sekiMissing();
@@ -342,10 +363,6 @@ async function main() {
   } else if (PAGE === 'provinsi') {
     renderProvinces();
     seg('#prov-seg', 'prov', renderProvinces);
-  } else if (PAGE === 'bunga') {
-    renderRates();
-    renderRateChart();
-    seg('#rate-seg', 'rate', renderRateChart);
   }
   $$('.seg').forEach(liquidSeg);
 }

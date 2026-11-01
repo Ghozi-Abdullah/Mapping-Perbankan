@@ -403,6 +403,18 @@ export function renderProfile(data) {
   qs.scrollLeft = qs.scrollWidth;
   // Laporan dibaca seperti buku; nomor bab disimpan di alamat (?hal=2) supaya bisa dibagikan.
   const hal = Math.max(1, parseInt(p.get('hal'), 10) || 1) - 1;
+  // Sampul buku: logo, nama, dan rentang kuartal; warnanya mengikuti kelompok bank.
+  $('#pf-book').classList.add(`g-${b.grup}`);
+  const last = qsWith[qsWith.length - 1];
+  const front = $('#cv-front');
+  if (front) {
+    front.innerHTML = `<span class="cv-kicker">${lucide('book-open-text')}Laporan keuangan</span>
+      <span class="cv-logo">${logoImg(b, 'logo-lg')}</span>
+      <span class="cv-title">${esc(b.nama)}</span>
+      <span class="cv-sub">${esc(b.lengkap || '')}</span>
+      <span class="cv-foot"><span>${groupIcon(b.grup)}${esc(groupLabel(b))}<br>${first ? `${qLabel(first)}–${qLabel(last)}, ${qsWith.length} kuartal` : ''}</span><span class="cv-open">Buka ${lucide('arrow-right')}</span></span>`;
+    $('#book-cover').setAttribute('aria-label', `Buka laporan ${b.nama}`);
+  }
   book($('#pf-book'), {
     start: hal,
     onTurn: (i) => {

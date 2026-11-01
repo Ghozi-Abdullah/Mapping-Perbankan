@@ -34,16 +34,21 @@
 
     <div id="banner" class="banner" hidden></div>
 
-    <section class="book needs-bank" id="pf-book" aria-label="Laporan bank">
+    <section class="book needs-bank has-cover closed still" id="pf-book" aria-label="Laporan bank">
       <div class="book-bar">
         <div class="book-tabs" id="book-tabs" role="tablist" aria-label="Bab laporan"></div>
         <div class="book-nav">
           <span class="book-folio" id="book-folio" aria-live="polite"></span>
+          <button type="button" class="book-btn book-shut" data-shut aria-label="Tutup buku"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg></button>
           <button type="button" class="book-btn" data-turn="-1" aria-label="Halaman sebelumnya"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
           <button type="button" class="book-btn" data-turn="1" aria-label="Halaman berikutnya"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
       </div>
       <div class="book-body" id="book-body">
+        <button type="button" class="book-cover" id="book-cover" aria-label="Buka laporan">
+          <span class="cv-face cv-front" id="cv-front"></span>
+          <span class="cv-face cv-back" aria-hidden="true"></span>
+        </button>
         <article class="spread on" id="pf-sum" data-title="Ringkasan" data-icon="book-open-text" aria-label="Ringkasan">
           <div class="page left pf-id" id="pf-id"></div>
           <div class="page right pf-nums">

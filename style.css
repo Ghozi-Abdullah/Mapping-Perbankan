@@ -793,14 +793,15 @@ a { text-decoration-color: var(--line-2); }
 .book-btn:hover:not(:disabled) { background: var(--accent); color: #fff; }
 .book-btn:disabled { opacity: .4; cursor: default; }
 
-/* Buku: sampul biru bermotif belah ketupat dengan tebal sampul di tepi bawah, tumpukan halaman di tepi luar. */
+/* Buku: sampul doff berwarna kelompok bank, tebal sampul di tepi bawah, tumpukan halaman di tepi luar. */
+.book { --cover: color-mix(in oklab, var(--g, #226192) 66%, #0E1A26); --cover-hi: color-mix(in oklab, var(--cover) 84%, #fff); --cover-lo: color-mix(in oklab, var(--cover) 72%, #000); }
 .book-body {
   --paper: #FDFDFB; --edge: #D9E0E7;
   position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1fr); padding: 14px 16px 20px; border-radius: 28px;
-  background-color: var(--accent);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='26'%3E%3Cpath d='M9 0l9 13-9 13-9-13z' fill='%23fff' fill-opacity='.1'/%3E%3C/svg%3E");
-  background-size: 18px 26px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 7px 0 #17476C, 0 8px 0 rgba(19, 33, 46, .2), 0 40px 70px -36px rgba(19, 33, 46, .6);
+  background: linear-gradient(180deg, var(--cover-hi), var(--cover) 70%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 7px 0 var(--cover-lo), 0 8px 0 rgba(19, 33, 46, .2), 0 40px 70px -36px rgba(19, 33, 46, .6);
+  transform-origin: 75% 50%;
+  transition: transform .95s cubic-bezier(.65, .05, .25, 1);
 }
 /* Tumpukan halaman di bawah halaman yang terbuka: terlihat sebagai garis-garis tipis di tepi luar dan bawah. */
 .book-body::before, .book-body::after { content: ''; position: absolute; z-index: -1; top: 14px; bottom: 20px; background: var(--paper); pointer-events: none; }
@@ -1031,3 +1032,237 @@ a.bb-more .lc { width: 15px; height: 15px; }
 @media (prefers-reduced-motion: reduce) {
   .tf.opening .tf-panel { animation: none; }
 }
+
+/* ---------- Suku bunga per bank (bunga.html) ---------- */
+.rb-acuan .stat-label { min-width: 0; }
+.rb-acuan .rb-src-a { margin-left: auto; }
+.rb-acuan .stat-foot .note { line-height: 1.4; }
+.rb-layout { display: grid; grid-template-columns: minmax(0, 1fr) 372px; gap: 16px; align-items: start; }
+.rb-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; min-width: 0; }
+.rb-main > .rb-head { margin: 4px 0 0; }
+.rb-tools { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; }
+.rb-produk { width: 100%; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.rb-produk button { height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 14.5px; font-weight: 600; }
+.rb-produk .lc { width: 18px; height: 18px; }
+.rb-filters { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; }
+.rb-filters .seg button { height: 32px; padding: 0 12px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.rb-filters .seg .lc { width: 14px; height: 14px; }
+.rb-filters .seg .lc.gi { width: 13px; height: 13px; }
+.rb-filters .seg button:disabled { cursor: default; color: var(--ink-2); }
+.rb-search { flex: 1 1 180px; height: 40px; min-width: 160px; }
+.rb-search input { font-size: 14px; }
+
+/* Konteks di atas daftar: tinggi tetap supaya daftar tidak melompat saat berganti produk. */
+.rb-ctx { min-height: 86px; border-radius: 18px; background: var(--bg); }
+.rb-ctx.note-mode { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px 14px; padding: 14px 16px; }
+.rb-ctx.note-mode p { font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+.rb-ctx .st-ic.warn { background: var(--warn-soft); color: var(--warn); }
+.rb-lps { grid-column: 2; display: flex; gap: 6px; flex-wrap: wrap; list-style: none; margin: 4px 0 0; padding: 0; }
+.rb-lps li { display: inline-flex; align-items: baseline; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--card); font-size: 12px; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--line); }
+.rb-lps li b { font-size: 12.5px; color: var(--ink); }
+.rb-lps li.on { box-shadow: inset 0 0 0 1.5px var(--warn); }
+.rb-ctx.ev-mode { padding: 8px; }
+.rb-ev-list { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; padding-bottom: 2px; }
+.ev {
+  flex: none; width: 236px; display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: 10px;
+  padding: 8px 12px 8px 8px; border: 0; border-radius: 14px; background: var(--card); text-align: left; cursor: pointer;
+  font: inherit; color: inherit; scroll-snap-align: start; box-shadow: inset 0 0 0 1px var(--line); transition: box-shadow .2s, background .2s;
+}
+.ev:hover { box-shadow: inset 0 0 0 1px var(--line-2); }
+.ev[aria-pressed="true"] { background: var(--accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.ev-date { display: grid; place-items: center; align-content: center; height: 54px; border-radius: 11px; background: var(--bg); line-height: 1; }
+.ev-date b { font-size: 19px; font-weight: 700; letter-spacing: -.02em; }
+.ev-date small { margin-top: 3px; font-size: 10.5px; font-weight: 600; color: var(--ink-3); white-space: nowrap; }
+.ev-date .lc { width: 20px; height: 20px; color: var(--accent); }
+.ev[aria-pressed="true"] .ev-date { background: var(--card); }
+.ev-t { display: grid; gap: 3px; min-width: 0; }
+.ev-t b { font-size: 13.5px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ev-t small { font-size: 11.5px; color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ev-t small .lc { width: 12px; height: 12px; vertical-align: -2px; margin-right: 4px; }
+
+/* Daftar bank */
+.rb-row {
+  display: grid; grid-template-columns: 22px 46px minmax(0, 210px) minmax(60px, 1fr) 128px 22px 34px; align-items: center; gap: 10px;
+  padding: 7px 8px; border-radius: 14px; transition: background .2s;
+}
+.rb-row:hover { background: var(--bg); }
+.rb-row.on { background: var(--accent-soft); }
+.rb-bars:not(.all) .rb-row.extra { display: none; }
+.rb-row .bb-name a { color: inherit; text-decoration: none; }
+.rb-row .bb-name a:hover b { text-decoration: underline; text-underline-offset: 3px; }
+.rb-cat { color: var(--ink-3); }
+.rb-logo { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 28px; padding: 4px 5px; box-sizing: border-box; border-radius: 9px; background: #fff; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.rb-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.rb-logo.mono { font-size: 10px; font-weight: 700; color: var(--ink-2); letter-spacing: 0; }
+.rb-bar { position: relative; height: 10px; overflow: visible; }
+.rb-bar > i { position: absolute; top: 0; left: 0; height: 100%; border-radius: 999px; background: var(--accent); }
+.rb-bar > i.lo { background: color-mix(in srgb, var(--accent) 38%, var(--bg-2)); }
+.rb-bar > i.hi { border-radius: 0 999px 999px 0; }
+.lps-mark { position: absolute; top: -4px; bottom: -4px; width: 0; border-left: 2px dashed var(--warn); transform: translateX(-1px); }
+.rb-row .bb-val { flex-direction: column; align-items: flex-end; gap: 1px; }
+.rb-row .bb-val small { max-width: 100%; font-size: 11px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rb-row .bb-val { min-width: 0; }
+.rb-over { display: inline-flex; align-items: center; gap: 3px; font-style: normal; font-size: 10.5px; font-weight: 600; color: var(--warn); white-space: nowrap; }
+.rb-over .lc { width: 11px; height: 11px; }
+.rb-src-a { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 7px; color: var(--ink-3); }
+.rb-src-a:hover { background: var(--card); color: var(--accent); }
+.rb-src-a .lc { width: 13px; height: 13px; }
+.rb-pick { display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 11px; background: var(--bg); color: var(--ink-2); cursor: pointer; transition: background .2s, color .2s, transform .15s; }
+.rb-pick:hover { background: var(--accent-soft); color: var(--accent); }
+.rb-pick:active { transform: scale(.92); }
+.rb-pick[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.rb-pick .lc { width: 16px; height: 16px; }
+.rb-empty { display: flex; align-items: center; gap: 10px; padding: 18px 12px; color: var(--ink-3); font-size: 14px; }
+.rb-empty .lc { width: 18px; height: 18px; flex: none; }
+.rb-bars .bb-missing { display: flex; gap: 8px; align-items: flex-start; line-height: 1.45; }
+.rb-bars .bb-missing .lc { width: 14px; height: 14px; flex: none; margin-top: 2px; }
+
+/* Panel banding: jumlah baris tetap, jadi tingginya sama walau bank ditambah atau dihapus. */
+.rb-cmp { position: sticky; top: 16px; }
+.rb-cmp .card-head { margin-bottom: 12px; }
+.rb-slots { display: grid; grid-template-columns: 96px repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 8px; }
+.rb-slots::before { content: ''; }
+.rb-slot { position: relative; display: grid; justify-items: center; align-content: start; gap: 6px; height: 84px; padding: 9px 4px 6px; border-radius: 14px; background: var(--bg); text-align: center; }
+.rb-slot b { font-size: 12px; font-weight: 600; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.rb-slot .rb-logo { width: 54px; height: 30px; }
+.rb-slot button { position: absolute; top: -5px; right: -5px; display: grid; place-items: center; width: 22px; height: 22px; border: 0; border-radius: 50%; background: var(--card); color: var(--ink-2); cursor: pointer; box-shadow: var(--shadow); }
+.rb-slot button .lc { width: 12px; height: 12px; }
+.rb-slot.vacant { align-content: center; background: none; box-shadow: inset 0 0 0 1.5px var(--line-2); border: 0; color: var(--ink-3); }
+.rb-slot.vacant span .lc { width: 16px; height: 16px; }
+.rb-slot.vacant small { font-size: 11px; }
+.rb-ctable { display: grid; }
+.rb-cg { display: flex; align-items: center; gap: 6px; margin: 10px 0 4px; font-size: 11.5px; font-weight: 600; color: var(--ink-3); }
+.rb-cg .lc { width: 13px; height: 13px; }
+.rb-cr { display: grid; grid-template-columns: 96px repeat(3, minmax(0, 1fr)); gap: 6px; align-items: center; min-height: 40px; border-top: 1px solid var(--line); }
+.rb-cl { font-size: 12px; line-height: 1.3; color: var(--ink-2); }
+.rb-cc { display: grid; justify-items: center; text-align: center; min-width: 0; padding: 4px 2px; border-radius: 9px; }
+.rb-cc b { display: inline-flex; align-items: center; gap: 3px; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rb-cc small { max-width: 100%; font-size: 10px; color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rb-cc.best { background: var(--good-soft); }
+.rb-cc.best b { color: var(--good); }
+.rb-cc.best .lc { width: 12px; height: 12px; }
+.rb-dock { display: none; }
+
+.rb-srcbox summary { display: flex; align-items: center; gap: 12px; cursor: pointer; list-style: none; }
+.rb-srcbox summary::-webkit-details-marker { display: none; }
+.rb-srcbox summary > span:nth-child(2) { display: grid; flex: 1; }
+.rb-srcbox summary b { font-size: 16px; font-weight: 600; }
+.rb-srcbox summary small { font-size: 12.5px; color: var(--ink-3); }
+.rb-srcbox .chev { width: 18px; height: 18px; color: var(--ink-3); transition: transform .2s; }
+.rb-srcbox[open] .chev { transform: rotate(90deg); }
+#rb-src { margin-top: 14px; display: grid; gap: 10px; }
+#rb-src p { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); max-width: 90ch; }
+.rb-srcl { columns: 2; column-gap: 28px; margin: 0; padding-left: 18px; font-size: 12.5px; line-height: 1.6; }
+.rb-srcl li { break-inside: avoid; overflow-wrap: anywhere; }
+.rb-srcl a { color: var(--ink-2); }
+.rb-sec { display: grid; gap: 4px; margin-top: 10px; }
+.rb-sec .lede { font-size: 14.5px; }
+
+@media (max-width: 1080px) {
+  .rb-layout { grid-template-columns: minmax(0, 1fr); }
+  .rb-cmp { position: static; }
+  .rb-cmp.rb-nopick .rb-ctable { display: none; }
+  .rb-cmp.rb-nopick .rb-slots { margin-bottom: 0; }
+  .rb-slots, .rb-cr { grid-template-columns: 140px repeat(3, minmax(0, 1fr)); }
+  .rb-dock:not([hidden]) {
+    position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 30; transform: translateX(-50%);
+    display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border: 0; border-radius: 999px;
+    background: var(--ink); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: var(--lift);
+  }
+  .rb-dock .lc { width: 16px; height: 16px; }
+}
+@media (max-width: 720px) {
+  .rb-produk button { flex-direction: column; gap: 3px; height: 54px; font-size: 12px; padding: 0 2px; }
+  .rb-filters > .seg { max-width: 100%; }
+  .rb-search { flex-basis: 100%; }
+  .rb-ctx { min-height: 0; }
+  .ev { width: 210px; }
+  .rb-row { grid-template-columns: 16px 46px minmax(0, 1fr) auto 34px; grid-template-areas: 'r l n v p' 'r b b b s'; row-gap: 6px; column-gap: 8px; padding: 8px 4px; }
+  .rb-row .bb-rank { grid-area: r; align-self: start; padding-top: 6px; }
+  .rb-row .rb-logo { grid-area: l; }
+  .rb-row .bb-name { grid-area: n; }
+  .rb-row .rb-bar { grid-area: b; }
+  .rb-row .bb-val { grid-area: v; }
+  .rb-row .rb-src-a, .rb-row > span:empty { grid-area: s; }
+  .rb-row .rb-pick { grid-area: p; }
+  .rb-slots, .rb-cr { grid-template-columns: 84px repeat(3, minmax(0, 1fr)); gap: 4px; }
+  .rb-srcl { columns: 1; }
+}
+.rb-old { color: var(--warn); font-weight: 600; }
+
+/* ---------- Sampul buku 3D (profil.html) ---------- */
+.book-cover { display: none; }
+.book.has-cover .book-cover {
+  display: block; position: absolute; z-index: 20; top: 0; bottom: 0; left: 50%; right: 0; padding: 0; border: 0; background: none;
+  cursor: pointer; font: inherit; color: #fff; text-align: left; transform-origin: left center; transform-style: preserve-3d;
+  transform: perspective(2600px) rotateY(-180deg); transition: transform .95s cubic-bezier(.65, .05, .25, 1);
+}
+.book.closed .book-cover { transform: perspective(2600px) rotateY(0deg); }
+.book.flat .book-cover { z-index: -2; pointer-events: none; }
+.cv-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.cv-front {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 48px 52px 40px; border-radius: 7px 28px 28px 7px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .28) 0, rgba(0, 0, 0, .06) 14px, rgba(255, 255, 255, .13) 22px, rgba(255, 255, 255, 0) 40px),
+    radial-gradient(120% 90% at 85% 0%, rgba(255, 255, 255, .12), rgba(255, 255, 255, 0) 60%),
+    linear-gradient(180deg, var(--cover-hi), var(--cover) 75%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), inset -1px 0 0 rgba(255, 255, 255, .08), 0 7px 0 var(--cover-lo);
+}
+.cv-back { transform: rotateY(180deg); border-radius: 28px 7px 7px 28px; background: linear-gradient(180deg, var(--cover-hi), var(--cover) 70%); box-shadow: inset -18px 0 24px -16px rgba(0, 0, 0, .35); }
+.cv-kicker { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 999px; background: rgba(255, 255, 255, .12); font-size: 13px; font-weight: 600; letter-spacing: .01em; }
+.cv-kicker .lc { width: 15px; height: 15px; }
+.cv-logo { margin-top: auto; }
+.cv-logo .logo-lg { width: 168px; height: 92px; border-radius: 18px; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .55); }
+.cv-title { font-size: clamp(34px, 3.6vw, 52px); font-weight: 700; line-height: 1.02; letter-spacing: -.04em; text-wrap: balance; text-shadow: 0 1px 0 rgba(0, 0, 0, .12); }
+.cv-sub { max-width: 34ch; font-size: 14px; line-height: 1.45; color: rgba(255, 255, 255, .72); }
+.cv-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; width: 100%; margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .14); font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, .72); }
+.cv-foot .lc.gi { width: 13px; height: 13px; vertical-align: -2px; margin-right: 5px; color: #fff; }
+.cv-open { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 999px; background: #fff; color: var(--cover); font-size: 14px; font-weight: 700; white-space: nowrap; transition: gap .25s; }
+.cv-open .lc { width: 16px; height: 16px; }
+.book-cover:hover .cv-open { gap: 12px; }
+.book-cover:focus-visible { outline: none; }
+.book-cover:focus-visible .cv-front { outline: 3px solid var(--accent); outline-offset: 4px; }
+.book-shut { display: none; }
+.book.has-cover .book-shut { display: grid; }
+.book.has-cover .book-shut[aria-pressed="true"] { background: var(--accent); color: #fff; }
+
+/* Tertutup: hanya sampul yang tampak, digeser ke tengah dan dimiringkan seperti buku di atas meja.
+   Papan sampul di belakang halaman baru muncul saat dibuka, dari punggung ke kiri mengikuti sampul. */
+.book.closed .book-body { transform: perspective(2600px) translateX(-25%) rotateX(9deg) rotateY(-13deg) rotateZ(1.2deg); }
+.book.closed:not(.closing) .book-body { background: none; box-shadow: none; }
+.book.closed:not(.closing) .book-body::before, .book.closed:not(.closing) .book-body::after, .book.closed .spread::before { visibility: hidden; }
+.book.closed .cv-front { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 7px 0 var(--cover-lo), 0 8px 0 rgba(19, 33, 46, .18), 34px 56px 80px -34px rgba(19, 33, 46, .55); }
+.book.opening .book-body { animation: book-reveal .95s cubic-bezier(.4, 0, .2, 1) both; }
+.book.closing .book-body { animation: book-hide .95s cubic-bezier(.4, 0, .2, 1) both; }
+@keyframes book-reveal { 0%, 45% { clip-path: inset(-160px -160px -160px 50%); } 100% { clip-path: inset(-160px -160px -160px -160px); } }
+@keyframes book-hide { 0% { clip-path: inset(-160px -160px -160px -160px); } 55%, 100% { clip-path: inset(-160px -160px -160px 50%); } }
+.book.has-cover:not(.closed) .book-body { transform: perspective(2600px) translateX(0) rotateX(0) rotateY(0) rotateZ(0); }
+.book.flat .book-body { transform: none; }
+.book.closed:not(.closing) .book-cover:hover { transform: perspective(2600px) rotateY(-9deg); transition-duration: .45s; }
+/* Halaman kiri muncul setelah sampul mendarat di kiri. */
+.book.has-cover .page.left { transition: opacity .35s ease; }
+.book.closed .page.left, .book.opening .page.left, .book.closing .page.left { opacity: 0; }
+.book.closed .dog, .book.opening .dog, .book.closing .dog { visibility: hidden; }
+.book.closed .book-tabs, .book.closed .book-folio { opacity: .55; }
+
+@media (max-width: 720px) {
+  .book.has-cover .book-cover { left: 0; transform: perspective(1600px) rotateY(-180deg); opacity: 0; transition: transform .8s cubic-bezier(.65, .05, .25, 1), opacity .25s linear .55s; }
+  .book.closed .book-cover { opacity: 1; transform: perspective(1600px) rotateY(0deg); transition: transform .8s cubic-bezier(.65, .05, .25, 1), opacity 0s; }
+  .book.closed:not(.closing) .book-cover:hover { transform: perspective(1600px) rotateY(-6deg); }
+  .cv-front { padding: 30px 26px 24px; border-radius: 7px 24px 24px 7px; }
+  .cv-back { display: none; }
+  .cv-logo .logo-lg { width: 132px; height: 74px; }
+  .cv-title { font-size: 34px; }
+  .cv-foot { flex-direction: column; align-items: stretch; gap: 12px; }
+  .cv-open { justify-content: center; }
+  .book.has-cover .book-body { transition: max-height .8s cubic-bezier(.65, .05, .25, 1), transform .8s cubic-bezier(.65, .05, .25, 1); max-height: 9000px; }
+  .book.closed .book-body { max-height: 560px; overflow: hidden; transform: perspective(1600px) rotateX(7deg) rotateZ(-1deg); }
+  .book.opening .book-body, .book.closing .book-body { animation: none; }
+  .book.closed .page.left, .book.opening .page.left, .book.closing .page.left { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .book-body, .book.has-cover .book-cover, .book.closed .book-body { transition: none; }
+}
+.book.still .book-body, .book.still .book-cover, .book.still .page.left { transition: none !important; }
+/* Buku adu dua bank: sampul doff yang sama dengan buku laporan bank. */
+.cb { --cover: color-mix(in oklab, #226192 66%, #0E1A26); background: linear-gradient(180deg, color-mix(in oklab, var(--cover) 84%, #fff), var(--cover) 70%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 7px 0 color-mix(in oklab, var(--cover) 72%, #000), 0 8px 0 rgba(19, 33, 46, .2), 0 40px 70px -36px rgba(19, 33, 46, .6); }

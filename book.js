@@ -4,12 +4,16 @@
 // Membalik halaman memakai halaman aslinya sendiri dalam dua tahap: halaman lama berputar di punggung buku sampai
 // tegak lurus, lalu halaman baru turun dari posisi tegak lurus ke tempatnya. Di ponsel halaman bertumpuk ke bawah,
 // jadi seluruh bentangan dibalik seperti satu lembar.
+// Bila ada .book-cover, buku mulai tertutup dan miring sedikit seperti benda 3D. Sampul berputar di punggung buku
+// ke kiri, buku bergeser ke tengah dan menjadi rata supaya teks tetap tajam saat dibaca.
 
 import { $, $$, esc } from './kit.js';
 import { lucide } from './icons.js';
 
 const UP = 380;   // tahap 1: halaman lama terangkat
 const DOWN = 440; // tahap 2: halaman baru turun
+const OPEN = 950; // sampul terbuka atau tertutup
+const AUTO = 700; // jeda sebelum buku terbuka sendiri setelah terlihat
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 const frame = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
@@ -25,6 +29,11 @@ export function book(host, { start = 0, onTurn = () => {} } = {}) {
   const narrow = matchMedia('(max-width: 720px)');
   let cur = Math.min(Math.max(0, start), spreads.length - 1);
   let busy = false;
+  const cover = $('.book-cover', host);
+  const shut = $('[data-shut]', host);
+  let closed = Boolean(cover) && start === 0 && !reduce;
+  if (cover) host.classList.add('has-cover');
+  host.classList.toggle('closed', closed);
 
   $('#book-tabs', host).innerHTML = spreads.map((s, i) => `<button type="button" role="tab" data-hal="${i}" aria-selected="false" aria-controls="${s.id || ''}">${lucide(s.dataset.icon || 'book-open', 'lc')}<span>${esc(s.dataset.title || `Bab ${i + 1}`)}</span></button>`).join('');
 
@@ -44,6 +53,7 @@ export function book(host, { start = 0, onTurn = () => {} } = {}) {
       s.setAttribute('aria-hidden', String(!on));
     });
     cur = i;
+    if (closed) spreads[i].inert = true;
     $$('#book-tabs [data-hal]', host).forEach((b) => b.setAttribute('aria-selected', String(+b.dataset.hal === i)));
     $$('[data-turn="-1"]', host).forEach((b) => { b.disabled = i === 0; });
     $$('[data-turn="1"]', host).forEach((b) => { b.disabled = i === spreads.length - 1; });
@@ -58,7 +68,47 @@ export function book(host, { start = 0, onTurn = () => {} } = {}) {
     body.classList.remove('turning');
   };
 
+  const setShut = () => {
+    if (!shut) return;
+    shut.setAttribute('aria-label', closed ? 'Buka buku' : 'Tutup buku');
+    shut.title = closed ? 'Buka buku' : 'Tutup buku';
+    shut.setAttribute('aria-pressed', String(closed));
+  };
+  // Buka: sampul berputar 180° di punggung buku, sisi kiri muncul mengikuti sampul, halaman kiri muncul belakangan.
+  const open = async () => {
+    if (!closed || busy) return;
+    busy = true;
+    closed = false;
+    host.classList.add('opening');
+    host.classList.remove('closed', 'flat');
+    if (!reduce) await wait(OPEN);
+    host.classList.remove('opening');
+    host.classList.add('flat');
+    spreads[cur].inert = false;
+    cover?.setAttribute('tabindex', '-1');
+    cover?.setAttribute('aria-hidden', 'true');
+    setShut();
+    busy = false;
+  };
+  const close = async () => {
+    if (closed || busy || !cover) return;
+    busy = true;
+    closed = true;
+    spreads[cur].inert = true;
+    host.classList.remove('flat');
+    host.classList.add('closing');
+    await frame();
+    host.classList.add('closed');
+    if (!reduce) await wait(OPEN);
+    host.classList.remove('closing');
+    cover.removeAttribute('tabindex');
+    cover.removeAttribute('aria-hidden');
+    setShut();
+    busy = false;
+  };
+
   const turn = async (to) => {
+    if (closed) await open();
     if (busy || to === cur || to < 0 || to >= spreads.length) return;
     const dir = to > cur ? 1 : -1;
     const from = spreads[cur];
@@ -109,6 +159,8 @@ export function book(host, { start = 0, onTurn = () => {} } = {}) {
   };
 
   host.addEventListener('click', (e) => {
+    if (e.target.closest('.book-cover')) { open(); return; }
+    if (e.target.closest('[data-shut]')) { if (closed) open(); else close(); return; }
     const t = e.target.closest('[data-turn]');
     if (t && !t.disabled) { turn(cur + +t.dataset.turn); return; }
     const tab = e.target.closest('[data-hal]');
@@ -118,6 +170,7 @@ export function book(host, { start = 0, onTurn = () => {} } = {}) {
   document.addEventListener('keydown', (e) => {
     if (e.altKey || e.ctrlKey || e.metaKey || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
     if (e.target.closest('input, select, textarea, .seg, .table-wrap, [role="tablist"]')) return;
+    if (closed) { if (e.key === 'ArrowRight') open(); return; }
     turn(cur + (e.key === 'ArrowRight' ? 1 : -1));
   });
   // Geser di layar sentuh, kecuali di atas tabel, grafik, atau tombol pilihan yang bisa digeser sendiri.
@@ -141,5 +194,18 @@ export function book(host, { start = 0, onTurn = () => {} } = {}) {
   });
 
   show(cur);
-  return { turn, renumber: () => { numberPages(); show(cur); }, get cur() { return cur; } };
+  setShut();
+  if (!closed) host.classList.add('flat');
+  // Keadaan awal dipasang tanpa animasi; transisi baru aktif setelah dua bingkai.
+  frame().then(() => host.classList.remove('still'));
+  // Buka sendiri sekali, sebentar setelah buku terlihat, supaya pembaca langsung sampai ke isi.
+  if (closed && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((list) => {
+      if (!list.some((x) => x.isIntersecting)) return;
+      io.disconnect();
+      setTimeout(open, AUTO);
+    }, { threshold: 0.35 });
+    io.observe(host);
+  }
+  return { turn, open, close, renumber: () => { numberPages(); show(cur); }, get cur() { return cur; }, get closed() { return closed; } };
 }
