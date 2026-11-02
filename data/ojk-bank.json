@@ -1,7 +1,6 @@
 {
- "diambil": "2026-10-29T05:42:41Z",
+ "diambil": "2026-11-02T06:17:33Z",
  "halaman": "https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah.aspx",
- "ok": true,
  "sumber": "https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/Documents/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah/Daftar%20Alamat%20Kantor%20Pusat%20Bank%20Umum%20Dan%20Syariah%20-%20Juni%202026.xlsx",
  "judul": "Daftar Alamat Kantor Pusat Bank Umum Dan Syariah - Juni 2026",
  "periode": "Juni 2026",
@@ -854,5 +853,7 @@
    "sandi": "069",
    "kelompok": "Kantor Cabang Bank Yang Berkedudukan Di Luar Negeri"
   }
- ]
+ ],
+ "ok": false,
+ "pesan": "Penarikan daftar OJK terakhir gagal (FetchError: https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/Pages/Daftar-Alamat-Kantor-Pusat-Bank-Umum-Dan-Syariah.aspx: URLError: timed out)."
 }
