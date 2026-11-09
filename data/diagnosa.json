@@ -1,23 +1,23 @@
 {
- "updated": "2026-11-05T06:55:41Z",
+ "updated": "2026-11-09T06:44:50Z",
  "tabel": {
   "kredit": {
    "lembar": [
     "2017-06",
     "2025-03",
-    "2026-08",
-    "2026-08",
-    "2026-08"
+    "2026-09",
+    "2026-09",
+    "2026-09"
    ],
    "dipakai": [
     "2017-06",
     "2025-03",
-    "2026-08 (3 lembar digabung)"
+    "2026-09 (3 lembar digabung)"
    ],
    "gagal": [
-    "2026-08: kelompok bank tidak lengkap (persero, bpd)",
-    "2026-08: kelompok bank tidak lengkap (busn, kcba)",
-    "2026-08: kelompok bank tidak lengkap (bpr, total)"
+    "2026-09: kelompok bank tidak lengkap (persero, bpd)",
+    "2026-09: kelompok bank tidak lengkap (busn, kcba)",
+    "2026-09: kelompok bank tidak lengkap (bpr, total)"
    ],
    "info_lembar": [
     {
@@ -1071,14 +1071,14 @@
     {
      "nama": "I.4_1",
      "baris": 57,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -1161,6 +1161,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -1171,7 +1175,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.4 OUTSTANDING OF LOAN/CREDITS IN RUPIAH AND FOREIGN CURRENCY OF COMMERCIAL AND RURAL BANKS BY GROUP OF BANKS AND ECONOMIC SECTOR"
       ],
       [
@@ -1181,7 +1185,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -1196,19 +1200,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND ECONOMIC SECTOR"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -1255,14 +1259,14 @@
     {
      "nama": "I.4_2",
      "baris": 57,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -1345,6 +1349,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -1355,7 +1363,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.4 OUTSTANDING OF LOAN/CREDITS IN RUPIAH AND FOREIGN CURRENCY OF COMMERCIAL AND RURAL BANKS BY GROUP OF BANKS AND ECONOMIC SECTOR"
       ],
       [
@@ -1365,7 +1373,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -1380,19 +1388,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND ECONOMIC SECTOR"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -1439,14 +1447,14 @@
     {
      "nama": "I.4_3",
      "baris": 57,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -1529,6 +1537,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -1539,7 +1551,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.4 OUTSTANDING OF LOAN/CREDITS IN RUPIAH AND FOREIGN CURRENCY OF COMMERCIAL AND RURAL BANKS BY GROUP OF BANKS AND ECONOMIC SECTOR"
       ],
       [
@@ -1549,7 +1561,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -1564,19 +1576,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND ECONOMIC SECTOR"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -1624,253 +1636,253 @@
    "struktur_lembar_terbaru": [
     [
      "Bank Perkreditan Rakyat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Berdasarkan Lapangan Usaha",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pertanian, Kehutanan & Perikanan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pertambangan dan Penggalian",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Industri Pengolahan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pengadaan Listrik dan Gas",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Perdagangan Besar dan Eceran, Reparasi Mobil dan Motor",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Transportasi dan Pergudangan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Penyediaan Akomodasi dan Minum",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Informasi dan Komunikasi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Keuangan dan Asuransi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Perusahaan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Pendidikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Kesehatan dan Kegiatan Lainnya",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Lainnya",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Kepada Bukan Lapangan Usaha (Konsumsi Rumah Tangg",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Rumah Tinggal",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Flat dan Apartemen",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Rumah Toko (Ruko) dan Rumah Kantor (Ruka",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kendaraan Bermotor",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Lainnya",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jumlah (1 s.d",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Berdasarkan Lapangan Usaha",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pertanian, Kehutanan & Perikanan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pertambangan dan Penggalian",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Industri Pengolahan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pengadaan Listrik dan Gas",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Perdagangan Besar dan Eceran, Reparasi Mobil dan Motor",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Transportasi dan Pergudangan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Penyediaan Akomodasi dan Minum",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Informasi dan Komunikasi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Keuangan dan Asuransi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Perusahaan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Administrasi Pemerintahan, Pertahanan dan Jaminan Sosial Wajib",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Pendidikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Kesehatan dan Kegiatan Lainnya",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jasa Lainnya",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Kepada Bukan Lapangan Usaha (Konsumsi Rumah Tangg",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Rumah Tinggal",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Flat dan Apartemen",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Rumah Toko (Ruko) dan Rumah Kantor (Ruka",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kendaraan Bermotor",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Lainnya",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Sejak Januari 2025 terdapat perubahan klasifikasi pengelompokan bank dari Bank Asing dan Bank Campuran menjadi Kantor Cabang Dari Bank Yang Berkedudukan Di Luar Negeri sehubungan dengan implementasi Laporan Bank Umum Terintegrasi (LBUT). - Sejak Januari 2025 terdapat penyesuaian cakupan sumber data terkait klasifikasi sektor KBLI sehubungan dengan implementasi Laporan Bank Umum Terintegrasi (LBUT) yang menggunakan KBLI 2015",
@@ -1885,16 +1897,16 @@
     "2009-12",
     "2017-06",
     "2025-03",
-    "2026-08",
-    "2026-08"
+    "2026-09",
+    "2026-09"
    ],
    "dipakai": [
     "2003-12",
     "2009-12",
     "2017-06",
     "2025-03",
-    "2026-08",
-    "2026-08"
+    "2026-09",
+    "2026-09"
    ],
    "gagal": [],
    "info_lembar": [
@@ -3947,14 +3959,14 @@
     {
      "nama": "1.17_1",
      "baris": 49,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -4037,6 +4049,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -4047,7 +4063,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.17 OUTSTANDING OF PRIVATE DEPOSITS OF COMMERCIAL AND RURAL BANKS BY GROUP OF BANKS AND TYPE OF DEPOSITS"
       ],
       [
@@ -4057,7 +4073,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -4072,19 +4088,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND TYPE OF DEPOSITS"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -4131,14 +4147,14 @@
     {
      "nama": "1.17_2",
      "baris": 41,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -4221,6 +4237,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -4231,7 +4251,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.17 OUTSTANDING OF PRIVATE DEPOSITS OF COMMERCIAL AND RURAL BANKS BY GROUP OF BANKS AND TYPE OF DEPOSITS"
       ],
       [
@@ -4241,7 +4261,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -4256,19 +4276,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND TYPE OF DEPOSITS"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -4316,128 +4336,128 @@
    "struktur_lembar_terbaru": [
     [
      "Rupiah Valuta Asing",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Persero",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Pemerintah Daerah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Swasta Nasional",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kantor Cabang dari Bank yang Berkedudukan di Luar Negeri",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Perkreditan Rakyat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jumlah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Memo Items",
@@ -4446,43 +4466,43 @@
     ],
     [
      "Pemerintah Pusat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bukan Penduduk",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Giro",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Tabungan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Deposito",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sejak Januari 2025, terdapat perubahan klasifikasi pengelompokan bank dari Bank Asing dan Bank Campuran menjadi Kantor Cabang Dari Bank Yang Berkedudukan Di Luar Negeri sehubungan dengan implementasi Laporan Bank Umum Terintegrasi (LBUT)",
@@ -4495,12 +4515,12 @@
    "lembar": [
     "2018-02",
     "2025-02",
-    "2026-08"
+    "2026-09"
    ],
    "dipakai": [
     "2018-02",
     "2025-02",
-    "2026-08"
+    "2026-09"
    ],
    "gagal": [],
    "info_lembar": [
@@ -5585,14 +5605,14 @@
     {
      "nama": "1.12",
      "baris": 42,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -5675,6 +5695,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -5685,7 +5709,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.12 OUTSTANDING OF LOANS/CREDITS IN RUPIAH AND FOREIGN CURRENCY OF COMMERCIAL AND RURAL BANKS BY PROJECT LOCATION OF PROVINCES"
       ],
       [
@@ -5695,7 +5719,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -5710,19 +5734,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "PROVINCE"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -5770,178 +5794,178 @@
    "struktur_lembar_terbaru": [
     [
      "Nanggroe Aceh Darussalam",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sumatera Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sumatera Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Riau",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jambi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sumatera Selatan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bangka Belitung",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bengkulu",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Lampung",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Banten",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "D.K.I. Jakarta",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jawa Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jawa Tengah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "D.I. Yogyakarta",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jawa Timur",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bali",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Nusa Tenggara Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Nusa Tenggara Timur",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Tengah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Selatan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Timur",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Gorontalo",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Tengah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Selatan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Tenggara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Maluku Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Maluku",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Papua",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Papua Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kepulauan Riau",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jumlah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sampai dengan Juli 2000, termasuk Provinsi Timor Timur. Sejak Mei 2014 terdapat perubahan cakupan dan klarifikasi data Dana dan Kredit berkaitan dengan implementasi Laporan Bulanan Bank Umum Syariah (LBUS) berdasarkan Laporan Stabilitas Moneter dan Sistem Keuangan (LSMK). Penjelasan lebih lanjut terdapat di Metadata",
@@ -5955,13 +5979,13 @@
     "2018-12",
     "2019-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "dipakai": [
     "2018-12",
     "2019-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "gagal": [],
    "info_lembar": [
@@ -7630,14 +7654,14 @@
     {
      "nama": "1.19",
      "baris": 45,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -7720,6 +7744,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -7730,7 +7758,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.19 OUTSTANDING OF PRIVATE DEPOSITS IN RUPIAH AND FOREIGN CURRENCY OF COMMERCIAL AND RURAL BANKS BY PROVINCES"
       ],
       [
@@ -7740,7 +7768,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -7755,19 +7783,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "PROVINCE"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -7815,178 +7843,178 @@
    "struktur_lembar_terbaru": [
     [
      "Nanggroe Aceh Darussalam",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sumatera Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sumatera Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Riau",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jambi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sumatera Selatan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bangka Belitung",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bengkulu",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Lampung",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Banten",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "D.K.I. Jakarta",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jawa Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jawa Tengah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "D.I. Yogyakarta",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jawa Timur",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bali",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Nusa Tenggara Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Nusa Tenggara Timur",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Tengah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Selatan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Timur",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Gorontalo",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Tengah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Selatan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Tenggara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Maluku Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Maluku",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Papua",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Papua Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sulawesi Barat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kepulauan Riau",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kalimantan Utara",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jumlah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Memo Items",
@@ -7995,13 +8023,13 @@
     ],
     [
      "Pemerintah Pusat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bukan Penduduk",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sampai dengan Juli 2000, termasuk Provinsi Timor Timur. Sejak Mei 2014 terdapat perubahan cakupan dan klarifikasi data Dana dan Kredit berkaitan dengan implementasi Laporan Bulanan Bank Umum Syariah (LBUS) berdasarkan Laporan Stabilitas Moneter dan Sistem Keuangan (LSMK). Penjelasan lebih lanjut terdapat di Metadata",
@@ -8015,15 +8043,15 @@
     "2009-12",
     "2017-06",
     "2025-03",
-    "2026-08",
-    "2026-08"
+    "2026-09",
+    "2026-09"
    ],
    "dipakai": [
     "2009-12",
     "2017-06",
     "2025-03",
-    "2026-08",
-    "2026-08"
+    "2026-09",
+    "2026-09"
    ],
    "gagal": [],
    "info_lembar": [
@@ -9517,14 +9545,14 @@
     {
      "nama": "1.15_1",
      "baris": 57,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -9607,6 +9635,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -9617,7 +9649,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.15 OUTSTANDING OF PROPERTY LOANS/CREDITS OF COMMERCIAL BANKS AND RURAL BANK BY GROUP OF BANKS AND TYPE OF UTILIZATION"
       ],
       [
@@ -9627,7 +9659,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -9642,19 +9674,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND TYPE OF UTILIZATION"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -9701,14 +9733,14 @@
     {
      "nama": "1.15_2",
      "baris": 32,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -9791,6 +9823,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -9801,7 +9837,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.15 OUTSTANDING OF PROPERTY LOANS/CREDITS OF COMMERCIAL BANKS AND RURAL BANK BY GROUP OF BANKS AND TYPE OF UTILIZATION"
       ],
       [
@@ -9811,7 +9847,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Billions of Rp)"
       ],
       [
@@ -9826,19 +9862,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND TYPE OF UTILIZATION"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -9886,128 +9922,128 @@
    "struktur_lembar_terbaru": [
     [
      "Rupiah dan Valas",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Persero",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- KPR dan KPA",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Pemerintah Daerah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- KPR dan KPA",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Swasta Nasional",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- KPR dan KPA",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kantor Cabang dari Bank yang Berkedudukan di Luar Negeri",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- KPR dan KPA",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Perkreditan Rakyat",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- KPR dan KPA",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Jumlah (1 s.d",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Konstruksi",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- Kredit Real Estate",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "- KPR dan KPA",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sejak Januari 2025 terdapat perubahan klasifikasi pengelompokan bank dari Bank Asing dan Bank Campuran menjadi Kantor Cabang Dari Bank Yang Berkedudukan Di Luar Negeri sehubungan dengan implementasi Laporan Bank Umum Terintegrasi (LBUT)",
@@ -10021,13 +10057,13 @@
     "2018-12",
     "2020-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "dipakai": [
     "2018-12",
     "2020-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "gagal": [],
    "info_lembar": [
@@ -11696,14 +11732,14 @@
     {
      "nama": "1.26",
      "baris": 27,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -11786,6 +11822,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -11796,7 +11836,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.26 INTEREST RATE OF RUPIAH LOANS BY GROUP OF BANKS AND TYPE OF LOANS"
       ],
       [
@@ -11806,7 +11846,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Percent Per Annum)"
       ],
       [
@@ -11821,19 +11861,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND TYPE OF LOANS"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -11886,18 +11926,18 @@
     ],
     [
      "Pinjaman Modal Kerja Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Investasi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Konsumsi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Pemerintah Daerah",
@@ -11906,18 +11946,18 @@
     ],
     [
      "Pinjaman Modal Kerja Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Investasi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Konsumsi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Swasta Nasional",
@@ -11926,18 +11966,18 @@
     ],
     [
      "Pinjaman Modal Kerja Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Investasi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Konsumsi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kantor Cabang dari Bank yang Berkedudukan di Luar Negeri",
@@ -11946,18 +11986,18 @@
     ],
     [
      "Pinjaman Modal Kerja Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Investasi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Konsumsi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Umum",
@@ -11966,18 +12006,18 @@
     ],
     [
      "Pinjaman Modal Kerja Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Investasi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Pinjaman Konsumsi Yang Diberikan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sejak Januari 2025 terdapat perubahan klasifikasi pengelompokan bank dari Bank Asing dan Bank Campuran menjadi Kantor Cabang Dari Bank Yang Berkedudukan Di Luar Negeri sehubungan dengan implementasi Laporan Bank Umum Terintegrasi (LBUT)",
@@ -11991,13 +12031,13 @@
     "2008-12",
     "2019-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "dipakai": [
     "2008-12",
     "2019-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "gagal": [],
    "info_lembar": [
@@ -13666,14 +13706,14 @@
     {
      "nama": "1.28",
      "baris": 37,
-     "kolom": 28,
+     "kolom": 29,
      "header": 4,
      "blok": [
       [
        4,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -13756,6 +13796,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -13766,7 +13810,7 @@
       ],
       [
        0,
-       14,
+       16,
        "I.28 INTEREST RATE OF TIME DEPOSITS IN RUPIAH BY GROUP OF BANKS AND TYPE OF MATURITY"
       ],
       [
@@ -13776,7 +13820,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Percent Per Annum)"
       ],
       [
@@ -13791,19 +13835,19 @@
       ],
       [
        3,
-       23,
+       24,
        "2026"
       ],
       [
        3,
-       26,
+       27,
        "GROUP OF BANKS AND TYPE OF MATURITY"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -13856,28 +13900,28 @@
     ],
     [
      "1 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "3 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "6 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "12 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "24 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Pemerintah Daerah",
@@ -13886,28 +13930,28 @@
     ],
     [
      "1 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "3 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "6 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "12 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "24 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Swasta Nasional",
@@ -13916,28 +13960,28 @@
     ],
     [
      "1 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "3 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "6 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "12 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "24 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kantor Cabang dari Bank yang Berkedudukan di Luar Negeri",
@@ -13946,28 +13990,28 @@
     ],
     [
      "1 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "3 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "6 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "12 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "24 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Umum",
@@ -13976,28 +14020,28 @@
     ],
     [
      "1 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "3 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "6 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "12 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "24 Bulan",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sejak Januari 2025 terdapat perubahan klasifikasi pengelompokan bank dari Bank Asing dan Bank Campuran menjadi Kantor Cabang Dari Bank Yang Berkedudukan Di Luar Negeri sehubungan dengan implementasi Laporan Bank Umum Terintegrasi (LBUT)",
@@ -14011,13 +14055,13 @@
     "2008-12",
     "2019-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "dipakai": [
     "2008-12",
     "2019-03",
     "2025-03",
-    "2026-08"
+    "2026-09"
    ],
    "gagal": [],
    "info_lembar": [
@@ -15676,14 +15720,14 @@
     {
      "nama": "1.30",
      "baris": 13,
-     "kolom": 28,
+     "kolom": 29,
      "header": 5,
      "blok": [
       [
        5,
        "2025-01",
-       "2026-08",
-       20
+       "2026-09",
+       21
       ]
      ],
      "sel_header": [
@@ -15766,6 +15810,10 @@
       [
        23,
        "Aug"
+      ],
+      [
+       24,
+       "Sep"
       ]
      ],
      "sel_atas": [
@@ -15776,7 +15824,7 @@
       ],
       [
        1,
-       14,
+       16,
        "(Percent Per Annum)"
       ],
       [
@@ -15791,19 +15839,19 @@
       ],
       [
        4,
-       23,
+       24,
        "2026"
       ],
       [
        4,
-       26,
+       27,
        "GROUP OF BANKS"
       ]
      ],
      "bulan": [
       "2025-01",
-      "2026-08",
-      20
+      "2026-09",
+      21
      ],
      "contoh_baris": [
       [
@@ -15851,28 +15899,28 @@
    "struktur_lembar_terbaru": [
     [
      "Bank Persero",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Pemerintah Daerah",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Swasta Nasional",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Kantor Cabang dari Bank yang Berkedudukan di Luar Negeri",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Bank Umum",
-     20,
-     "2026-08"
+     21,
+     "2026-09"
     ],
     [
      "Sejak Januari 2025 terdapat perubahan klasifikasi pengelompokan bank dari Bank Asing dan Bank Campuran menjadi Kantor Cabang Dari Bank Yang Berkedudukan Di Luar Negeri sehubungan dengan implementasi Laporan Bank Umum Terintegrasi (LBUT)",

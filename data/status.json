@@ -1,52 +1,52 @@
 {
- "updated": "2026-11-05T06:55:41Z",
+ "updated": "2026-11-09T06:44:50Z",
  "sources": {
   "kredit": {
    "ok": true,
-   "at": "2026-11-05T06:55:28Z",
-   "note": "TABEL1_4: 2019-01 s.d. 2026-08 dari 3 lembar",
+   "at": "2026-11-09T06:44:35Z",
+   "note": "TABEL1_4: 2019-01 s.d. 2026-09 dari 3 lembar",
    "count": 51
   },
   "simpanan": {
    "ok": true,
-   "at": "2026-11-05T06:55:31Z",
-   "note": "TABEL1_17: 2019-01 s.d. 2026-08 dari 6 lembar",
+   "at": "2026-11-09T06:44:40Z",
+   "note": "TABEL1_17: 2019-01 s.d. 2026-09 dari 6 lembar",
    "count": 35
   },
   "kredit_prov": {
    "ok": true,
-   "at": "2026-11-05T06:55:33Z",
-   "note": "TABEL1_12: 2019-01 s.d. 2026-08 dari 3 lembar",
+   "at": "2026-11-09T06:44:42Z",
+   "note": "TABEL1_12: 2019-01 s.d. 2026-09 dari 3 lembar",
    "count": 36
   },
   "simpanan_prov": {
    "ok": true,
-   "at": "2026-11-05T06:55:35Z",
-   "note": "TABEL1_19: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "at": "2026-11-09T06:44:43Z",
+   "note": "TABEL1_19: 2019-01 s.d. 2026-09 dari 4 lembar",
    "count": 39
   },
   "kpr": {
    "ok": true,
-   "at": "2026-11-05T06:55:37Z",
-   "note": "TABEL1_15: 2019-01 s.d. 2026-08 dari 5 lembar",
+   "at": "2026-11-09T06:44:45Z",
+   "note": "TABEL1_15: 2019-01 s.d. 2026-09 dari 5 lembar",
    "count": 26
   },
   "bunga_kredit": {
    "ok": true,
-   "at": "2026-11-05T06:55:38Z",
-   "note": "TABEL1_26: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "at": "2026-11-09T06:44:48Z",
+   "note": "TABEL1_26: 2019-01 s.d. 2026-09 dari 4 lembar",
    "count": 21
   },
   "bunga_deposito": {
    "ok": true,
-   "at": "2026-11-05T06:55:40Z",
-   "note": "TABEL1_28: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "at": "2026-11-09T06:44:49Z",
+   "note": "TABEL1_28: 2019-01 s.d. 2026-09 dari 4 lembar",
    "count": 31
   },
   "bunga_tabungan": {
    "ok": true,
-   "at": "2026-11-05T06:55:41Z",
-   "note": "TABEL1_30: 2019-01 s.d. 2026-08 dari 4 lembar",
+   "at": "2026-11-09T06:44:50Z",
+   "note": "TABEL1_30: 2019-01 s.d. 2026-09 dari 4 lembar",
    "count": 6
   }
  }
